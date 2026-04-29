@@ -1,0 +1,5 @@
+PS C:\Users\Dami\Downloads\openf1-main> # open a shell to the mongo container (image provides mongosh/mongo)
+>> docker-compose exec mongo mongosh --eval 'db.getSiblingDB("openf1-livetiming").getCollectionNames()'
+>> docker-compose exec mongo mongosh --eval 'db.getSiblingDB("openf1-livetiming").laps.findOne()'
+ReferenceError: openf1 is not defined
+ReferenceError: openf1 is not defined
