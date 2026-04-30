@@ -1,4 +1,5 @@
 import json
+import os
 import re
 from datetime import datetime, timedelta
 from functools import lru_cache
@@ -355,6 +356,17 @@ def ingest_collections(
 def ingest_session(year: int, meeting_key: int, session_key: int, verbose: bool = True):
     collections = get_collections(meeting_key=meeting_key, session_key=session_key)
     collection_names = sorted([c.__class__.name for c in collections])
+
+# Allow excluding collections via env var, e.g. OPENF1_INGEST_EXCLUDE_COLLECTIONS=car_data
+EXCLUDE_COLLECTIONS_ENV = os.getenv("OPENF1_INGEST_EXCLUDE_COLLECTIONS", "")
+EXCLUDE_COLLECTIONS = set([c.strip() for c in EXCLUDE_COLLECTIONS_ENV.split(",") if c.strip()])
+
+    if EXCLUDE_COLLECTIONS:
+        filtered = [c for c in collection_names if c not in EXCLUDE_COLLECTIONS]
+        skipped = [c for c in collection_names if c in EXCLUDE_COLLECTIONS]
+        collection_names = filtered
+        if verbose and skipped:
+            logger.info(f"Skipping excluded collections: {skipped}")
 
     if verbose:
         logger.info(
