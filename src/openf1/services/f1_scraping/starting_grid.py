@@ -122,14 +122,20 @@ def ingest_starting_grid(
     grid_url = _session_key_to_page_url(session_key)
     logger.info(f"Ingesting starting grid of session {session_key}, from {grid_url}")
 
-    with tempfile.NamedTemporaryFile(
-        mode="w", delete=True, suffix=".html"
-    ) as temp_file:
-        download_page(
-            url=grid_url,
-            output_file=Path(temp_file.name),
-        )
-        docs = _parse_starting_grid_page(Path(temp_file.name))
+    with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".html") as temp_file:
+        temp_path = Path(temp_file.name)
+        temp_file.close()
+        try:
+            download_page(
+                url=grid_url,
+                output_file=temp_path,
+            )
+            docs = _parse_starting_grid_page(temp_path)
+        finally:
+            try:
+                temp_path.unlink()
+            except Exception:
+                pass
         if not docs:
             logger.error(f"No starting grid data found for meeting_key={meeting_key}")
             return

@@ -9,6 +9,7 @@ from loguru import logger
 from motor.motor_asyncio import AsyncIOMotorClient
 from pymongo import InsertOne, MongoClient, ReplaceOne, UpdateOne
 from pymongo.errors import BulkWriteError
+from pymongo.errors import ExecutionTimeout
 
 from openf1.util.misc import hash_obj, timed_cache
 
@@ -77,8 +78,38 @@ async def get_documents(
         {"$sort": {key: 1 for key in _SORT_KEYS}},
     ]
 
-    cursor = collection.aggregate(pipeline, maxTimeMS=_MAX_QUERY_TIME_MS)
-    results = await cursor.to_list(length=None)
+    try:
+        cursor = collection.aggregate(pipeline, maxTimeMS=_MAX_QUERY_TIME_MS)
+        results = await cursor.to_list(length=None)
+    except ExecutionTimeout:
+        logger.warning(
+            "Aggregation exceeded maxTimeMS=%sms, retrying with extended timeout",
+            _MAX_QUERY_TIME_MS,
+        )
+        # Retry with a larger timeout
+        try:
+            cursor = collection.aggregate(pipeline, maxTimeMS=_MAX_QUERY_TIME_MS * 10)
+            results = await cursor.to_list(length=None)
+        except ExecutionTimeout:
+            logger.error(
+                "Aggregation still timed out after extended timeout; falling back to client-side grouping (may be slower)"
+            )
+            # Fallback: perform a server-side find sorted by _id desc and dedupe by _key in Python.
+            # This avoids MongoDB aggregation timeouts on very large collections at the cost
+            # of transferring more data to the client. We cap the number of scanned documents
+            # to avoid OOM or extremely long responses.
+            fallback_cap = 200_000
+            cursor = collection.find(predicate).sort([("_id", -1)])
+            results = []
+            seen_keys = set()
+            docs = await cursor.to_list(length=fallback_cap)
+            for doc in docs:
+                k = doc.get("_key")
+                if k in seen_keys:
+                    continue
+                seen_keys.add(k)
+                results.append(doc)
+            # Note: results are already the latest per _key due to sort by _id desc.
     cleaned_results = []
     for doc in results:
         cleaned_doc = {k: v for k, v in doc.items() if not k.startswith("_")}

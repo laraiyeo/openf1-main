@@ -243,12 +243,20 @@ def ingest_session_result(
     session_url = _session_key_to_page_url(session_key)
     logger.info(f"Ingesting result of session {session_key}, from {session_url}")
 
-    with tempfile.NamedTemporaryFile(mode="w", delete=True) as temp:
-        download_page(
-            url=session_url,
-            output_file=Path(temp.name),
-        )
-        docs = _parse_page(Path(temp.name))
+    with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".html") as temp:
+        temp_path = Path(temp.name)
+        temp.close()
+        try:
+            download_page(
+                url=session_url,
+                output_file=temp_path,
+            )
+            docs = _parse_page(temp_path)
+        finally:
+            try:
+                temp_path.unlink()
+            except Exception:
+                pass
 
         # Add missing fields
         for idx, doc in enumerate(docs):
