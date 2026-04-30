@@ -5,6 +5,7 @@ import time
 from urllib.parse import urljoin
 
 import requests
+import random
 
 _base = os.getenv("OPENF1_BASE_URL")
 BASE_URL = _base if _base else "https://api.openf1.org/"
@@ -80,24 +81,57 @@ def _get_valid_token():
     return access_token
 
 
-def get(endpoint, params=None):
-    """
-    Makes a GET request to a specified API endpoint.
-    Includes an authorization header only if authentication is automatically enabled
-    by the presence of environment variables.
+def get(endpoint, params=None, max_retries: int = 5):
+    """Makes a GET request with simple retry/backoff for 429 and 5xx errors.
+
+    Retries up to `max_retries` times with exponential backoff and small jitter.
+    Honors `Retry-After` header for 429 responses when present.
     """
     _ensure_initialized()
 
     full_url = urljoin(BASE_URL, endpoint)
-    headers = {
-        "Accept": "application/json",
-    }
+    headers = {"Accept": "application/json"}
 
     if _authentication_enabled:
         token = _get_valid_token()
         if token:
             headers["Authorization"] = f"Bearer {token}"
 
-    response = requests.get(full_url, headers=headers, params=params)
-    response.raise_for_status()
-    return response.json()
+    attempt = 0
+    backoff = 1.0
+    while True:
+        try:
+            response = requests.get(full_url, headers=headers, params=params, timeout=10)
+
+            # Handle rate limiting explicitly (Retry-After if provided)
+            if response.status_code == 429:
+                if attempt >= max_retries:
+                    response.raise_for_status()
+                retry_after = response.headers.get("Retry-After")
+                try:
+                    sleep_for = float(retry_after) if retry_after is not None else backoff + random.random()
+                except Exception:
+                    sleep_for = backoff + random.random()
+                time.sleep(sleep_for)
+                attempt += 1
+                backoff *= 2
+                continue
+
+            # Retry on server errors
+            if 500 <= response.status_code < 600:
+                if attempt >= max_retries:
+                    response.raise_for_status()
+                time.sleep(backoff + random.random())
+                attempt += 1
+                backoff *= 2
+                continue
+
+            response.raise_for_status()
+            return response.json()
+
+        except requests.exceptions.RequestException:
+            if attempt >= max_retries:
+                raise
+            time.sleep(backoff + random.random())
+            attempt += 1
+            backoff *= 2

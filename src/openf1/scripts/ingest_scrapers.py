@@ -9,6 +9,7 @@ logs errors (continues on failure).
 """
 import argparse
 import logging
+import time
 from typing import Iterable, List
 
 from openf1.services.f1_scraping import session_result as sr_mod
@@ -36,6 +37,8 @@ def ingest_meeting_scrapers(year: int, meeting_key: int, collections: List[str])
                 sg_mod.ingest_starting_grid(meeting_key=meeting_key, session_key=sk)
             except Exception:
                 logging.exception(f"starting_grid ingestion failed for session {sk}")
+        # Small sleep to avoid hitting API rate limits when iterating many sessions
+        time.sleep(0.2)
 
 
 def ingest_year(year: int, collections: List[str]):
