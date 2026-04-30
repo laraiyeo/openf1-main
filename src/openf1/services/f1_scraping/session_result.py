@@ -253,12 +253,21 @@ def ingest_session_result(
         meeting_key = get_latest_meeting_key()
         session_key = get_latest_session_key()
 
-    session_url = _session_key_to_page_url(session_key)
+    try:
+        session_url = _session_key_to_page_url(session_key)
+    except Exception as e:
+        logger.info(f"Skipping session_result for session {session_key}: {e}")
+        return
+
     logger.info(f"Ingesting result of session {session_key}, from {session_url}")
 
     # Download HTML into memory and parse directly to avoid temp-file permission issues
-    html = fetch_page(session_url)
-    docs = _parse_page_from_html(html)
+    try:
+        html = fetch_page(session_url)
+        docs = _parse_page_from_html(html)
+    except Exception:
+        logger.exception(f"Failed to fetch/parse session result for session {session_key}")
+        return
 
     # Add missing fields
     for idx, doc in enumerate(docs):

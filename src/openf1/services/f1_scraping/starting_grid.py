@@ -179,12 +179,24 @@ def ingest_starting_grid(
         meeting_key = get_latest_meeting_key()
         session_key = get_latest_session_key()
 
-    grid_url = _session_key_to_page_url(session_key)
+    try:
+        grid_url = _session_key_to_page_url(session_key)
+    except ValueError as e:
+        logger.info(f"Skipping starting grid for session {session_key}: {e}")
+        return
+
     logger.info(f"Ingesting starting grid of session {session_key}, from {grid_url}")
 
     # Fetch HTML into memory and parse directly to avoid temp-file permission issues
-    html = fetch_page(grid_url)
-    docs = _parse_starting_grid_from_html(html)
+    try:
+        html = fetch_page(grid_url)
+        docs = _parse_starting_grid_from_html(html)
+    except ValueError as e:
+        logger.info(f"No starting-grid page or no results for session {session_key}: {e}")
+        return
+    except Exception:
+        logger.exception(f"Failed to fetch/parse starting grid for session {session_key}")
+        return
     if not docs:
         logger.error(f"No starting grid data found for meeting_key={meeting_key}")
         return

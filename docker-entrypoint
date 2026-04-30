@@ -47,9 +47,25 @@ PYCODE
       ;;
     scrape-latest)
       echo "Starting scrape-latest"
-      # Ensure scrapers call the local api when running in the same container
-      export OPENF1_BASE_URL=${OPENF1_BASE_URL:-http://localhost:8000}
-      sleep 2 # api needs to be fully up before this will work
+      # Force scrapers to call the local api when running in the same container
+      export OPENF1_BASE_URL=http://localhost:8000
+      echo "OPENF1_BASE_URL set to $OPENF1_BASE_URL"
+      # Wait up to ~30s for the local API to start responding
+      python - <<'PY'
+import sys, time, urllib.request
+url = "http://localhost:8000/"
+print(f"Waiting for local API at {url} (30s timeout)...")
+for i in range(30):
+    try:
+        r = urllib.request.urlopen(url, timeout=2)
+        if getattr(r, 'status', None) in (200, None):
+            print('Local API is responding')
+            sys.exit(0)
+    except Exception:
+        time.sleep(1)
+print('Timed out waiting for local API; continuing anyway')
+sys.exit(0)
+PY
       python -m openf1.services.f1_scraping.schedule ingest-meetings
       python -m openf1.services.f1_scraping.schedule ingest-sessions
       python -m openf1.services.f1_scraping.session_result
