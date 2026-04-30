@@ -17,7 +17,6 @@ run_role() {
       # Historical ingestion only runs on deploy when explicitly enabled.
       if [ "$OPENF1_RUN_HISTORICAL_ON_DEPLOY" != "true" ]; then
         echo "ingest-historical present in ROLE but OPENF1_RUN_HISTORICAL_ON_DEPLOY!=true; skipping historical ingest"
-        ;;
       fi
 
       # If OPENF1_DROP_DB_ON_DEPLOY is set to "true", drop the database first
