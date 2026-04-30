@@ -1,121 +1,576 @@
-2026-04-30T00:24:59.895662845Z [inf]  Starting api
-2026-04-30T00:24:59.895667407Z [inf]  Starting ingest-historical
-2026-04-30T00:24:59.895674375Z [inf]  Dropping MongoDB database openf1-livetiming (if set)
-2026-04-30T00:24:59.895680032Z [inf]  Starting ingest-realtime
-2026-04-30T00:24:59.895684760Z [err]  INFO:     Will watch for changes in these directories: ['/app']
-2026-04-30T00:24:59.895689872Z [err]  INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-2026-04-30T00:24:59.895694450Z [err]  INFO:     Started reloader process [7] using StatReload
-2026-04-30T00:24:59.895699432Z [inf]  Dropped database: openf1-livetiming
-2026-04-30T00:24:59.928778803Z [inf]  Ingesting historical season for year: 2023
-2026-04-30T00:24:59.955329907Z [err]  INFO:     Started server process [11]
-2026-04-30T00:24:59.955339609Z [err]  INFO:     Waiting for application startup.
-2026-04-30T00:24:59.955346579Z [err]  INFO:     Application startup complete.
-2026-04-30T00:24:59.955352717Z [err]  Traceback (most recent call last):
-2026-04-30T00:24:59.955358865Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 187, in _run_module_as_main
-2026-04-30T00:24:59.955364708Z [err]      mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-2026-04-30T00:24:59.955369915Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 157, in _get_module_details
-2026-04-30T00:24:59.955375268Z [err]      code = loader.get_code(mod_name)
-2026-04-30T00:24:59.955381128Z [err]    File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-2026-04-30T00:24:59.955385929Z [err]    File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-2026-04-30T00:24:59.955391277Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-04-30T00:24:59.955396872Z [err]    File "/app/openf1/services/ingestor_livetiming/historical/main.py", line 364
-2026-04-30T00:24:59.955402363Z [err]      if EXCLUDE_COLLECTIONS:
-2026-04-30T00:24:59.955408035Z [err]  IndentationError: unexpected indent
-2026-04-30T00:25:00.000608869Z [err]    File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-2026-04-30T00:25:00.000618235Z [err]    File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-2026-04-30T00:25:00.000623769Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-04-30T00:25:00.000628878Z [err]    File "/app/openf1/services/ingestor_livetiming/historical/main.py", line 364
-2026-04-30T00:25:00.000633227Z [err]      if EXCLUDE_COLLECTIONS:
-2026-04-30T00:25:00.000639824Z [err]  IndentationError: unexpected indent
-2026-04-30T00:25:00.000649407Z [inf]  Ingesting historical season for year: 2024
-2026-04-30T00:25:00.000719131Z [err]  Traceback (most recent call last):
-2026-04-30T00:25:00.000723743Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 187, in _run_module_as_main
-2026-04-30T00:25:00.000728459Z [err]      mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-2026-04-30T00:25:00.000733149Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 157, in _get_module_details
-2026-04-30T00:25:00.000737787Z [err]      code = loader.get_code(mod_name)
-2026-04-30T00:25:00.016945451Z [err]  Traceback (most recent call last):
-2026-04-30T00:25:00.016949659Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 187, in _run_module_as_main
-2026-04-30T00:25:00.016954446Z [err]      mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-2026-04-30T00:25:00.016959844Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 157, in _get_module_details
-2026-04-30T00:25:00.016965644Z [err]      code = loader.get_code(mod_name)
-2026-04-30T00:25:00.016971103Z [err]    File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-2026-04-30T00:25:00.016976235Z [err]    File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-2026-04-30T00:25:00.016981989Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-04-30T00:25:00.016987020Z [err]    File "/app/openf1/services/ingestor_livetiming/historical/main.py", line 364
-2026-04-30T00:25:00.016993256Z [err]      if EXCLUDE_COLLECTIONS:
-2026-04-30T00:25:00.016999795Z [err]  IndentationError: unexpected indent
-2026-04-30T00:25:00.048195536Z [inf]  Starting Container
-2026-04-30T00:25:00.052367736Z [err]    File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-2026-04-30T00:25:00.052379287Z [err]    File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-2026-04-30T00:25:00.052386435Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-04-30T00:25:00.052392678Z [err]    File "/app/openf1/services/ingestor_livetiming/historical/main.py", line 364
-2026-04-30T00:25:00.052398938Z [err]      if EXCLUDE_COLLECTIONS:
-2026-04-30T00:25:00.052414912Z [err]  IndentationError: unexpected indent
-2026-04-30T00:25:00.052470321Z [err]  Traceback (most recent call last):
-2026-04-30T00:25:00.052475017Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 187, in _run_module_as_main
-2026-04-30T00:25:00.052480528Z [err]      mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-2026-04-30T00:25:00.052485901Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 157, in _get_module_details
-2026-04-30T00:25:00.052491436Z [err]      code = loader.get_code(mod_name)
-2026-04-30T00:25:00.055311949Z [inf]  Ingesting historical season for year: 2025
-2026-04-30T00:25:00.082749476Z [err]  Traceback (most recent call last):
-2026-04-30T00:25:00.082756766Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 187, in _run_module_as_main
-2026-04-30T00:25:00.082761701Z [err]      mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-2026-04-30T00:25:00.082766717Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 157, in _get_module_details
-2026-04-30T00:25:00.082772065Z [err]      code = loader.get_code(mod_name)
-2026-04-30T00:25:00.082777572Z [err]    File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-2026-04-30T00:25:00.082782569Z [err]    File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-2026-04-30T00:25:00.082787175Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-04-30T00:25:00.082791321Z [err]    File "/app/openf1/services/ingestor_livetiming/historical/main.py", line 364
-2026-04-30T00:25:00.082795541Z [err]      if EXCLUDE_COLLECTIONS:
-2026-04-30T00:25:00.082799189Z [err]  IndentationError: unexpected indent
-2026-04-30T00:25:00.124909590Z [err]  Traceback (most recent call last):
-2026-04-30T00:25:00.124914876Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 187, in _run_module_as_main
-2026-04-30T00:25:00.124919684Z [err]      mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-2026-04-30T00:25:00.124924562Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 157, in _get_module_details
-2026-04-30T00:25:00.124929960Z [err]      code = loader.get_code(mod_name)
-2026-04-30T00:25:00.124935294Z [err]    File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-2026-04-30T00:25:00.124939908Z [err]    File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-2026-04-30T00:25:00.124945612Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-04-30T00:25:00.124950475Z [err]    File "/app/openf1/services/ingestor_livetiming/historical/main.py", line 364
-2026-04-30T00:25:00.124957814Z [err]      if EXCLUDE_COLLECTIONS:
-2026-04-30T00:25:00.124963281Z [err]  IndentationError: unexpected indent
-2026-04-30T00:25:00.126206251Z [inf]  Ingesting historical season for year: 2026
-2026-04-30T00:25:00.152752114Z [err]  Traceback (most recent call last):
-2026-04-30T00:25:00.152777695Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 187, in _run_module_as_main
-2026-04-30T00:25:00.152785098Z [err]      mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-2026-04-30T00:25:00.152791422Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 157, in _get_module_details
-2026-04-30T00:25:00.152797471Z [err]      code = loader.get_code(mod_name)
-2026-04-30T00:25:00.152802756Z [err]    File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-2026-04-30T00:25:00.152808955Z [err]    File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-2026-04-30T00:25:00.152814257Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-04-30T00:25:00.152819599Z [err]    File "/app/openf1/services/ingestor_livetiming/historical/main.py", line 364
-2026-04-30T00:25:00.152825504Z [err]      if EXCLUDE_COLLECTIONS:
-2026-04-30T00:25:00.152830063Z [err]  IndentationError: unexpected indent
-2026-04-30T00:25:00.185250845Z [err]  Traceback (most recent call last):
-2026-04-30T00:25:00.185268629Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 187, in _run_module_as_main
-2026-04-30T00:25:00.185274125Z [err]      mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
-2026-04-30T00:25:00.185278893Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 157, in _get_module_details
-2026-04-30T00:25:00.185284320Z [err]      code = loader.get_code(mod_name)
-2026-04-30T00:25:00.185289157Z [err]    File "<frozen importlib._bootstrap_external>", line 1017, in get_code
-2026-04-30T00:25:00.185296682Z [err]    File "<frozen importlib._bootstrap_external>", line 947, in source_to_code
-2026-04-30T00:25:00.185301758Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-2026-04-30T00:25:00.185306837Z [err]    File "/app/openf1/services/ingestor_livetiming/historical/main.py", line 364
-2026-04-30T00:25:00.185311923Z [err]      if EXCLUDE_COLLECTIONS:
-2026-04-30T00:25:00.185316602Z [err]  IndentationError: unexpected indent
-2026-04-30T00:25:01.509899651Z [err]  /usr/local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
-2026-04-30T00:25:01.509903487Z [err]    warnings.warn(message, FutureWarning)
-2026-04-30T00:25:01.537415600Z [err]  2026-04-30 00:25:01.534 | INFO     | __main__:main:19 - Recording raw data to '/tmp/tmpvec5gyu7'
-2026-04-30T00:25:01.574742296Z [err]  2026-04-30 00:25:01.564 | INFO     | __main__:main:24 - Starting live recording of the following topics: {'TimingAppData', 'SessionInfo', 'CarData.z', 'PitStopSeries', 'SessionData', 'WeatherData', 'Heartbeat', 'ChampionshipPrediction', 'RaceControlMessages', 'TimingData', 'DriverRaceInfo', 'Position.z', 'PitLaneTimeCollection', 'DriverList', 'TeamRadio'}
-2026-04-30T00:25:01.574751757Z [err]  2026-04-30 00:25:01.565 | INFO     | __main__:main:49 - Starting data ingestion
-2026-04-30T00:25:01.574758413Z [err]  2026-04-30 00:25:01.566 | INFO     | openf1.util.mqtt:initialize_mqtt:26 - MQTT credentials not found, MQTT is disabled
-2026-04-30T00:25:01.941524057Z [err]  2026-04-30 00:25:01,939 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=vm%2BHApsooYa2qfDp8nqaQu44morgL85SVte7KE%2BLqSSLiCAr8c9FCsTPAhRzOuWZ%2Fh8bTSVvay0lov0n3a%2FuJZcM8rlI74eoNfEEz%2B4pTr4E0lIfo1rK5zzNhhWSjJEi&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
-2026-04-30T00:25:02.261745221Z [err]  2026-04-30 00:25:02,258 - INFO: WebSocket connection established.
-2026-04-30T00:26:02.494896918Z [err]  2026-04-30 00:26:01.567 | WARNING  | openf1.services.ingestor_livetiming.real_time.recording:monitor_file_size:33 - File '/tmp/tmpvec5gyu7' is empty after 1 minute. Killing subprocess to trigger a restart.
-2026-04-30T00:26:02.494903136Z [err]  2026-04-30 00:26:01.572 | ERROR    | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:55 - Recorder subprocess failed with exit code -9.
-2026-04-30T00:26:02.494908900Z [err]  2026-04-30 00:26:01.572 | INFO     | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:64 - Waiting before restarting the recorder...
-2026-04-30T00:26:05.453016116Z [err]  2026-04-30 00:26:05,169 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=LY9PLsOgKvXHJ9TiIzsrTSaloEf23A7NGR36ujVZ07McjEliEhhros125ISF1gYjgsZqDjC18Em%2Bnz07YHxcTsnL%2FKp3mfKv2ctbCFB3wihpZ1mxAeSO2fePhctHBNa6&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
-2026-04-30T00:26:05.453023720Z [err]  2026-04-30 00:26:05,410 - INFO: WebSocket connection established.
-2026-04-30T00:27:05.760410350Z [err]  2026-04-30 00:27:04.884 | WARNING  | openf1.services.ingestor_livetiming.real_time.recording:monitor_file_size:33 - File '/tmp/tmpvec5gyu7' is empty after 1 minute. Killing subprocess to trigger a restart.
-2026-04-30T00:27:05.760415507Z [err]  2026-04-30 00:27:04.889 | ERROR    | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:55 - Recorder subprocess failed with exit code -9.
-2026-04-30T00:27:05.760421043Z [err]  2026-04-30 00:27:04.889 | INFO     | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:64 - Waiting before restarting the recorder...
-2026-04-30T00:27:07.825631369Z [err]  2026-04-30 00:27:07,819 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=6Oh4G%2FS9nwQiqR1etTkb5DhfFc2I8O6dE4Evvuz8i1Ffv8em5Ax3upAUoHivIsnOlE43pbORnwXbl8d38qMyQ4wR7qF9nPkL4jUfDjHN4IOltB4lXSBGkA1N8%2BsdE8dy&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:32:50.740480769Z [inf]  Starting Container
+2026-04-30T00:32:51.151212039Z [err]  INFO:     Application startup complete.
+2026-04-30T00:32:51.151250926Z [inf]  Dropping MongoDB database openf1-livetiming (if set)
+2026-04-30T00:32:51.151263109Z [inf]  Starting ingest-realtime
+2026-04-30T00:32:51.151268297Z [err]  INFO:     Will watch for changes in these directories: ['/app']
+2026-04-30T00:32:51.151273957Z [err]  INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-04-30T00:32:51.151279225Z [err]  INFO:     Started reloader process [6] using StatReload
+2026-04-30T00:32:51.151285447Z [inf]  Dropped database: openf1-livetiming
+2026-04-30T00:32:51.151290233Z [inf]  Ingesting historical season for year: 2023
+2026-04-30T00:32:51.151300206Z [err]  INFO:     Started server process [11]
+2026-04-30T00:32:51.151306345Z [err]  INFO:     Waiting for application startup.
+2026-04-30T00:32:51.151341494Z [inf]  Starting api
+2026-04-30T00:32:51.151346772Z [inf]  Starting ingest-historical
+2026-04-30T00:32:51.529460865Z [inf]  {
+2026-04-30T00:32:51.529461192Z [inf]            "Number": 3,
+2026-04-30T00:32:51.529476119Z [inf]    "Year": 2023,
+2026-04-30T00:32:51.529481118Z [inf]    "Meetings": [
+2026-04-30T00:32:51.529485399Z [inf]      {
+2026-04-30T00:32:51.529491463Z [inf]        "Sessions": [
+2026-04-30T00:32:51.529497283Z [inf]          {
+2026-04-30T00:32:51.529504902Z [inf]            "Key": 9222,
+2026-04-30T00:32:51.529505786Z [inf]            "Number": 2,
+2026-04-30T00:32:51.529510494Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.529520958Z [inf]            "Number": 1,
+2026-04-30T00:32:51.529522270Z [inf]            "Name": "Practice 2",
+2026-04-30T00:32:51.529527342Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.529533510Z [inf]            "StartDate": "2023-02-23T10:00:00",
+2026-04-30T00:32:51.529537705Z [inf]            "StartDate": "2023-02-24T10:00:00",
+2026-04-30T00:32:51.529539907Z [inf]            "EndDate": "2023-02-23T19:30:00",
+2026-04-30T00:32:51.529548026Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.529549562Z [inf]            "EndDate": "2023-02-24T19:30:00",
+2026-04-30T00:32:51.529554713Z [inf]            "Path": "2023/2023-02-25_Pre-Season_Testing/2023-02-23_Practice_1/"
+2026-04-30T00:32:51.529560977Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.529562986Z [inf]          },
+2026-04-30T00:32:51.529569734Z [inf]          {
+2026-04-30T00:32:51.529572638Z [inf]            "Path": "2023/2023-02-25_Pre-Season_Testing/2023-02-24_Practice_2/"
+2026-04-30T00:32:51.529576686Z [inf]            "Key": 7763,
+2026-04-30T00:32:51.529583642Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.529586127Z [inf]          },
+2026-04-30T00:32:51.529592560Z [inf]          {
+2026-04-30T00:32:51.529598274Z [inf]            "Key": 7764,
+2026-04-30T00:32:51.529604567Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.530937837Z [inf]        }
+2026-04-30T00:32:51.530949322Z [inf]      },
+2026-04-30T00:32:51.530955540Z [inf]      {
+2026-04-30T00:32:51.530961649Z [inf]        "Sessions": [
+2026-04-30T00:32:51.530968218Z [inf]          {
+2026-04-30T00:32:51.530971954Z [inf]            "Name": "Practice 3",
+2026-04-30T00:32:51.530975707Z [inf]            "Key": 7765,
+2026-04-30T00:32:51.530984769Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.530986798Z [inf]            "StartDate": "2023-02-25T10:00:00",
+2026-04-30T00:32:51.530992453Z [inf]            "Number": 1,
+2026-04-30T00:32:51.530997186Z [inf]            "EndDate": "2023-02-25T19:30:00",
+2026-04-30T00:32:51.531002775Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.531007339Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.531013613Z [inf]            "Path": "2023/2023-02-25_Pre-Season_Testing/2023-02-25_Practice_3/"
+2026-04-30T00:32:51.531019601Z [inf]          }
+2026-04-30T00:32:51.531024027Z [inf]        ],
+2026-04-30T00:32:51.531029220Z [inf]        "Key": 1140,
+2026-04-30T00:32:51.531034393Z [inf]        "Code": "BRN0104",
+2026-04-30T00:32:51.531040060Z [inf]        "Number": 1,
+2026-04-30T00:32:51.531045149Z [inf]        "Location": "Sakhir",
+2026-04-30T00:32:51.531065120Z [inf]        "OfficialName": "FORMULA 1 ARAMCO PRE-SEASON TESTING 2023",
+2026-04-30T00:32:51.531070707Z [inf]        "Name": "Pre-Season Testing",
+2026-04-30T00:32:51.531075981Z [inf]        "Country": {
+2026-04-30T00:32:51.531081884Z [inf]          "Key": 36,
+2026-04-30T00:32:51.531086617Z [inf]          "Code": "BRN",
+2026-04-30T00:32:51.531091970Z [inf]          "Name": "Bahrain"
+2026-04-30T00:32:51.531096474Z [inf]        },
+2026-04-30T00:32:51.531101594Z [inf]        "Circuit": {
+2026-04-30T00:32:51.531106229Z [inf]          "Key": 63,
+2026-04-30T00:32:51.531110335Z [inf]          "ShortName": "Sakhir"
+2026-04-30T00:32:51.532312686Z [inf]            "StartDate": "2023-03-03T14:30:00",
+2026-04-30T00:32:51.532316242Z [inf]            "Number": 3,
+2026-04-30T00:32:51.532324650Z [inf]            "EndDate": "2023-03-03T15:30:00",
+2026-04-30T00:32:51.532331151Z [inf]            "Name": "Practice 3",
+2026-04-30T00:32:51.532335095Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.532343207Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-03_Practice_1/"
+2026-04-30T00:32:51.532347972Z [inf]            "StartDate": "2023-03-04T14:30:00",
+2026-04-30T00:32:51.532349274Z [inf]          },
+2026-04-30T00:32:51.532358353Z [inf]          {
+2026-04-30T00:32:51.532360510Z [inf]            "EndDate": "2023-03-04T15:30:00",
+2026-04-30T00:32:51.532366842Z [inf]            "Key": 7766,
+2026-04-30T00:32:51.532373469Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.532376422Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.532386880Z [inf]            "Number": 2,
+2026-04-30T00:32:51.532387242Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-04_Practice_3/"
+2026-04-30T00:32:51.532397434Z [inf]          },
+2026-04-30T00:32:51.532397731Z [inf]            "Name": "Practice 2",
+2026-04-30T00:32:51.532407363Z [inf]            "StartDate": "2023-03-03T18:00:00",
+2026-04-30T00:32:51.532413774Z [inf]            "EndDate": "2023-03-03T19:00:00",
+2026-04-30T00:32:51.532414685Z [inf]          {
+2026-04-30T00:32:51.532420371Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.532426154Z [inf]            "Key": 7768,
+2026-04-30T00:32:51.532431034Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-03_Practice_2/"
+2026-04-30T00:32:51.532436103Z [inf]          },
+2026-04-30T00:32:51.532440922Z [inf]          {
+2026-04-30T00:32:51.532445784Z [inf]            "Key": 7767,
+2026-04-30T00:32:51.532449962Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.533765090Z [inf]          "Code": "BRN",
+2026-04-30T00:32:51.533770213Z [inf]            "Type": "Qualifying",
+2026-04-30T00:32:51.533775053Z [inf]          "Name": "Bahrain"
+2026-04-30T00:32:51.533779944Z [inf]            "Name": "Qualifying",
+2026-04-30T00:32:51.533784820Z [inf]            "StartDate": "2023-03-04T18:00:00",
+2026-04-30T00:32:51.533789458Z [inf]            "EndDate": "2023-03-04T19:00:00",
+2026-04-30T00:32:51.533794761Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.533799604Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-04_Qualifying/"
+2026-04-30T00:32:51.533804626Z [inf]          },
+2026-04-30T00:32:51.533809634Z [inf]          {
+2026-04-30T00:32:51.533815560Z [inf]            "Key": 7953,
+2026-04-30T00:32:51.533819823Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.533823638Z [inf]            "Name": "Race",
+2026-04-30T00:32:51.533830966Z [inf]            "StartDate": "2023-03-05T18:00:00",
+2026-04-30T00:32:51.533836048Z [inf]            "EndDate": "2023-03-05T20:00:00",
+2026-04-30T00:32:51.533839445Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.533842874Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-05_Race/"
+2026-04-30T00:32:51.533846287Z [inf]          }
+2026-04-30T00:32:51.533850790Z [inf]        ],
+2026-04-30T00:32:51.533854109Z [inf]        "Key": 1141,
+2026-04-30T00:32:51.533862041Z [inf]        "Code": "BRN0104",
+2026-04-30T00:32:51.533865288Z [inf]        "Number": 1,
+2026-04-30T00:32:51.533869944Z [inf]        "Location": "Sakhir",
+2026-04-30T00:32:51.533880256Z [inf]        "OfficialName": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2023",
+2026-04-30T00:32:51.533883963Z [inf]        "Name": "Bahrain Grand Prix",
+2026-04-30T00:32:51.533887276Z [inf]        "Country": {
+2026-04-30T00:32:51.533890652Z [inf]          "Key": 36,
+2026-04-30T00:32:51.535208141Z [inf]          },
+2026-04-30T00:32:51.535214483Z [inf]          {
+2026-04-30T00:32:51.535235917Z [inf]        },
+2026-04-30T00:32:51.535242996Z [inf]        "Circuit": {
+2026-04-30T00:32:51.535247323Z [inf]          "Key": 63,
+2026-04-30T00:32:51.535251427Z [inf]          "ShortName": "Sakhir"
+2026-04-30T00:32:51.535255274Z [inf]        }
+2026-04-30T00:32:51.535259368Z [inf]      },
+2026-04-30T00:32:51.535262946Z [inf]      {
+2026-04-30T00:32:51.535266644Z [inf]        "Sessions": [
+2026-04-30T00:32:51.535270124Z [inf]          {
+2026-04-30T00:32:51.535273789Z [inf]            "Key": 7772,
+2026-04-30T00:32:51.535277381Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.535280783Z [inf]            "Number": 1,
+2026-04-30T00:32:51.535284696Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.535288186Z [inf]            "StartDate": "2023-03-17T16:30:00",
+2026-04-30T00:32:51.535291751Z [inf]            "EndDate": "2023-03-17T17:30:00",
+2026-04-30T00:32:51.535295418Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.535299757Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-17_Practice_1/"
+2026-04-30T00:32:51.535304048Z [inf]          },
+2026-04-30T00:32:51.535307346Z [inf]          {
+2026-04-30T00:32:51.535310593Z [inf]            "Key": 7773,
+2026-04-30T00:32:51.535314126Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.535317700Z [inf]            "Number": 2,
+2026-04-30T00:32:51.535321345Z [inf]            "Name": "Practice 2",
+2026-04-30T00:32:51.535325607Z [inf]            "StartDate": "2023-03-17T20:00:00",
+2026-04-30T00:32:51.535329198Z [inf]            "EndDate": "2023-03-17T21:00:00",
+2026-04-30T00:32:51.535332715Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.535336006Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-17_Practice_2/"
+2026-04-30T00:32:51.536521960Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-18_Qualifying/"
+2026-04-30T00:32:51.536534867Z [inf]          },
+2026-04-30T00:32:51.536541633Z [inf]          {
+2026-04-30T00:32:51.536546351Z [inf]            "Key": 7779,
+2026-04-30T00:32:51.536550812Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.536555193Z [inf]            "Name": "Race",
+2026-04-30T00:32:51.536559976Z [inf]            "StartDate": "2023-03-19T20:00:00",
+2026-04-30T00:32:51.536565279Z [inf]            "Key": 7774,
+2026-04-30T00:32:51.536565294Z [inf]            "EndDate": "2023-03-19T22:00:00",
+2026-04-30T00:32:51.536570095Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.536575515Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-19_Race/"
+2026-04-30T00:32:51.536581139Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.536586611Z [inf]            "Number": 3,
+2026-04-30T00:32:51.536592143Z [inf]            "Name": "Practice 3",
+2026-04-30T00:32:51.536599232Z [inf]            "StartDate": "2023-03-18T16:30:00",
+2026-04-30T00:32:51.536605273Z [inf]            "EndDate": "2023-03-18T17:30:00",
+2026-04-30T00:32:51.536610754Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.536627074Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-18_Practice_3/"
+2026-04-30T00:32:51.536632485Z [inf]          },
+2026-04-30T00:32:51.536643815Z [inf]          {
+2026-04-30T00:32:51.536649264Z [inf]            "Key": 7775,
+2026-04-30T00:32:51.536654116Z [inf]            "Type": "Qualifying",
+2026-04-30T00:32:51.536658698Z [inf]            "Name": "Qualifying",
+2026-04-30T00:32:51.536663956Z [inf]            "StartDate": "2023-03-18T20:00:00",
+2026-04-30T00:32:51.536668600Z [inf]            "EndDate": "2023-03-18T21:00:00",
+2026-04-30T00:32:51.536673176Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:32:51.537848845Z [inf]            "StartDate": "2023-03-31T12:30:00",
+2026-04-30T00:32:51.537859351Z [inf]            "EndDate": "2023-03-31T13:30:00",
+2026-04-30T00:32:51.537860384Z [inf]          }
+2026-04-30T00:32:51.537868045Z [inf]            "GmtOffset": "11:00:00",
+2026-04-30T00:32:51.537871970Z [inf]        ],
+2026-04-30T00:32:51.537878119Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-03-31_Practice_1/"
+2026-04-30T00:32:51.537881530Z [inf]        "Key": 1142,
+2026-04-30T00:32:51.537885873Z [inf]          },
+2026-04-30T00:32:51.537889488Z [inf]        "Code": "KSA0101",
+2026-04-30T00:32:51.537894438Z [inf]        "Number": 2,
+2026-04-30T00:32:51.537898445Z [inf]        "Location": "Jeddah",
+2026-04-30T00:32:51.537902154Z [inf]        "OfficialName": "FORMULA 1 STC SAUDI ARABIAN GRAND PRIX 2023",
+2026-04-30T00:32:51.537905933Z [inf]        "Name": "Saudi Arabian Grand Prix",
+2026-04-30T00:32:51.537909603Z [inf]        "Country": {
+2026-04-30T00:32:51.537913314Z [inf]          "Key": 153,
+2026-04-30T00:32:51.537917754Z [inf]          "Code": "KSA",
+2026-04-30T00:32:51.537922315Z [inf]          "Name": "Saudi Arabia"
+2026-04-30T00:32:51.537927233Z [inf]        },
+2026-04-30T00:32:51.537931983Z [inf]        "Circuit": {
+2026-04-30T00:32:51.537936984Z [inf]          "Key": 149,
+2026-04-30T00:32:51.537941081Z [inf]          "ShortName": "Jeddah"
+2026-04-30T00:32:51.537945900Z [inf]        }
+2026-04-30T00:32:51.537951847Z [inf]      },
+2026-04-30T00:32:51.537956585Z [inf]      {
+2026-04-30T00:32:51.537960695Z [inf]        "Sessions": [
+2026-04-30T00:32:51.537965764Z [inf]          {
+2026-04-30T00:32:51.537970523Z [inf]            "Key": 7780,
+2026-04-30T00:32:51.537975037Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.537979632Z [inf]            "Number": 1,
+2026-04-30T00:32:51.537984190Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.539395178Z [inf]          {
+2026-04-30T00:32:51.539401614Z [inf]            "Key": 7783,
+2026-04-30T00:32:51.539406242Z [inf]            "Type": "Qualifying",
+2026-04-30T00:32:51.539410406Z [inf]            "Name": "Qualifying",
+2026-04-30T00:32:51.539414778Z [inf]            "StartDate": "2023-04-01T16:00:00",
+2026-04-30T00:32:51.539421843Z [inf]          {
+2026-04-30T00:32:51.539422216Z [inf]            "EndDate": "2023-04-01T17:00:00",
+2026-04-30T00:32:51.539429372Z [inf]            "Key": 7781,
+2026-04-30T00:32:51.539432730Z [inf]            "GmtOffset": "11:00:00",
+2026-04-30T00:32:51.539437823Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.539441842Z [inf]            "Number": 2,
+2026-04-30T00:32:51.539445484Z [inf]            "Name": "Practice 2",
+2026-04-30T00:32:51.539448949Z [inf]            "StartDate": "2023-03-31T16:00:00",
+2026-04-30T00:32:51.539452310Z [inf]            "EndDate": "2023-03-31T17:00:00",
+2026-04-30T00:32:51.539456431Z [inf]            "GmtOffset": "11:00:00",
+2026-04-30T00:32:51.539460301Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-03-31_Practice_2/"
+2026-04-30T00:32:51.539464267Z [inf]          },
+2026-04-30T00:32:51.539467864Z [inf]          {
+2026-04-30T00:32:51.539471744Z [inf]            "Key": 7782,
+2026-04-30T00:32:51.539476326Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.539479585Z [inf]            "Number": 3,
+2026-04-30T00:32:51.539482968Z [inf]            "Name": "Practice 3",
+2026-04-30T00:32:51.539486287Z [inf]            "StartDate": "2023-04-01T12:30:00",
+2026-04-30T00:32:51.539491360Z [inf]            "EndDate": "2023-04-01T13:30:00",
+2026-04-30T00:32:51.539494955Z [inf]            "GmtOffset": "11:00:00",
+2026-04-30T00:32:51.539498944Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-04-01_Practice_3/"
+2026-04-30T00:32:51.539502933Z [inf]          },
+2026-04-30T00:32:51.540747693Z [inf]          "Key": 10,
+2026-04-30T00:32:51.540748170Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-04-01_Qualifying/"
+2026-04-30T00:32:51.540756285Z [inf]          "ShortName": "Melbourne"
+2026-04-30T00:32:51.540758933Z [inf]          },
+2026-04-30T00:32:51.540764239Z [inf]        }
+2026-04-30T00:32:51.540767724Z [inf]          {
+2026-04-30T00:32:51.540773471Z [inf]      },
+2026-04-30T00:32:51.540775994Z [inf]            "Key": 7787,
+2026-04-30T00:32:51.540781798Z [inf]      {
+2026-04-30T00:32:51.540784096Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.540788312Z [inf]            "Name": "Race",
+2026-04-30T00:32:51.540793239Z [inf]            "StartDate": "2023-04-02T15:00:00",
+2026-04-30T00:32:51.540796963Z [inf]            "EndDate": "2023-04-02T17:00:00",
+2026-04-30T00:32:51.540800900Z [inf]            "GmtOffset": "10:00:00",
+2026-04-30T00:32:51.540804873Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-04-02_Race/"
+2026-04-30T00:32:51.540808250Z [inf]          }
+2026-04-30T00:32:51.540811777Z [inf]        ],
+2026-04-30T00:32:51.540822007Z [inf]        "Key": 1143,
+2026-04-30T00:32:51.540826507Z [inf]        "Code": "AUS0204",
+2026-04-30T00:32:51.540830048Z [inf]        "Number": 3,
+2026-04-30T00:32:51.540833754Z [inf]        "Location": "Melbourne",
+2026-04-30T00:32:51.540837207Z [inf]        "OfficialName": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2023",
+2026-04-30T00:32:51.540840945Z [inf]        "Name": "Australian Grand Prix",
+2026-04-30T00:32:51.540844625Z [inf]        "Country": {
+2026-04-30T00:32:51.540847698Z [inf]          "Key": 5,
+2026-04-30T00:32:51.540851097Z [inf]          "Code": "AUS",
+2026-04-30T00:32:51.540855118Z [inf]          "Name": "Australia"
+2026-04-30T00:32:51.540858875Z [inf]        },
+2026-04-30T00:32:51.540862345Z [inf]        "Circuit": {
+2026-04-30T00:32:51.542075891Z [inf]            "Type": "Qualifying",
+2026-04-30T00:32:51.542076443Z [inf]        "Sessions": [
+2026-04-30T00:32:51.542085254Z [inf]          {
+2026-04-30T00:32:51.542091646Z [inf]            "Name": "Qualifying",
+2026-04-30T00:32:51.542092916Z [inf]            "Key": 9063,
+2026-04-30T00:32:51.542099703Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.542103378Z [inf]            "StartDate": "2023-04-28T17:00:00",
+2026-04-30T00:32:51.542106926Z [inf]            "Number": 1,
+2026-04-30T00:32:51.542115274Z [inf]            "EndDate": "2023-04-28T18:00:00",
+2026-04-30T00:32:51.542115368Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.542121150Z [inf]            "StartDate": "2023-04-28T13:30:00",
+2026-04-30T00:32:51.542126596Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:32:51.542130738Z [inf]            "EndDate": "2023-04-28T14:30:00",
+2026-04-30T00:32:51.542139752Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-28_Qualifying/"
+2026-04-30T00:32:51.542140096Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:32:51.542149796Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-28_Practice_1/"
+2026-04-30T00:32:51.542152661Z [inf]          },
+2026-04-30T00:32:51.542158236Z [inf]          },
+2026-04-30T00:32:51.542164100Z [inf]          {
+2026-04-30T00:32:51.542168284Z [inf]          {
+2026-04-30T00:32:51.542175958Z [inf]            "Key": 9278,
+2026-04-30T00:32:51.542177475Z [inf]            "Key": 9064,
+2026-04-30T00:32:51.542185266Z [inf]            "Type": "Qualifying",
+2026-04-30T00:32:51.542191314Z [inf]            "Number": -1,
+2026-04-30T00:32:51.542197580Z [inf]            "Name": "Sprint Shootout",
+2026-04-30T00:32:51.542202968Z [inf]            "StartDate": "2023-04-29T12:30:00",
+2026-04-30T00:32:51.542208176Z [inf]            "EndDate": "2023-04-29T13:14:00",
+2026-04-30T00:32:51.543343823Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:32:51.543348505Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-29_Sprint_Shootout/"
+2026-04-30T00:32:51.543352325Z [inf]          },
+2026-04-30T00:32:51.543357691Z [inf]          {
+2026-04-30T00:32:51.543362828Z [inf]            "Key": 9069,
+2026-04-30T00:32:51.543369183Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.543374580Z [inf]            "Number": -1,
+2026-04-30T00:32:51.543379846Z [inf]            "Name": "Sprint",
+2026-04-30T00:32:51.543385094Z [inf]            "StartDate": "2023-04-29T17:30:00",
+2026-04-30T00:32:51.543390225Z [inf]            "EndDate": "2023-04-29T18:00:00",
+2026-04-30T00:32:51.543395984Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:32:51.543401355Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-29_Sprint/"
+2026-04-30T00:32:51.543405981Z [inf]          },
+2026-04-30T00:32:51.543416543Z [inf]          {
+2026-04-30T00:32:51.543420992Z [inf]            "Key": 9070,
+2026-04-30T00:32:51.543424868Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.543428598Z [inf]            "Name": "Race",
+2026-04-30T00:32:51.543432673Z [inf]            "StartDate": "2023-04-30T15:00:00",
+2026-04-30T00:32:51.543436513Z [inf]            "EndDate": "2023-04-30T17:00:00",
+2026-04-30T00:32:51.543439912Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:32:51.543443980Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-30_Race/"
+2026-04-30T00:32:51.543448483Z [inf]          }
+2026-04-30T00:32:51.543451855Z [inf]        ],
+2026-04-30T00:32:51.543455323Z [inf]        "Key": 1207,
+2026-04-30T00:32:51.543458681Z [inf]        "Code": "AZE02",
+2026-04-30T00:32:51.543462860Z [inf]        "Number": 4,
+2026-04-30T00:32:51.543467472Z [inf]        "Location": "Baku",
+2026-04-30T00:32:51.543471217Z [inf]        "OfficialName": "FORMULA 1 AZERBAIJAN GRAND PRIX 2023",
+2026-04-30T00:32:51.544876707Z [inf]        "Name": "Azerbaijan Grand Prix",
+2026-04-30T00:32:51.544879100Z [inf]            "EndDate": "2023-05-05T18:30:00",
+2026-04-30T00:32:51.544884054Z [inf]        "Country": {
+2026-04-30T00:32:51.544889070Z [inf]          "Key": 30,
+2026-04-30T00:32:51.544894801Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.544899148Z [inf]          "Code": "AZE",
+2026-04-30T00:32:51.544903552Z [inf]            "Number": 2,
+2026-04-30T00:32:51.544905783Z [inf]            "Key": 9071,
+2026-04-30T00:32:51.544910012Z [inf]          "Name": "Azerbaijan"
+2026-04-30T00:32:51.544913785Z [inf]            "Name": "Practice 2",
+2026-04-30T00:32:51.544920139Z [inf]        },
+2026-04-30T00:32:51.544924397Z [inf]            "StartDate": "2023-05-05T17:30:00",
+2026-04-30T00:32:51.544925256Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.544930276Z [inf]        "Circuit": {
+2026-04-30T00:32:51.544937194Z [inf]          "Key": 144,
+2026-04-30T00:32:51.544940238Z [inf]            "Number": 1,
+2026-04-30T00:32:51.544944270Z [inf]          "ShortName": "Baku"
+2026-04-30T00:32:51.544951249Z [inf]        }
+2026-04-30T00:32:51.544953472Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.544957267Z [inf]      },
+2026-04-30T00:32:51.544965374Z [inf]            "StartDate": "2023-05-05T14:00:00",
+2026-04-30T00:32:51.544966491Z [inf]      {
+2026-04-30T00:32:51.544973065Z [inf]        "Sessions": [
+2026-04-30T00:32:51.544977612Z [inf]            "EndDate": "2023-05-05T15:00:00",
+2026-04-30T00:32:51.544981308Z [inf]          {
+2026-04-30T00:32:51.544992857Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:32:51.544999060Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-05_Practice_1/"
+2026-04-30T00:32:51.545006724Z [inf]          },
+2026-04-30T00:32:51.545013301Z [inf]          {
+2026-04-30T00:32:51.545019079Z [inf]            "Key": 9072,
+2026-04-30T00:32:51.546535670Z [inf]            "EndDate": "2023-05-06T17:00:00",
+2026-04-30T00:32:51.546541751Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:32:51.546546252Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-06_Qualifying/"
+2026-04-30T00:32:51.546551011Z [inf]          },
+2026-04-30T00:32:51.546556150Z [inf]          {
+2026-04-30T00:32:51.546560411Z [inf]            "Key": 9078,
+2026-04-30T00:32:51.546564562Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.546571401Z [inf]            "Name": "Race",
+2026-04-30T00:32:51.546575015Z [inf]            "StartDate": "2023-05-07T15:30:00",
+2026-04-30T00:32:51.546583388Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:32:51.546588337Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-05_Practice_2/"
+2026-04-30T00:32:51.546605977Z [inf]          },
+2026-04-30T00:32:51.546611350Z [inf]          {
+2026-04-30T00:32:51.546616817Z [inf]            "Key": 9073,
+2026-04-30T00:32:51.546622533Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.546627683Z [inf]            "Number": 3,
+2026-04-30T00:32:51.546632922Z [inf]            "Name": "Practice 3",
+2026-04-30T00:32:51.546639156Z [inf]            "StartDate": "2023-05-06T12:30:00",
+2026-04-30T00:32:51.546644256Z [inf]            "EndDate": "2023-05-06T13:30:00",
+2026-04-30T00:32:51.546648885Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:32:51.546653501Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-06_Practice_3/"
+2026-04-30T00:32:51.546658842Z [inf]          },
+2026-04-30T00:32:51.546663965Z [inf]          {
+2026-04-30T00:32:51.546668890Z [inf]            "Key": 9074,
+2026-04-30T00:32:51.546673410Z [inf]            "Type": "Qualifying",
+2026-04-30T00:32:51.546681672Z [inf]            "Name": "Qualifying",
+2026-04-30T00:32:51.546687284Z [inf]            "StartDate": "2023-05-06T16:00:00",
+2026-04-30T00:32:51.548059728Z [inf]        }
+2026-04-30T00:32:51.548066035Z [inf]      },
+2026-04-30T00:32:51.548072944Z [inf]      {
+2026-04-30T00:32:51.548080865Z [inf]            "EndDate": "2023-05-07T17:30:00",
+2026-04-30T00:32:51.548081959Z [inf]        "Sessions": [
+2026-04-30T00:32:51.548092734Z [inf]          {
+2026-04-30T00:32:51.548093352Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:32:51.548103827Z [inf]            "Key": 9087,
+2026-04-30T00:32:51.548104217Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-07_Race/"
+2026-04-30T00:32:51.548113827Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.548116201Z [inf]          }
+2026-04-30T00:32:51.548125482Z [inf]            "Number": 1,
+2026-04-30T00:32:51.548126099Z [inf]        ],
+2026-04-30T00:32:51.548136309Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.548137678Z [inf]        "Key": 1208,
+2026-04-30T00:32:51.548146638Z [inf]            "StartDate": "2023-05-26T13:30:00",
+2026-04-30T00:32:51.548147953Z [inf]        "Code": "USA1401",
+2026-04-30T00:32:51.548157008Z [inf]            "EndDate": "2023-05-26T14:30:00",
+2026-04-30T00:32:51.548159075Z [inf]        "Number": 5,
+2026-04-30T00:32:51.548165084Z [inf]        "Location": "Miami",
+2026-04-30T00:32:51.548169529Z [inf]        "OfficialName": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2023",
+2026-04-30T00:32:51.548173807Z [inf]        "Name": "Miami Grand Prix",
+2026-04-30T00:32:51.548177502Z [inf]        "Country": {
+2026-04-30T00:32:51.548181469Z [inf]          "Key": 19,
+2026-04-30T00:32:51.548185039Z [inf]          "Code": "USA",
+2026-04-30T00:32:51.548188539Z [inf]          "Name": "United States"
+2026-04-30T00:32:51.548191847Z [inf]        },
+2026-04-30T00:32:51.548196345Z [inf]        "Circuit": {
+2026-04-30T00:32:51.548202009Z [inf]          "Key": 151,
+2026-04-30T00:32:51.548207106Z [inf]          "ShortName": "Miami"
+2026-04-30T00:32:51.549456155Z [inf]          {
+2026-04-30T00:32:51.549461441Z [inf]            "Key": 9090,
+2026-04-30T00:32:51.549467552Z [inf]            "Type": "Qualifying",
+2026-04-30T00:32:51.549471847Z [inf]            "Name": "Qualifying",
+2026-04-30T00:32:51.549482934Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.549499201Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-26_Practice_1/"
+2026-04-30T00:32:51.549503007Z [inf]          },
+2026-04-30T00:32:51.549507266Z [inf]          {
+2026-04-30T00:32:51.549511192Z [inf]            "Key": 9088,
+2026-04-30T00:32:51.549514668Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.549518099Z [inf]            "Number": 2,
+2026-04-30T00:32:51.549521631Z [inf]            "Name": "Practice 2",
+2026-04-30T00:32:51.549526987Z [inf]            "StartDate": "2023-05-26T17:00:00",
+2026-04-30T00:32:51.549531449Z [inf]            "EndDate": "2023-05-26T18:00:00",
+2026-04-30T00:32:51.549535095Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.549538423Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-26_Practice_2/"
+2026-04-30T00:32:51.549541823Z [inf]          },
+2026-04-30T00:32:51.549545173Z [inf]          {
+2026-04-30T00:32:51.549549742Z [inf]            "Key": 9089,
+2026-04-30T00:32:51.549554255Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.549557506Z [inf]            "Number": 3,
+2026-04-30T00:32:51.549560866Z [inf]            "Name": "Practice 3",
+2026-04-30T00:32:51.549564200Z [inf]            "StartDate": "2023-05-27T12:30:00",
+2026-04-30T00:32:51.549567922Z [inf]            "EndDate": "2023-05-27T13:30:00",
+2026-04-30T00:32:51.549571123Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.549574356Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-27_Practice_3/"
+2026-04-30T00:32:51.549578354Z [inf]          },
+2026-04-30T00:32:51.551008246Z [inf]        "Name": "Monaco Grand Prix",
+2026-04-30T00:32:51.551019041Z [inf]        "Country": {
+2026-04-30T00:32:51.551025208Z [inf]            "StartDate": "2023-05-27T16:00:00",
+2026-04-30T00:32:51.551026354Z [inf]          "Key": 114,
+2026-04-30T00:32:51.551033430Z [inf]          "Code": "MON",
+2026-04-30T00:32:51.551038046Z [inf]            "EndDate": "2023-05-27T17:00:00",
+2026-04-30T00:32:51.551041666Z [inf]          "Name": "Monaco"
+2026-04-30T00:32:51.551048066Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.551050558Z [inf]        },
+2026-04-30T00:32:51.551058929Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-27_Qualifying/"
+2026-04-30T00:32:51.551061364Z [inf]        "Circuit": {
+2026-04-30T00:32:51.551070528Z [inf]          },
+2026-04-30T00:32:51.551070728Z [inf]          "Key": 22,
+2026-04-30T00:32:51.551078044Z [inf]          {
+2026-04-30T00:32:51.551083534Z [inf]            "Key": 9094,
+2026-04-30T00:32:51.551087174Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.551090468Z [inf]            "Name": "Race",
+2026-04-30T00:32:51.551093833Z [inf]            "StartDate": "2023-05-28T15:00:00",
+2026-04-30T00:32:51.551104952Z [inf]            "EndDate": "2023-05-28T17:00:00",
+2026-04-30T00:32:51.551109097Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.551112754Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-28_Race/"
+2026-04-30T00:32:51.551115979Z [inf]          }
+2026-04-30T00:32:51.551119226Z [inf]        ],
+2026-04-30T00:32:51.551122519Z [inf]        "Key": 1210,
+2026-04-30T00:32:51.551126064Z [inf]        "Code": "MON0112",
+2026-04-30T00:32:51.551129799Z [inf]        "Number": 7,
+2026-04-30T00:32:51.551133164Z [inf]        "Location": "Monaco",
+2026-04-30T00:32:51.551136342Z [inf]        "OfficialName": "FORMULA 1 GRAND PRIX DE MONACO 2023",
+2026-04-30T00:32:51.552522089Z [inf]          "ShortName": "Monte Carlo"
+2026-04-30T00:32:51.552527069Z [inf]        }
+2026-04-30T00:32:51.552532030Z [inf]      },
+2026-04-30T00:32:51.552536002Z [inf]      {
+2026-04-30T00:32:51.552539913Z [inf]        "Sessions": [
+2026-04-30T00:32:51.552544042Z [inf]          {
+2026-04-30T00:32:51.552548528Z [inf]            "Key": 9095,
+2026-04-30T00:32:51.552553642Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.552558427Z [inf]            "Number": 1,
+2026-04-30T00:32:51.552563136Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.552567972Z [inf]            "StartDate": "2023-06-02T13:30:00",
+2026-04-30T00:32:51.552572649Z [inf]            "EndDate": "2023-06-02T14:30:00",
+2026-04-30T00:32:51.552577193Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.552581877Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-02_Practice_1/"
+2026-04-30T00:32:51.552586797Z [inf]          },
+2026-04-30T00:32:51.552592470Z [inf]          {
+2026-04-30T00:32:51.552597879Z [inf]            "Key": 9096,
+2026-04-30T00:32:51.552602402Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.552607839Z [inf]            "Number": 2,
+2026-04-30T00:32:51.552612630Z [inf]            "Name": "Practice 2",
+2026-04-30T00:32:51.552617362Z [inf]            "StartDate": "2023-06-02T17:00:00",
+2026-04-30T00:32:51.552621719Z [inf]            "EndDate": "2023-06-02T18:00:00",
+2026-04-30T00:32:51.552629142Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.552634180Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-02_Practice_2/"
+2026-04-30T00:32:51.552639441Z [inf]          },
+2026-04-30T00:32:51.552644379Z [inf]          {
+2026-04-30T00:32:51.552647920Z [inf]            "Key": 9097,
+2026-04-30T00:32:51.552651310Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.552654834Z [inf]            "Number": 3,
+2026-04-30T00:32:51.554093317Z [inf]            "Name": "Practice 3",
+2026-04-30T00:32:51.554098279Z [inf]            "StartDate": "2023-06-03T12:30:00",
+2026-04-30T00:32:51.554103190Z [inf]            "EndDate": "2023-06-03T13:30:00",
+2026-04-30T00:32:51.554108272Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.554113286Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-03_Practice_3/"
+2026-04-30T00:32:51.554118210Z [inf]          },
+2026-04-30T00:32:51.554125699Z [inf]          {
+2026-04-30T00:32:51.554130875Z [inf]            "Key": 9098,
+2026-04-30T00:32:51.554135132Z [inf]            "Type": "Qualifying",
+2026-04-30T00:32:51.554139766Z [inf]            "Name": "Qualifying",
+2026-04-30T00:32:51.554144642Z [inf]            "StartDate": "2023-06-03T16:00:00",
+2026-04-30T00:32:51.554149705Z [inf]            "EndDate": "2023-06-03T17:00:00",
+2026-04-30T00:32:51.554154859Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.554160538Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-03_Qualifying/"
+2026-04-30T00:32:51.554165828Z [inf]          },
+2026-04-30T00:32:51.554170731Z [inf]          {
+2026-04-30T00:32:51.554175382Z [inf]            "Key": 9102,
+2026-04-30T00:32:51.554180499Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.554184826Z [inf]            "Name": "Race",
+2026-04-30T00:32:51.554191591Z [inf]            "StartDate": "2023-06-04T15:00:00",
+2026-04-30T00:32:51.554197314Z [inf]            "EndDate": "2023-06-04T17:00:00",
+2026-04-30T00:32:51.554201872Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.554221875Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-04_Race/"
+2026-04-30T00:32:51.554227268Z [inf]          }
+2026-04-30T00:32:51.554232757Z [inf]        ],
+2026-04-30T00:32:51.554237036Z [inf]        "Key": 1211,
+2026-04-30T00:32:51.554241837Z [inf]        "Code": "ESP0112",
+2026-04-30T00:32:51.555383347Z [inf]        "Number": 8,
+2026-04-30T00:32:51.555392273Z [inf]        "Location": "Barcelona",
+2026-04-30T00:32:51.555398801Z [inf]        "OfficialName": "FORMULA 1 AWS GRAN PREMIO DE ESPA\u00d1A 2023",
+2026-04-30T00:32:51.555404976Z [inf]        "Name": "Spanish Grand Prix",
+2026-04-30T00:32:51.555409694Z [inf]        "Country": {
+2026-04-30T00:32:51.556583204Z [inf]            "Name": "Practice 2",
+2026-04-30T00:32:51.558246477Z [inf]            "Key": 9110,
+2026-04-30T00:32:51.559616216Z [inf]            "Number": 1,
+2026-04-30T00:32:51.562434936Z [inf]          "Code": "AUT",
+2026-04-30T00:32:51.563637983Z [inf]          },
+2026-04-30T00:32:51.566250505Z [inf]          },
+2026-04-30T00:32:51.567409343Z [inf]        "Location": "Budapest",
+2026-04-30T00:32:51.570106054Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:32:51.571614969Z [inf]        "OfficialName": "FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023",
+2026-04-30T00:32:51.574969242Z [inf]            "StartDate": "2023-08-27T15:00:00",
+2026-04-30T00:32:51.576245876Z [inf]            "EndDate": "2023-09-01T14:30:00",
+2026-04-30T00:32:51.577653404Z [inf]            "Name": "Qualifying",
+2026-04-30T00:32:51.580031217Z [inf]            "Number": 3,
+2026-04-30T00:32:51.581636581Z [inf]        "Code": "SIN0107",
+2026-04-30T00:32:51.585786023Z [inf]            "Type": "Practice",
+2026-04-30T00:32:51.585791191Z [inf]            "Number": 2,
+2026-04-30T00:32:51.587407219Z [inf]          "Key": 4,
+2026-04-30T00:32:51.590066308Z [inf]            "Number": -1,
+2026-04-30T00:32:51.591474204Z [inf]            "EndDate": "2023-10-08T22:00:00",
+2026-04-30T00:32:51.594307775Z [inf]            "GmtOffset": "-05:00:00",
+2026-04-30T00:32:51.595894916Z [inf]        "OfficialName": "FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023",
+2026-04-30T00:32:51.598404172Z [inf]            "Type": "Race",
+2026-04-30T00:32:51.599655622Z [inf]            "Name": "Practice 1",
+2026-04-30T00:32:51.602488977Z [inf]          "Name": "Brazil"
+2026-04-30T00:32:51.604053270Z [inf]          {
+2026-04-30T00:32:51.605431499Z [inf]        "Name": "Las Vegas Grand Prix",
+2026-04-30T00:32:51.608169077Z [inf]            "Path": "2023/2023-11-26_Abu_Dhabi_Grand_Prix/2023-11-25_Qualifying/"
+2026-04-30T00:32:52.164046961Z [err]  2026-04-30 00:32:51.976 | INFO     | __main__:ingest_season:403 - 23 meetings found: [1140, 1141, 1142, 1143, 1207, 1208, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222, 1223, 1224, 1225, 1226]
+2026-04-30T00:32:52.164051221Z [err]  2026-04-30 00:32:51.976 | INFO     | __main__:ingest_season:407 - Ingesting meeting 1140
+2026-04-30T00:32:52.711567712Z [err]  /usr/local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+2026-04-30T00:32:52.711573418Z [err]    warnings.warn(message, FutureWarning)
+2026-04-30T00:32:52.759134553Z [err]  2026-04-30 00:32:52.750 | INFO     | __main__:main:19 - Recording raw data to '/tmp/tmp0vb7ncu4'
+2026-04-30T00:32:52.767541066Z [err]  2026-04-30 00:32:52.766 | INFO     | __main__:main:24 - Starting live recording of the following topics: {'PitStopSeries', 'CarData.z', 'SessionData', 'ChampionshipPrediction', 'DriverRaceInfo', 'WeatherData', 'TimingData', 'Heartbeat', 'DriverList', 'SessionInfo', 'PitLaneTimeCollection', 'RaceControlMessages', 'TimingAppData', 'Position.z', 'TeamRadio'}
+2026-04-30T00:32:52.767548613Z [err]  2026-04-30 00:32:52.766 | INFO     | __main__:main:49 - Starting data ingestion
+2026-04-30T00:32:52.769191994Z [err]  2026-04-30 00:32:52.767 | INFO     | openf1.util.mqtt:initialize_mqtt:26 - MQTT credentials not found, MQTT is disabled
+2026-04-30T00:32:53.170525771Z [err]  2026-04-30 00:32:53,002 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=s%2FBoQKvggGm%2Fs6y0JgaCIULbJimBenLI%2BO5HV2A1gUiDk1w%2BPFBP%2FDIpH2xT4hPNxaigYClDJt4pOdCo2b6fu2n9w%2F9%2FWs1oq78LqqUYQf80MZ8%2Blrl0%2BE7C%2Fho8m0TI&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:32:53.322751992Z [err]  2026-04-30 00:32:53,318 - INFO: WebSocket connection established.
+2026-04-30T00:33:10.677754393Z [err]  Railway rate limit of 500 logs/sec reached for replica, update your application to reduce the logging rate. Messages dropped: 1008
+2026-04-30T00:33:53.587555052Z [err]  2026-04-30 00:33:52.768 | WARNING  | openf1.services.ingestor_livetiming.real_time.recording:monitor_file_size:33 - File '/tmp/tmp0vb7ncu4' is empty after 1 minute. Killing subprocess to trigger a restart.
+2026-04-30T00:33:53.587560129Z [err]  2026-04-30 00:33:52.771 | ERROR    | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:55 - Recorder subprocess failed with exit code -9.
+2026-04-30T00:33:53.587565478Z [err]  2026-04-30 00:33:52.771 | INFO     | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:64 - Waiting before restarting the recorder...
+2026-04-30T00:33:54.795265248Z [err]  2026-04-30 00:33:54,778 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=lDgxXfgcJg0Szvk5mevgXjUXR2HgeNUwN7Rz%2F5N%2BbVzt6Rraw%2BRd2qHMk0IU04hOaPe1ctcRaHy0nVSnmv22fL%2F43jvBTorx9yqja3pdPyI3fL5yryxpD%2FV%2B5HXpZHmI&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:33:55.029605278Z [err]  2026-04-30 00:33:55,016 - INFO: WebSocket connection established.
+2026-04-30T00:34:35.038938299Z [err]  2026-04-30 00:34:31.191 | DEBUG    | openf1.util.db:get_documents:67 - Mongo query predicate for collection 'meetings': {}
+2026-04-30T00:34:35.038944416Z [err]  2026-04-30 00:34:31.220 | DEBUG    | openf1.util.db:get_documents:87 - get_documents: collection='meetings' filters='{}' returned 0 documents
+2026-04-30T00:34:35.038948119Z [inf]  INFO:     100.64.0.2:58950 - "GET /v1/meetings HTTP/1.1" 200 OK
+2026-04-30T00:34:55.037265011Z [err]  2026-04-30 00:34:54.377 | WARNING  | openf1.services.ingestor_livetiming.real_time.recording:monitor_file_size:33 - File '/tmp/tmp0vb7ncu4' is empty after 1 minute. Killing subprocess to trigger a restart.
+2026-04-30T00:34:55.037271690Z [err]  2026-04-30 00:34:54.381 | ERROR    | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:55 - Recorder subprocess failed with exit code -9.
+2026-04-30T00:34:55.037276730Z [err]  2026-04-30 00:34:54.381 | INFO     | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:64 - Waiting before restarting the recorder...
+2026-04-30T00:34:58.326704946Z [err]  2026-04-30 00:34:58,307 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=1yXUY6PyBt36E7PhLX7MR8%2BICl5FI3PorCvjhg96yScDhPvKYYu%2BOZj54XFJNOnhS9QpftZi7ihmjxPhzpKTeYDObW4HiTcTg%2Bj%2B5YCwznUaD7Px1GF9M582ytIEyDF3&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:34:58.617562977Z [err]  2026-04-30 00:34:58,614 - INFO: WebSocket connection established.

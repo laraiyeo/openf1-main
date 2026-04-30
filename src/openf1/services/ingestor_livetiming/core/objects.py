@@ -16,6 +16,7 @@ from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
 from typing import Iterator
+from loguru import logger
 
 _id_lock = asyncio.Lock()
 _last_id = 0
@@ -193,10 +194,22 @@ def get_topics_to_collections_mapping(
 
 
 def get_topics() -> set[str]:
-    """Returns the set of topics which are used to process collections"""
+    """Returns the set of topics which are used to process collections
+
+    Honors `OPENF1_INGEST_EXCLUDE_COLLECTIONS` to avoid subscribing to topics
+    for excluded collections (e.g. `CarData`)."""
+    from os import getenv
+
+    exclude_env = getenv("OPENF1_INGEST_EXCLUDE_COLLECTIONS", "")
+    exclude_set = set([c.strip() for c in exclude_env.split(",") if c.strip()])
+
     topics = set()
-    for cls in _get_collections_cls_by_name().values():
+    for name, cls in _get_collections_cls_by_name().items():
+        if name in exclude_set:
+            logger.info(f"Excluding topics for collection: {name}")
+            continue
         topics.update(cls.source_topics)
+
     topics.add("SessionInfo")
     topics.add("Heartbeat")
     return topics
