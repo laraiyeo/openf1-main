@@ -72,7 +72,7 @@ PY
       # otherwise default to the current year.
       YEARS=${OPENF1_INGEST_SCRAPER_YEARS:-$(date +"%Y")}
       echo "Running scraper ingestion for years: $YEARS"
-      python scripts/ingest_scrapers.py --years $YEARS
+      python -m openf1.scripts.ingest_scrapers --years $YEARS
       ;;
     *)
       echo "\"$role\" not recognized, please set a valid role"
