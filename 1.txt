@@ -1,218 +1,63 @@
-2026-04-30T16:50:00.115304173Z [inf]  Starting api
-2026-04-30T16:50:00.115311136Z [inf]  Starting scrape-latest
-2026-04-30T16:50:00.115318078Z [inf]  OPENF1_BASE_URL set to http://localhost:8000
-2026-04-30T16:50:00.115324606Z [inf]  Starting ingest-realtime
-2026-04-30T16:50:00.115330883Z [inf]  Waiting for local API at http://localhost:8000/ (30s timeout)...
-2026-04-30T16:50:00.115338249Z [err]  INFO:     Will watch for changes in these directories: ['/app']
-2026-04-30T16:50:00.115388351Z [err]  INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-2026-04-30T16:50:00.115395166Z [err]  INFO:     Started reloader process [6] using StatReload
-2026-04-30T16:50:00.481727745Z [inf]  Starting Container
-2026-04-30T16:50:01.295272437Z [err]  INFO:     Started server process [11]
-2026-04-30T16:50:01.295281926Z [err]  INFO:     Waiting for application startup.
-2026-04-30T16:50:01.295289762Z [err]  INFO:     Application startup complete.
-2026-04-30T16:50:02.087235051Z [err]  2026-04-30 16:50:01.886 | INFO     | openf1.util.mqtt:initialize_mqtt:26 - MQTT credentials not found, MQTT is disabled
-2026-04-30T16:50:02.087243016Z [err]  2026-04-30 16:50:01.980 | INFO     | __main__:_ingest:172 - Ingesting 24 documents into 'meetings'
-2026-04-30T16:50:02.087277606Z [err]    warnings.warn(message, FutureWarning)
-2026-04-30T16:50:02.087287779Z [err]  2026-04-30 16:50:01.851 | INFO     | __main__:main:19 - Recording raw data to '/tmp/tmpj69sxlxq'
-2026-04-30T16:50:02.087293803Z [inf]  INFO:     127.0.0.1:39086 - "GET / HTTP/1.1" 200 OK
-2026-04-30T16:50:02.087295359Z [err]  2026-04-30 16:50:01.885 | INFO     | __main__:main:24 - Starting live recording of the following topics: {'PitStopSeries', 'DriverRaceInfo', 'PitLaneTimeCollection', 'DriverList', 'Heartbeat', 'RaceControlMessages', 'TimingData', 'Position.z', 'CarData.z', 'ChampionshipPrediction', 'TimingAppData', 'WeatherData', 'TeamRadio', 'SessionInfo', 'SessionData'}
-2026-04-30T16:50:02.087303561Z [err]  2026-04-30 16:50:01.885 | INFO     | __main__:main:49 - Starting data ingestion
-2026-04-30T16:50:02.087304629Z [inf]  Local API is responding
-2026-04-30T16:50:02.087312721Z [err]  /usr/local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
-2026-04-30T16:50:02.137242383Z [err]  2026-04-30 16:50:02,133 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=wNLaVlQQGrIuffzKPHRBfA%2F2cWa5WxbuCAisfZ9%2BzxewWjW4YeBugkuo7P4o3ECyWqRCLW%2BhCo6tElpXyAAuE6Py8DXrsR9EQ9YrA88y%2B5uy02O03mxA%2Fop0poo21hJW&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
-2026-04-30T16:50:02.377256706Z [err]  2026-04-30 16:50:02,373 - INFO: WebSocket connection established.
-2026-04-30T16:50:08.096038456Z [err]  
-Fetching sessions:   0%|          | 0/24 [00:00<?, ?it/s]
-Fetching sessions:   4%|▍         | 1/24 [00:00<00:07,  3.24it/s]
-Fetching sessions:   8%|▊         | 2/24 [00:00<00:08,  2.75it/s]
-Fetching sessions:  17%|█▋        | 4/24 [00:00<00:03,  5.90it/s]
-Fetching sessions:  25%|██▌       | 6/24 [00:00<00:02,  8.70it/s]
-Fetching sessions:  33%|███▎      | 8/24 [00:01<00:01, 10.82it/s]
-Fetching sessions:  42%|████▏     | 10/24 [00:01<00:01, 12.49it/s]
-Fetching sessions:  50%|█████     | 12/24 [00:04<00:07,  1.53it/s]
-Fetching sessions:  58%|█████▊    | 14/24 [00:04<00:04,  2.18it/s]
-Fetching sessions:  67%|██████▋   | 16/24 [00:04<00:02,  3.03it/s]
-2026-04-30T16:50:08.375369262Z [err]  
-Fetching sessions:  75%|███████▌  | 18/24 [00:05<00:01,  4.08it/s]
-Fetching sessions:  83%|████████▎ | 20/24 [00:05<00:00,  5.34it/s]
-Fetching sessions:  92%|█████████▏| 22/24 [00:05<00:00,  6.81it/s]
-Fetching sessions: 100%|██████████| 24/24 [00:05<00:00,  8.40it/s]
-Fetching sessions: 100%|██████████| 24/24 [00:05<00:00,  4.48it/s]
-2026-04-30T16:50:08.375376842Z [err]  2026-04-30 16:50:08.371 | INFO     | __main__:_ingest:172 - Ingesting 116 documents into 'sessions'
-2026-04-30T16:50:09.124133598Z [inf]  Running scraper ingestion for years: 2026
-2026-04-30T16:50:10.191051441Z [err]  2026-04-30 16:50:09,907 INFO Ingesting session_result for year=2026 meeting=1279 session=11228
-2026-04-30T16:50:10.191057965Z [err]  2026-04-30 16:50:09.909 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11228}}]}]}]}
-2026-04-30T16:50:10.191058409Z [err]  2026-04-30 16:50:09,482 INFO Ingesting session_result for year=2026 meeting=1279 session=11227
-2026-04-30T16:50:10.191064840Z [err]  2026-04-30 16:50:09.496 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11227}}]}]}]}
-2026-04-30T16:50:10.191066625Z [err]  2026-04-30 16:50:09.530 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11227, from https://www.formula1.com/en/results/2026/races/1279/aa/practice/1
-2026-04-30T16:50:10.191071772Z [err]  2026-04-30 16:50:09.527 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11227}]}' returned 1 documents
-2026-04-30T16:50:10.191074216Z [err]  2026-04-30 16:50:09,904 INFO Ingesting starting_grid for year=2026 meeting=1279 session=11227
-2026-04-30T16:50:10.191078046Z [inf]  INFO:     127.0.0.1:39098 - "GET /v1/sessions?session_key=11227 HTTP/1.1" 200 OK
-2026-04-30T16:50:10.191107863Z [inf]  INFO:     127.0.0.1:47588 - "GET /v1/sessions?session_key=11227 HTTP/1.1" 200 OK
-2026-04-30T16:50:10.191116189Z [err]  2026-04-30 16:50:09.907 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11227: Session 11227 is not a qualifying session and has no starting grid
-2026-04-30T16:50:10.191143788Z [err]  2026-04-30 16:50:09,465 INFO Starting ingestion for year 2026
-2026-04-30T16:50:10.191147973Z [err]  2026-04-30 16:50:09,482 INFO Year 2026: found meetings [1279, 1280, 1281, 1304, 1305]
-2026-04-30T16:50:10.191152545Z [err]  2026-04-30 16:50:09,482 INFO Meeting 1279: found sessions [11227, 11228, 11229, 11230, 11234]
-2026-04-30T16:50:10.192642037Z [err]  2026-04-30 16:50:09.915 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11228}]}' returned 1 documents
-2026-04-30T16:50:10.192765746Z [inf]  INFO:     127.0.0.1:47596 - "GET /v1/sessions?session_key=11228 HTTP/1.1" 200 OK
-2026-04-30T16:50:10.192770340Z [err]  2026-04-30 16:50:09.916 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11228, from https://www.formula1.com/en/results/2026/races/1279/aa/practice/2
-2026-04-30T16:50:10.192775228Z [err]  2026-04-30 16:50:10,188 INFO Ingesting starting_grid for year=2026 meeting=1279 session=11228
-2026-04-30T16:50:10.198569379Z [inf]  INFO:     127.0.0.1:47602 - "GET /v1/sessions?session_key=11228 HTTP/1.1" 200 OK
-2026-04-30T16:50:10.198573276Z [err]  2026-04-30 16:50:10.192 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11228: Session 11228 is not a qualifying session and has no starting grid
-2026-04-30T16:50:10.198577667Z [err]  2026-04-30 16:50:10,192 INFO Ingesting session_result for year=2026 meeting=1279 session=11229
-2026-04-30T16:50:10.198582328Z [err]  2026-04-30 16:50:10.194 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11229}}]}]}]}
-2026-04-30T16:50:10.208314611Z [err]  2026-04-30 16:50:10.203 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11229}]}' returned 1 documents
-2026-04-30T16:50:10.208318511Z [inf]  INFO:     127.0.0.1:47610 - "GET /v1/sessions?session_key=11229 HTTP/1.1" 200 OK
-2026-04-30T16:50:10.208322171Z [err]  2026-04-30 16:50:10.205 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11229, from https://www.formula1.com/en/results/2026/races/1279/aa/practice/3
-2026-04-30T16:50:11.128640333Z [err]  2026-04-30 16:50:10.747 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11230, from https://www.formula1.com/en/results/2026/races/1279/aa/qualifying
-2026-04-30T16:50:11.128646589Z [err]  2026-04-30 16:50:11,030 INFO Ingesting starting_grid for year=2026 meeting=1279 session=11230
-2026-04-30T16:50:11.128653633Z [inf]  INFO:     127.0.0.1:47632 - "GET /v1/sessions?session_key=11230 HTTP/1.1" 200 OK
-2026-04-30T16:50:11.128659653Z [err]  2026-04-30 16:50:11.036 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:188 - Ingesting starting grid of session 11230, from https://www.formula1.com/en/results/aa/races/1279/aa/starting-grid
-2026-04-30T16:50:11.128671308Z [err]  2026-04-30 16:50:10.738 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11229: Session 11229 is not a qualifying session and has no starting grid
-2026-04-30T16:50:11.128684824Z [err]  2026-04-30 16:50:10,738 INFO Ingesting session_result for year=2026 meeting=1279 session=11230
-2026-04-30T16:50:11.128692638Z [err]  2026-04-30 16:50:10.740 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11230}}]}]}]}
-2026-04-30T16:50:11.128700318Z [err]  2026-04-30 16:50:10.746 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11230}]}' returned 1 documents
-2026-04-30T16:50:11.128710116Z [inf]  INFO:     127.0.0.1:47620 - "GET /v1/sessions?session_key=11230 HTTP/1.1" 200 OK
-2026-04-30T16:50:11.128773037Z [err]  2026-04-30 16:50:10,734 INFO Ingesting starting_grid for year=2026 meeting=1279 session=11229
-2026-04-30T16:50:11.128796715Z [inf]  INFO:     127.0.0.1:47614 - "GET /v1/sessions?session_key=11229 HTTP/1.1" 200 OK
-2026-04-30T16:50:12.264846100Z [err]  2026-04-30 16:50:11.760 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11235}}]}]}]}
-2026-04-30T16:50:12.264858732Z [err]  2026-04-30 16:50:11.766 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11235}]}' returned 1 documents
-2026-04-30T16:50:12.264868116Z [err]  2026-04-30 16:50:11.501 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11234}}]}]}]}
-2026-04-30T16:50:12.264880550Z [err]  2026-04-30 16:50:11.508 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11234}]}' returned 1 documents
-2026-04-30T16:50:12.264888367Z [inf]  INFO:     127.0.0.1:47634 - "GET /v1/sessions?session_key=11234 HTTP/1.1" 200 OK
-2026-04-30T16:50:12.264894762Z [err]  2026-04-30 16:50:11.510 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11234, from https://www.formula1.com/en/results/2026/races/1279/aa/race-result
-2026-04-30T16:50:12.264900963Z [err]  2026-04-30 16:50:11,753 INFO Ingesting starting_grid for year=2026 meeting=1279 session=11234
-2026-04-30T16:50:12.264907796Z [inf]  INFO:     127.0.0.1:47648 - "GET /v1/sessions?session_key=11234 HTTP/1.1" 200 OK
-2026-04-30T16:50:12.264913908Z [err]  2026-04-30 16:50:11.757 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11234: Session 11234 is not a qualifying session and has no starting grid
-2026-04-30T16:50:12.264920861Z [err]  2026-04-30 16:50:11,758 INFO Meeting 1280: found sessions [11235, 11236, 11240, 11241, 11245]
-2026-04-30T16:50:12.264929456Z [err]  2026-04-30 16:50:11,758 INFO Ingesting session_result for year=2026 meeting=1280 session=11235
-2026-04-30T16:50:12.265026389Z [err]  2026-04-30 16:50:11,498 INFO Ingesting session_result for year=2026 meeting=1279 session=11234
-2026-04-30T16:50:12.266520864Z [inf]  INFO:     127.0.0.1:47654 - "GET /v1/sessions?session_key=11235 HTTP/1.1" 200 OK
-2026-04-30T16:50:12.266525515Z [err]  2026-04-30 16:50:11.767 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11235, from https://www.formula1.com/en/results/2026/races/1280/aa/practice/1
-2026-04-30T16:50:12.322451649Z [err]  2026-04-30 16:50:12,319 INFO Ingesting starting_grid for year=2026 meeting=1280 session=11235
-2026-04-30T16:50:12.328275317Z [inf]  INFO:     127.0.0.1:47660 - "GET /v1/sessions?session_key=11235 HTTP/1.1" 200 OK
-2026-04-30T16:50:12.328281535Z [err]  2026-04-30 16:50:12.324 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11235: Session 11235 is not a qualifying session and has no starting grid
-2026-04-30T16:50:12.328287259Z [err]  2026-04-30 16:50:12,324 INFO Ingesting session_result for year=2026 meeting=1280 session=11236
-2026-04-30T16:50:12.333598980Z [err]  2026-04-30 16:50:12.327 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11236}}]}]}]}
-2026-04-30T16:50:12.338164650Z [err]  2026-04-30 16:50:12.334 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11236}]}' returned 1 documents
-2026-04-30T16:50:12.338173232Z [inf]  INFO:     127.0.0.1:47664 - "GET /v1/sessions?session_key=11236 HTTP/1.1" 200 OK
-2026-04-30T16:50:12.338178496Z [err]  2026-04-30 16:50:12.337 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11236, from https://www.formula1.com/en/results/2026/races/1280/aa/sprint-qualifying
-2026-04-30T16:50:13.314978061Z [err]  2026-04-30 16:50:12,581 INFO Ingesting starting_grid for year=2026 meeting=1280 session=11236
-2026-04-30T16:50:13.314983071Z [inf]  INFO:     127.0.0.1:47672 - "GET /v1/sessions?session_key=11236 HTTP/1.1" 200 OK
-2026-04-30T16:50:13.314987821Z [err]  2026-04-30 16:50:12.585 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:188 - Ingesting starting grid of session 11236, from https://www.formula1.com/en/results/aa/races/1280/aa/sprint-grid
-2026-04-30T16:50:13.314993661Z [err]  2026-04-30 16:50:12,861 INFO Ingesting session_result for year=2026 meeting=1280 session=11240
-2026-04-30T16:50:13.314998555Z [err]  2026-04-30 16:50:12.864 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11240}}]}]}]}
-2026-04-30T16:50:13.315003117Z [err]  2026-04-30 16:50:12.869 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11240}]}' returned 1 documents
-2026-04-30T16:50:13.315007874Z [inf]  INFO:     127.0.0.1:47682 - "GET /v1/sessions?session_key=11240 HTTP/1.1" 200 OK
-2026-04-30T16:50:13.315013690Z [err]  2026-04-30 16:50:12.871 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11240, from https://www.formula1.com/en/results/2026/races/1280/aa/sprint-results
-2026-04-30T16:50:13.315019108Z [err]  2026-04-30 16:50:13,101 INFO Ingesting starting_grid for year=2026 meeting=1280 session=11240
-2026-04-30T16:50:13.315024171Z [inf]  INFO:     127.0.0.1:47690 - "GET /v1/sessions?session_key=11240 HTTP/1.1" 200 OK
-2026-04-30T16:50:13.315029688Z [err]  2026-04-30 16:50:13.108 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11240: Session 11240 is not a qualifying session and has no starting grid
-2026-04-30T16:50:13.315034916Z [err]  2026-04-30 16:50:13,108 INFO Ingesting session_result for year=2026 meeting=1280 session=11241
-2026-04-30T16:50:13.319370611Z [err]  2026-04-30 16:50:13.111 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11241}}]}]}]}
-2026-04-30T16:50:13.319381094Z [err]  2026-04-30 16:50:13.121 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11241}]}' returned 1 documents
-2026-04-30T16:50:13.319386670Z [inf]  INFO:     127.0.0.1:47700 - "GET /v1/sessions?session_key=11241 HTTP/1.1" 200 OK
-2026-04-30T16:50:13.319391733Z [err]  2026-04-30 16:50:13.124 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11241, from https://www.formula1.com/en/results/2026/races/1280/aa/qualifying
-2026-04-30T16:50:13.386142783Z [err]  2026-04-30 16:50:13,376 INFO Ingesting starting_grid for year=2026 meeting=1280 session=11241
-2026-04-30T16:50:13.386148466Z [inf]  INFO:     127.0.0.1:47706 - "GET /v1/sessions?session_key=11241 HTTP/1.1" 200 OK
-2026-04-30T16:50:13.386152552Z [err]  2026-04-30 16:50:13.383 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:188 - Ingesting starting grid of session 11241, from https://www.formula1.com/en/results/aa/races/1280/aa/starting-grid
-2026-04-30T16:50:14.255417460Z [err]  2026-04-30 16:50:14.062 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11246}}]}]}]}
-2026-04-30T16:50:14.255428523Z [err]  2026-04-30 16:50:14.070 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11246}]}' returned 1 documents
-2026-04-30T16:50:14.255543140Z [err]  2026-04-30 16:50:13,648 INFO Ingesting session_result for year=2026 meeting=1280 session=11245
-2026-04-30T16:50:14.255549242Z [err]  2026-04-30 16:50:13.746 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11245}}]}]}]}
-2026-04-30T16:50:14.255562353Z [err]  2026-04-30 16:50:13.751 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11245}]}' returned 1 documents
-2026-04-30T16:50:14.255569169Z [inf]  INFO:     127.0.0.1:47712 - "GET /v1/sessions?session_key=11245 HTTP/1.1" 200 OK
-2026-04-30T16:50:14.255575889Z [err]  2026-04-30 16:50:13.753 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11245, from https://www.formula1.com/en/results/2026/races/1280/aa/race-result
-2026-04-30T16:50:14.255582009Z [err]  2026-04-30 16:50:14,056 INFO Ingesting starting_grid for year=2026 meeting=1280 session=11245
-2026-04-30T16:50:14.255590347Z [inf]  INFO:     127.0.0.1:47726 - "GET /v1/sessions?session_key=11245 HTTP/1.1" 200 OK
-2026-04-30T16:50:14.255596677Z [err]  2026-04-30 16:50:14.060 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11245: Session 11245 is not a qualifying session and has no starting grid
-2026-04-30T16:50:14.255602720Z [err]  2026-04-30 16:50:14,060 INFO Meeting 1281: found sessions [11246, 11247, 11248, 11249, 11253]
-2026-04-30T16:50:14.255608569Z [err]  2026-04-30 16:50:14,060 INFO Ingesting session_result for year=2026 meeting=1281 session=11246
-2026-04-30T16:50:14.260177287Z [inf]  INFO:     127.0.0.1:47730 - "GET /v1/sessions?session_key=11246 HTTP/1.1" 200 OK
-2026-04-30T16:50:14.260183023Z [err]  2026-04-30 16:50:14.072 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11246, from https://www.formula1.com/en/results/2026/races/1281/aa/practice/1
-2026-04-30T16:50:14.410371656Z [err]  2026-04-30 16:50:14,408 INFO Ingesting starting_grid for year=2026 meeting=1281 session=11246
-2026-04-30T16:50:14.415474008Z [inf]  INFO:     127.0.0.1:47734 - "GET /v1/sessions?session_key=11246 HTTP/1.1" 200 OK
-2026-04-30T16:50:14.415480810Z [err]  2026-04-30 16:50:14.412 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11246: Session 11246 is not a qualifying session and has no starting grid
-2026-04-30T16:50:14.415487051Z [err]  2026-04-30 16:50:14,412 INFO Ingesting session_result for year=2026 meeting=1281 session=11247
-2026-04-30T16:50:14.423886444Z [err]  2026-04-30 16:50:14.422 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11247}]}' returned 1 documents
-2026-04-30T16:50:14.427409977Z [inf]  INFO:     127.0.0.1:47736 - "GET /v1/sessions?session_key=11247 HTTP/1.1" 200 OK
-2026-04-30T16:50:14.427419644Z [err]  2026-04-30 16:50:14.426 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11247, from https://www.formula1.com/en/results/2026/races/1281/aa/practice/2
-2026-04-30T16:50:15.085442405Z [inf]  INFO:     127.0.0.1:47742 - "GET /v1/sessions?session_key=11247 HTTP/1.1" 200 OK
-2026-04-30T16:50:15.085449429Z [err]  2026-04-30 16:50:14.715 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11247: Session 11247 is not a qualifying session and has no starting grid
-2026-04-30T16:50:15.085462578Z [err]  2026-04-30 16:50:14.718 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11248}}]}]}]}
-2026-04-30T16:50:15.085469045Z [err]  2026-04-30 16:50:14.723 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11248}]}' returned 1 documents
-2026-04-30T16:50:15.085475363Z [inf]  INFO:     127.0.0.1:47756 - "GET /v1/sessions?session_key=11248 HTTP/1.1" 200 OK
-2026-04-30T16:50:15.085481929Z [err]  2026-04-30 16:50:14.725 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11248, from https://www.formula1.com/en/results/2026/races/1281/aa/practice/3
-2026-04-30T16:50:15.085495289Z [inf]  INFO:     127.0.0.1:47758 - "GET /v1/sessions?session_key=11248 HTTP/1.1" 200 OK
-2026-04-30T16:50:15.085501701Z [err]  2026-04-30 16:50:15.057 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11248: Session 11248 is not a qualifying session and has no starting grid
-2026-04-30T16:50:15.085508049Z [err]  2026-04-30 16:50:15,057 INFO Ingesting session_result for year=2026 meeting=1281 session=11249
-2026-04-30T16:50:15.089378085Z [err]  2026-04-30 16:50:15.059 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11249}}]}]}]}
-2026-04-30T16:50:15.089386835Z [err]  2026-04-30 16:50:15.065 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11249}]}' returned 1 documents
-2026-04-30T16:50:15.089393518Z [inf]  INFO:     127.0.0.1:47772 - "GET /v1/sessions?session_key=11249 HTTP/1.1" 200 OK
-2026-04-30T16:50:15.089400470Z [err]  2026-04-30 16:50:15.066 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11249, from https://www.formula1.com/en/results/2026/races/1281/aa/qualifying
-2026-04-30T16:50:15.349599509Z [inf]  INFO:     127.0.0.1:47780 - "GET /v1/sessions?session_key=11249 HTTP/1.1" 200 OK
-2026-04-30T16:50:15.349607035Z [err]  2026-04-30 16:50:15.346 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:188 - Ingesting starting grid of session 11249, from https://www.formula1.com/en/results/aa/races/1281/aa/starting-grid
-2026-04-30T16:50:16.320794414Z [err]  2026-04-30 16:50:15.808 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11465}]}' returned 1 documents
-2026-04-30T16:50:16.320835945Z [err]  2026-04-30 16:50:15.800 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11253: Session 11253 is not a qualifying session and has no starting grid
-2026-04-30T16:50:16.320854153Z [err]  2026-04-30 16:50:15,800 INFO Ingesting session_result for year=2026 meeting=1304 session=11465
-2026-04-30T16:50:16.320858894Z [err]  2026-04-30 16:50:15,686 INFO Ingesting session_result for year=2026 meeting=1281 session=11253
-2026-04-30T16:50:16.320872873Z [err]  2026-04-30 16:50:15.690 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11253}}]}]}]}
-2026-04-30T16:50:16.320883063Z [err]  2026-04-30 16:50:15,797 INFO Ingesting starting_grid for year=2026 meeting=1281 session=11253
-2026-04-30T16:50:16.320884097Z [err]  2026-04-30 16:50:15.695 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11253}]}' returned 1 documents
-2026-04-30T16:50:16.322927777Z [inf]  INFO:     127.0.0.1:47800 - "GET /v1/sessions?session_key=11465 HTTP/1.1" 200 OK
-2026-04-30T16:50:16.966053352Z [err]  2026-04-30 16:50:16.516 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11465: Session 11465 is not a qualifying session and has no starting grid
-2026-04-30T16:50:16.966054308Z [err]  2026-04-30 16:50:16,513 INFO Ingesting starting_grid for year=2026 meeting=1304 session=11465
-2026-04-30T16:50:16.966061497Z [err]  2026-04-30 16:50:16,516 INFO Ingesting session_result for year=2026 meeting=1304 session=11466
-2026-04-30T16:50:16.966062197Z [inf]  INFO:     127.0.0.1:47804 - "GET /v1/sessions?session_key=11465 HTTP/1.1" 200 OK
-2026-04-30T16:50:16.966068665Z [err]  2026-04-30 16:50:16.519 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11466}}]}]}]}
-2026-04-30T16:50:16.966073778Z [err]  2026-04-30 16:50:16.523 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11466}]}' returned 1 documents
-2026-04-30T16:50:16.966080648Z [inf]  INFO:     127.0.0.1:47806 - "GET /v1/sessions?session_key=11466 HTTP/1.1" 200 OK
-2026-04-30T16:50:16.966086175Z [err]  2026-04-30 16:50:16.525 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11466, from https://www.formula1.com/en/results/2026/races/1304/aa/practice/2
-2026-04-30T16:50:17.005454152Z [err]  2026-04-30 16:50:17,004 INFO Ingesting starting_grid for year=2026 meeting=1304 session=11466
-2026-04-30T16:50:17.008878807Z [inf]  INFO:     127.0.0.1:47822 - "GET /v1/sessions?session_key=11466 HTTP/1.1" 200 OK
-2026-04-30T16:50:17.008884884Z [err]  2026-04-30 16:50:17.007 | INFO     | openf1.services.f1_scraping.starting_grid:ingest_starting_grid:185 - Skipping starting grid for session 11466: Session 11466 is not a qualifying session and has no starting grid
-2026-04-30T16:50:17.008889318Z [err]  2026-04-30 16:50:17,008 INFO Ingesting session_result for year=2026 meeting=1304 session=11467
-2026-04-30T16:50:17.012172143Z [err]  2026-04-30 16:50:17.010 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11467}}]}]}]}
-2026-04-30T16:50:17.020966927Z [err]  2026-04-30 16:50:17.015 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11467}]}' returned 1 documents
-2026-04-30T16:50:17.020971384Z [inf]  INFO:     127.0.0.1:47826 - "GET /v1/sessions?session_key=11467 HTTP/1.1" 200 OK
-2026-04-30T16:50:17.020975400Z [err]  2026-04-30 16:50:17.016 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11467, from https://www.formula1.com/en/results/2026/races/1304/aa/practice/3
-2026-04-30T16:50:18.017030366Z [err]  2026-04-30 16:50:17,452 INFO Ingesting starting_grid for year=2026 meeting=1304 session=11467
-2026-04-30T16:50:18.017031136Z [err]  2026-04-30 16:50:17.461 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'sessions': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11470}}]}]}]}
-2026-04-30T16:50:18.017042636Z [inf]  INFO:     127.0.0.1:47832 - "GET /v1/sessions?session_key=11467 HTTP/1.1" 200 OK
-2026-04-30T16:50:18.017042991Z [err]  2026-04-30 16:50:17.466 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='sessions' filters='{'session_key': [{'$eq': 11470}]}' returned 1 documents
-2026-04-30T16:50:18.017054323Z [inf]  INFO:     127.0.0.1:47834 - "GET /v1/sessions?session_key=11470 HTTP/1.1" 200 OK
-2026-04-30T16:50:18.017065062Z [err]  2026-04-30 16:50:17.468 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:262 - Ingesting result of session 11470, from https://www.formula1.com/en/results/2026/races/1305/aa/practice/1
-2026-04-30T16:50:18.017069301Z [err]  2026-04-30 16:50:17,457 INFO Meeting 1305: found sessions [11470, 11469, 11468]
-2026-04-30T16:50:18.017075940Z [err]  2026-04-30 16:50:17,457 INFO Ingesting session_result for year=2026 meeting=1305 session=11470
-2026-04-30T16:50:18.377945564Z [inf]  INFO:     127.0.0.1:47842 - "GET /v1/sessions?session_key=11470 HTTP/1.1" 200 OK
-2026-04-30T16:50:18.377969580Z [err]  2026-04-30 16:50:18.227 | INFO     | openf1.services.f1_scraping.session_result:ingest_session_result:259 - Skipping session_result for session 11469: 500 Server Error: Internal Server Error for url: http://localhost:8000/v1/sessions?session_key=11469
-2026-04-30T16:50:18.377973500Z [err]  2026-04-30 16:50:18,227 INFO Ingesting starting_grid for year=2026 meeting=1305 session=11469
-2026-04-30T16:50:18.382801324Z [inf]  INFO:     127.0.0.1:47860 - "GET /v1/sessions?session_key=11469 HTTP/1.1" 500 Internal Server Error
-2026-04-30T16:50:18.382808742Z [err]  2026-04-30 16:50:18,231 ERROR starting_grid ingestion failed for session 11469
-2026-04-30T16:50:18.382815018Z [err]  Traceback (most recent call last):
-2026-04-30T16:50:18.382822029Z [err]    File "/app/openf1/scripts/ingest_scrapers.py", line 36, in ingest_meeting_scrapers
-2026-04-30T16:50:18.382828271Z [err]      sg_mod.ingest_starting_grid(meeting_key=meeting_key, session_key=sk)
-2026-04-30T16:50:18.382834499Z [err]    File "/app/openf1/services/f1_scraping/starting_grid.py", line 183, in ingest_starting_grid
-2026-04-30T16:50:18.382840691Z [err]      grid_url = _session_key_to_page_url(session_key)
-2026-04-30T16:50:18.382861837Z [err]    File "/app/openf1/services/f1_scraping/starting_grid.py", line 144, in _session_key_to_page_url
-2026-04-30T16:50:18.382869238Z [err]      api_results = openf1_client.get(f"v1/sessions?session_key={session_key}")
-2026-04-30T16:50:18.382881873Z [err]      response.raise_for_status()
-2026-04-30T16:50:18.382888433Z [err]    File "/usr/local/lib/python3.10/site-packages/requests/models.py", line 1026, in raise_for_status
-2026-04-30T16:50:18.382894773Z [err]      raise HTTPError(http_error_msg, response=self)
-2026-04-30T16:50:18.382900878Z [err]  requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://localhost:8000/v1/sessions?session_key=11469
-2026-04-30T16:50:18.382907955Z [err]  2026-04-30 16:50:18,232 INFO Ingesting session_result for year=2026 meeting=1305 session=11468
-2026-04-30T16:50:18.382914824Z [err]  2026-04-30 16:50:18.234 | WARNING  | openf1.services.query_api.app:check_rate_limit:101 - Rate limit exceeded
-2026-04-30T16:50:18.387175085Z [err]      grid_url = _session_key_to_page_url(session_key)
-2026-04-30T16:50:18.387244493Z [inf]  INFO:     127.0.0.1:47874 - "GET /v1/sessions?session_key=11468 HTTP/1.1" 500 Internal Server Error
-2026-04-30T16:50:18.387256246Z [err]  2026-04-30 16:50:18,235 INFO Ingesting starting_grid for year=2026 meeting=1305 session=11468
-2026-04-30T16:50:18.387261343Z [err]  2026-04-30 16:50:18.237 | WARNING  | openf1.services.query_api.app:check_rate_limit:101 - Rate limit exceeded
-2026-04-30T16:50:18.387266272Z [err]  2026-04-30 16:50:18.237 | ERROR    | openf1.services.query_api.app:endpoint:189 - Path: v1/sessions | Headers: {'host': 'localhost:8000', 'user-agent': 'python-requests/2.32.4', 'accept-encoding': 'gzip, deflate', 'accept': 'application/json', 'connection': 'keep-alive'} | Query Parameters: {'session_key': '11468'} | Exception: 429: Too Many Requests
-2026-04-30T16:50:18.387271206Z [inf]  INFO:     127.0.0.1:47880 - "GET /v1/sessions?session_key=11468 HTTP/1.1" 500 Internal Server Error
-2026-04-30T16:50:18.387276456Z [err]  2026-04-30 16:50:18,238 ERROR starting_grid ingestion failed for session 11468
-2026-04-30T16:50:18.387281637Z [err]  Traceback (most recent call last):
-2026-04-30T16:50:18.387290775Z [err]    File "/app/openf1/scripts/ingest_scrapers.py", line 36, in ingest_meeting_scrapers
-2026-04-30T16:50:18.387298716Z [err]      sg_mod.ingest_starting_grid(meeting_key=meeting_key, session_key=sk)
-2026-04-30T16:50:18.388941419Z [err]      api_results = openf1_client.get(f"v1/sessions?session_key={session_key}")
-2026-04-30T16:50:18.388955873Z [err]      response.raise_for_status()
-2026-04-30T16:50:18.388970211Z [err]      raise HTTPError(http_error_msg, response=self)
-2026-04-30T16:50:18.388976693Z [err]  requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://localhost:8000/v1/sessions?session_key=11468
+2026-04-30T16:54:40.432719764Z [err]  INFO:     Will watch for changes in these directories: ['/app']
+2026-04-30T16:54:40.432731438Z [inf]  Starting api
+2026-04-30T16:54:40.432731922Z [err]  INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-04-30T16:54:40.432740778Z [err]  INFO:     Started reloader process [6] using StatReload
+2026-04-30T16:54:40.432744673Z [inf]  OPENF1_BASE_URL set to http://localhost:8000
+2026-04-30T16:54:40.432745598Z [inf]  Starting scrape-latest
+2026-04-30T16:54:40.432752139Z [inf]  Starting ingest-realtime
+2026-04-30T16:54:40.432757546Z [inf]  Waiting for local API at http://localhost:8000/ (30s timeout)...
+2026-04-30T16:54:40.698209615Z [inf]  Starting Container
+2026-04-30T16:54:40.858520285Z [err]  INFO:     Started server process [11]
+2026-04-30T16:54:40.858535128Z [err]  INFO:     Waiting for application startup.
+2026-04-30T16:54:40.858542583Z [err]  INFO:     Application startup complete.
+2026-04-30T16:54:41.033403459Z [inf]  INFO:     127.0.0.1:49096 - "GET / HTTP/1.1" 200 OK
+2026-04-30T16:54:41.033412486Z [inf]  Local API is responding
+2026-04-30T16:54:41.510827323Z [err]  2026-04-30 16:54:41.506 | INFO     | __main__:_ingest:172 - Ingesting 24 documents into 'meetings'
+2026-04-30T16:54:42.449377663Z [err]  /usr/local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+2026-04-30T16:54:42.449382706Z [err]    warnings.warn(message, FutureWarning)
+2026-04-30T16:54:42.449388052Z [err]  2026-04-30 16:54:42.358 | INFO     | __main__:main:19 - Recording raw data to '/tmp/tmpiid9muwa'
+2026-04-30T16:54:42.449393141Z [err]  2026-04-30 16:54:42.387 | INFO     | __main__:main:24 - Starting live recording of the following topics: {'PitLaneTimeCollection', 'RaceControlMessages', 'DriverList', 'SessionData', 'CarData.z', 'SessionInfo', 'Position.z', 'TimingAppData', 'ChampionshipPrediction', 'DriverRaceInfo', 'TimingData', 'Heartbeat', 'TeamRadio', 'PitStopSeries', 'WeatherData'}
+2026-04-30T16:54:42.449398295Z [err]  2026-04-30 16:54:42.387 | INFO     | __main__:main:49 - Starting data ingestion
+2026-04-30T16:54:42.449402951Z [err]  2026-04-30 16:54:42.388 | INFO     | openf1.util.mqtt:initialize_mqtt:26 - MQTT credentials not found, MQTT is disabled
+2026-04-30T16:54:42.591554275Z [err]  
+Fetching sessions:   0%|          | 0/24 [00:00<?, ?it/s]2026-04-30 16:54:42,586 - INFO: Reconnecting in 5 seconds...
+2026-04-30T16:54:43.773990477Z [err]  
+Fetching sessions:   4%|▍         | 1/24 [00:00<00:04,  5.26it/s]
+Fetching sessions:   8%|▊         | 2/24 [00:00<00:03,  6.05it/s]
+Fetching sessions:  17%|█▋        | 4/24 [00:00<00:01, 10.42it/s]
+Fetching sessions:  25%|██▌       | 6/24 [00:00<00:01, 12.68it/s]
+Fetching sessions:  33%|███▎      | 8/24 [00:00<00:01, 14.43it/s]
+Fetching sessions:  42%|████▏     | 10/24 [00:00<00:00, 15.07it/s]
+Fetching sessions:  50%|█████     | 12/24 [00:00<00:00, 16.19it/s]
+Fetching sessions:  58%|█████▊    | 14/24 [00:01<00:00, 16.88it/s]
+Fetching sessions:  67%|██████▋   | 16/24 [00:01<00:00, 16.72it/s]
+Fetching sessions:  75%|███████▌  | 18/24 [00:01<00:00, 17.33it/s]
+2026-04-30T16:54:44.128213813Z [err]  
+Fetching sessions:  83%|████████▎ | 20/24 [00:01<00:00, 17.45it/s]
+Fetching sessions:  92%|█████████▏| 22/24 [00:01<00:00, 17.69it/s]
+Fetching sessions: 100%|██████████| 24/24 [00:01<00:00, 15.35it/s]
+2026-04-30T16:54:44.128220145Z [err]  2026-04-30 16:54:44.083 | INFO     | __main__:_ingest:172 - Ingesting 116 documents into 'sessions'
+2026-04-30T16:54:44.676039674Z [inf]  Running scraper ingestion for years: 2026
+2026-04-30T16:54:45.117237116Z [err]      meeting_keys = get_meeting_keys(year)
+2026-04-30T16:54:45.117248623Z [err]    File "/app/openf1/util/schedule.py", line 257, in get_meeting_keys
+2026-04-30T16:54:45.117250300Z [err]  2026-04-30 16:54:45,076 INFO Starting ingestion for year 2026
+2026-04-30T16:54:45.117256085Z [err]  Traceback (most recent call last):
+2026-04-30T16:54:45.117259232Z [err]      keys = [m["Key"] for m in get_schedule(year)["Meetings"]]
+2026-04-30T16:54:45.117263021Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+2026-04-30T16:54:45.117268385Z [err]    File "/app/openf1/util/schedule.py", line 235, in get_schedule
+2026-04-30T16:54:45.117270595Z [err]      return _run_code(code, main_globals, None,
+2026-04-30T16:54:45.117277924Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 86, in _run_code
+2026-04-30T16:54:45.117278426Z [err]      content_dict = json.loads(content_json)
+2026-04-30T16:54:45.117287849Z [err]      exec(code, run_globals)
+2026-04-30T16:54:45.117288039Z [err]    File "/usr/local/lib/python3.10/json/__init__.py", line 346, in loads
+2026-04-30T16:54:45.117295340Z [err]      return _default_decoder.decode(s)
+2026-04-30T16:54:45.117300728Z [err]    File "/usr/local/lib/python3.10/json/decoder.py", line 337, in decode
+2026-04-30T16:54:45.117305034Z [err]    File "/app/openf1/scripts/ingest_scrapers.py", line 65, in <module>
+2026-04-30T16:54:45.117307881Z [err]      obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+2026-04-30T16:54:45.117314078Z [err]    File "/usr/local/lib/python3.10/json/decoder.py", line 355, in raw_decode
+2026-04-30T16:54:45.117315802Z [err]      main()
+2026-04-30T16:54:45.117321516Z [err]    File "/app/openf1/scripts/ingest_scrapers.py", line 61, in main
+2026-04-30T16:54:45.117328031Z [err]      ingest_year(y, args.collections)
+2026-04-30T16:54:45.117334235Z [err]    File "/app/openf1/scripts/ingest_scrapers.py", line 45, in ingest_year
+2026-04-30T16:54:45.117815991Z [err]      raise JSONDecodeError("Expecting value", s, err.value) from None
+2026-04-30T16:54:45.117820896Z [err]  json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

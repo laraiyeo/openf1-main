@@ -1,4 +1,6 @@
 import json
+import time
+import random
 from functools import lru_cache
 
 import requests
@@ -230,9 +232,29 @@ def get_schedule(year: int) -> dict:
     """Fetches the Formula 1 race schedule for a specified year (past sessions only)"""
     BASE_URL = "https://livetiming.formula1.com/static"
     url = join_url(BASE_URL, f"{year}/Index.json")
-    response = requests.get(url)
-    content_json = response.content
-    content_dict = json.loads(content_json)
+    max_retries = 5
+    backoff = 1.0
+    last_exc = None
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            content_json = response.content
+            if not content_json:
+                raise ValueError("Empty Index.json response")
+            content_dict = json.loads(content_json)
+            break
+        except (requests.RequestException, ValueError, json.JSONDecodeError) as exc:
+            last_exc = exc
+            if attempt == max_retries - 1:
+                raise
+            sleep_for = backoff + random.random()
+            time.sleep(sleep_for)
+            backoff *= 2
+
+    if last_exc is not None and 'content_dict' not in locals():
+        # If we exited the loop without a valid content_dict, raise the last exception
+        raise last_exc
 
     # Add missing sessions
     if year in MISSING_SESSIONS:
