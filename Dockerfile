@@ -14,5 +14,6 @@ COPY ./src ./
 RUN pip install --no-cache-dir -e .
 
 COPY ./docker-entrypoint ./
+RUN chmod +x ./docker-entrypoint
 
 ENTRYPOINT ["./docker-entrypoint"]
