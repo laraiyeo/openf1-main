@@ -68,8 +68,11 @@ sys.exit(0)
 PY
       python -m openf1.services.f1_scraping.schedule ingest-meetings
       python -m openf1.services.f1_scraping.schedule ingest-sessions
-      python -m openf1.services.f1_scraping.session_result
-      python -m openf1.services.f1_scraping.starting_grid
+      # Run scrapers for all sessions in the given years. Use OPENF1_INGEST_SCRAPER_YEARS if set,
+      # otherwise default to the current year.
+      YEARS=${OPENF1_INGEST_SCRAPER_YEARS:-$(date +"%Y")}
+      echo "Running scraper ingestion for years: $YEARS"
+      python scripts/ingest_scrapers.py --years $YEARS
       ;;
     *)
       echo "\"$role\" not recognized, please set a valid role"
