@@ -1,520 +1,825 @@
-  {
-    "meeting_key": 1304,
-    "meeting_name": "Pre-Season Testing",
-    "meeting_official_name": "FORMULA 1 ARAMCO PRE-SEASON TESTING 1 2026",
-    "location": "Bahrain",
-    "country_key": 36,
-    "country_code": "BRN",
-    "country_name": "Bahrain",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/bahrain-flag.png",
-    "circuit_key": 63,
-    "circuit_short_name": "Sakhir",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/63/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png",
-    "gmt_offset": "03:00:00",
-    "date_start": "2026-02-11T07:00:00+00:00",
-    "date_end": "2026-02-13T16:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1305,
-    "meeting_name": "Pre-Season Testing",
-    "meeting_official_name": "FORMULA 1 ARAMCO PRE-SEASON TESTING 2 2026",
-    "location": "Bahrain",
-    "country_key": 36,
-    "country_code": "BRN",
-    "country_name": "Bahrain",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/bahrain-flag.png",
-    "circuit_key": 63,
-    "circuit_short_name": "Sakhir",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/63/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png",
-    "gmt_offset": "03:00:00",
-    "date_start": "2026-02-18T07:00:00+00:00",
-    "date_end": "2026-02-20T16:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1279,
-    "meeting_name": "Australian Grand Prix",
-    "meeting_official_name": "FORMULA 1 QATAR AIRWAYS AUSTRALIAN GRAND PRIX 2026",
-    "location": "Melbourne",
-    "country_key": 5,
-    "country_code": "AUS",
-    "country_name": "Australia",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/australia-flag.png",
-    "circuit_key": 10,
-    "circuit_short_name": "Melbourne",
-    "circuit_type": "Temporary - Street",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/10/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Australia%20carbon.png",
-    "gmt_offset": "11:00:00",
-    "date_start": "2026-03-06T01:30:00+00:00",
-    "date_end": "2026-03-08T06:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1280,
-    "meeting_name": "Chinese Grand Prix",
-    "meeting_official_name": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2026",
-    "location": "Shanghai",
-    "country_key": 53,
-    "country_code": "CHN",
-    "country_name": "China",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/china-flag.png",
-    "circuit_key": 49,
-    "circuit_short_name": "Shanghai",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/49/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/China%20carbon.png",
-    "gmt_offset": "08:00:00",
-    "date_start": "2026-03-13T03:30:00+00:00",
-    "date_end": "2026-03-15T09:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1281,
-    "meeting_name": "Japanese Grand Prix",
-    "meeting_official_name": "FORMULA 1 ARAMCO JAPANESE GRAND PRIX 2026",
-    "location": "Suzuka",
-    "country_key": 4,
-    "country_code": "JPN",
-    "country_name": "Japan",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/japan-flag.png",
-    "circuit_key": 46,
-    "circuit_short_name": "Suzuka",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/46/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Japan%20carbon.png",
-    "gmt_offset": "09:00:00",
-    "date_start": "2026-03-27T02:30:00+00:00",
-    "date_end": "2026-03-29T07:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1282,
-    "meeting_name": "Bahrain Grand Prix",
-    "meeting_official_name": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2026",
-    "location": "Sakhir",
-    "country_key": 36,
-    "country_code": "BRN",
-    "country_name": "Bahrain",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/bahrain-flag.png",
-    "circuit_key": 63,
-    "circuit_short_name": "Sakhir",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/63/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Bahrain%20carbon.png",
-    "gmt_offset": "03:00:00",
-    "date_start": "2026-04-10T11:30:00+00:00",
-    "date_end": "2026-04-12T17:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": true
-  },
-  {
-    "meeting_key": 1283,
-    "meeting_name": "Saudi Arabian Grand Prix",
-    "meeting_official_name": "FORMULA 1 STC SAUDI ARABIAN GRAND PRIX 2026",
-    "location": "Jeddah",
-    "country_key": 153,
-    "country_code": "KSA",
-    "country_name": "Saudi Arabia",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/saudi-arabia-flag.png",
-    "circuit_key": 149,
-    "circuit_short_name": "Jeddah",
-    "circuit_type": "Temporary - Street",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/149/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Saudi Arabia%20carbon.png",
-    "gmt_offset": "03:00:00",
-    "date_start": "2026-04-17T13:30:00+00:00",
-    "date_end": "2026-04-19T19:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": true
-  },
-  {
-    "meeting_key": 1284,
-    "meeting_name": "Miami Grand Prix",
-    "meeting_official_name": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2026",
-    "location": "Miami Gardens",
-    "country_key": 19,
-    "country_code": "USA",
-    "country_name": "United States",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-states-flag.png",
-    "circuit_key": 151,
-    "circuit_short_name": "Miami",
-    "circuit_type": "Temporary - Street",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/151/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Miami%20carbon.png",
-    "gmt_offset": "-04:00:00",
-    "date_start": "2026-05-01T16:00:00+00:00",
-    "date_end": "2026-05-03T22:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1285,
-    "meeting_name": "Canadian Grand Prix",
-    "meeting_official_name": "FORMULA 1 LENOVO GRAND PRIX DU CANADA 2026",
-    "location": "Montréal",
-    "country_key": 46,
-    "country_code": "CAN",
-    "country_name": "Canada",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/canada-flag.png",
-    "circuit_key": 23,
-    "circuit_short_name": "Montreal",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/23/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Canada%20carbon.png",
-    "gmt_offset": "-04:00:00",
-    "date_start": "2026-05-22T16:30:00+00:00",
-    "date_end": "2026-05-24T22:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1286,
-    "meeting_name": "Monaco Grand Prix",
-    "meeting_official_name": "FORMULA 1 LOUIS VUITTON GRAND PRIX DE MONACO 2026",
-    "location": "Monte Carlo",
-    "country_key": 114,
-    "country_code": "MON",
-    "country_name": "Monaco",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/monaco-flag.png",
-    "circuit_key": 22,
-    "circuit_short_name": "Monte Carlo",
-    "circuit_type": "Temporary - Street",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/22/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Monaco%20carbon.png",
-    "gmt_offset": "02:00:00",
-    "date_start": "2026-06-05T11:30:00+00:00",
-    "date_end": "2026-06-07T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1287,
-    "meeting_name": "Barcelona Grand Prix",
-    "meeting_official_name": "FORMULA 1 MSC CRUISES GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
-    "location": "Barcelona",
-    "country_key": 1,
-    "country_code": "ESP",
-    "country_name": "Spain",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/spain-flag.png",
-    "circuit_key": 15,
-    "circuit_short_name": "Catalunya",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/15/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Barcelona-Catalunya%20carbon.png",
-    "gmt_offset": "02:00:00",
-    "date_start": "2026-06-12T11:30:00+00:00",
-    "date_end": "2026-06-14T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1288,
-    "meeting_name": "Austrian Grand Prix",
-    "meeting_official_name": "FORMULA 1 LENOVO AUSTRIAN GRAND PRIX 2026",
-    "location": "Spielberg",
-    "country_key": 17,
-    "country_code": "AUT",
-    "country_name": "Austria",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/austria-flag.png",
-    "circuit_key": 19,
-    "circuit_short_name": "Spielberg",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/19/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Austria%20carbon.png",
-    "gmt_offset": "02:00:00",
-    "date_start": "2026-06-26T11:30:00+00:00",
-    "date_end": "2026-06-28T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1289,
-    "meeting_name": "British Grand Prix",
-    "meeting_official_name": "FORMULA 1 PIRELLI BRITISH GRAND PRIX 2026",
-    "location": "Silverstone",
-    "country_key": 2,
-    "country_code": "GBR",
-    "country_name": "United Kingdom",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-kingdom-flag.png",
-    "circuit_key": 2,
-    "circuit_short_name": "Silverstone",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/2/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great Britain%20carbon.png",
-    "gmt_offset": "01:00:00",
-    "date_start": "2026-07-03T11:30:00+00:00",
-    "date_end": "2026-07-05T16:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1290,
-    "meeting_name": "Belgian Grand Prix",
-    "meeting_official_name": "FORMULA 1 MOËT & CHANDON BELGIAN GRAND PRIX 2026",
-    "location": "Spa-Francorchamps",
-    "country_key": 16,
-    "country_code": "BEL",
-    "country_name": "Belgium",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/belgium-flag.png",
-    "circuit_key": 7,
-    "circuit_short_name": "Spa-Francorchamps",
-    "circuit_type": "Temporary - Road",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/7/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Belgium%20carbon.png",
-    "gmt_offset": "02:00:00",
-    "date_start": "2026-07-17T11:30:00+00:00",
-    "date_end": "2026-07-19T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1291,
-    "meeting_name": "Hungarian Grand Prix",
-    "meeting_official_name": "FORMULA 1 AWS HUNGARIAN GRAND PRIX 2026",
-    "location": "Budapest",
-    "country_key": 14,
-    "country_code": "HUN",
-    "country_name": "Hungary",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/hungary-flag.png",
-    "circuit_key": 4,
-    "circuit_short_name": "Hungaroring",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/4/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Hungary%20carbon.png",
-    "gmt_offset": "02:00:00",
-    "date_start": "2026-07-24T11:30:00+00:00",
-    "date_end": "2026-07-26T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1292,
-    "meeting_name": "Dutch Grand Prix",
-    "meeting_official_name": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2026",
-    "location": "Zandvoort",
-    "country_key": 133,
-    "country_code": "NED",
-    "country_name": "Netherlands",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/netherlands-flag.png",
-    "circuit_key": 55,
-    "circuit_short_name": "Zandvoort",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/55/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Netherlands%20carbon.png",
-    "gmt_offset": "02:00:00",
-    "date_start": "2026-08-21T10:30:00+00:00",
-    "date_end": "2026-08-23T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1293,
-    "meeting_name": "Italian Grand Prix",
-    "meeting_official_name": "FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2026",
-    "location": "Monza",
-    "country_key": 13,
-    "country_code": "ITA",
-    "country_name": "Italy",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/italy-flag.png",
-    "circuit_key": 39,
-    "circuit_short_name": "Monza",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/39/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Italy%20carbon.png",
-    "gmt_offset": "02:00:00",
-    "date_start": "2026-09-04T10:30:00+00:00",
-    "date_end": "2026-09-06T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1294,
-    "meeting_name": "Spanish Grand Prix",
-    "meeting_official_name": "FORMULA 1 TAG HEUER GRAN PREMIO DE ESPAÑA 2026",
-    "location": "Madrid",
-    "country_key": 1,
-    "country_code": "ESP",
-    "country_name": "Spain",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/spain-flag.png",
-    "circuit_key": 153,
-    "circuit_short_name": "Madring",
-    "circuit_type": "Temporary - Street",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/153/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Spain%20carbon.png",
-    "gmt_offset": "02:00:00",
-    "date_start": "2026-09-11T11:30:00+00:00",
-    "date_end": "2026-09-13T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1295,
-    "meeting_name": "Azerbaijan Grand Prix",
-    "meeting_official_name": "FORMULA 1 QATAR AIRWAYS AZERBAIJAN GRAND PRIX 2026",
-    "location": "Baku",
-    "country_key": 30,
-    "country_code": "AZE",
-    "country_name": "Azerbaijan",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/azerbaijan-flag.png",
-    "circuit_key": 144,
-    "circuit_short_name": "Baku",
-    "circuit_type": "Temporary - Street",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/144/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Azerbaijan%20carbon.png",
-    "gmt_offset": "04:00:00",
-    "date_start": "2026-09-24T08:30:00+00:00",
-    "date_end": "2026-09-26T13:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1296,
-    "meeting_name": "Singapore Grand Prix",
-    "meeting_official_name": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2026",
-    "location": "Marina Bay",
-    "country_key": 157,
-    "country_code": "SGP",
-    "country_name": "Singapore",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/singapore-flag.png",
-    "circuit_key": 61,
-    "circuit_short_name": "Singapore",
-    "circuit_type": "Temporary - Street",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/61/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Singapore%20carbon.png",
-    "gmt_offset": "08:00:00",
-    "date_start": "2026-10-09T08:30:00+00:00",
-    "date_end": "2026-10-11T14:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1297,
-    "meeting_name": "United States Grand Prix",
-    "meeting_official_name": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026",
-    "location": "Austin",
-    "country_key": 19,
-    "country_code": "USA",
-    "country_name": "United States",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-states-flag.png",
-    "circuit_key": 9,
-    "circuit_short_name": "Austin",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/9/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/United States%20carbon.png",
-    "gmt_offset": "-05:00:00",
-    "date_start": "2026-10-23T17:30:00+00:00",
-    "date_end": "2026-10-25T22:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1298,
-    "meeting_name": "Mexico City Grand Prix",
-    "meeting_official_name": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
-    "location": "Mexico City",
-    "country_key": 8,
-    "country_code": "MEX",
-    "country_name": "Mexico",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/mexico-flag.png",
-    "circuit_key": 65,
-    "circuit_short_name": "Mexico City",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/65/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Mexico%20carbon.png",
-    "gmt_offset": "-06:00:00",
-    "date_start": "2026-10-30T18:30:00+00:00",
-    "date_end": "2026-11-01T22:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1299,
-    "meeting_name": "São Paulo Grand Prix",
-    "meeting_official_name": "FORMULA 1 MSC CRUISES GRANDE PRÊMIO DE SÃO PAULO 2026",
-    "location": "São Paulo",
-    "country_key": 10,
-    "country_code": "BRA",
-    "country_name": "Brazil",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/brazil-flag.png",
-    "circuit_key": 14,
-    "circuit_short_name": "Interlagos",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/14/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Brazil%20carbon.png",
-    "gmt_offset": "-03:00:00",
-    "date_start": "2026-11-06T15:30:00+00:00",
-    "date_end": "2026-11-08T19:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1300,
-    "meeting_name": "Las Vegas Grand Prix",
-    "meeting_official_name": "FORMULA 1 HEINEKEN LAS VEGAS GRAND PRIX 2026",
-    "location": "Las Vegas",
-    "country_key": 19,
-    "country_code": "USA",
-    "country_name": "United States",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-states-flag.png",
-    "circuit_key": 152,
-    "circuit_short_name": "Las Vegas",
-    "circuit_type": "Temporary - Street",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/152/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Las Vegas%20carbon.png",
-    "gmt_offset": "-08:00:00",
-    "date_start": "2026-11-20T00:30:00+00:00",
-    "date_end": "2026-11-22T06:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1301,
-    "meeting_name": "Qatar Grand Prix",
-    "meeting_official_name": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026",
-    "location": "Lusail",
-    "country_key": 149,
-    "country_code": "QAT",
-    "country_name": "Qatar",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/qatar-flag.png",
-    "circuit_key": 150,
-    "circuit_short_name": "Lusail",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/150/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Qatar%20carbon.png",
-    "gmt_offset": "03:00:00",
-    "date_start": "2026-11-27T13:30:00+00:00",
-    "date_end": "2026-11-29T18:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  },
-  {
-    "meeting_key": 1302,
-    "meeting_name": "Abu Dhabi Grand Prix",
-    "meeting_official_name": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026",
-    "location": "Yas Marina",
-    "country_key": 21,
-    "country_code": "UAE",
-    "country_name": "United Arab Emirates",
-    "country_flag": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-arab-emirates-flag.png",
-    "circuit_key": 70,
-    "circuit_short_name": "Yas Marina Circuit",
-    "circuit_type": "Permanent",
-    "circuit_info_url": "https://api.multiviewer.app/api/v1/circuits/70/2026",
-    "circuit_image": "https://media.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Abu Dhabi%20carbon.png",
-    "gmt_offset": "04:00:00",
-    "date_start": "2026-12-04T09:30:00+00:00",
-    "date_end": "2026-12-06T15:00:00+00:00",
-    "year": 2026,
-    "is_cancelled": false
-  }
+2026-04-30T16:16:33.008866389Z [inf]  Starting Container
+2026-04-30T16:16:34.031429297Z [inf]  Starting api
+2026-04-30T16:16:34.031434735Z [inf]  Starting scrape-latest
+2026-04-30T16:16:34.031440986Z [err]  INFO:     Will watch for changes in these directories: ['/app']
+2026-04-30T16:16:34.031447180Z [err]  INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-04-30T16:16:34.031721042Z [err]  INFO:     Started reloader process [6] using StatReload
+2026-04-30T16:16:34.031728973Z [err]  INFO:     Started server process [9]
+2026-04-30T16:16:34.031739998Z [err]  INFO:     Waiting for application startup.
+2026-04-30T16:16:34.031745942Z [err]  INFO:     Application startup complete.
+2026-04-30T16:16:35.516796225Z [err]  2026-04-30 16:16:34.642 | INFO     | __main__:_ingest:172 - Ingesting 24 documents into 'meetings'
+2026-04-30T16:16:38.662808599Z [err]  
+Fetching sessions:   0%|          | 0/24 [00:00<?, ?it/s]
+Fetching sessions:   4%|▍         | 1/24 [00:00<00:05,  3.98it/s]
+Fetching sessions:   8%|▊         | 2/24 [00:00<00:04,  4.77it/s]
+Fetching sessions:  17%|█▋        | 4/24 [00:00<00:02,  8.76it/s]
+Fetching sessions:  25%|██▌       | 6/24 [00:00<00:01, 11.14it/s]
+Fetching sessions:  33%|███▎      | 8/24 [00:00<00:01, 13.25it/s]
+Fetching sessions:  42%|████▏     | 10/24 [00:00<00:00, 14.38it/s]
+Fetching sessions:  50%|█████     | 12/24 [00:01<00:00, 14.11it/s]
+Fetching sessions:  58%|█████▊    | 14/24 [00:01<00:00, 13.30it/s]
+Fetching sessions:  67%|██████▋   | 16/24 [00:01<00:00, 13.79it/s]
+2026-04-30T16:16:38.663388778Z [err]  
+Fetching sessions:  75%|███████▌  | 18/24 [00:01<00:00, 15.08it/s]
+Fetching sessions:  83%|████████▎ | 20/24 [00:01<00:00, 16.24it/s]
+Fetching sessions:  92%|█████████▏| 22/24 [00:01<00:00, 16.72it/s]
+Fetching sessions: 100%|██████████| 24/24 [00:01<00:00, 17.10it/s]
+Fetching sessions: 100%|██████████| 24/24 [00:01<00:00, 13.50it/s]
+2026-04-30T16:16:41.465194040Z [err]  │    205 │   │   │   │   (self._dns_host, self.port),                          │
+2026-04-30T16:16:41.465215462Z [err]  │    207 │   │   │   │   source_address=self.source_address,                   │
+2026-04-30T16:16:41.465222296Z [err]  ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+2026-04-30T16:16:41.465237106Z [err]  │ ╭───────────────────────────── locals ─────────────────────────────╮         │
+2026-04-30T16:16:41.465240742Z [err]  │ _new_conn                                                                    │
+2026-04-30T16:16:41.465246909Z [err]  │                                                                              │
+2026-04-30T16:16:41.465259393Z [err]  │    202 │   │   """                                                           │
+2026-04-30T16:16:41.465265124Z [err]  │    203 │   │   try:                                                          │
+2026-04-30T16:16:41.465270412Z [err]  │ ❱  204 │   │   │   sock = connection.create_connection(                      │
+2026-04-30T16:16:42.835904061Z [err]  │ ╰──────────────────────────────────────────────────────────────────╯         │
+2026-04-30T16:16:42.835913194Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/util/connection.py:60 in     │
+2026-04-30T16:16:42.835918607Z [err]  │ create_connection                                                            │
+2026-04-30T16:16:42.835925050Z [err]  │                                                                              │
+2026-04-30T16:16:42.837247692Z [err]  │    57 │   except UnicodeError:                                               │
+2026-04-30T16:16:42.837257327Z [err]  │    58 │   │   raise LocationParseError(f"'{host}', label empty or too long") │
+2026-04-30T16:16:42.837262655Z [err]  │    59 │                                                                      │
+2026-04-30T16:16:42.837273660Z [err]  │    61 │   │   af, socktype, proto, canonname, sa = res                       │
+2026-04-30T16:16:42.837278979Z [err]  │    62 │   │   sock = None                                                    │
+2026-04-30T16:16:42.837283772Z [err]  │    63 │   │   try:                                                           │
+2026-04-30T16:16:42.837293306Z [err]  │                                                                              │
+2026-04-30T16:16:42.837302632Z [err]  │ │        address = ('api', 8000)                │                            │
+2026-04-30T16:16:44.306926164Z [err]  │ │         family = <AddressFamily.AF_UNSPEC: 0> │                            │
+2026-04-30T16:16:44.306938765Z [err]  │ ❱ 967 │   for res in _socket.getaddrinfo(host, port, family, type, proto, fl │
+2026-04-30T16:16:44.306975220Z [err]  │ │ socket_options = [(6, 1, 1)]                  │                            │
+2026-04-30T16:16:44.306992808Z [err]  │ │        timeout = None                         │                            │
+2026-04-30T16:16:44.307003929Z [err]  │ ╰───────────────────────────────────────────────╯                            │
+2026-04-30T16:16:44.307011781Z [err]  │                                                                              │
+2026-04-30T16:16:44.307014388Z [err]  │                                                                              │
+2026-04-30T16:16:44.307024252Z [err]  │   964 │   # We override this function since we want to translate the numeric │
+2026-04-30T16:16:44.307024297Z [err]  │ /usr/local/lib/python3.10/socket.py:967 in getaddrinfo                       │
+2026-04-30T16:16:44.307045343Z [err]  │   966 │   addrlist = []                                                      │
+2026-04-30T16:16:46.082218436Z [err]  │   968 │   │   af, socktype, proto, canonname, sa = res                       │
+2026-04-30T16:16:46.082227328Z [err]  │   969 │   │   addrlist.append((_intenum_converter(af, AddressFamily),        │
+2026-04-30T16:16:46.082234659Z [err]  │   970 │   │   │   │   │   │    _intenum_converter(socktype, SocketKind),     │
+2026-04-30T16:16:46.082247833Z [err]  │ ╭──────────────── locals ─────────────────╮                                  │
+2026-04-30T16:16:46.082254771Z [err]  │ │ addrlist = []                           │                                  │
+2026-04-30T16:16:46.082265124Z [err]  │ │   family = <AddressFamily.AF_UNSPEC: 0> │                                  │
+2026-04-30T16:16:46.082278815Z [err]  │ │     host = 'api'                        │                                  │
+2026-04-30T16:16:46.082283203Z [err]  │ │    proto = 0                            │                                  │
+2026-04-30T16:16:46.082288898Z [err]  │ │     port = 8000                         │                                  │
+2026-04-30T16:16:46.082291948Z [err]  │ │     type = <SocketKind.SOCK_STREAM: 1>  │                                  │
+2026-04-30T16:16:46.082298959Z [err]  │ ╰─────────────────────────────────────────╯                                  │
+2026-04-30T16:16:46.082305419Z [err]  ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-04-30T16:16:47.745995593Z [err]  gaierror: [Errno -2] Name or service not known
+2026-04-30T16:16:47.746003414Z [err]  
+2026-04-30T16:16:47.746009252Z [err]  The above exception was the direct cause of the following exception:
+2026-04-30T16:16:47.746015596Z [err]  
+2026-04-30T16:16:47.746022153Z [err]  ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+2026-04-30T16:16:47.746028791Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py:787 in     │
+2026-04-30T16:16:47.746035372Z [err]  │ urlopen                                                                      │
+2026-04-30T16:16:47.746041659Z [err]  │                                                                              │
+2026-04-30T16:16:47.746047702Z [err]  │    784 │   │   │   response_conn = conn if not release_conn else None        │
+2026-04-30T16:16:47.746054289Z [err]  │    785 │   │   │                                                             │
+2026-04-30T16:16:47.746060420Z [err]  │    786 │   │   │   # Make the request on the HTTPConnection object           │
+2026-04-30T16:16:47.746066600Z [err]  │ ❱  787 │   │   │   response = self._make_request(                            │
+2026-04-30T16:16:47.746073019Z [err]  │    788 │   │   │   │   conn,                                                 │
+2026-04-30T16:16:47.746079154Z [err]  │    789 │   │   │   │   method,                                               │
+2026-04-30T16:16:47.746085058Z [err]  │    790 │   │   │   │   url,                                                  │
+2026-04-30T16:16:47.746091632Z [err]  │                                                                              │
+2026-04-30T16:16:47.746097895Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:16:49.216542420Z [err]  │ │                        port=8000): Failed to resolve 'api' ([Errno -2]   │ │
+2026-04-30T16:16:49.216558210Z [err]  │ │     assert_same_host = False                                             │ │
+2026-04-30T16:16:49.216569366Z [err]  │ │                        'application/json', 'Connection': 'keep-alive'}   │ │
+2026-04-30T16:16:49.216589126Z [err]  │ │                new_e = NameResolutionError("HTTPConnection(host='api',   │ │
+2026-04-30T16:16:49.216600430Z [err]  │ │                  err = None                                              │ │
+2026-04-30T16:16:49.216600640Z [err]  │ │                 body = None                                              │ │
+2026-04-30T16:16:49.216604995Z [err]  │ │                 conn = None                                              │ │
+2026-04-30T16:16:49.216614644Z [err]  │ │             body_pos = None                                              │ │
+2026-04-30T16:16:49.216618706Z [err]  │ │              headers = {'User-Agent': 'python-requests/2.32.4',          │ │
+2026-04-30T16:16:49.216624055Z [err]  │ │   destination_scheme = None                                              │ │
+2026-04-30T16:16:49.216625739Z [err]  │ │              chunked = False                                             │ │
+2026-04-30T16:16:49.216628594Z [err]  │ │                        'Accept-Encoding': 'gzip, deflate', 'Accept':     │ │
+2026-04-30T16:16:49.216633799Z [err]  │ │           clean_exit = False                                             │ │
+2026-04-30T16:16:50.450922628Z [err]  │ │                        │   fragment=None                                 │ │
+2026-04-30T16:16:50.450930140Z [err]  │ │                        )                                                 │ │
+2026-04-30T16:16:50.450937554Z [err]  │ │         pool_timeout = None                                              │ │
+2026-04-30T16:16:50.450998981Z [err]  │ │             redirect = False                                             │ │
+2026-04-30T16:16:50.451005789Z [err]  │ │         release_conn = False                                             │ │
+2026-04-30T16:16:50.451011220Z [err]  │ │    release_this_conn = True                                              │ │
+2026-04-30T16:16:50.451016063Z [err]  │ │        response_conn = <HTTPConnection(host='api', port=8000) at         │ │
+2026-04-30T16:16:50.451171172Z [err]  │ │                        Name or service not known)")                      │ │
+2026-04-30T16:16:50.451185727Z [err]  │ │                        │   scheme=None,                                  │ │
+2026-04-30T16:16:50.451192285Z [err]  │ │                        │   auth=None,                                    │ │
+2026-04-30T16:16:50.451198620Z [err]  │ │                        │   host=None,                                    │ │
+2026-04-30T16:16:50.451205098Z [err]  │ │                        │   port=None,                                    │ │
+2026-04-30T16:16:50.451210983Z [err]  │ │                        │   path='/v1/sessions',                          │ │
+2026-04-30T16:16:50.451216866Z [err]  │ │                        │   query='session_key=11253',                    │ │
+2026-04-30T16:16:51.654689133Z [err]  │ │          response_kw = {}                                                │ │
+2026-04-30T16:16:51.654709283Z [err]  │ │              retries = Retry(total=0, connect=None, read=False,          │ │
+2026-04-30T16:16:51.654714500Z [err]  │ │                        redirect=None, status=None)                       │ │
+2026-04-30T16:16:51.654719753Z [err]  │ │                 self = <urllib3.connectionpool.HTTPConnectionPool object │ │
+2026-04-30T16:16:51.654724575Z [err]  │ │                        at 0x7f0fba861f60>                                │ │
+2026-04-30T16:16:51.654742499Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:16:51.654754970Z [err]  │                                                                              │
+2026-04-30T16:16:51.654760805Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py:493 in     │
+2026-04-30T16:16:51.654770101Z [err]  │                                                                              │
+2026-04-30T16:16:52.770313592Z [err]  │    491 │   │   # urllib3.request. It also calls makefile (recv) on the socke │
+2026-04-30T16:16:52.770318393Z [err]  │    492 │   │   try:                                                          │
+2026-04-30T16:16:52.770323010Z [err]  │ ❱  493 │   │   │   conn.request(                                             │
+2026-04-30T16:16:52.770568180Z [err]  │    494 │   │   │   │   method,                                               │
+2026-04-30T16:16:52.770576124Z [err]  │    495 │   │   │   │   url,                                                  │
+2026-04-30T16:16:52.770581832Z [err]  │    496 │   │   │   │   body=body,                                            │
+2026-04-30T16:16:52.770585648Z [err]  │                                                                              │
+2026-04-30T16:16:52.770589303Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:16:52.770593610Z [err]  │ │                   body = None                                            │ │
+2026-04-30T16:16:52.770598310Z [err]  │ │                chunked = False                                           │ │
+2026-04-30T16:16:52.770607186Z [err]  │ │                   conn = <HTTPConnection(host='api', port=8000) at       │ │
+2026-04-30T16:16:52.770612070Z [err]  │ │                          0x7f0fba862890>                                 │ │
+2026-04-30T16:16:52.770617690Z [err]  │ │         decode_content = False                                           │ │
+2026-04-30T16:16:52.770624329Z [err]  │ │ enforce_content_length = True                                            │ │
+2026-04-30T16:16:52.770629976Z [err]  │ │                headers = {'User-Agent': 'python-requests/2.32.4',        │ │
+2026-04-30T16:16:54.107786113Z [err]  │ │                          'Accept-Encoding': 'gzip, deflate', 'Accept':   │ │
+2026-04-30T16:16:54.107796367Z [err]  │ │                          'application/json', 'Connection': 'keep-alive'} │ │
+2026-04-30T16:16:54.107806666Z [err]  │ │                 method = 'GET'                                           │ │
+2026-04-30T16:16:54.108066180Z [err]  │ │        preload_content = False                                           │ │
+2026-04-30T16:16:54.108072913Z [err]  │ │          response_conn = <HTTPConnection(host='api', port=8000) at       │ │
+2026-04-30T16:16:54.108077808Z [err]  │ │                          0x7f0fba862890>                                 │ │
+2026-04-30T16:16:54.108084296Z [err]  │ │                retries = Retry(total=0, connect=None, read=False,        │ │
+2026-04-30T16:16:54.108089191Z [err]  │ │                          redirect=None, status=None)                     │ │
+2026-04-30T16:16:54.108094805Z [err]  │ │                   self = <urllib3.connectionpool.HTTPConnectionPool      │ │
+2026-04-30T16:16:54.108100072Z [err]  │ │                          object at 0x7f0fba861f60>                       │ │
+2026-04-30T16:16:54.108131163Z [err]  │ │                timeout = Timeout(connect=None, read=None, total=None)    │ │
+2026-04-30T16:16:54.108137140Z [err]  │ │            timeout_obj = Timeout(connect=None, read=None, total=None)    │ │
+2026-04-30T16:16:54.108142312Z [err]  │ │                    url = '/v1/sessions?session_key=11253'                │ │
+2026-04-30T16:16:54.108147668Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:16:54.108152884Z [err]  │                                                                              │
+2026-04-30T16:16:55.504119932Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connection.py:500 in request │
+2026-04-30T16:16:55.504126248Z [err]  │                                                                              │
+2026-04-30T16:16:55.504140395Z [err]  │    498 │   │   for header, value in headers.items():                         │
+2026-04-30T16:16:55.504162584Z [err]  │    501 │   │                                                                 │
+2026-04-30T16:16:55.504170808Z [err]  │    502 │   │   # If we're given a body we start sending that in chunks.      │
+2026-04-30T16:16:55.504178532Z [err]  │    503 │   │   if chunks is not None:                                        │
+2026-04-30T16:16:55.504186986Z [err]  │                                                                              │
+2026-04-30T16:16:55.504194784Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:16:55.504203083Z [err]  │ │                   body = None                                            │ │
+2026-04-30T16:16:55.504210674Z [err]  │ │                chunked = False                                           │ │
+2026-04-30T16:16:55.504226483Z [err]  │ │          chunks_and_cl = ChunksAndContentLength(                         │ │
+2026-04-30T16:16:56.883419267Z [err]  │ │                headers = {'User-Agent': 'python-requests/2.32.4',        │ │
+2026-04-30T16:16:56.883428475Z [err]  │ │                          'Accept-Encoding': 'gzip, deflate', 'Accept':   │ │
+2026-04-30T16:16:56.883444224Z [err]  │ │                          │   'user-agent',                               │ │
+2026-04-30T16:16:56.883452776Z [err]  │ │                          │   'connection'                                │ │
+2026-04-30T16:16:56.883459197Z [err]  │ │            header_keys = frozenset({                                     │ │
+2026-04-30T16:16:56.883461317Z [err]  │ │                          })                                              │ │
+2026-04-30T16:16:56.883475336Z [err]  │ │                          │   'accept-encoding',                          │ │
+2026-04-30T16:16:56.883485785Z [err]  │ │                          │   'accept',                                   │ │
+2026-04-30T16:16:56.883491916Z [err]  │ │                          │   chunks=None,                                │ │
+2026-04-30T16:16:56.883493910Z [err]  │ │         content_length = None                                            │ │
+2026-04-30T16:16:56.883501221Z [err]  │ │                          │   content_length=None                         │ │
+2026-04-30T16:16:56.883507800Z [err]  │ │         decode_content = False                                           │ │
+2026-04-30T16:16:56.883511270Z [err]  │ │                          )                                               │ │
+2026-04-30T16:16:56.883515766Z [err]  │ │ enforce_content_length = True                                            │ │
+2026-04-30T16:16:56.883521263Z [err]  │ │                 header = 'Connection'                                    │ │
+2026-04-30T16:16:58.144344303Z [err]  │ │                          'application/json', 'Connection': 'keep-alive'} │ │
+2026-04-30T16:16:58.144351891Z [err]  │ │                 method = 'GET'                                           │ │
+2026-04-30T16:16:58.144358545Z [err]  │ │        preload_content = False                                           │ │
+2026-04-30T16:16:58.144365173Z [err]  │ │                   self = <HTTPConnection(host='api', port=8000) at       │ │
+2026-04-30T16:16:58.144371668Z [err]  │ │                          0x7f0fba862890>                                 │ │
+2026-04-30T16:16:58.144377747Z [err]  │ │   skip_accept_encoding = True                                            │ │
+2026-04-30T16:16:58.144384339Z [err]  │ │              skip_host = False                                           │ │
+2026-04-30T16:16:58.144392809Z [err]  │ │                    url = '/v1/sessions?session_key=11253'                │ │
+2026-04-30T16:16:58.144400438Z [err]  │ │                  value = 'keep-alive'                                    │ │
+2026-04-30T16:16:58.144407264Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:16:58.144413986Z [err]  │                                                                              │
+2026-04-30T16:16:58.144432615Z [err]  │ /usr/local/lib/python3.10/http/client.py:1298 in endheaders                  │
+2026-04-30T16:16:58.144439297Z [err]  │                                                                              │
+2026-04-30T16:16:58.144447237Z [err]  │   1295 │   │   │   self.__state = _CS_REQ_SENT                               │
+2026-04-30T16:16:58.144478780Z [err]  │   1296 │   │   else:                                                         │
+2026-04-30T16:17:00.002299599Z [err]  │ │ encode_chunked = False                                                   │ │
+2026-04-30T16:17:00.002308910Z [err]  │ │   message_body = None                                                    │ │
+2026-04-30T16:17:00.002313230Z [err]  │ │                  0x7f0fba862890>                                         │ │
+2026-04-30T16:17:00.002318893Z [err]  │ │           self = <HTTPConnection(host='api', port=8000) at               │ │
+2026-04-30T16:17:00.002322240Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:00.002328695Z [err]  │                                                                              │
+2026-04-30T16:17:00.002344743Z [err]  │   1301 │   │   │   │   encode_chunked=False):                                │
+2026-04-30T16:17:00.002351675Z [err]  │                                                                              │
+2026-04-30T16:17:00.002357507Z [err]  │   1297 │   │   │   raise CannotSendHeader()                                  │
+2026-04-30T16:17:00.002367366Z [err]  │ ❱ 1298 │   │   self._send_output(message_body, encode_chunked=encode_chunked │
+2026-04-30T16:17:00.002383676Z [err]  │   1300 │   def request(self, method, url, body=None, headers={}, *,          │
+2026-04-30T16:17:02.171018431Z [err]  │                                                                              │
+2026-04-30T16:17:02.171031279Z [err]  │   1056 │   │   msg = b"\r\n".join(self._buffer)                              │
+2026-04-30T16:17:02.171038417Z [err]  │   1057 │   │   del self._buffer[:]                                           │
+2026-04-30T16:17:02.171045675Z [err]  │ ❱ 1058 │   │   self.send(msg)                                                │
+2026-04-30T16:17:02.171051737Z [err]  │   1059 │   │                                                                 │
+2026-04-30T16:17:02.171065758Z [err]  │   1061                                                                       │
+2026-04-30T16:17:02.171072096Z [err]  │                                                                              │
+2026-04-30T16:17:02.171078476Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:17:02.171085983Z [err]  │ │ encode_chunked = False                                                   │ │
+2026-04-30T16:17:02.171093130Z [err]  │ │   message_body = None                                                    │ │
+2026-04-30T16:17:02.171099929Z [err]  │ │            msg = b'GET /v1/sessions?session_key=11253 HTTP/1.1\r\nHost:  │ │
+2026-04-30T16:17:03.566249659Z [err]  │                                                                              │
+2026-04-30T16:17:03.566258770Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:17:03.566405320Z [err]  │ │                  0x7f0fba862890>                                         │ │
+2026-04-30T16:17:03.566412093Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:03.566417775Z [err]  │                                                                              │
+2026-04-30T16:17:03.566424965Z [err]  │ /usr/local/lib/python3.10/http/client.py:996 in send                         │
+2026-04-30T16:17:03.566432591Z [err]  │                                                                              │
+2026-04-30T16:17:03.566439839Z [err]  │    993 │   │                                                                 │
+2026-04-30T16:17:03.566454806Z [err]  │    994 │   │   if self.sock is None:                                         │
+2026-04-30T16:17:03.566461542Z [err]  │    995 │   │   │   if self.auto_open:                                        │
+2026-04-30T16:17:03.566468170Z [err]  │ ❱  996 │   │   │   │   self.connect()                                        │
+2026-04-30T16:17:03.566474718Z [err]  │    997 │   │   │   else:                                                     │
+2026-04-30T16:17:03.566480695Z [err]  │    998 │   │   │   │   raise NotConnected()                                  │
+2026-04-30T16:17:03.566487514Z [err]  │    999                                                                       │
+2026-04-30T16:17:04.638346269Z [err]  │    330 │   def connect(self) -> None:                                        │
+2026-04-30T16:17:04.638357177Z [err]  │ ❱  331 │   │   self.sock = self._new_conn()                                  │
+2026-04-30T16:17:04.638365169Z [err]  │    332 │   │   if self._tunnel_host:                                         │
+2026-04-30T16:17:04.638371838Z [err]  │    333 │   │   │   # If we're tunneling it means we're connected to our prox │
+2026-04-30T16:17:04.638379511Z [err]  │    334 │   │   │   self._has_connected_to_proxy = True                       │
+2026-04-30T16:17:04.638523094Z [err]  │ │ data = b'GET /v1/sessions?session_key=11253 HTTP/1.1\r\nHost:            │ │
+2026-04-30T16:17:04.638529519Z [err]  │ │        api:8000\r\nUser-Agent: python-'+101                              │ │
+2026-04-30T16:17:04.638535378Z [err]  │ │ self = <HTTPConnection(host='api', port=8000) at 0x7f0fba862890>         │ │
+2026-04-30T16:17:04.638540748Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:04.638545843Z [err]  │                                                                              │
+2026-04-30T16:17:04.638551638Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connection.py:331 in connect │
+2026-04-30T16:17:04.638557926Z [err]  │                                                                              │
+2026-04-30T16:17:04.638563584Z [err]  │    328 │   │   │   │   │   response.close()                                  │
+2026-04-30T16:17:04.638569410Z [err]  │    329 │                                                                     │
+2026-04-30T16:17:05.931848685Z [err]  │                                                                              │
+2026-04-30T16:17:05.931859898Z [err]  │ ╭───────────────────────────── locals ─────────────────────────────╮         │
+2026-04-30T16:17:05.931867721Z [err]  │ │ self = <HTTPConnection(host='api', port=8000) at 0x7f0fba862890> │         │
+2026-04-30T16:17:05.931876498Z [err]  │ ╰──────────────────────────────────────────────────────────────────╯         │
+2026-04-30T16:17:05.932338043Z [err]  │    212 │   │   except SocketTimeout as e:                                    │
+2026-04-30T16:17:05.932350590Z [err]  │    213 │   │   │   raise ConnectTimeoutError(                                │
+2026-04-30T16:17:05.932357995Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connection.py:211 in         │
+2026-04-30T16:17:05.932370578Z [err]  │ _new_conn                                                                    │
+2026-04-30T16:17:05.932398466Z [err]  │    209 │   │   │   )                                                         │
+2026-04-30T16:17:05.932406813Z [err]  │    210 │   │   except socket.gaierror as e:                                  │
+2026-04-30T16:17:05.932414045Z [err]  │ ❱  211 │   │   │   raise NameResolutionError(self.host, self, e) from e      │
+2026-04-30T16:17:07.485359585Z [err]  │    214 │   │   │   │   self,                                                 │
+2026-04-30T16:17:07.485369012Z [err]  │                                                                              │
+2026-04-30T16:17:07.485372905Z [err]  NameResolutionError: HTTPConnection(host='api', port=8000): Failed to resolve 
+2026-04-30T16:17:07.485380493Z [err]  'api' ([Errno -2] Name or service not known)
+2026-04-30T16:17:07.485387217Z [err]  
+2026-04-30T16:17:07.485389550Z [err]  
+2026-04-30T16:17:07.485399298Z [err]  The above exception was the direct cause of the following exception:
+2026-04-30T16:17:07.485402406Z [err]  │ ╭───────────────────────────── locals ─────────────────────────────╮         │
+2026-04-30T16:17:07.485411418Z [err]  │ │ self = <HTTPConnection(host='api', port=8000) at 0x7f0fba862890> │         │
+2026-04-30T16:17:07.485411789Z [err]  │ /usr/local/lib/python3.10/site-packages/requests/adapters.py:667 in send     │
+2026-04-30T16:17:07.485421896Z [err]  │ ╰──────────────────────────────────────────────────────────────────╯         │
+2026-04-30T16:17:07.485423399Z [err]  │                                                                              │
+2026-04-30T16:17:09.198557816Z [err]  │   664 │   │   │   timeout = TimeoutSauce(connect=timeout, read=timeout)      │
+2026-04-30T16:17:09.198564640Z [err]  │   665 │   │                                                                  │
+2026-04-30T16:17:09.198571306Z [err]  │   666 │   │   try:                                                           │
+2026-04-30T16:17:09.198577840Z [err]  │ ❱ 667 │   │   │   resp = conn.urlopen(                                       │
+2026-04-30T16:17:09.198872315Z [err]  │   668 │   │   │   │   method=request.method,                                 │
+2026-04-30T16:17:09.198908318Z [err]  │ │ proxies = OrderedDict()                                                  │ │
+2026-04-30T16:17:09.198915741Z [err]  │ │ request = <PreparedRequest [GET]>                                        │ │
+2026-04-30T16:17:09.199351739Z [err]  │   669 │   │   │   │   url=url,                                               │
+2026-04-30T16:17:09.199373186Z [err]  │   670 │   │   │   │   body=request.body,                                     │
+2026-04-30T16:17:09.199381601Z [err]  │                                                                              │
+2026-04-30T16:17:09.199388425Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:17:09.199401782Z [err]  │ │    cert = None                                                           │ │
+2026-04-30T16:17:09.199409078Z [err]  │ │ chunked = False                                                          │ │
+2026-04-30T16:17:09.199415814Z [err]  │ │    conn = <urllib3.connectionpool.HTTPConnectionPool object at           │ │
+2026-04-30T16:17:09.199422978Z [err]  │ │           0x7f0fba861f60>                                                │ │
+2026-04-30T16:17:10.453002416Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:10.453017573Z [err]  │                                                                              │
+2026-04-30T16:17:10.453036118Z [err]  │ │    self = <requests.adapters.HTTPAdapter object at 0x7f0fba860e20>       │ │
+2026-04-30T16:17:10.453043803Z [err]  │ │  stream = False                                                          │ │
+2026-04-30T16:17:10.453052184Z [err]  │ │ timeout = Timeout(connect=None, read=None, total=None)                   │ │
+2026-04-30T16:17:10.453060126Z [err]  │ │     url = '/v1/sessions?session_key=11253'                               │ │
+2026-04-30T16:17:10.453066775Z [err]  │ │  verify = True                                                           │ │
+2026-04-30T16:17:10.453275823Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py:841 in     │
+2026-04-30T16:17:10.453285519Z [err]  │ urlopen                                                                      │
+2026-04-30T16:17:10.453293659Z [err]  │                                                                              │
+2026-04-30T16:17:10.453300869Z [err]  │    838 │   │   │   elif isinstance(new_e, (OSError, HTTPException)):         │
+2026-04-30T16:17:10.453308127Z [err]  │    839 │   │   │   │   new_e = ProtocolError("Connection aborted.", new_e)   │
+2026-04-30T16:17:10.453341492Z [err]  │    840 │   │   │                                                             │
+2026-04-30T16:17:10.453349821Z [err]  │ ❱  841 │   │   │   retries = retries.increment(                              │
+2026-04-30T16:17:10.453356329Z [err]  │    842 │   │   │   │   method, url, error=new_e, _pool=self, _stacktrace=sys │
+2026-04-30T16:17:11.759260101Z [err]  │    843 │   │   │   )                                                         │
+2026-04-30T16:17:11.759267756Z [err]  │    844 │   │   │   retries.sleep()                                           │
+2026-04-30T16:17:11.759273996Z [err]  │                                                                              │
+2026-04-30T16:17:11.759279949Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:17:11.759285841Z [err]  │ │     assert_same_host = False                                             │ │
+2026-04-30T16:17:11.759292638Z [err]  │ │                 body = None                                              │ │
+2026-04-30T16:17:11.759298538Z [err]  │ │             body_pos = None                                              │ │
+2026-04-30T16:17:11.759304347Z [err]  │ │              chunked = False                                             │ │
+2026-04-30T16:17:11.759310039Z [err]  │ │           clean_exit = False                                             │ │
+2026-04-30T16:17:11.759316540Z [err]  │ │                 conn = None                                              │ │
+2026-04-30T16:17:11.759322753Z [err]  │ │       decode_content = False                                             │ │
+2026-04-30T16:17:11.759328455Z [err]  │ │   destination_scheme = None                                              │ │
+2026-04-30T16:17:11.759334856Z [err]  │ │                  err = None                                              │ │
+2026-04-30T16:17:11.759341274Z [err]  │ │              headers = {'User-Agent': 'python-requests/2.32.4',          │ │
+2026-04-30T16:17:11.759378680Z [err]  │ │                        'Accept-Encoding': 'gzip, deflate', 'Accept':     │ │
+2026-04-30T16:17:13.565177115Z [err]  │ │                        'application/json', 'Connection': 'keep-alive'}   │ │
+2026-04-30T16:17:13.565183633Z [err]  │ │ http_tunnel_required = False                                             │ │
+2026-04-30T16:17:13.565189358Z [err]  │ │               method = 'GET'                                             │ │
+2026-04-30T16:17:13.565195646Z [err]  │ │                new_e = NameResolutionError("HTTPConnection(host='api',   │ │
+2026-04-30T16:17:13.565202839Z [err]  │ │                        port=8000): Failed to resolve 'api' ([Errno -2]   │ │
+2026-04-30T16:17:13.565209567Z [err]  │ │                        Name or service not known)")                      │ │
+2026-04-30T16:17:13.565215797Z [err]  │ │           parsed_url = Url(                                              │ │
+2026-04-30T16:17:13.565222606Z [err]  │ │                        │   scheme=None,                                  │ │
+2026-04-30T16:17:13.565230904Z [err]  │ │                        │   auth=None,                                    │ │
+2026-04-30T16:17:13.565237421Z [err]  │ │                        │   host=None,                                    │ │
+2026-04-30T16:17:13.565316590Z [err]  │ │                        │   port=None,                                    │ │
+2026-04-30T16:17:13.565325066Z [err]  │ │                        │   path='/v1/sessions',                          │ │
+2026-04-30T16:17:13.565332174Z [err]  │ │                        │   query='session_key=11253',                    │ │
+2026-04-30T16:17:13.565340144Z [err]  │ │                        │   fragment=None                                 │ │
+2026-04-30T16:17:13.565587434Z [err]  │ │                        )                                                 │ │
+2026-04-30T16:17:15.356270586Z [err]  │ │                        redirect=None, status=None)                       │ │
+2026-04-30T16:17:15.356284544Z [err]  │ │                 self = <urllib3.connectionpool.HTTPConnectionPool object │ │
+2026-04-30T16:17:15.356303661Z [err]  │ │              timeout = Timeout(connect=None, read=None, total=None)      │ │
+2026-04-30T16:17:15.356311352Z [err]  │ │          timeout_obj = Timeout(connect=None, read=None, total=None)      │ │
+2026-04-30T16:17:15.356319489Z [err]  │ │                  url = '/v1/sessions?session_key=11253'                  │ │
+2026-04-30T16:17:15.357187294Z [err]  │ │         pool_timeout = None                                              │ │
+2026-04-30T16:17:15.357191288Z [err]  │ │      preload_content = False                                             │ │
+2026-04-30T16:17:15.357206436Z [err]  │ │    release_this_conn = True                                              │ │
+2026-04-30T16:17:15.357210720Z [err]  │ │        response_conn = <HTTPConnection(host='api', port=8000) at         │ │
+2026-04-30T16:17:15.357216288Z [err]  │ │                        0x7f0fba862890>                                   │ │
+2026-04-30T16:17:15.357220931Z [err]  │ │          response_kw = {}                                                │ │
+2026-04-30T16:17:15.357225250Z [err]  │ │              retries = Retry(total=0, connect=None, read=False,          │ │
+2026-04-30T16:17:16.849809513Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/util/retry.py:535 in         │
+2026-04-30T16:17:16.849813903Z [err]  │ increment                                                                    │
+2026-04-30T16:17:16.849824403Z [err]  │   532 │   │                                                                  │
+2026-04-30T16:17:16.849828763Z [err]  │   533 │   │   if new_retry.is_exhausted():                                   │
+2026-04-30T16:17:16.849833532Z [err]  │   534 │   │   │   reason = error or ResponseError(cause)                     │
+2026-04-30T16:17:16.849837767Z [err]  │ ❱ 535 │   │   │   raise MaxRetryError(_pool, url, reason) from reason  # typ │
+2026-04-30T16:17:16.849847833Z [err]  │   537 │   │   log.debug("Incremented Retry for (url='%s'): %r", url, new_ret │
+2026-04-30T16:17:16.849853049Z [err]  │   538                                                                        │
+2026-04-30T16:17:16.849871526Z [err]  │ │             _pool = <urllib3.connectionpool.HTTPConnectionPool object at │ │
+2026-04-30T16:17:16.849878301Z [err]  │ │                     0x7f0fba861f60>                                      │ │
+2026-04-30T16:17:18.257099915Z [err]  │ │                     error=NameResolutionError("HTTPConnection(host='api… │ │
+2026-04-30T16:17:18.257114699Z [err]  │ │                     port=8000): Failed to resolve 'api' ([Errno -2] Name │ │
+2026-04-30T16:17:18.257123419Z [err]  │ │                     or service not known)"),                             │ │
+2026-04-30T16:17:18.257130753Z [err]  │ │                     │   │   status=None,                                 │ │
+2026-04-30T16:17:18.257137786Z [err]  │ │                     │   │   redirect_location=None                       │ │
+2026-04-30T16:17:18.257137831Z [err]  │ │       _stacktrace = <traceback object at 0x7f0fba75f0c0>                 │ │
+2026-04-30T16:17:18.257156876Z [err]  │ │             cause = 'unknown'                                            │ │
+2026-04-30T16:17:18.257165045Z [err]  │ │           connect = None                                                 │ │
+2026-04-30T16:17:18.257172648Z [err]  │ │             error = NameResolutionError("HTTPConnection(host='api',      │ │
+2026-04-30T16:17:18.257180517Z [err]  │ │                     port=8000): Failed to resolve 'api' ([Errno -2] Name │ │
+2026-04-30T16:17:18.257356802Z [err]  │ │                     │   │   method='GET',                                │ │
+2026-04-30T16:17:18.257368714Z [err]  │ │                     │   │                                                │ │
+2026-04-30T16:17:19.463237265Z [err]  │ │              self = Retry(total=0, connect=None, read=False,             │ │
+2026-04-30T16:17:19.463248792Z [err]  │ │                     redirect=None, status=None)                          │ │
+2026-04-30T16:17:19.463255117Z [err]  │ │                     │   ),                                               │ │
+2026-04-30T16:17:19.463255941Z [err]  │ │                     port=8000): Failed to resolve 'api' ([Errno -2] Name │ │
+2026-04-30T16:17:19.463263030Z [err]  │ │                     )                                                    │ │
+2026-04-30T16:17:19.463267518Z [err]  │ │            status = None                                                 │ │
+2026-04-30T16:17:19.463270838Z [err]  │ │                     or service not known)")                              │ │
+2026-04-30T16:17:19.463272647Z [err]  │ │            method = 'GET'                                                │ │
+2026-04-30T16:17:19.463282223Z [err]  │ │          redirect = None                                                 │ │
+2026-04-30T16:17:19.463282362Z [err]  │ │         new_retry = Retry(total=-1, connect=None, read=False,            │ │
+2026-04-30T16:17:19.463291246Z [err]  │ │                     redirect=None, status=None)                          │ │
+2026-04-30T16:17:19.463292212Z [err]  │ │ redirect_location = None                                                 │ │
+2026-04-30T16:17:19.463300136Z [err]  │ │             other = None                                                 │ │
+2026-04-30T16:17:19.463303423Z [err]  │ │          response = None                                                 │ │
+2026-04-30T16:17:19.463308203Z [err]  │ │              read = False                                                │ │
+2026-04-30T16:17:19.463315448Z [err]  │ │            reason = NameResolutionError("HTTPConnection(host='api',      │ │
+2026-04-30T16:17:20.622756897Z [err]  │ /app/openf1/services/f1_scraping/session_result.py:243 in                    │
+2026-04-30T16:17:20.622763967Z [err]  │ ingest_session_result                                                        │
+2026-04-30T16:17:20.622798978Z [err]  │ │      status_count = None                                                 │ │
+2026-04-30T16:17:20.622804623Z [err]  │ │             total = -1                                                   │ │
+2026-04-30T16:17:20.622822148Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:20.622835419Z [err]  MaxRetryError: HTTPConnectionPool(host='api', port=8000): Max retries exceeded 
+2026-04-30T16:17:20.622843816Z [err]  with url: /v1/sessions?session_key=11253 (Caused by 
+2026-04-30T16:17:20.622861865Z [err]  'api' ([Errno -2] Name or service not known)"))
+2026-04-30T16:17:20.622871936Z [err]  
+2026-04-30T16:17:20.622884431Z [err]  ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+2026-04-30T16:17:21.820729210Z [err]  │                                                                              │
+2026-04-30T16:17:21.820735433Z [err]  │   240 │   │   meeting_key = get_latest_meeting_key()                         │
+2026-04-30T16:17:21.820758889Z [err]  │   241 │   │   session_key = get_latest_session_key()                         │
+2026-04-30T16:17:21.820766460Z [err]  │   242 │                                                                      │
+2026-04-30T16:17:21.820772884Z [err]  │ ❱ 243 │   session_url = _session_key_to_page_url(session_key)                │
+2026-04-30T16:17:21.820778914Z [err]  │   244 │   logger.info(f"Ingesting result of session {session_key}, from {ses │
+2026-04-30T16:17:21.820785226Z [err]  │   245 │                                                                      │
+2026-04-30T16:17:21.820790916Z [err]  │   246 │   with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=". │
+2026-04-30T16:17:21.820797599Z [err]  │                                                                              │
+2026-04-30T16:17:21.820804071Z [err]  │ ╭────── locals ───────╮                                                      │
+2026-04-30T16:17:21.820810747Z [err]  │ │ meeting_key = 1281  │                                                      │
+2026-04-30T16:17:21.820816999Z [err]  │ │ session_key = 11253 │                                                      │
+2026-04-30T16:17:21.820822970Z [err]  │ ╰─────────────────────╯                                                      │
+2026-04-30T16:17:21.820829936Z [err]  │                                                                              │
+2026-04-30T16:17:21.820836119Z [err]  │ /app/openf1/services/f1_scraping/session_result.py:199 in                    │
+2026-04-30T16:17:23.029125100Z [err]  │ _session_key_to_page_url                                                     │
+2026-04-30T16:17:23.029131322Z [err]  │                                                                              │
+2026-04-30T16:17:23.029136081Z [err]  │   196                                                                        │
+2026-04-30T16:17:23.029140820Z [err]  │   197                                                                        │
+2026-04-30T16:17:23.029145457Z [err]  │   198 def _session_key_to_page_url(session_key: int) -> str:                 │
+2026-04-30T16:17:23.029150819Z [err]  │ ❱ 199 │   api_results = openf1_client.get(f"v1/sessions?session_key={session │
+2026-04-30T16:17:23.029157498Z [err]  │   200 │   if len(api_results) != 1:                                          │
+2026-04-30T16:17:23.029164102Z [err]  │   201 │   │   raise ValueError(                                              │
+2026-04-30T16:17:23.029171147Z [err]  │   202 │   │   │   "Unexpected number of sessions for "                       │
+2026-04-30T16:17:23.029178295Z [err]  │                                                                              │
+2026-04-30T16:17:23.029185055Z [err]  │ ╭────── locals ───────╮                                                      │
+2026-04-30T16:17:23.029193105Z [err]  │ │ session_key = 11253 │                                                      │
+2026-04-30T16:17:23.029199835Z [err]  │ ╰─────────────────────╯                                                      │
+2026-04-30T16:17:23.029206584Z [err]  │                                                                              │
+2026-04-30T16:17:23.029213362Z [err]  │ /app/openf1/util/openf1_client.py:101 in get                                 │
+2026-04-30T16:17:23.029219855Z [err]  │                                                                              │
+2026-04-30T16:17:24.127695496Z [err]  │    98 │   │   if token:                                                      │
+2026-04-30T16:17:24.127703042Z [err]  │    99 │   │   │   headers["Authorization"] = f"Bearer {token}"               │
+2026-04-30T16:17:24.127710726Z [err]  │   100 │                                                                      │
+2026-04-30T16:17:24.130601168Z [err]  │ ❱ 101 │   response = requests.get(full_url, headers=headers, params=params)  │
+2026-04-30T16:17:24.130610571Z [err]  │   102 │   response.raise_for_status()                                        │
+2026-04-30T16:17:24.130616176Z [err]  │   103 │   return response.json()                                             │
+2026-04-30T16:17:24.130620934Z [err]  │   104                                                                        │
+2026-04-30T16:17:24.130625800Z [err]  │                                                                              │
+2026-04-30T16:17:24.130631746Z [err]  │ ╭────────────────────────── locals ──────────────────────────╮               │
+2026-04-30T16:17:24.130636060Z [err]  │ │ endpoint = 'v1/sessions?session_key=11253'                 │               │
+2026-04-30T16:17:24.130640347Z [err]  │ │ full_url = 'http://api:8000/v1/sessions?session_key=11253' │               │
+2026-04-30T16:17:24.130644644Z [err]  │ │  headers = {'Accept': 'application/json'}                  │               │
+2026-04-30T16:17:24.130649726Z [err]  │ │   params = None                                            │               │
+2026-04-30T16:17:24.130654207Z [err]  │ ╰────────────────────────────────────────────────────────────╯               │
+2026-04-30T16:17:25.304873899Z [err]  │ │    url = 'http://api:8000/v1/sessions?session_key=11253' │                 │
+2026-04-30T16:17:25.305361387Z [err]  │                                                                              │
+2026-04-30T16:17:25.305367951Z [err]  │ /usr/local/lib/python3.10/site-packages/requests/api.py:73 in get            │
+2026-04-30T16:17:25.305374764Z [err]  │                                                                              │
+2026-04-30T16:17:25.305381541Z [err]  │    70 │   :rtype: requests.Response                                          │
+2026-04-30T16:17:25.305387745Z [err]  │    71 │   """                                                                │
+2026-04-30T16:17:25.305395145Z [err]  │    72 │                                                                      │
+2026-04-30T16:17:25.305401334Z [err]  │ ❱  73 │   return request("get", url, params=params, **kwargs)                │
+2026-04-30T16:17:25.305412893Z [err]  │    75                                                                        │
+2026-04-30T16:17:25.305425247Z [err]  │                                                                              │
+2026-04-30T16:17:25.305435998Z [err]  │ ╭───────────────────────── locals ─────────────────────────╮                 │
+2026-04-30T16:17:25.305441718Z [err]  │ │ kwargs = {'headers': {'Accept': 'application/json'}}     │                 │
+2026-04-30T16:17:26.544858183Z [err]  │                                                                              │
+2026-04-30T16:17:26.544864505Z [err]  │ /usr/local/lib/python3.10/site-packages/requests/api.py:59 in request        │
+2026-04-30T16:17:26.544872910Z [err]  │                                                                              │
+2026-04-30T16:17:26.544879120Z [err]  │    56 │   # avoid leaving sockets open which can trigger a ResourceWarning i │
+2026-04-30T16:17:26.544885499Z [err]  │    57 │   # cases, and look like a memory leak in others.                    │
+2026-04-30T16:17:26.544891501Z [err]  │    58 │   with sessions.Session() as session:                                │
+2026-04-30T16:17:26.544897827Z [err]  │ ❱  59 │   │   return session.request(method=method, url=url, **kwargs)       │
+2026-04-30T16:17:26.544903819Z [err]  │    60                                                                        │
+2026-04-30T16:17:26.544910898Z [err]  │    61                                                                        │
+2026-04-30T16:17:26.544917740Z [err]  │    62 def get(url, params=None, **kwargs):                                   │
+2026-04-30T16:17:26.544924241Z [err]  │                                                                              │
+2026-04-30T16:17:26.544930188Z [err]  │ ╭─────────────────────────────── locals ────────────────────────────────╮    │
+2026-04-30T16:17:26.544935776Z [err]  │ │  kwargs = {'params': None, 'headers': {'Accept': 'application/json'}} │    │
+2026-04-30T16:17:28.030980918Z [err]  │   592                                                                        │
+2026-04-30T16:17:28.030993774Z [err]  │                                                                              │
+2026-04-30T16:17:28.031001349Z [err]  │ ❱ 589 │   │   resp = self.send(prep, **send_kwargs)                          │
+2026-04-30T16:17:28.031010572Z [err]  │   590 │   │                                                                  │
+2026-04-30T16:17:28.031066132Z [err]  │ │  method = 'get'                                                       │    │
+2026-04-30T16:17:28.031079639Z [err]  │ │     url = 'http://api:8000/v1/sessions?session_key=11253'             │    │
+2026-04-30T16:17:28.031087266Z [err]  │ ╰───────────────────────────────────────────────────────────────────────╯    │
+2026-04-30T16:17:28.031094354Z [err]  │                                                                              │
+2026-04-30T16:17:28.031101798Z [err]  │ /usr/local/lib/python3.10/site-packages/requests/sessions.py:589 in request  │
+2026-04-30T16:17:28.031108880Z [err]  │                                                                              │
+2026-04-30T16:17:28.031119415Z [err]  │   586 │   │   │   "allow_redirects": allow_redirects,                        │
+2026-04-30T16:17:28.031126391Z [err]  │   587 │   │   }                                                              │
+2026-04-30T16:17:29.811758054Z [err]  │ │ allow_redirects = True                                                 │   │
+2026-04-30T16:17:29.811763477Z [err]  │ │            auth = None                                                 │   │
+2026-04-30T16:17:29.811769032Z [err]  │ │            cert = None                                                 │   │
+2026-04-30T16:17:29.811779984Z [err]  │ │            data = None                                                 │   │
+2026-04-30T16:17:29.811785710Z [err]  │ │           files = None                                                 │   │
+2026-04-30T16:17:29.811791074Z [err]  │ │         headers = {'Accept': 'application/json'}                       │   │
+2026-04-30T16:17:29.811796684Z [err]  │ │           hooks = None                                                 │   │
+2026-04-30T16:17:29.811802170Z [err]  │ │            json = None                                                 │   │
+2026-04-30T16:17:29.811819297Z [err]  │ │            prep = <PreparedRequest [GET]>                              │   │
+2026-04-30T16:17:29.811824867Z [err]  │ │         proxies = {}                                                   │   │
+2026-04-30T16:17:29.812004211Z [err]  │ │             req = <Request [GET]>                                      │   │
+2026-04-30T16:17:31.739802920Z [err]  │ │          stream = None                                                 │   │
+2026-04-30T16:17:31.740186730Z [err]  │ │            self = <requests.sessions.Session object at 0x7f0fbaa33670> │   │
+2026-04-30T16:17:31.740192987Z [err]  │ │     send_kwargs = {                                                    │   │
+2026-04-30T16:17:31.740198846Z [err]  │ │                   │   'timeout': None,                                 │   │
+2026-04-30T16:17:31.740206692Z [err]  │ │                   │   'allow_redirects': True,                         │   │
+2026-04-30T16:17:31.740213159Z [err]  │ │                   │   'proxies': OrderedDict(),                        │   │
+2026-04-30T16:17:31.740218650Z [err]  │ │                   │   'stream': False,                                 │   │
+2026-04-30T16:17:31.740224694Z [err]  │ │                   │   'verify': True,                                  │   │
+2026-04-30T16:17:31.740237391Z [err]  │ │                   }                                                    │   │
+2026-04-30T16:17:31.740243996Z [err]  │ │        settings = {                                                    │   │
+2026-04-30T16:17:31.740250278Z [err]  │ │                   │   'proxies': OrderedDict(),                        │   │
+2026-04-30T16:17:31.740262129Z [err]  │ │                   │   'verify': True,                                  │   │
+2026-04-30T16:17:31.740268347Z [err]  │ │                   │   'cert': None                                     │   │
+2026-04-30T16:17:31.740274990Z [err]  │ │                   }                                                    │   │
+2026-04-30T16:17:33.511727544Z [err]  │ │             url = 'http://api:8000/v1/sessions?session_key=11253'      │   │
+2026-04-30T16:17:33.511733897Z [err]  │ │          verify = None                                                 │   │
+2026-04-30T16:17:33.511740149Z [err]  │ ╰────────────────────────────────────────────────────────────────────────╯   │
+2026-04-30T16:17:33.511752547Z [err]  │ /usr/local/lib/python3.10/site-packages/requests/sessions.py:703 in send     │
+2026-04-30T16:17:33.511758142Z [err]  │                                                                              │
+2026-04-30T16:17:33.511766204Z [err]  │   700 │   │   start = preferred_clock()                                      │
+2026-04-30T16:17:33.511772849Z [err]  │   701 │   │                                                                  │
+2026-04-30T16:17:33.511778823Z [err]  │   702 │   │   # Send the request                                             │
+2026-04-30T16:17:33.511784613Z [err]  │ ❱ 703 │   │   r = adapter.send(request, **kwargs)                            │
+2026-04-30T16:17:33.511790489Z [err]  │   704 │   │                                                                  │
+2026-04-30T16:17:33.511796885Z [err]  │   705 │   │   # Total elapsed time of the request (approximately)            │
+2026-04-30T16:17:33.511803245Z [err]  │   706 │   │   elapsed = preferred_clock() - start                            │
+2026-04-30T16:17:33.511809288Z [err]  │                                                                              │
+2026-04-30T16:17:34.719754188Z [err]  │ │ allow_redirects = True                                                   │ │
+2026-04-30T16:17:34.719761796Z [err]  │ │           hooks = {'response': []}                                       │ │
+2026-04-30T16:17:34.719768683Z [err]  │ │          kwargs = {                                                      │ │
+2026-04-30T16:17:34.719784997Z [err]  │ │                   │   'proxies': OrderedDict(),                          │ │
+2026-04-30T16:17:34.719792815Z [err]  │ │                   │   'stream': False,                                   │ │
+2026-04-30T16:17:34.719828615Z [err]  │ │                   0x7f0fba860e20>                                        │ │
+2026-04-30T16:17:34.719843979Z [err]  │ │            self = <requests.sessions.Session object at 0x7f0fbaa33670>   │ │
+2026-04-30T16:17:34.719855186Z [err]  │ │           start = 1777565799.3729937                                     │ │
+2026-04-30T16:17:36.365323248Z [err]  │ │          stream = False                                                  │ │
+2026-04-30T16:17:36.365329428Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:36.365334638Z [err]  │                                                                              │
+2026-04-30T16:17:36.365338905Z [err]  │ /usr/local/lib/python3.10/site-packages/requests/adapters.py:700 in send     │
+2026-04-30T16:17:36.365343984Z [err]  │                                                                              │
+2026-04-30T16:17:36.365348303Z [err]  │   697 │   │   │   │   # This branch is for urllib3 v1.22 and later.          │
+2026-04-30T16:17:36.365352925Z [err]  │   698 │   │   │   │   raise SSLError(e, request=request)                     │
+2026-04-30T16:17:36.365366392Z [err]  │ ❱ 700 │   │   │   raise ConnectionError(e, request=request)                  │
+2026-04-30T16:17:36.365384728Z [err]  │                                                                              │
+2026-04-30T16:17:37.718339948Z [err]  │ │    conn = <urllib3.connectionpool.HTTPConnectionPool object at           │ │
+2026-04-30T16:17:37.718345964Z [err]  │ │           0x7f0fba861f60>                                                │ │
+2026-04-30T16:17:37.718362526Z [err]  │ │    self = <requests.adapters.HTTPAdapter object at 0x7f0fba860e20>       │ │
+2026-04-30T16:17:37.718367936Z [err]  │ │  stream = False                                                          │ │
+2026-04-30T16:17:37.718373484Z [err]  │ │ timeout = Timeout(connect=None, read=None, total=None)                   │ │
+2026-04-30T16:17:37.718380059Z [err]  │ │     url = '/v1/sessions?session_key=11253'                               │ │
+2026-04-30T16:17:37.718388041Z [err]  │ │  verify = True                                                           │ │
+2026-04-30T16:17:37.718394452Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:37.718400563Z [err]  ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-04-30T16:17:39.133257771Z [err]  │ _new_conn                                                                    │
+2026-04-30T16:17:39.133297155Z [err]  ConnectionError: HTTPConnectionPool(host='api', port=8000): Max retries exceeded
+2026-04-30T16:17:39.133315830Z [err]  with url: /v1/sessions?session_key=11253 (Caused by 
+2026-04-30T16:17:39.133322842Z [err]  NameResolutionError("HTTPConnection(host='api', port=8000): Failed to resolve 
+2026-04-30T16:17:39.133339420Z [err]  'api' ([Errno -2] Name or service not known)"))
+2026-04-30T16:17:39.133347732Z [err]  ╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+2026-04-30T16:17:39.133354730Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connection.py:204 in         │
+2026-04-30T16:17:39.134185127Z [err]  │                                                                              │
+2026-04-30T16:17:39.134196696Z [err]  │    201 │   │   :return: New socket connection.                               │
+2026-04-30T16:17:39.134207134Z [err]  │    202 │   │   """                                                           │
+2026-04-30T16:17:39.134214194Z [err]  │    203 │   │   try:                                                          │
+2026-04-30T16:17:39.134220484Z [err]  │ ❱  204 │   │   │   sock = connection.create_connection(                      │
+2026-04-30T16:17:39.134228506Z [err]  │    205 │   │   │   │   (self._dns_host, self.port),                          │
+2026-04-30T16:17:39.134235519Z [err]  │    206 │   │   │   │   self.timeout,                                         │
+2026-04-30T16:17:39.134242976Z [err]  │    207 │   │   │   │   source_address=self.source_address,                   │
+2026-04-30T16:17:39.134251454Z [err]  │                                                                              │
+2026-04-30T16:17:40.464999583Z [err]  │ ╭───────────────────────────── locals ─────────────────────────────╮         │
+2026-04-30T16:17:40.465004987Z [err]  │ │ self = <HTTPConnection(host='api', port=8000) at 0x7f4ee4a226e0> │         │
+2026-04-30T16:17:40.465009635Z [err]  │ ╰──────────────────────────────────────────────────────────────────╯         │
+2026-04-30T16:17:40.465014022Z [err]  │                                                                              │
+2026-04-30T16:17:40.465024838Z [err]  │ create_connection                                                            │
+2026-04-30T16:17:40.465030938Z [err]  │                                                                              │
+2026-04-30T16:17:40.465036926Z [err]  │    57 │   except UnicodeError:                                               │
+2026-04-30T16:17:40.465043596Z [err]  │    58 │   │   raise LocationParseError(f"'{host}', label empty or too long") │
+2026-04-30T16:17:40.465056031Z [err]  │ ❱  60 │   for res in socket.getaddrinfo(host, port, family, socket.SOCK_STRE │
+2026-04-30T16:17:40.465061726Z [err]  │    61 │   │   af, socktype, proto, canonname, sa = res                       │
+2026-04-30T16:17:40.465067133Z [err]  │    62 │   │   sock = None                                                    │
+2026-04-30T16:17:40.465072400Z [err]  │    63 │   │   try:                                                           │
+2026-04-30T16:17:41.774905446Z [err]  │                                                                              │
+2026-04-30T16:17:41.774910341Z [err]  │ ╭─────────────────── locals ────────────────────╮                            │
+2026-04-30T16:17:41.774914954Z [err]  │ │        address = ('api', 8000)                │                            │
+2026-04-30T16:17:41.774921933Z [err]  │ │            err = None                         │                            │
+2026-04-30T16:17:41.774930894Z [err]  │ │           host = 'api'                        │                            │
+2026-04-30T16:17:41.774937202Z [err]  │ │           port = 8000                         │                            │
+2026-04-30T16:17:41.774949149Z [err]  │ │ source_address = None                         │                            │
+2026-04-30T16:17:41.774955612Z [err]  │ │        timeout = None                         │                            │
+2026-04-30T16:17:41.774962568Z [err]  │ ╰───────────────────────────────────────────────╯                            │
+2026-04-30T16:17:41.774985594Z [err]  │                                                                              │
+2026-04-30T16:17:41.775013043Z [err]  │   964 │   # We override this function since we want to translate the numeric │
+2026-04-30T16:17:43.025865054Z [err]  │   966 │   addrlist = []                                                      │
+2026-04-30T16:17:43.025871563Z [err]  │ ❱ 967 │   for res in _socket.getaddrinfo(host, port, family, type, proto, fl │
+2026-04-30T16:17:43.025878772Z [err]  │   968 │   │   af, socktype, proto, canonname, sa = res                       │
+2026-04-30T16:17:43.025892724Z [err]  │   970 │   │   │   │   │   │    _intenum_converter(socktype, SocketKind),     │
+2026-04-30T16:17:43.025899040Z [err]  │                                                                              │
+2026-04-30T16:17:43.025913344Z [err]  │ │ addrlist = []                           │                                  │
+2026-04-30T16:17:43.025920028Z [err]  │ │   family = <AddressFamily.AF_UNSPEC: 0> │                                  │
+2026-04-30T16:17:43.025926271Z [err]  │ │    flags = 0                            │                                  │
+2026-04-30T16:17:43.025942622Z [err]  │ │     host = 'api'                        │                                  │
+2026-04-30T16:17:43.025950372Z [err]  │ │     port = 8000                         │                                  │
+2026-04-30T16:17:43.025958716Z [err]  │ │    proto = 0                            │                                  │
+2026-04-30T16:17:43.025975473Z [err]  │ │     type = <SocketKind.SOCK_STREAM: 1>  │                                  │
+2026-04-30T16:17:45.203921985Z [err]  gaierror: [Errno -2] Name or service not known
+2026-04-30T16:17:45.203939585Z [err]  The above exception was the direct cause of the following exception:
+2026-04-30T16:17:45.203945964Z [err]  
+2026-04-30T16:17:45.203966473Z [err]  │ urlopen                                                                      │
+2026-04-30T16:17:45.204009477Z [err]  │    788 │   │   │   │   conn,                                                 │
+2026-04-30T16:17:46.682089313Z [err]  │    789 │   │   │   │   method,                                               │
+2026-04-30T16:17:46.682116778Z [err]  │    790 │   │   │   │   url,                                                  │
+2026-04-30T16:17:46.682124490Z [err]  │                                                                              │
+2026-04-30T16:17:46.682131743Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:17:46.682146754Z [err]  │ │                 body = None                                              │ │
+2026-04-30T16:17:46.682163487Z [err]  │ │             body_pos = None                                              │ │
+2026-04-30T16:17:46.682177562Z [err]  │ │           clean_exit = False                                             │ │
+2026-04-30T16:17:46.682184905Z [err]  │ │                 conn = None                                              │ │
+2026-04-30T16:17:46.682191584Z [err]  │ │       decode_content = False                                             │ │
+2026-04-30T16:17:46.682205449Z [err]  │ │                  err = None                                              │ │
+2026-04-30T16:17:46.682218525Z [err]  │ │                        'Accept-Encoding': 'gzip, deflate', 'Accept':     │ │
+2026-04-30T16:17:48.514913571Z [err]  │ │                        'application/json', 'Connection': 'keep-alive'}   │ │
+2026-04-30T16:17:48.514930312Z [err]  │ │ http_tunnel_required = False                                             │ │
+2026-04-30T16:17:48.514948522Z [err]  │ │                        port=8000): Failed to resolve 'api' ([Errno -2]   │ │
+2026-04-30T16:17:48.514961535Z [err]  │ │           parsed_url = Url(                                              │ │
+2026-04-30T16:17:48.514967442Z [err]  │ │                        │   scheme=None,                                  │ │
+2026-04-30T16:17:48.514973897Z [err]  │ │                        │   auth=None,                                    │ │
+2026-04-30T16:17:48.514979116Z [err]  │ │                        │   host=None,                                    │ │
+2026-04-30T16:17:48.514997391Z [err]  │ │                        │   query='session_key=11253',                    │ │
+2026-04-30T16:17:48.515017116Z [err]  │ │         pool_timeout = None                                              │ │
+2026-04-30T16:17:49.733087479Z [err]  │ │      preload_content = False                                             │ │
+2026-04-30T16:17:49.733096149Z [err]  │ │             redirect = False                                             │ │
+2026-04-30T16:17:49.733102987Z [err]  │ │         release_conn = False                                             │ │
+2026-04-30T16:17:49.733109063Z [err]  │ │    release_this_conn = True                                              │ │
+2026-04-30T16:17:49.733115705Z [err]  │ │        response_conn = <HTTPConnection(host='api', port=8000) at         │ │
+2026-04-30T16:17:49.733123516Z [err]  │ │                        0x7f4ee4a226e0>                                   │ │
+2026-04-30T16:17:49.733130030Z [err]  │ │          response_kw = {}                                                │ │
+2026-04-30T16:17:49.733135620Z [err]  │ │              retries = Retry(total=0, connect=None, read=False,          │ │
+2026-04-30T16:17:49.733141032Z [err]  │ │                        redirect=None, status=None)                       │ │
+2026-04-30T16:17:49.733146223Z [err]  │ │                 self = <urllib3.connectionpool.HTTPConnectionPool object │ │
+2026-04-30T16:17:49.733153929Z [err]  │ │                        at 0x7f4ee4a21d20>                                │ │
+2026-04-30T16:17:49.733161244Z [err]  │ │              timeout = Timeout(connect=None, read=None, total=None)      │ │
+2026-04-30T16:17:49.733167886Z [err]  │ │          timeout_obj = Timeout(connect=None, read=None, total=None)      │ │
+2026-04-30T16:17:49.733173422Z [err]  │ │                  url = '/v1/sessions?session_key=11253'                  │ │
+2026-04-30T16:17:49.733178346Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:51.154467645Z [err]  │                                                                              │
+2026-04-30T16:17:51.154532633Z [err]  │    490 │   │   # conn.request() calls http.client.*.request, not the method  │
+2026-04-30T16:17:51.154553904Z [err]  │    492 │   │   try:                                                          │
+2026-04-30T16:17:51.154571186Z [err]  │    494 │   │   │   │   method,                                               │
+2026-04-30T16:17:51.154577744Z [err]  │    495 │   │   │   │   url,                                                  │
+2026-04-30T16:17:51.154583795Z [err]  │    496 │   │   │   │   body=body,                                            │
+2026-04-30T16:17:51.155348989Z [err]  │ │                chunked = False                                           │ │
+2026-04-30T16:17:52.756385588Z [err]  │ │                          0x7f4ee4a226e0>                                 │ │
+2026-04-30T16:17:52.756664871Z [err]  │ │                timeout = Timeout(connect=None, read=None, total=None)    │ │
+2026-04-30T16:17:53.965067721Z [err]  │ │            timeout_obj = Timeout(connect=None, read=None, total=None)    │ │
+2026-04-30T16:17:53.965074371Z [err]  │ │                    url = '/v1/sessions?session_key=11253'                │ │
+2026-04-30T16:17:53.965454637Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:17:53.965463091Z [err]  │                                                                              │
+2026-04-30T16:17:53.965479761Z [err]  │    497 │   │   │   self.putheader("User-Agent", _get_default_user_agent())   │
+2026-04-30T16:17:53.965485383Z [err]  │    498 │   │   for header, value in headers.items():                         │
+2026-04-30T16:17:53.965496559Z [err]  │    499 │   │   │   self.putheader(header, value)                             │
+2026-04-30T16:17:53.965505104Z [err]  │    501 │   │                                                                 │
+2026-04-30T16:17:53.965514879Z [err]  │    502 │   │   # If we're given a body we start sending that in chunks.      │
+2026-04-30T16:17:53.965527006Z [err]  │    503 │   │   if chunks is not None:                                        │
+2026-04-30T16:17:53.965531730Z [err]  │                                                                              │
+2026-04-30T16:17:53.965536003Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:17:55.361148665Z [err]  │ │                   body = None                                            │ │
+2026-04-30T16:17:55.361216382Z [err]  │ │                          )                                               │ │
+2026-04-30T16:17:55.361229229Z [err]  │ │         content_length = None                                            │ │
+2026-04-30T16:17:55.361263249Z [err]  │ │                 header = 'Connection'                                    │ │
+2026-04-30T16:17:55.361272149Z [err]  │ │            header_keys = frozenset({                                     │ │
+2026-04-30T16:17:56.644099857Z [err]  │ │                  value = 'keep-alive'                                    │ │
+2026-04-30T16:17:56.644329677Z [err]  │ │                          })                                              │ │
+2026-04-30T16:17:56.644335631Z [err]  │ │                headers = {'User-Agent': 'python-requests/2.32.4',        │ │
+2026-04-30T16:17:56.644342702Z [err]  │ │                          'Accept-Encoding': 'gzip, deflate', 'Accept':   │ │
+2026-04-30T16:17:56.644347792Z [err]  │ │                          'application/json', 'Connection': 'keep-alive'} │ │
+2026-04-30T16:17:56.644353229Z [err]  │ │                 method = 'GET'                                           │ │
+2026-04-30T16:17:56.644363614Z [err]  │ │                   self = <HTTPConnection(host='api', port=8000) at       │ │
+2026-04-30T16:17:58.144880183Z [err]  │ ❱ 1298 │   │   self._send_output(message_body, encode_chunked=encode_chunked │
+2026-04-30T16:17:58.144886160Z [err]  │   1299 │                                                                     │
+2026-04-30T16:17:58.144892098Z [err]  │   1300 │   def request(self, method, url, body=None, headers={}, *,          │
+2026-04-30T16:17:58.144926281Z [err]  │ │   message_body = None                                                    │ │
+2026-04-30T16:17:58.144931909Z [err]  │ │           self = <HTTPConnection(host='api', port=8000) at               │ │
+2026-04-30T16:17:58.144939537Z [err]  │ │                  0x7f4ee4a226e0>                                         │ │
+2026-04-30T16:17:59.764579789Z [err]  │   1056 │   │   msg = b"\r\n".join(self._buffer)                              │
+2026-04-30T16:17:59.764593287Z [err]  │ ❱ 1058 │   │   self.send(msg)                                                │
+2026-04-30T16:17:59.764599218Z [err]  │   1059 │   │                                                                 │
+2026-04-30T16:17:59.764617925Z [err]  │                                                                              │
+2026-04-30T16:17:59.764631157Z [err]  │ │ encode_chunked = False                                                   │ │
+2026-04-30T16:18:01.657486118Z [err]  │    998 │   │   │   │   raise NotConnected()                                  │
+2026-04-30T16:18:01.657535145Z [err]  │    994 │   │   if self.sock is None:                                         │
+2026-04-30T16:18:01.657542323Z [err]  │    995 │   │   │   if self.auto_open:                                        │
+2026-04-30T16:18:01.657579965Z [err]  │ │           self = <HTTPConnection(host='api', port=8000) at               │ │
+2026-04-30T16:18:01.657661336Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:18:01.657667774Z [err]  │                                                                              │
+2026-04-30T16:18:01.657681253Z [err]  │                                                                              │
+2026-04-30T16:18:03.537062031Z [err]  │                                                                              │
+2026-04-30T16:18:03.537078637Z [err]  │ │ data = b'GET /v1/sessions?session_key=11253 HTTP/1.1\r\nHost:            │ │
+2026-04-30T16:18:03.537104204Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:18:03.537121831Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connection.py:331 in connect │
+2026-04-30T16:18:03.537154623Z [err]  │    330 │   def connect(self) -> None:                                        │
+2026-04-30T16:18:04.633873884Z [err]  │ ❱  331 │   │   self.sock = self._new_conn()                                  │
+2026-04-30T16:18:04.633881479Z [err]  │    332 │   │   if self._tunnel_host:                                         │
+2026-04-30T16:18:04.634341543Z [err]  │    333 │   │   │   # If we're tunneling it means we're connected to our prox │
+2026-04-30T16:18:04.634348775Z [err]  │    334 │   │   │   self._has_connected_to_proxy = True                       │
+2026-04-30T16:18:04.634359980Z [err]  │ ╭───────────────────────────── locals ─────────────────────────────╮         │
+2026-04-30T16:18:04.634375538Z [err]  │ ╰──────────────────────────────────────────────────────────────────╯         │
+2026-04-30T16:18:04.634389847Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connection.py:211 in         │
+2026-04-30T16:18:04.634395123Z [err]  │ _new_conn                                                                    │
+2026-04-30T16:18:04.634407862Z [err]  │                                                                              │
+2026-04-30T16:18:04.634414912Z [err]  │    208 │   │   │   │   socket_options=self.socket_options,                   │
+2026-04-30T16:18:04.634420900Z [err]  │    209 │   │   │   )                                                         │
+2026-04-30T16:18:04.634427350Z [err]  │    210 │   │   except socket.gaierror as e:                                  │
+2026-04-30T16:18:05.986684642Z [err]  │                                                                              │
+2026-04-30T16:18:07.539518064Z [err]  │                                                                              │
+2026-04-30T16:18:07.539570763Z [err]  │   669 │   │   │   │   url=url,                                               │
+2026-04-30T16:18:07.539576575Z [err]  │   670 │   │   │   │   body=request.body,                                     │
+2026-04-30T16:18:07.539594577Z [err]  │ │    cert = None                                                           │ │
+2026-04-30T16:18:07.539600254Z [err]  │ │ chunked = False                                                          │ │
+2026-04-30T16:18:08.895801635Z [err]  │ │ proxies = OrderedDict()                                                  │ │
+2026-04-30T16:18:08.895808372Z [err]  │ │ request = <PreparedRequest [GET]>                                        │ │
+2026-04-30T16:18:08.896292331Z [err]  │ │ timeout = Timeout(connect=None, read=None, total=None)                   │ │
+2026-04-30T16:18:08.896305168Z [err]  │ │  verify = True                                                           │ │
+2026-04-30T16:18:08.896319834Z [err]  │                                                                              │
+2026-04-30T16:18:08.896327533Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/connectionpool.py:841 in     │
+2026-04-30T16:18:08.896341782Z [err]  │                                                                              │
+2026-04-30T16:18:09.988594957Z [err]  │    843 │   │   │   )                                                         │
+2026-04-30T16:18:09.988606699Z [err]  │    844 │   │   │   retries.sleep()                                           │
+2026-04-30T16:18:09.988615427Z [err]  │                                                                              │
+2026-04-30T16:18:09.988661740Z [err]  │ │           clean_exit = False                                             │ │
+2026-04-30T16:18:11.071110163Z [err]  │ │               method = 'GET'                                             │ │
+2026-04-30T16:18:11.071118007Z [err]  │ │                new_e = NameResolutionError("HTTPConnection(host='api',   │ │
+2026-04-30T16:18:11.071133337Z [err]  │ │                        Name or service not known)")                      │ │
+2026-04-30T16:18:11.071496810Z [err]  │ │                        │   query='session_key=11253',                    │ │
+2026-04-30T16:18:12.100615560Z [err]  │ │        response_conn = <HTTPConnection(host='api', port=8000) at         │ │
+2026-04-30T16:18:12.100625828Z [err]  │ │                        0x7f4ee4a226e0>                                   │ │
+2026-04-30T16:18:12.100629464Z [err]  │ │             redirect = False                                             │ │
+2026-04-30T16:18:12.100649456Z [err]  │ │    release_this_conn = True                                              │ │
+2026-04-30T16:18:12.100658078Z [err]  │ │         pool_timeout = None                                              │ │
+2026-04-30T16:18:12.100681783Z [err]  │ │              timeout = Timeout(connect=None, read=None, total=None)      │ │
+2026-04-30T16:18:13.426769534Z [err]  │ │                  url = '/v1/sessions?session_key=11253'                  │ │
+2026-04-30T16:18:13.426776233Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:18:13.426782393Z [err]  │                                                                              │
+2026-04-30T16:18:13.426789831Z [err]  │ /usr/local/lib/python3.10/site-packages/urllib3/util/retry.py:535 in         │
+2026-04-30T16:18:13.426795866Z [err]  │ increment                                                                    │
+2026-04-30T16:18:13.426807811Z [err]  │   532 │   │                                                                  │
+2026-04-30T16:18:13.426813917Z [err]  │   533 │   │   if new_retry.is_exhausted():                                   │
+2026-04-30T16:18:13.426825799Z [err]  │ ❱ 535 │   │   │   raise MaxRetryError(_pool, url, reason) from reason  # typ │
+2026-04-30T16:18:13.426845578Z [err]  │   538                                                                        │
+2026-04-30T16:18:14.775482094Z [err]  │ │                     0x7f4ee4a21d20>                                      │ │
+2026-04-30T16:18:14.775969250Z [err]  │ │                     │   │                                                │ │
+2026-04-30T16:18:16.284924190Z [err]  │ │                     │   │   redirect_location=None                       │ │
+2026-04-30T16:18:16.284931501Z [err]  │ │                     │   ),                                               │ │
+2026-04-30T16:18:16.285183756Z [err]  │ │              read = False                                                │ │
+2026-04-30T16:18:16.285189785Z [err]  │ │            reason = NameResolutionError("HTTPConnection(host='api',      │ │
+2026-04-30T16:18:16.285196329Z [err]  │ │                     port=8000): Failed to resolve 'api' ([Errno -2] Name │ │
+2026-04-30T16:18:16.285216348Z [err]  │ │ redirect_location = None                                                 │ │
+2026-04-30T16:18:16.285226649Z [err]  │ │          response = None                                                 │ │
+2026-04-30T16:18:16.285233280Z [err]  │ │              self = Retry(total=0, connect=None, read=False,             │ │
+2026-04-30T16:18:17.654944094Z [err]  │ │                     redirect=None, status=None)                          │ │
+2026-04-30T16:18:17.654959907Z [err]  │ │             total = -1                                                   │ │
+2026-04-30T16:18:17.654971115Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:18:17.654976089Z [err]  ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-04-30T16:18:17.654992948Z [err]  NameResolutionError("HTTPConnection(host='api', port=8000): Failed to resolve 
+2026-04-30T16:18:17.654998751Z [err]  'api' ([Errno -2] Name or service not known)"))
+2026-04-30T16:18:17.655014117Z [err]  During handling of the above exception, another exception occurred:
+2026-04-30T16:18:18.980250140Z [err]  │   121 │                                                                      │
+2026-04-30T16:18:18.980256321Z [err]  │ ❱ 122 │   grid_url = _session_key_to_page_url(session_key)                   │
+2026-04-30T16:18:18.980261788Z [err]  │   123 │   logger.info(f"Ingesting starting grid of session {session_key}, fr │
+2026-04-30T16:18:18.980275315Z [err]  │                                                                              │
+2026-04-30T16:18:18.980366291Z [err]  │                                                                              │
+2026-04-30T16:18:18.980372435Z [err]  │   119 │   │   meeting_key = get_latest_meeting_key()                         │
+2026-04-30T16:18:20.049839298Z [err]  │                                                                              │
+2026-04-30T16:18:20.049941800Z [err]  │    85 │   if len(api_results) != 1:                                          │
+2026-04-30T16:18:20.049947919Z [err]  │    86 │   │   raise ValueError(                                              │
+2026-04-30T16:18:21.350946836Z [err]  │   100 │                                                                      │
+2026-04-30T16:18:21.350960133Z [err]  │   102 │   response.raise_for_status()                                        │
+2026-04-30T16:18:21.350982393Z [err]  │                                                                              │
+2026-04-30T16:18:21.350989480Z [err]  │ ╭────────────────────────── locals ──────────────────────────╮               │
+2026-04-30T16:18:21.350995744Z [err]  │ │ endpoint = 'v1/sessions?session_key=11253'                 │               │
+2026-04-30T16:18:21.351009490Z [err]  │ │ full_url = 'http://api:8000/v1/sessions?session_key=11253' │               │
+2026-04-30T16:18:21.351018435Z [err]  │ │  headers = {'Accept': 'application/json'}                  │               │
+2026-04-30T16:18:22.548566470Z [err]  │    72 │                                                                      │
+2026-04-30T16:18:22.548578149Z [err]  │ ❱  73 │   return request("get", url, params=params, **kwargs)                │
+2026-04-30T16:18:22.548599384Z [err]  │ ╰────────────────────────────────────────────────────────────╯               │
+2026-04-30T16:18:22.548604379Z [err]  │    76 def options(url, **kwargs):                                            │
+2026-04-30T16:18:22.548605181Z [err]  │                                                                              │
+2026-04-30T16:18:22.548609942Z [err]  │ /usr/local/lib/python3.10/site-packages/requests/api.py:73 in get            │
+2026-04-30T16:18:22.548617767Z [err]  │    70 │   :rtype: requests.Response                                          │
+2026-04-30T16:18:22.548711879Z [err]  │                                                                              │
+2026-04-30T16:18:22.548716766Z [err]  │ ╭───────────────────────── locals ─────────────────────────╮                 │
+2026-04-30T16:18:22.548721558Z [err]  │ │ kwargs = {'headers': {'Accept': 'application/json'}}     │                 │
+2026-04-30T16:18:22.548726279Z [err]  │ │ params = None                                            │                 │
+2026-04-30T16:18:23.693692428Z [err]  │    56 │   # avoid leaving sockets open which can trigger a ResourceWarning i │
+2026-04-30T16:18:23.693718757Z [err]  │    60                                                                        │
+2026-04-30T16:18:23.693756775Z [err]  │ │    url = 'http://api:8000/v1/sessions?session_key=11253' │                 │
+2026-04-30T16:18:23.693770272Z [err]  │                                                                              │
+2026-04-30T16:18:23.693777475Z [err]  │ /usr/local/lib/python3.10/site-packages/requests/api.py:59 in request        │
+2026-04-30T16:18:24.741525879Z [err]  │ ╰───────────────────────────────────────────────────────────────────────╯    │
+2026-04-30T16:18:24.741546989Z [err]  │                                                                              │
+2026-04-30T16:18:24.741552345Z [err]  │   586 │   │   │   "allow_redirects": allow_redirects,                        │
+2026-04-30T16:18:24.741639576Z [err]  │ │  method = 'get'                                                       │    │
+2026-04-30T16:18:24.741800773Z [err]  │   587 │   │   }                                                              │
+2026-04-30T16:18:24.741814383Z [err]  │ ❱ 589 │   │   resp = self.send(prep, **send_kwargs)                          │
+2026-04-30T16:18:24.741820461Z [err]  │   590 │   │                                                                  │
+2026-04-30T16:18:24.741826226Z [err]  │   591 │   │   return resp                                                    │
+2026-04-30T16:18:24.741917749Z [err]  │   592                                                                        │
+2026-04-30T16:18:25.758832395Z [err]  │ │          method = 'get'                                                │   │
+2026-04-30T16:18:27.062765917Z [err]  │ │             req = <Request [GET]>                                      │   │
+2026-04-30T16:18:27.062793987Z [err]  │ │                   }                                                    │   │
+2026-04-30T16:18:27.062812180Z [err]  │ │                   │   'allow_redirects': True,                         │   │
+2026-04-30T16:18:27.062819355Z [err]  │ │                   │   'proxies': OrderedDict(),                        │   │
+2026-04-30T16:18:27.062826366Z [err]  │ │                   │   'stream': False,                                 │   │
+2026-04-30T16:18:27.062840531Z [err]  │ │                   │   'cert': None                                     │   │
+2026-04-30T16:18:27.062847220Z [err]  │ │                   }                                                    │   │
+2026-04-30T16:18:28.164682211Z [err]  │ │          stream = None                                                 │   │
+2026-04-30T16:18:28.164688911Z [err]  │ │         timeout = None                                                 │   │
+2026-04-30T16:18:28.164701148Z [err]  │ │          verify = None                                                 │   │
+2026-04-30T16:18:28.164712951Z [err]  │                                                                              │
+2026-04-30T16:18:28.164725147Z [err]  │                                                                              │
+2026-04-30T16:18:28.164731656Z [err]  │   700 │   │   start = preferred_clock()                                      │
+2026-04-30T16:18:28.164738116Z [err]  │   701 │   │                                                                  │
+2026-04-30T16:18:28.164744179Z [err]  │   702 │   │   # Send the request                                             │
+2026-04-30T16:18:28.165473557Z [err]  │ ❱ 703 │   │   r = adapter.send(request, **kwargs)                            │
+2026-04-30T16:18:28.165489935Z [err]  │   705 │   │   # Total elapsed time of the request (approximately)            │
+2026-04-30T16:18:29.722095281Z [err]  │ ╭───────────────────────────────── locals ─────────────────────────────────╮ │
+2026-04-30T16:18:29.722100728Z [err]  │ │         adapter = <requests.adapters.HTTPAdapter object at               │ │
+2026-04-30T16:18:29.722106272Z [err]  │ │                   0x7f4ee4a20c70>                                        │ │
+2026-04-30T16:18:29.722112288Z [err]  │ │ allow_redirects = True                                                   │ │
+2026-04-30T16:18:29.722132275Z [err]  │ │                   │   'timeout': None,                                   │ │
+2026-04-30T16:18:29.722137573Z [err]  │ │                   │   'proxies': OrderedDict(),                          │ │
+2026-04-30T16:18:29.722167671Z [err]  │ │            self = <requests.sessions.Session object at 0x7f4ee4bf75b0>   │ │
+2026-04-30T16:18:31.290458733Z [err]  │   699 │   │   │                                                              │
+2026-04-30T16:18:31.290490064Z [err]  │                                                                              │
+2026-04-30T16:18:32.594473244Z [err]  │ │    cert = None                                                           │ │
+2026-04-30T16:18:32.594971289Z [err]  │ │           0x7f4ee4a21d20>                                                │ │
+2026-04-30T16:18:32.595009704Z [err]  │ │ timeout = Timeout(connect=None, read=None, total=None)                   │ │
+2026-04-30T16:18:32.595016462Z [err]  │ │     url = '/v1/sessions?session_key=11253'                               │ │
+2026-04-30T16:18:32.595027195Z [err]  │ ╰──────────────────────────────────────────────────────────────────────────╯ │
+2026-04-30T16:18:32.595031634Z [err]  ╰──────────────────────────────────────────────────────────────────────────────╯
+2026-04-30T16:18:33.915314330Z [err]  ConnectionError: HTTPConnectionPool(host='api', port=8000): Max retries exceeded
+2026-04-30T16:18:33.915322811Z [err]  with url: /v1/sessions?session_key=11253 (Caused by 
+2026-04-30T16:18:33.915336872Z [err]  'api' ([Errno -2] Name or service not known)"))
+2026-04-30T16:18:33.915343176Z [err]  2026-04-30 16:18:10.532 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'meetings': {}
+2026-04-30T16:18:33.915349981Z [err]  2026-04-30 16:18:10.571 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='meetings' filters='{}' returned 26 documents
+2026-04-30T16:18:33.915356538Z [inf]  INFO:     100.64.0.2:49566 - "GET /v1/meetings HTTP/1.1" 200 OK

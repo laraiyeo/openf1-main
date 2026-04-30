@@ -1,11 +1,10 @@
-import tempfile
 from pathlib import Path
 
 import typer
 from bs4 import BeautifulSoup
 from loguru import logger
 
-from openf1.services.f1_scraping.util import download_page
+from openf1.services.f1_scraping.util import fetch_page
 from openf1.util import openf1_client
 from openf1.util.db import upsert_data_sync
 from openf1.util.misc import to_timedelta
@@ -22,6 +21,67 @@ def _parse_starting_grid_page(html_file: Path) -> list[dict]:
         html_content = f.read()
 
     soup = BeautifulSoup(html_content, "lxml")
+    table = soup.find("table", class_="Table-module_table__cKsW2")
+    headers = [
+        header.get_text(strip=True).upper()
+        for header in table.find("thead").find_all("th")
+    ]
+
+    header_map = {
+        "POS.": "position",
+        "NO.": "driver_number",
+        "TIME": "lap_duration",
+    }
+
+    if "no results available" in str(table).lower():
+        raise ValueError("No results available")
+
+    rows = table.find("tbody").find_all("tr")
+
+    results_data = []
+    for row in rows:
+        cols = row.find_all("td")
+        driver_data = {}
+
+        for i, header_text in enumerate(headers):
+            output_key = header_map.get(header_text.upper())
+
+            if output_key and i < len(cols):
+                cell_value = cols[i].get_text(strip=True)
+
+                if not cell_value:
+                    driver_data[output_key] = None
+                    continue
+
+                try:
+                    if output_key == "position":
+                        driver_data[output_key] = (
+                            int(cell_value) if cell_value != "NC" else None
+                        )
+                    elif output_key == "driver_number":
+                        driver_data[output_key] = int(cell_value)
+                    elif output_key == "lap_duration":
+                        driver_data[output_key] = (
+                            to_timedelta(cell_value).total_seconds()
+                            if cell_value is not None
+                            else None
+                        )
+                except (ValueError, IndexError):
+                    logger.exception(
+                        "Unhandled value format for "
+                        f"output_key '{output_key}': {cell_value}"
+                    )
+                    driver_data[output_key] = cell_value
+
+        if driver_data:
+            results_data.append(driver_data)
+
+    return results_data
+
+
+def _parse_starting_grid_from_html(html: str) -> list[dict]:
+    """Parse HTML content (string) and return starting grid data list."""
+    soup = BeautifulSoup(html, "lxml")
     table = soup.find("table", class_="Table-module_table__cKsW2")
     headers = [
         header.get_text(strip=True).upper()
@@ -122,32 +182,21 @@ def ingest_starting_grid(
     grid_url = _session_key_to_page_url(session_key)
     logger.info(f"Ingesting starting grid of session {session_key}, from {grid_url}")
 
-    with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".html") as temp_file:
-        temp_path = Path(temp_file.name)
-        temp_file.close()
-        try:
-            download_page(
-                url=grid_url,
-                output_file=temp_path,
-            )
-            docs = _parse_starting_grid_page(temp_path)
-        finally:
-            try:
-                temp_path.unlink()
-            except Exception:
-                pass
-        if not docs:
-            logger.error(f"No starting grid data found for meeting_key={meeting_key}")
-            return
+    # Fetch HTML into memory and parse directly to avoid temp-file permission issues
+    html = fetch_page(grid_url)
+    docs = _parse_starting_grid_from_html(html)
+    if not docs:
+        logger.error(f"No starting grid data found for meeting_key={meeting_key}")
+        return
 
-        # Add missing fields
-        for idx, doc in enumerate(docs):
-            doc["meeting_key"] = meeting_key
-            doc["session_key"] = session_key
-            doc["_id"] = f"{session_key}_{str(idx).zfill(2)}"
-            doc["_key"] = doc["_id"]
+    # Add missing fields
+    for idx, doc in enumerate(docs):
+        doc["meeting_key"] = meeting_key
+        doc["session_key"] = session_key
+        doc["_id"] = f"{session_key}_{str(idx).zfill(2)}"
+        doc["_key"] = doc["_id"]
 
-        upsert_data_sync(collection_name="starting_grid", docs=docs)
+    upsert_data_sync(collection_name="starting_grid", docs=docs)
 
 
 if __name__ == "__main__":

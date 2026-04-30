@@ -1,4 +1,3 @@
-import tempfile
 from pathlib import Path
 
 import typer
@@ -6,7 +5,7 @@ from bs4 import BeautifulSoup
 from bs4.element import Tag
 from loguru import logger
 
-from openf1.services.f1_scraping.util import download_page
+from openf1.services.f1_scraping.util import fetch_page
 from openf1.util import openf1_client
 from openf1.util.db import upsert_data_sync
 from openf1.util.misc import to_timedelta
@@ -147,6 +146,20 @@ def _process_qualifying_results(results_data: list[dict]) -> list[dict]:
     return results_data
 
 
+def _parse_page_from_html(html: str) -> list[dict]:
+    """Parse HTML content (string) and return list of result dicts."""
+    soup = BeautifulSoup(html, "lxml")
+
+    table = soup.find("table", class_="Table-module_table__cKsW2")
+    raw_results = _extract_raw_results(table)
+
+    is_qualifying = "Q1" in raw_results[0]
+    if is_qualifying:
+        return _process_qualifying_results(raw_results)
+    else:
+        return _process_practice_and_race_results(raw_results)
+
+
 def _process_practice_and_race_results(results_data: list[dict]) -> list[dict]:
     """Processes results to calculate duration, gaps, and set status flags"""
     # Find the leader's time, which is the baseline duration
@@ -243,29 +256,18 @@ def ingest_session_result(
     session_url = _session_key_to_page_url(session_key)
     logger.info(f"Ingesting result of session {session_key}, from {session_url}")
 
-    with tempfile.NamedTemporaryFile(mode="w", delete=False, suffix=".html") as temp:
-        temp_path = Path(temp.name)
-        temp.close()
-        try:
-            download_page(
-                url=session_url,
-                output_file=temp_path,
-            )
-            docs = _parse_page(temp_path)
-        finally:
-            try:
-                temp_path.unlink()
-            except Exception:
-                pass
+    # Download HTML into memory and parse directly to avoid temp-file permission issues
+    html = fetch_page(session_url)
+    docs = _parse_page_from_html(html)
 
-        # Add missing fields
-        for idx, doc in enumerate(docs):
-            doc["meeting_key"] = meeting_key
-            doc["session_key"] = session_key
-            doc["_id"] = f"{session_key}_{str(idx).zfill(2)}"
-            doc["_key"] = doc["_id"]
+    # Add missing fields
+    for idx, doc in enumerate(docs):
+        doc["meeting_key"] = meeting_key
+        doc["session_key"] = session_key
+        doc["_id"] = f"{session_key}_{str(idx).zfill(2)}"
+        doc["_key"] = doc["_id"]
 
-        upsert_data_sync(collection_name="session_result", docs=docs)
+    upsert_data_sync(collection_name="session_result", docs=docs)
 
 
 if __name__ == "__main__":

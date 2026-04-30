@@ -47,6 +47,8 @@ PYCODE
       ;;
     scrape-latest)
       echo "Starting scrape-latest"
+      # Ensure scrapers call the local api when running in the same container
+      export OPENF1_BASE_URL=${OPENF1_BASE_URL:-http://localhost:8000}
       sleep 2 # api needs to be fully up before this will work
       python -m openf1.services.f1_scraping.schedule ingest-meetings
       python -m openf1.services.f1_scraping.schedule ingest-sessions
