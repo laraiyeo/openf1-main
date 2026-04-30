@@ -14,6 +14,12 @@ run_role() {
       ;;
     ingest-historical)
       echo "Starting ingest-historical"
+      # Historical ingestion only runs on deploy when explicitly enabled.
+      if [ "$OPENF1_RUN_HISTORICAL_ON_DEPLOY" != "true" ]; then
+        echo "ingest-historical present in ROLE but OPENF1_RUN_HISTORICAL_ON_DEPLOY!=true; skipping historical ingest"
+        ;;
+      fi
+
       # If OPENF1_DROP_DB_ON_DEPLOY is set to "true", drop the database first
       if [ "$OPENF1_DROP_DB_ON_DEPLOY" = "true" ]; then
         echo "Dropping MongoDB database $OPENF1_DB_NAME (if set)"
