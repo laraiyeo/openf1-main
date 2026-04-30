@@ -151,9 +151,20 @@ def _get_collections_cls_by_name() -> dict[str, type[Collection]]:
 @lru_cache()
 def get_collections(meeting_key: int, session_key: int) -> list[Collection]:
     """Returns the instances of all available collections for a given session"""
+    # Allow excluding collections via env var (e.g. OPENF1_INGEST_EXCLUDE_COLLECTIONS=CarData)
+    from os import getenv
+
+    exclude_env = getenv("OPENF1_INGEST_EXCLUDE_COLLECTIONS", "")
+    exclude_set = set([c.strip() for c in exclude_env.split(",") if c.strip()])
+
+    classes = [
+        cls
+        for name, cls in _get_collections_cls_by_name().items()
+        if name not in exclude_set
+    ]
+
     collections = [
-        cls(meeting_key=meeting_key, session_key=session_key)
-        for cls in _get_collections_cls_by_name().values()
+        cls(meeting_key=meeting_key, session_key=session_key) for cls in classes
     ]
     collections = sorted(collections, key=lambda c: c.__class__.name)
     return collections
