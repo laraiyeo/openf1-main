@@ -1,213 +1,1591 @@
-PS C:\Users\Dami\Downloads\openf1-main> docker-compose ps
->> docker-compose logs api --tail=200
->> docker-compose logs mongo --tail=200
-NAME                         IMAGE                      COMMAND                  SERVICE             CREATED          STATUS          PORTS
-openf1-api-1                 openf1-api                 "./docker-entrypoint"    api                 16 seconds ago   Up 14 seconds   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
-openf1-ingest-historical-1   openf1-ingest-historical   "./docker-entrypoint"    ingest-historical   16 seconds ago   Up 14 seconds   
-openf1-ingest-realtime-1     openf1-ingest-realtime     "./docker-entrypoint"    ingest-realtime     15 seconds ago   Up 14 seconds   
-openf1-mongo-1               mongo:8                    "docker-entrypoint.s…"   mongo               10 minutes ago   Up 15 seconds   27017/tcp
-openf1-mqtt-1                eclipse-mosquitto:2.0.22   "/docker-entrypoint.…"   mqtt                10 minutes ago   Up 15 seconds   0.0.0.0:1883->1883/tcp, [::]:1883->1883/tcp, 0.0.0.0:8084->8084/tcp, [::]:8084->8084/tcp
-api-1  | INFO:     Will watch for changes in these directories: ['/app']
-api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-api-1  | INFO:     Started reloader process [7] using StatReload
-api-1  | INFO:     Started server process [9]
-api-1  | INFO:     Waiting for application startup.
-api-1  | INFO:     Application startup complete.
-mongo-1  | {"t":{"$date":"2026-04-29T16:07:17.499+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":9356}},"cpuNanos":89508700,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":104,"durationMillis":104}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:07:36.396+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478856,"ts_usec":394479,"thread":"1:0x79af4aaa06c0","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT_PROGRESS","log_id":1000000,"category_id":7,"verbose_level":"INFO","verbose_level_id":0,"msg":"saving checkpoint snapshot min: 38614, snapshot max: 38614 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:00.868+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":9765}},"cpuNanos":95455800,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":105,"durationMillis":105}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:03.805+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":9012}},"cpuNanos":89824900,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":122,"durationMillis":122}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:04.208+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":8543}},"cpuNanos":89865300,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":115,"durationMillis":115}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:05.426+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":58651}},"cpuNanos":96134500,"remote":"172.18.0.4:43876","protocol":"op_msg","delinquencyInfo":{"totalDelinquentAcquisitions":1,"totalAcquisitionDelinquencyMillis":51,"maxAcquisitionDelinquencyMillis":51},"numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":165,"durationMillis":165}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:06.711+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":7129}},"cpuNanos":86449500,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":124,"durationMillis":124}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:08.871+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":9141}},"cpuNanos":92735700,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":104,"durationMillis":104}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:10.105+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":9108}},"cpuNanos":89849800,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":128,"durationMillis":128}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:11.188+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":9032}},"cpuNanos":87301400,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":100,"durationMillis":100}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:15.990+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":7086}},"cpuNanos":82062600,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":101,"durationMillis":101}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:17.960+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":8336}},"cpuNanos":86347000,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":117,"durationMillis":117}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:20.330+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":7473}},"cpuNanos":89937500,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":133,"durationMillis":133}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:21.667+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":7665}},"cpuNanos":85843700,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":108,"durationMillis":108}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:22.756+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":9237}},"cpuNanos":84476200,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":107,"durationMillis":107}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:23.814+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":8097}},"cpuNanos":89941500,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":112,"durationMillis":112}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:24.055+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":7778}},"cpuNanos":86155200,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":115,"durationMillis":115}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:26.580+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.location","collectionType":"normal","command":{"insert":"location","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":8170}},"cpuNanos":87422900,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":140,"durationMillis":140}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:08:36.583+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"Checkpointer","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478916,"ts_usec":581851,"thread":"1:0x79af4aaa06c0","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT_PROGRESS","log_id":1000000,"category_id":7,"verbose_level":"INFO","verbose_level_id":0,"msg":"saving checkpoint snapshot min: 49383, snapshot max: 49383 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:09.622+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":8539}},"cpuNanos":94778500,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":119,"durationMillis":119}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:10.788+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":9147}},"cpuNanos":91309500,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":108,"durationMillis":108}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:12.224+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn3","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"6ad4a617-155f-4ff3-978b-832d8319d433"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"timeWaitingMicros":{"storageExecutionMicros":7557}},"cpuNanos":84175900,"remote":"172.18.0.4:43876","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":101,"durationMillis":101}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:12.920+00:00"},"s":"I",  "c":"-",        "id":20883,   "ctx":"conn1","msg":"Interrupted operation as its client disconnected","attr":{"opId":12333}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:12.929+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn3","msg":"Connection ended","attr":{"remote":"172.18.0.4:43876","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"4ba6bb2d-009f-4571-8735-2b7a96928f14"}},"connectionId":3,"connectionCount":5}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:12.930+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn2","msg":"Connection ended","attr":{"remote":"172.18.0.4:43868","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"3abe6bdf-cfe2-490a-81d6-7c9c808c3404"}},"connectionId":2,"connectionCount":4}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:12.931+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn1","msg":"Connection ended","attr":{"remote":"172.18.0.4:43856","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"4da68032-203d-463c-8d97-8b664d8fa61d"}},"connectionId":1,"connectionCount":3}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.149+00:00"},"s":"I",  "c":"-",        "id":20883,   "ctx":"conn4","msg":"Interrupted operation as its client disconnected","attr":{"opId":16423}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.149+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn6","msg":"Connection ended","attr":{"remote":"172.18.0.5:38112","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"80eb29e6-dbb6-4e68-b2d9-8c089b7e92ae"}},"connectionId":6,"connectionCount":2}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.149+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn5","msg":"Connection ended","attr":{"remote":"172.18.0.5:38096","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"67572fb7-cd3e-4be6-ba2b-317278127229"}},"connectionId":5,"connectionCount":1}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.150+00:00"},"s":"I",  "c":"NETWORK",  "id":22944,   "ctx":"conn4","msg":"Connection ended","attr":{"remote":"172.18.0.5:38084","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"c3b63d74-c154-4da3-a9e2-9fadb1381da8"}},"connectionId":4,"connectionCount":0}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.460+00:00"},"s":"I",  "c":"CONTROL",  "id":23377,   "ctx":"SignalHandler","msg":"Received signal","attr":{"signal":15,"error":"Terminated"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.461+00:00"},"s":"I",  "c":"CONTROL",  "id":23378,   "ctx":"SignalHandler","msg":"Signal was sent by kill(2)","attr":{"pid":0,"uid":0}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.461+00:00"},"s":"I",  "c":"CONTROL",  "id":23381,   "ctx":"SignalHandler","msg":"will terminate after current cmd ends"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.465+00:00"},"s":"I",  "c":"REPL",     "id":4784900, "ctx":"SignalHandler","msg":"Stepping down the ReplicationCoordinator for shutdown","attr":{"waitTimeMillis":15000}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.468+00:00"},"s":"I",  "c":"REPL",     "id":4794602, "ctx":"SignalHandler","msg":"Attempting to enter quiesce mode"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.469+00:00"},"s":"I",  "c":"STORAGE",  "id":7333402, "ctx":"SignalHandler","msg":"Shutting down the DiskSpaceMonitor"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.471+00:00"},"s":"I",  "c":"-",        "id":6371601, "ctx":"SignalHandler","msg":"Shutting down the FLE Crud thread pool"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.472+00:00"},"s":"I",  "c":"COMMAND",  "id":4784901, "ctx":"SignalHandler","msg":"Shutting down the MirrorMaestro"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.472+00:00"},"s":"I",  "c":"SHARDING", "id":4784902, "ctx":"SignalHandler","msg":"Shutting down the WaitForMajorityService"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.482+00:00"},"s":"I",  "c":"CONTROL",  "id":4784903, "ctx":"SignalHandler","msg":"Shutting down the LogicalSessionCache"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.483+00:00"},"s":"I",  "c":"NETWORK",  "id":8314100, "ctx":"SignalHandler","msg":"Shutdown: Closing listener sockets"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.485+00:00"},"s":"I",  "c":"NETWORK",  "id":23017,   "ctx":"listener","msg":"removing socket file","attr":{"path":"/tmp/mongodb-27017.sock"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.486+00:00"},"s":"I",  "c":"NETWORK",  "id":4784905, "ctx":"SignalHandler","msg":"Shutting down the global connection pool"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.487+00:00"},"s":"I",  "c":"CONTROL",  "id":4784906, "ctx":"SignalHandler","msg":"Shutting down the FlowControlTicketholder"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.487+00:00"},"s":"I",  "c":"-",        "id":20520,   "ctx":"SignalHandler","msg":"Stopping further Flow Control ticket acquisitions."}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.488+00:00"},"s":"I",  "c":"CONTROL",  "id":4784908, "ctx":"SignalHandler","msg":"Shutting down PeriodicThreadToAbortExpiredTransactions"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.489+00:00"},"s":"I",  "c":"CONTROL",  "id":10036707,"ctx":"SignalHandler","msg":"Shutting down PeriodicThreadToRollbackUnderCachePressure"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.489+00:00"},"s":"I",  "c":"REPL",     "id":4784909, "ctx":"SignalHandler","msg":"Shutting down the ReplicationCoordinator"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.490+00:00"},"s":"I",  "c":"SHARDING", "id":4784910, "ctx":"SignalHandler","msg":"Shutting down the ShardingInitializationMongoD"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.491+00:00"},"s":"I",  "c":"REPL",     "id":4784911, "ctx":"SignalHandler","msg":"Enqueuing the ReplicationStateTransitionLock for shutdown"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.492+00:00"},"s":"I",  "c":"-",        "id":4784912, "ctx":"SignalHandler","msg":"Killing all operations for shutdown"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.493+00:00"},"s":"I",  "c":"-",        "id":4695300, "ctx":"SignalHandler","msg":"Interrupted all currently running operations","attr":{"opsKilled":3}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.493+00:00"},"s":"I",  "c":"COMMAND",  "id":4784913, "ctx":"SignalHandler","msg":"Shutting down all open transactions"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.494+00:00"},"s":"I",  "c":"REPL",     "id":4784914, "ctx":"SignalHandler","msg":"Acquiring the ReplicationStateTransitionLock for shutdown"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.494+00:00"},"s":"I",  "c":"INDEX",    "id":4784915, "ctx":"SignalHandler","msg":"Shutting down the IndexBuildsCoordinator"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.495+00:00"},"s":"I",  "c":"NETWORK",  "id":4784918, "ctx":"SignalHandler","msg":"Shutting down the ReplicaSetMonitor"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.496+00:00"},"s":"I",  "c":"SHARDING", "id":9439300, "ctx":"SignalHandler","msg":"Shutting down the filtering metadata cache"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.497+00:00"},"s":"I",  "c":"NETWORK",  "id":20562,   "ctx":"SignalHandler","msg":"Shutdown: Closing open transport sessions"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.497+00:00"},"s":"I",  "c":"NETWORK",  "id":4784923, "ctx":"SignalHandler","msg":"Shutting down the ASIO transport SessionManager"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.497+00:00"},"s":"I",  "c":"CONTROL",  "id":4784927, "ctx":"SignalHandler","msg":"Shutting down the HealthLog"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.498+00:00"},"s":"I",  "c":"CONTROL",  "id":4784928, "ctx":"SignalHandler","msg":"Shutting down the TTL monitor"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.498+00:00"},"s":"I",  "c":"INDEX",    "id":3684100, "ctx":"SignalHandler","msg":"Shutting down TTL collection monitor thread"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.500+00:00"},"s":"I",  "c":"CONNPOOL", "id":22582,   "ctx":"SignalHandler","msg":"Killing all outstanding egress activity","attr":{"instanceName":"NetworkInterfaceTL-TTLMonitorMetadataRefreshNetwork","numKilledByType":{}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.501+00:00"},"s":"I",  "c":"INDEX",    "id":3684101, "ctx":"SignalHandler","msg":"Finished shutting down TTL collection monitor thread"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.502+00:00"},"s":"I",  "c":"CONTROL",  "id":4784929, "ctx":"SignalHandler","msg":"Acquiring the global lock for shutdown"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.503+00:00"},"s":"I",  "c":"CONTROL",  "id":4784930, "ctx":"SignalHandler","msg":"Shutting down the storage engine"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.503+00:00"},"s":"I",  "c":"STORAGE",  "id":22320,   "ctx":"SignalHandler","msg":"Shutting down journal flusher thread"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.504+00:00"},"s":"I",  "c":"STORAGE",  "id":22321,   "ctx":"SignalHandler","msg":"Finished shutting down journal flusher thread"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.504+00:00"},"s":"I",  "c":"STORAGE",  "id":22322,   "ctx":"SignalHandler","msg":"Shutting down checkpoint thread"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.505+00:00"},"s":"I",  "c":"STORAGE",  "id":22323,   "ctx":"SignalHandler","msg":"Finished shutting down checkpoint thread"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.506+00:00"},"s":"I",  "c":"STORAGE",  "id":20282,   "ctx":"SignalHandler","msg":"Deregistering all the collections"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.513+00:00"},"s":"I",  "c":"STORAGE",  "id":22261,   "ctx":"SignalHandler","msg":"Timestamp monitor shutting down"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.514+00:00"},"s":"I",  "c":"STORAGE",  "id":10158003,"ctx":"SignalHandler","msg":"SpillWiredTigerKVEngine shutting down"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.514+00:00"},"s":"I",  "c":"STORAGE",  "id":10158006,"ctx":"SignalHandler","msg":"Closing spill WiredTiger","attr":{"closeConfig":"leak_memory=true,"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.516+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":514427,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"closing WiredTiger library."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.516+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":516618,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"rolling back all running transactions."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.517+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":517179,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"closing all running sessions."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.517+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":517260,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"closing some of the internal threads."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.522+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":521928,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"perform final checkpoint and shutting down the global transaction state"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.523+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":523552,"thread":"1:0x79af5b2c16c0","session_name":"close_ckpt","category":"WT_VERB_CHECKPOINT","log_id":1000000,"category_id":5,"verbose_level":"INFO","verbose_level_id":0,"msg":"Checkpoint requested at stable timestamp (0, 0)"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.527+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":527251,"thread":"1:0x79af5b2c16c0","session_name":"close_ckpt","category":"WT_VERB_CHECKPOINT_PROGRESS","log_id":1000000,"category_id":7,"verbose_level":"INFO","verbose_level_id":0,"msg":"saving checkpoint snapshot min: 2, snapshot max: 2 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.543+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":543050,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"shutdown checkpoint has successfully finished and ran for 19 milliseconds"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.544+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":544411,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1493200,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"shutdown was completed successfully and took 27ms, including 0ms for the rollback to stable, and 19ms for the checkpoint."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.544+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":544491,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"stopping eviction threads"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.544+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":544785,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"waiting for eviction threads to stop"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.546+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"thread39","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":544880,"thread":"1:0x79af4d2a56c0","session_name":"eviction-server","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"eviction thread exiting"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.576+00:00"},"s":"I",  "c":"STORAGE",  "id":10158007,"ctx":"SignalHandler","msg":"Closed spill WiredTiger ","attr":{"durationMillis":62}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.576+00:00"},"s":"I",  "c":"STORAGE",  "id":22317,   "ctx":"SignalHandler","msg":"WiredTigerKVEngine shutting down"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.576+00:00"},"s":"I",  "c":"STORAGE",  "id":22318,   "ctx":"SignalHandler","msg":"Shutting down session sweeper thread"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.577+00:00"},"s":"I",  "c":"STORAGE",  "id":22319,   "ctx":"SignalHandler","msg":"Finished shutting down session sweeper thread"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.580+00:00"},"s":"I",  "c":"STORAGE",  "id":4795902, "ctx":"SignalHandler","msg":"Closing WiredTiger","attr":{"closeConfig":"leak_memory=true,use_timestamp=false,"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.581+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":581048,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"closing WiredTiger library."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.581+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":581236,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"rolling back all running transactions."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.581+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":581252,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"closing all running sessions."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.581+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":581264,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"closing some of the internal threads."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.587+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":587183,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"perform final checkpoint and shutting down the global transaction state"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.633+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":633802,"thread":"1:0x79af5b2c16c0","session_name":"close_ckpt","category":"WT_VERB_CHECKPOINT_PROGRESS","log_id":1000000,"category_id":7,"verbose_level":"INFO","verbose_level_id":0,"msg":"saving checkpoint snapshot min: 51985, snapshot max: 51985 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 1"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.706+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":706339,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"shutdown checkpoint has successfully finished and ran for 119 milliseconds"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.707+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":707010,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1493200,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"shutdown was completed successfully and took 125ms, including 0ms for the rollback to stable, and 119ms for the checkpoint."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.707+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":707067,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"stopping eviction threads"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.707+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"SignalHandler","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":707122,"thread":"1:0x79af5b2c16c0","session_name":"WT_CONNECTION.close","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"waiting for eviction threads to stop"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:09:14.707+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"thread40","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777478954,"ts_usec":707217,"thread":"1:0x79af55ab66c0","session_name":"eviction-server","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"eviction thread exiting"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.104+00:00"},"s":"I",  "c":"-",        "id":8991200, "ctx":"main","msg":"Shuffling initializers","attr":{"seed":3278880489}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.118+00:00"},"s":"I",  "c":"CONTROL",  "id":97374,   "ctx":"main","msg":"Automatically disabling TLS 1.0 and TLS 1.1, to force-enable TLS 1.1 specify --sslDisabledProtocols 'TLS1_0'; to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.121+00:00"},"s":"I",  "c":"NETWORK",  "id":4915701, "ctx":"main","msg":"Initialized wire specification","attr":{"spec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":27},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":27},"outgoing":{"minWireVersion":6,"maxWireVersion":27},"isInternalClient":true}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.122+00:00"},"s":"I",  "c":"CONTROL",  "id":5945603, "ctx":"main","msg":"Multi threading initialized"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.122+00:00"},"s":"I",  "c":"CONTROL",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":1,"port":27017,"dbPath":"/data/db","architecture":"64-bit","host":"2f4b64dee4f6"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.122+00:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"8.2.7","gitVersion":"8f6785264a643d2eeb5e4046f7876a23e40e1a09","openSSLVersion":"OpenSSL 3.0.13 30 Jan 2024","modules":[],"allocator":"tcmalloc-google","environment":{"distmod":"ubuntu2404","distarch":"x86_64","target_arch":"x86_64"}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.122+00:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Ubuntu","version":"24.04"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.122+00:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{"net":{"bindIp":"*"}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.123+00:00"},"s":"W",  "c":"NETWORK",  "id":11621101,"ctx":"initandlisten","msg":"Overriding max connections to honor `capMemoryConsumptionForPreAuthBuffers` settings","attr":{"limit":100418}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.123+00:00"},"s":"I",  "c":"NETWORK",  "id":4648601, "ctx":"initandlisten","msg":"Implicit TCP FastOpen unavailable. If TCP FastOpen is required, set at least one of the related parameters","attr":{"relatedParameters":["tcpFastOpenServer","tcpFastOpenClient","tcpFastOpenQueueSize"]}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.125+00:00"},"s":"W",  "c":"STORAGE",  "id":22271,   "ctx":"initandlisten","msg":"Detected unclean shutdown - Lock file is not empty","attr":{"lockFile":"/data/db/mongod.lock"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.125+00:00"},"s":"I",  "c":"STORAGE",  "id":22270,   "ctx":"initandlisten","msg":"Storage engine to use detected by data files","attr":{"dbpath":"/data/db","storageEngine":"wiredTiger"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.125+00:00"},"s":"W",  "c":"STORAGE",  "id":22302,   "ctx":"initandlisten","msg":"Recovering data from the last clean checkpoint."}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.125+00:00"},"s":"I",  "c":"STORAGE",  "id":22297,   "ctx":"initandlisten","msg":"Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem","tags":["startupWarnings"]}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.125+00:00"},"s":"I",  "c":"STORAGE",  "id":22315,   "ctx":"initandlisten","msg":"Opening WiredTiger","attr":{"config":"create,cache_size=3410M,session_max=33000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,remove=true,path=journal,compressor=snappy),builtin_extension_config=(zstd=(compression_level=6)),file_manager=(close_idle_time=600,close_scan_interval=10,close_handle_minimum=2000),statistics_log=(wait=0),json_output=(error,message),verbose=[recovery_progress:1,checkpoint_progress:1,compact_progress:1,live_restore_progress:1,backup:0,checkpoint:0,compact:0,eviction:0,fileops:0,history_store:0,live_restore:0,recovery:0,rts:0,salvage:0,tiered:0,timestamp:0,transaction:0,verify:0,log:0],prefetch=(available=true,default=false),"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.137+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":137223,"thread":"1:0x7d87ad6f3400","session_name":"wiredtiger_open","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"opening the WiredTiger library"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.154+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":154330,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"connection configuration string parsing completed"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.155+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":155267,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"starting WiredTiger utility threads"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.174+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":174222,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"starting WiredTiger recovery"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.174+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":174480,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Recovering log 9 through 10"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.193+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":193789,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Recovering log 10 through 10"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.258+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":258133,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"scanning metadata to find the largest file ID"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.258+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":258802,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"largest file ID found in the metadata 38"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.259+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":259570,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"Main recovery loop: starting at 9,77194240 to 10,256"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.259+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":259717,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"starting eviction threads"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.260+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":260031,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Recovering log 9 through 10"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.275+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":275339,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Recovering log 10 through 10"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.299+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":299481,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"recovery log replay has successfully finished and ran for 125 milliseconds"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.299+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":299573,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Set global recovery timestamp: (0, 0)"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.299+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":299589,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Set global oldest timestamp: (0, 0)"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.299+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":299609,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"[RECOVERY_RTS] performing recovery rollback_to_stable with stable_timestamp=(0, 0) and oldest_timestamp=(0, 0)"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.300+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":300749,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"recovery rollback to stable has successfully finished and ran for 1 milliseconds"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.300+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":300812,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"stopping eviction threads"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.300+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":300861,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"waiting for eviction threads to stop"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.300+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"thread8","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":300904,"thread":"1:0x7d87a96c96c0","session_name":"eviction-server","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"eviction thread exiting"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.308+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":308944,"thread":"1:0x7d87ad6f3400","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT","log_id":1000000,"category_id":5,"verbose_level":"INFO","verbose_level_id":0,"msg":"Checkpoint requested at stable timestamp (0, 0)"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.309+00:00"},"s":"I",  "c":"WTCHKPT",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":309626,"thread":"1:0x7d87ad6f3400","session_name":"WT_SESSION.checkpoint","category":"WT_VERB_CHECKPOINT_PROGRESS","log_id":1000000,"category_id":7,"verbose_level":"INFO","verbose_level_id":0,"msg":"saving checkpoint snapshot min: 15, snapshot max: 15 snapshot count: 0, oldest timestamp: (0, 0) , meta checkpoint timestamp: (0, 0) base write gen: 21103"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.337+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":337128,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"recovery checkpoint has successfully finished and ran for 36 milliseconds"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.337+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":337226,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1493201,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"recovery was completed successfully and took 162ms, including 125ms for the log replay, 1ms for the rollback to stable, and 36ms for the checkpoint."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.337+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":337243,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1493201,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"recovery was completed successfully and took 162ms, including 125ms for the log replay, 1ms for the rollback to stable, and 36ms for the checkpoint."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.340+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":340834,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"starting eviction threads"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.342+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":342188,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"WiredTiger utility threads started successfully"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.342+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":342253,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"the WiredTiger library has successfully opened"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.342+00:00"},"s":"I",  "c":"STORAGE",  "id":4795906, "ctx":"initandlisten","msg":"WiredTiger opened","attr":{"durationMillis":217}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.342+00:00"},"s":"I",  "c":"RECOVERY", "id":23987,   "ctx":"initandlisten","msg":"WiredTiger recoveryTimestamp","attr":{"recoveryTimestamp":{"$timestamp":{"t":0,"i":0}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.342+00:00"},"s":"I",  "c":"STORAGE",  "id":9086700, "ctx":"initandlisten","msg":"WiredTiger session cache max value has been set","attr":{"sessionCacheMax":16500}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.343+00:00"},"s":"I",  "c":"STORAGE",  "id":10158000,"ctx":"initandlisten","msg":"Opening spill WiredTiger","attr":{"config":"create,cache_size=196M,session_max=1024,eviction=(threads_min=1,threads_max=1),eviction_dirty_target=9MB,eviction_dirty_trigger=156MB,eviction_updates_trigger=156MB,config_base=false,statistics=(fast),log=(enabled=false),builtin_extension_config=(zstd=(compression_level=-7)),file_manager=(close_idle_time=600,close_scan_interval=10,close_handle_minimum=2000),statistics_log=(wait=0),json_output=(error,message),verbose=[recovery_progress:1,checkpoint_progress:1,compact_progress:1,live_restore_progress:1,backup:0,checkpoint:0,compact:0,eviction:0,fileops:0,history_store:0,live_restore:0,recovery:0,rts:0,salvage:0,tiered:0,timestamp:0,transaction:0,verify:0,log:0],"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.351+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":351453,"thread":"1:0x7d87ad6f3400","session_name":"wiredtiger_open","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"opening the WiredTiger library"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.352+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":352758,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"connection configuration string parsing completed"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.376+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":376667,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"starting WiredTiger utility threads"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.376+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":376909,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"starting WiredTiger recovery"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.376+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":376980,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"scanning metadata to find the largest file ID"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.377+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":377010,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"largest file ID found in the metadata 0"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.377+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":377033,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"recovery log replay has successfully finished and ran for 0 milliseconds"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.377+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":377077,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Set global recovery timestamp: (0, 0)"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.377+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":377094,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1000000,"category_id":33,"verbose_level":"DEBUG_1","verbose_level_id":1,"msg":"Set global oldest timestamp: (0, 0)"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.377+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":377117,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY","log_id":1493201,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"recovery was completed successfully and took 0ms, including 0ms for the log replay, 0ms for the rollback to stable, and 0ms for the checkpoint."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.377+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":377140,"thread":"1:0x7d87ad6f3400","session_name":"txn-recover","category":"WT_VERB_RECOVERY_PROGRESS","log_id":1493201,"category_id":33,"verbose_level":"INFO","verbose_level_id":0,"msg":"recovery was completed successfully and took 0ms, including 0ms for the log replay, 0ms for the rollback to stable, and 0ms for the checkpoint."}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.410+00:00"},"s":"I",  "c":"WTEVICT",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":410344,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_EVICTION","log_id":1000000,"category_id":15,"verbose_level":"INFO","verbose_level_id":0,"msg":"starting eviction threads"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.410+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":410725,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"WiredTiger utility threads started successfully"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.410+00:00"},"s":"I",  "c":"WTRECOV",  "id":22430,   "ctx":"initandlisten","msg":"WiredTiger message","attr":{"message":{"ts_sec":1777479094,"ts_usec":410756,"thread":"1:0x7d87ad6f3400","session_name":"connection","category":"WT_VERB_RECOVERY","log_id":1000000,"category_id":32,"verbose_level":"INFO","verbose_level_id":0,"msg":"the WiredTiger library has successfully opened"}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.410+00:00"},"s":"I",  "c":"STORAGE",  "id":10158001,"ctx":"initandlisten","msg":"Spill WiredTiger opened","attr":{"durationMillis":67}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.411+00:00"},"s":"I",  "c":"STORAGE",  "id":9529901, "ctx":"initandlisten","msg":"Initializing durable catalog","attr":{"numRecords":17}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.413+00:00"},"s":"I",  "c":"STORAGE",  "id":9529902, "ctx":"initandlisten","msg":"Retrieving all idents from storage engine"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.413+00:00"},"s":"I",  "c":"STORAGE",  "id":9529903, "ctx":"initandlisten","msg":"Initializing all collections in durable catalog","attr":{"numEntries":17}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.418+00:00"},"s":"W",  "c":"CONTROL",  "id":22120,   "ctx":"initandlisten","msg":"Access control is not enabled for the database. Read and write access to data and configuration is unrestricted","tags":["startupWarnings"]}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.418+00:00"},"s":"W",  "c":"CONTROL",  "id":9068900, "ctx":"initandlisten","msg":"For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile","attr":{"allocator":"tcmalloc-google","sysfsFile":"/sys/kernel/mm/transparent_hugepage/enabled","currentValue":"never","desiredValue":"always"},"tags":["startupWarnings"]}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.418+00:00"},"s":"W",  "c":"CONTROL",  "id":9068900, "ctx":"initandlisten","msg":"For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile","attr":{"allocator":"tcmalloc-google","sysfsFile":"/sys/kernel/mm/transparent_hugepage/defrag","currentValue":"madvise","desiredValue":"defer+madvise"},"tags":["startupWarnings"]}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.418+00:00"},"s":"W",  "c":"CONTROL",  "id":8640302, "ctx":"initandlisten","msg":"We suggest setting the contents of sysfsFile to 0.","attr":{"sysfsFile":"/sys/kernel/mm/transparent_hugepage/khugepaged/max_ptes_none","currentValue":511},"tags":["startupWarnings"]}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.418+00:00"},"s":"W",  "c":"CONTROL",  "id":8386700, "ctx":"initandlisten","msg":"We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.","attr":{"sysfsFile":"/proc/sys/vm/swappiness","currentValue":60},"tags":["startupWarnings"]}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.421+00:00"},"s":"I",  "c":"NETWORK",  "id":4915702, "ctx":"initandlisten","msg":"Updated wire specification","attr":{"oldSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":27},"incomingInternalClient":{"minWireVersion":0,"maxWireVersion":27},"outgoing":{"minWireVersion":6,"maxWireVersion":27},"isInternalClient":true},"newSpec":{"incomingExternalClient":{"minWireVersion":0,"maxWireVersion":27},"incomingInternalClient":{"minWireVersion":27,"maxWireVersion":27},"outgoing":{"minWireVersion":27,"maxWireVersion":27},"isInternalClient":true}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.421+00:00"},"s":"I",  "c":"REPL",     "id":5853300, "ctx":"initandlisten","msg":"current featureCompatibilityVersion value","attr":{"featureCompatibilityVersion":"8.2","context":"startup"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.422+00:00"},"s":"I",  "c":"STORAGE",  "id":5071100, "ctx":"initandlisten","msg":"Clearing temp directory"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.422+00:00"},"s":"I",  "c":"STORAGE",  "id":10682200,"ctx":"initandlisten","msg":"Dropping spill idents","attr":{"numIdents":0}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.422+00:00"},"s":"I",  "c":"CONTROL",  "id":6608200, "ctx":"initandlisten","msg":"Initializing cluster server parameters from disk"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.422+00:00"},"s":"I",  "c":"CONTROL",  "id":20536,   "ctx":"initandlisten","msg":"Flow Control is enabled on this deployment"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.423+00:00"},"s":"I",  "c":"FTDC",     "id":20625,   "ctx":"initandlisten","msg":"Initializing full-time diagnostic data capture","attr":{"dataDirectory":"/data/db/diagnostic.data"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.430+00:00"},"s":"I",  "c":"REPL",     "id":6015317, "ctx":"initandlisten","msg":"Setting new configuration state","attr":{"newState":"ConfigReplicationDisabled","oldState":"ConfigPreStart"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.430+00:00"},"s":"I",  "c":"STORAGE",  "id":22262,   "ctx":"initandlisten","msg":"Timestamp monitor starting"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.430+00:00"},"s":"I",  "c":"STORAGE",  "id":7333401, "ctx":"initandlisten","msg":"Starting the DiskSpaceMonitor"}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.432+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"/tmp/mongodb-27017.sock"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.432+00:00"},"s":"I",  "c":"NETWORK",  "id":23015,   "ctx":"listener","msg":"Listening on","attr":{"address":"0.0.0.0:27017"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.432+00:00"},"s":"I",  "c":"NETWORK",  "id":23016,   "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:34.432+00:00"},"s":"I",  "c":"CONTROL",  "id":8423403, "ctx":"initandlisten","msg":"mongod startup complete","attr":{"Summary of time elapsed":{"Startup from clean shutdown?":false,"Statistics":{"setUpPeriodicRunnerMillis":0,"setUpOCSPMillis":0,"setUpTransportLayerMillis":0,"initSyncCrashRecoveryMillis":0,"createLockFileMillis":1,"getStorageEngineMetadataMillis":0,"validateMetadataMillis":0,"createStorageEngineMillis":288,"writePIDMillis":0,"initializeFCVForIndexMillis":3,"dropAbandonedIdentsMillis":0,"standaloneClusterParamsMillis":0,"userAndRolesGraphMillis":0,"waitForMajorityServiceMillis":0,"startUpReplCoordMillis":2,"recoverChangeStreamMillis":0,"logStartupOptionsMillis":0,"startUpTransportLayerMillis":1,"initAndListenTotalMillis":310}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.876+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.18.0.4:45380","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"7b335adb-0cb2-4a8f-a68d-e6383ceab956"}},"connectionId":1,"connectionCount":1}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.892+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn1","msg":"client metadata","attr":{"remote":"172.18.0.4:45380","client":"conn1","negotiatedCompressors":[],"doc":{"driver":{"name":"PyMongo|c","version":"4.13.2"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"6.6.87.2-microsoft-standard-WSL2"},"platform":"CPython 3.10.20.final.0","env":{"container":{"runtime":"docker"}}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.892+00:00"},"s":"I",  "c":"ACCESS",   "id":10483900,"ctx":"conn1","msg":"Connection not authenticating","attr":{"client":"172.18.0.4:45380","doc":{"driver":{"name":"PyMongo|c","version":"4.13.2"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"6.6.87.2-microsoft-standard-WSL2"},"platform":"CPython 3.10.20.final.0","env":{"container":{"runtime":"docker"}}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.916+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.18.0.4:45392","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"6cbc40f6-4394-48de-a88e-b30aca97b501"}},"connectionId":2,"connectionCount":2}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.916+00:00"},"s":"I",  "c":"NETWORK",  "id":22943,   "ctx":"listener","msg":"Connection accepted","attr":{"remote":"172.18.0.4:45402","isLoadBalanced":false,"uuid":{"uuid":{"$uuid":"cfaef811-1847-4acc-84f9-7f7e7ab6f1e8"}},"connectionId":3,"connectionCount":3}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.916+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn2","msg":"client metadata","attr":{"remote":"172.18.0.4:45392","client":"conn2","negotiatedCompressors":[],"doc":{"driver":{"name":"PyMongo|c","version":"4.13.2"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"6.6.87.2-microsoft-standard-WSL2"},"platform":"CPython 3.10.20.final.0","env":{"container":{"runtime":"docker"}}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.916+00:00"},"s":"I",  "c":"ACCESS",   "id":10483900,"ctx":"conn2","msg":"Connection not authenticating","attr":{"client":"172.18.0.4:45392","doc":{"driver":{"name":"PyMongo|c","version":"4.13.2"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"6.6.87.2-microsoft-standard-WSL2"},"platform":"CPython 3.10.20.final.0","env":{"container":{"runtime":"docker"}}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.916+00:00"},"s":"I",  "c":"NETWORK",  "id":51800,   "ctx":"conn3","msg":"client metadata","attr":{"remote":"172.18.0.4:45402","client":"conn3","negotiatedCompressors":[],"doc":{"driver":{"name":"PyMongo|c","version":"4.13.2"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"6.6.87.2-microsoft-standard-WSL2"},"platform":"CPython 3.10.20.final.0","env":{"container":{"runtime":"docker"}}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.916+00:00"},"s":"I",  "c":"ACCESS",   "id":10483900,"ctx":"conn3","msg":"Connection not authenticating","attr":{"client":"172.18.0.4:45402","doc":{"driver":{"name":"PyMongo|c","version":"4.13.2"},"os":{"type":"Linux","name":"Linux","architecture":"x86_64","version":"6.6.87.2-microsoft-standard-WSL2"},"platform":"CPython 3.10.20.final.0","env":{"container":{"runtime":"docker"}}}}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:41.980+00:00"},"s":"I",  "c":"NETWORK",  "id":6788700, "ctx":"conn2","msg":"Received first command on ingress connection since session start or auth handshake","attr":{"elapsedMillis":64}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:42.078+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn2","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"3d98f8b4-c615-4eab-baf2-1c9f779d3b98"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"data":{"bytesRead":587060,"timeReadingMicros":2186},"timeWaitingMicros":{"storageExecutionMicros":8432}},"cpuNanos":100668300,"remote":"172.18.0.4:45392","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":103,"durationMillis":103}}
-mongo-1  | {"t":{"$date":"2026-04-29T16:11:42.272+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn2","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"3d98f8b4-c615-4eab-baf2-1c9f779d3b98"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"data":{"bytesWritten":574875,"timeWritingMicros":399},"timeWaitingMicros":{"storageExecutionMicros":10456}},"cpuNanos":104352000,"remote":"172.18.0.4:45392","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":104,"durationMillis":104}}mongo-1  | {"t":{"$date":"2026-04-29T16:11:42.529+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn2","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"3d98f8b4-c615-4eab-baf2-1c9f779d3b98"}},"$db":"openf1-livetiming"},"ninserted":50000,"keysInserted":50000,"numYields":0,"reslen":45,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":101}},"Global":{"acquireCount":{"r":1,"w":100}},"Database":{"acquireCount":{"r":1,"w":100}},"Collection":{"acquireCount":{"r":1,"w":100}}},"flowControl":{"acquireCount":100},"storage":{"data":{"bytesWritten":574786,"timeWritingMicros":518},"timeWaitingMicros":{"storageExecutionMicros":10490}},"cpuNanos":107462300,"remote":"172.18.0.4:45392","protocol":"op_msg","numInterruptChecks":406,"queues":{"ingress":{"admissions":1},"execution":{"admissions":102}},"workingMillis":107,"durationMillis":107}}mongo-1  | {"t":{"$date":"2026-04-29T16:11:43.017+00:00"},"s":"I",  "c":"COMMAND",  "id":51803,   "ctx":"conn2","msg":"Slow query","attr":{"type":"command","isFromUserConnection":true,"ns":"openf1-livetiming.car_data","collectionType":"normal","command":{"insert":"car_data","ordered":false,"lsid":{"id":{"$uuid":"3d98f8b4-c615-4eab-baf2-1c9f779d3b98"}},"$db":"openf1-livetiming"},"ninserted":40677,"keysInserted":40677,"numYields":0,"reslen":1938137,"locks":{"ReplicationStateTransition":{"acquireCount":{"w":9424}},"Global":{"acquireCount":{"r":1,"w":9423}},"Database":{"acquireCount":{"r":1,"w":9423}},"Collection":{"acquireCount":{"r":1,"w":9423}}},"flowControl":{"acquireCount":9423},"storage":{"data":{"bytesRead":103181,"bytesWritten":582960,"timeReadingMicros":572,"timeWritingMicros":393},"timeWaitingMicros":{"storageExecutionMicros":8914}},"cpuNanos":400569200,"remote":"172.18.0.4:45392","protocol":"op_msg","numInterruptChecks":37698,"queues":{"ingress":{"admissions":1},"execution":{"admissions":9425}},"workingMillis":401,"durationMillis":401}}
+2026-04-30T00:03:11.573142757Z [inf]  Starting api
+2026-04-30T00:03:11.573149174Z [inf]  Starting ingest-historical
+2026-04-30T00:03:11.573154873Z [inf]  Dropping MongoDB database openf1-livetiming (if set)
+2026-04-30T00:03:11.573160247Z [inf]  Starting ingest-realtime
+2026-04-30T00:03:11.573166093Z [err]  INFO:     Will watch for changes in these directories: ['/app']
+2026-04-30T00:03:11.573172533Z [err]  INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-04-30T00:03:11.573177996Z [err]  INFO:     Started reloader process [6] using StatReload
+2026-04-30T00:03:11.573184196Z [inf]  Dropped database: openf1-livetiming
+2026-04-30T00:03:11.573189799Z [inf]  Ingesting historical season for year: 2023
+2026-04-30T00:03:11.573195545Z [err]  INFO:     Started server process [11]
+2026-04-30T00:03:11.573201757Z [err]  INFO:     Waiting for application startup.
+2026-04-30T00:03:11.573206893Z [err]  INFO:     Application startup complete.
+2026-04-30T00:03:11.573212803Z [inf]  {
+2026-04-30T00:03:11.573218594Z [inf]    "Year": 2023,
+2026-04-30T00:03:11.573224231Z [inf]    "Meetings": [
+2026-04-30T00:03:11.573229781Z [inf]      {
+2026-04-30T00:03:11.573235337Z [inf]        "Sessions": [
+2026-04-30T00:03:11.573240742Z [inf]          {
+2026-04-30T00:03:11.573246050Z [inf]            "Key": 9222,
+2026-04-30T00:03:11.573251304Z [inf]            "Type": "Practice",
+2026-04-30T00:03:11.573257347Z [inf]            "Number": 1,
+2026-04-30T00:03:11.573263055Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:11.573268819Z [inf]            "StartDate": "2023-02-23T10:00:00",
+2026-04-30T00:03:11.573274415Z [inf]            "EndDate": "2023-02-23T19:30:00",
+2026-04-30T00:03:11.573280329Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:11.573286341Z [inf]            "Path": "2023/2023-02-25_Pre-Season_Testing/2023-02-23_Practice_1/"
+2026-04-30T00:03:11.573292569Z [inf]          },
+2026-04-30T00:03:11.646909598Z [inf]  Starting Container
+2026-04-30T00:03:13.471021527Z [inf]          {
+2026-04-30T00:03:13.471028363Z [inf]            "Key": 7763,
+2026-04-30T00:03:13.471035472Z [inf]            "Type": "Practice",
+2026-04-30T00:03:13.471043335Z [inf]            "Number": 2,
+2026-04-30T00:03:13.471323355Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:13.471338316Z [inf]            "StartDate": "2023-02-24T10:00:00",
+2026-04-30T00:03:13.472381664Z [inf]            "EndDate": "2023-02-24T19:30:00",
+2026-04-30T00:03:13.472401160Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:13.472426706Z [inf]            "Path": "2023/2023-02-25_Pre-Season_Testing/2023-02-24_Practice_2/"
+2026-04-30T00:03:13.472438987Z [inf]          },
+2026-04-30T00:03:13.472445384Z [inf]          {
+2026-04-30T00:03:13.472451097Z [inf]            "Key": 7764,
+2026-04-30T00:03:13.472456750Z [inf]            "Type": "Practice",
+2026-04-30T00:03:13.472464478Z [inf]            "Number": 3,
+2026-04-30T00:03:13.472469779Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:13.472475909Z [inf]            "StartDate": "2023-02-25T10:00:00",
+2026-04-30T00:03:13.472481734Z [inf]            "EndDate": "2023-02-25T19:30:00",
+2026-04-30T00:03:13.472487378Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:13.472493432Z [inf]            "Path": "2023/2023-02-25_Pre-Season_Testing/2023-02-25_Practice_3/"
+2026-04-30T00:03:13.472499637Z [inf]          }
+2026-04-30T00:03:13.472505117Z [inf]        ],
+2026-04-30T00:03:13.472511044Z [inf]        "Key": 1140,
+2026-04-30T00:03:13.472516276Z [inf]        "Code": "BRN0104",
+2026-04-30T00:03:13.472521273Z [inf]        "Number": 1,
+2026-04-30T00:03:13.472526233Z [inf]        "Location": "Sakhir",
+2026-04-30T00:03:13.472531593Z [inf]        "OfficialName": "FORMULA 1 ARAMCO PRE-SEASON TESTING 2023",
+2026-04-30T00:03:13.472537601Z [inf]        "Name": "Pre-Season Testing",
+2026-04-30T00:03:15.572372333Z [inf]        }
+2026-04-30T00:03:15.572372681Z [inf]        "Sessions": [
+2026-04-30T00:03:15.572383778Z [inf]          {
+2026-04-30T00:03:15.572386723Z [inf]      },
+2026-04-30T00:03:15.572393661Z [inf]            "Key": 7765,
+2026-04-30T00:03:15.572397289Z [inf]      {
+2026-04-30T00:03:15.572401826Z [inf]            "Type": "Practice",
+2026-04-30T00:03:15.572406773Z [inf]            "Number": 1,
+2026-04-30T00:03:15.572460512Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:15.572468265Z [inf]            "EndDate": "2023-03-03T19:00:00",
+2026-04-30T00:03:15.572468567Z [inf]            "StartDate": "2023-03-03T14:30:00",
+2026-04-30T00:03:15.572482238Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:15.572505043Z [inf]            "EndDate": "2023-03-03T15:30:00",
+2026-04-30T00:03:15.572511557Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:15.572517618Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-03_Practice_1/"
+2026-04-30T00:03:15.572522338Z [inf]          },
+2026-04-30T00:03:15.572528749Z [inf]          {
+2026-04-30T00:03:15.572532289Z [inf]            "Type": "Practice",
+2026-04-30T00:03:15.572536364Z [inf]            "Key": 7766,
+2026-04-30T00:03:15.572541489Z [inf]            "Number": 2,
+2026-04-30T00:03:15.572549551Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:15.572555705Z [inf]            "StartDate": "2023-03-03T18:00:00",
+2026-04-30T00:03:15.572894131Z [inf]        "Country": {
+2026-04-30T00:03:15.572901837Z [inf]          "Key": 36,
+2026-04-30T00:03:15.572909761Z [inf]          "Code": "BRN",
+2026-04-30T00:03:15.572916560Z [inf]          "Name": "Bahrain"
+2026-04-30T00:03:15.572922453Z [inf]        },
+2026-04-30T00:03:15.572928540Z [inf]        "Circuit": {
+2026-04-30T00:03:15.572934035Z [inf]          "Key": 63,
+2026-04-30T00:03:15.572939684Z [inf]          "ShortName": "Sakhir"
+2026-04-30T00:03:17.542387258Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-03_Practice_2/"
+2026-04-30T00:03:17.542392844Z [inf]          },
+2026-04-30T00:03:17.542398129Z [inf]          {
+2026-04-30T00:03:17.542403985Z [inf]            "Key": 7767,
+2026-04-30T00:03:17.542409141Z [inf]            "Type": "Practice",
+2026-04-30T00:03:17.542414587Z [inf]            "Number": 3,
+2026-04-30T00:03:17.542422054Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:17.542427290Z [inf]            "StartDate": "2023-03-04T14:30:00",
+2026-04-30T00:03:17.542432200Z [inf]            "EndDate": "2023-03-04T15:30:00",
+2026-04-30T00:03:17.542437365Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:17.542446416Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-04_Practice_3/"
+2026-04-30T00:03:17.542452115Z [inf]          },
+2026-04-30T00:03:17.542457684Z [inf]          {
+2026-04-30T00:03:17.542464572Z [inf]            "Key": 7768,
+2026-04-30T00:03:17.542470140Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:17.542475112Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:17.542480355Z [inf]            "StartDate": "2023-03-04T18:00:00",
+2026-04-30T00:03:17.542485392Z [inf]            "EndDate": "2023-03-04T19:00:00",
+2026-04-30T00:03:17.542490459Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:17.542495871Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-04_Qualifying/"
+2026-04-30T00:03:17.542501370Z [inf]          },
+2026-04-30T00:03:17.542506590Z [inf]          {
+2026-04-30T00:03:17.542511701Z [inf]            "Key": 7953,
+2026-04-30T00:03:17.542516699Z [inf]            "Type": "Race",
+2026-04-30T00:03:17.542521499Z [inf]            "Name": "Race",
+2026-04-30T00:03:17.542526775Z [inf]            "StartDate": "2023-03-05T18:00:00",
+2026-04-30T00:03:17.542533888Z [inf]            "EndDate": "2023-03-05T20:00:00",
+2026-04-30T00:03:19.173391435Z [inf]        "Key": 1141,
+2026-04-30T00:03:19.173403310Z [inf]          "Name": "Bahrain"
+2026-04-30T00:03:19.173403539Z [inf]        "Code": "BRN0104",
+2026-04-30T00:03:19.173414056Z [inf]        "Number": 1,
+2026-04-30T00:03:19.173414126Z [inf]        }
+2026-04-30T00:03:19.173415001Z [inf]        },
+2026-04-30T00:03:19.173421293Z [inf]        "Location": "Sakhir",
+2026-04-30T00:03:19.173426421Z [inf]        "Circuit": {
+2026-04-30T00:03:19.173427963Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:19.173429639Z [inf]      },
+2026-04-30T00:03:19.173431225Z [inf]        "OfficialName": "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2023",
+2026-04-30T00:03:19.173437904Z [inf]            "Key": 7772,
+2026-04-30T00:03:19.173438700Z [inf]            "Path": "2023/2023-03-05_Bahrain_Grand_Prix/2023-03-05_Race/"
+2026-04-30T00:03:19.173441911Z [inf]      {
+2026-04-30T00:03:19.173449727Z [inf]        "Sessions": [
+2026-04-30T00:03:19.173451780Z [inf]            "Type": "Practice",
+2026-04-30T00:03:19.173455941Z [inf]          }
+2026-04-30T00:03:19.173456469Z [inf]          "Key": 63,
+2026-04-30T00:03:19.173461866Z [inf]          {
+2026-04-30T00:03:19.173464939Z [inf]            "Number": 1,
+2026-04-30T00:03:19.173467986Z [inf]          "ShortName": "Sakhir"
+2026-04-30T00:03:19.173468173Z [inf]        ],
+2026-04-30T00:03:19.173475070Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:19.173478668Z [inf]            "EndDate": "2023-03-17T17:30:00",
+2026-04-30T00:03:19.173483192Z [inf]            "StartDate": "2023-03-17T16:30:00",
+2026-04-30T00:03:19.173491507Z [inf]        "Name": "Bahrain Grand Prix",
+2026-04-30T00:03:19.173498505Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:19.173501047Z [inf]        "Country": {
+2026-04-30T00:03:19.173507844Z [inf]          "Key": 36,
+2026-04-30T00:03:19.173515636Z [inf]          "Code": "BRN",
+2026-04-30T00:03:20.783350138Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-17_Practice_1/"
+2026-04-30T00:03:20.783356450Z [inf]          },
+2026-04-30T00:03:20.783362697Z [inf]          {
+2026-04-30T00:03:20.783372558Z [inf]            "Key": 7773,
+2026-04-30T00:03:20.783379577Z [inf]            "Type": "Practice",
+2026-04-30T00:03:20.783385942Z [inf]            "Number": 2,
+2026-04-30T00:03:20.783392532Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:20.783399612Z [inf]            "StartDate": "2023-03-17T20:00:00",
+2026-04-30T00:03:20.783406148Z [inf]            "EndDate": "2023-03-17T21:00:00",
+2026-04-30T00:03:20.783420302Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:20.783436362Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-17_Practice_2/"
+2026-04-30T00:03:20.783442731Z [inf]          },
+2026-04-30T00:03:20.783449345Z [inf]          {
+2026-04-30T00:03:20.783455650Z [inf]            "Key": 7774,
+2026-04-30T00:03:20.783462072Z [inf]            "Type": "Practice",
+2026-04-30T00:03:20.783469724Z [inf]            "Number": 3,
+2026-04-30T00:03:20.783475998Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:20.783483722Z [inf]            "StartDate": "2023-03-18T16:30:00",
+2026-04-30T00:03:20.783489515Z [inf]            "EndDate": "2023-03-18T17:30:00",
+2026-04-30T00:03:20.783495383Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:20.784346677Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-18_Practice_3/"
+2026-04-30T00:03:20.784354662Z [inf]          },
+2026-04-30T00:03:20.784361285Z [inf]          {
+2026-04-30T00:03:20.784368195Z [inf]            "Key": 7775,
+2026-04-30T00:03:20.784375709Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:20.784382886Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:20.784390208Z [inf]            "StartDate": "2023-03-18T20:00:00",
+2026-04-30T00:03:22.042335131Z [inf]            "Type": "Race",
+2026-04-30T00:03:22.042346202Z [inf]          "ShortName": "Jeddah"
+2026-04-30T00:03:22.042352453Z [inf]            "Name": "Race",
+2026-04-30T00:03:22.042360955Z [inf]            "StartDate": "2023-03-19T20:00:00",
+2026-04-30T00:03:22.042369813Z [inf]            "EndDate": "2023-03-18T21:00:00",
+2026-04-30T00:03:22.042384476Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:22.042399501Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-18_Qualifying/"
+2026-04-30T00:03:22.042414160Z [inf]            "EndDate": "2023-03-19T22:00:00",
+2026-04-30T00:03:22.042416076Z [inf]          },
+2026-04-30T00:03:22.042419769Z [inf]        "OfficialName": "FORMULA 1 STC SAUDI ARABIAN GRAND PRIX 2023",
+2026-04-30T00:03:22.042428497Z [inf]          {
+2026-04-30T00:03:22.042430771Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:03:22.042434662Z [inf]        "Name": "Saudi Arabian Grand Prix",
+2026-04-30T00:03:22.042441065Z [inf]            "Key": 7779,
+2026-04-30T00:03:22.042443088Z [inf]            "Path": "2023/2023-03-19_Saudi_Arabian_Grand_Prix/2023-03-19_Race/"
+2026-04-30T00:03:22.042447365Z [inf]        "Country": {
+2026-04-30T00:03:22.042454775Z [inf]          "Key": 153,
+2026-04-30T00:03:22.042461365Z [inf]          "Code": "KSA",
+2026-04-30T00:03:22.042473883Z [inf]          }
+2026-04-30T00:03:22.042481979Z [inf]          "Name": "Saudi Arabia"
+2026-04-30T00:03:22.042491761Z [inf]        ],
+2026-04-30T00:03:22.042494907Z [inf]        "Circuit": {
+2026-04-30T00:03:22.042497063Z [inf]        "Code": "KSA0101",
+2026-04-30T00:03:22.042501468Z [inf]        },
+2026-04-30T00:03:22.042505886Z [inf]        "Key": 1142,
+2026-04-30T00:03:22.042508900Z [inf]        "Number": 2,
+2026-04-30T00:03:22.042510197Z [inf]          "Key": 149,
+2026-04-30T00:03:22.042521226Z [inf]        "Location": "Jeddah",
+2026-04-30T00:03:23.243960713Z [inf]      },
+2026-04-30T00:03:23.243969657Z [inf]      {
+2026-04-30T00:03:23.243977754Z [inf]        "Sessions": [
+2026-04-30T00:03:23.243984366Z [inf]          {
+2026-04-30T00:03:23.243991079Z [inf]            "Key": 7780,
+2026-04-30T00:03:23.243999575Z [inf]            "Type": "Practice",
+2026-04-30T00:03:23.244003165Z [inf]        }
+2026-04-30T00:03:23.244009795Z [inf]            "Number": 1,
+2026-04-30T00:03:23.244019837Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:23.244030278Z [inf]            "StartDate": "2023-03-31T12:30:00",
+2026-04-30T00:03:23.244035659Z [inf]            "GmtOffset": "11:00:00",
+2026-04-30T00:03:23.244043315Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-03-31_Practice_2/"
+2026-04-30T00:03:23.244047652Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-03-31_Practice_1/"
+2026-04-30T00:03:23.244053757Z [inf]            "EndDate": "2023-03-31T13:30:00",
+2026-04-30T00:03:23.244062670Z [inf]          },
+2026-04-30T00:03:23.244071783Z [inf]          },
+2026-04-30T00:03:23.244073305Z [inf]          {
+2026-04-30T00:03:23.244080642Z [inf]          {
+2026-04-30T00:03:23.244084909Z [inf]            "Key": 7782,
+2026-04-30T00:03:23.244093139Z [inf]            "Key": 7781,
+2026-04-30T00:03:23.244094920Z [inf]            "Type": "Practice",
+2026-04-30T00:03:23.244103604Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:23.244108324Z [inf]            "Number": 2,
+2026-04-30T00:03:23.244108635Z [inf]            "Type": "Practice",
+2026-04-30T00:03:23.244111580Z [inf]            "Number": 3,
+2026-04-30T00:03:23.244128380Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:23.244138725Z [inf]            "StartDate": "2023-03-31T16:00:00",
+2026-04-30T00:03:23.244162108Z [inf]            "EndDate": "2023-03-31T17:00:00",
+2026-04-30T00:03:23.244177668Z [inf]            "GmtOffset": "11:00:00",
+2026-04-30T00:03:24.473660055Z [inf]            "StartDate": "2023-04-01T12:30:00",
+2026-04-30T00:03:24.473666232Z [inf]            "EndDate": "2023-04-01T13:30:00",
+2026-04-30T00:03:24.473672232Z [inf]            "GmtOffset": "11:00:00",
+2026-04-30T00:03:24.473678505Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-04-01_Practice_3/"
+2026-04-30T00:03:24.473684213Z [inf]          },
+2026-04-30T00:03:24.473692000Z [inf]          {
+2026-04-30T00:03:24.473698586Z [inf]            "Key": 7783,
+2026-04-30T00:03:24.473703839Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:24.473708670Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:24.473714015Z [inf]            "StartDate": "2023-04-01T16:00:00",
+2026-04-30T00:03:24.473719608Z [inf]            "EndDate": "2023-04-01T17:00:00",
+2026-04-30T00:03:24.473727965Z [inf]            "GmtOffset": "11:00:00",
+2026-04-30T00:03:24.473733824Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-04-01_Qualifying/"
+2026-04-30T00:03:24.473739558Z [inf]          },
+2026-04-30T00:03:24.473744640Z [inf]          {
+2026-04-30T00:03:24.473749720Z [inf]            "Key": 7787,
+2026-04-30T00:03:24.473757167Z [inf]            "Type": "Race",
+2026-04-30T00:03:24.474096197Z [inf]            "Name": "Race",
+2026-04-30T00:03:24.474103773Z [inf]            "StartDate": "2023-04-02T15:00:00",
+2026-04-30T00:03:24.474109717Z [inf]            "EndDate": "2023-04-02T17:00:00",
+2026-04-30T00:03:24.474115107Z [inf]            "GmtOffset": "10:00:00",
+2026-04-30T00:03:24.474126720Z [inf]            "Path": "2023/2023-04-02_Australian_Grand_Prix/2023-04-02_Race/"
+2026-04-30T00:03:24.474148956Z [inf]          }
+2026-04-30T00:03:24.474155586Z [inf]        ],
+2026-04-30T00:03:24.474161136Z [inf]        "Key": 1143,
+2026-04-30T00:03:24.474166725Z [inf]        "Code": "AUS0204",
+2026-04-30T00:03:24.474174598Z [inf]        "Number": 3,
+2026-04-30T00:03:26.194914089Z [inf]        "Location": "Melbourne",
+2026-04-30T00:03:26.194921272Z [inf]        "OfficialName": "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2023",
+2026-04-30T00:03:26.194929882Z [inf]        "Name": "Australian Grand Prix",
+2026-04-30T00:03:26.194939219Z [inf]        "Country": {
+2026-04-30T00:03:26.194946154Z [inf]          "Key": 5,
+2026-04-30T00:03:26.194952778Z [inf]          "Code": "AUS",
+2026-04-30T00:03:26.194959783Z [inf]          "Name": "Australia"
+2026-04-30T00:03:26.194966430Z [inf]        },
+2026-04-30T00:03:26.194973784Z [inf]        "Circuit": {
+2026-04-30T00:03:26.194980106Z [inf]          "Key": 10,
+2026-04-30T00:03:26.194987105Z [inf]          "ShortName": "Melbourne"
+2026-04-30T00:03:26.194994494Z [inf]        }
+2026-04-30T00:03:26.195001334Z [inf]      },
+2026-04-30T00:03:26.195007521Z [inf]      {
+2026-04-30T00:03:26.195015827Z [inf]        "Sessions": [
+2026-04-30T00:03:26.195133122Z [inf]          {
+2026-04-30T00:03:26.195142485Z [inf]            "Key": 9063,
+2026-04-30T00:03:26.195155330Z [inf]            "Type": "Practice",
+2026-04-30T00:03:26.195162761Z [inf]            "Number": 1,
+2026-04-30T00:03:26.195169035Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:26.195176402Z [inf]            "StartDate": "2023-04-28T13:30:00",
+2026-04-30T00:03:26.195183102Z [inf]            "EndDate": "2023-04-28T14:30:00",
+2026-04-30T00:03:26.195189767Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:03:26.195196106Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-28_Practice_1/"
+2026-04-30T00:03:26.195203278Z [inf]          },
+2026-04-30T00:03:26.195250749Z [inf]          {
+2026-04-30T00:03:26.195260581Z [inf]            "Key": 9064,
+2026-04-30T00:03:26.195267627Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:26.195274892Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:27.942962500Z [inf]            "EndDate": "2023-04-28T18:00:00",
+2026-04-30T00:03:27.942976252Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:03:27.943115853Z [inf]            "StartDate": "2023-04-28T17:00:00",
+2026-04-30T00:03:27.943210920Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-28_Qualifying/"
+2026-04-30T00:03:27.943231041Z [inf]          },
+2026-04-30T00:03:27.943237835Z [inf]          {
+2026-04-30T00:03:27.943244567Z [inf]            "Key": 9278,
+2026-04-30T00:03:27.943251180Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:27.943259708Z [inf]            "Number": -1,
+2026-04-30T00:03:27.943265484Z [inf]            "Name": "Sprint Shootout",
+2026-04-30T00:03:27.943272364Z [inf]            "StartDate": "2023-04-29T12:30:00",
+2026-04-30T00:03:27.943278460Z [inf]            "EndDate": "2023-04-29T13:14:00",
+2026-04-30T00:03:27.943285302Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:03:27.943292516Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-29_Sprint_Shootout/"
+2026-04-30T00:03:27.943298635Z [inf]          },
+2026-04-30T00:03:27.943305187Z [inf]          {
+2026-04-30T00:03:27.943311697Z [inf]            "Key": 9069,
+2026-04-30T00:03:27.943318364Z [inf]            "Type": "Race",
+2026-04-30T00:03:27.943324854Z [inf]            "Number": -1,
+2026-04-30T00:03:27.943356214Z [inf]            "Name": "Sprint",
+2026-04-30T00:03:27.943366757Z [inf]            "StartDate": "2023-04-29T17:30:00",
+2026-04-30T00:03:27.943372624Z [inf]            "EndDate": "2023-04-29T18:00:00",
+2026-04-30T00:03:27.943380121Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:03:27.943386749Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-29_Sprint/"
+2026-04-30T00:03:27.943393429Z [inf]          },
+2026-04-30T00:03:27.943400884Z [inf]          {
+2026-04-30T00:03:30.481856616Z [inf]            "Key": 9070,
+2026-04-30T00:03:30.481865564Z [inf]            "Type": "Race",
+2026-04-30T00:03:30.481873654Z [inf]            "Name": "Race",
+2026-04-30T00:03:30.481880883Z [inf]            "StartDate": "2023-04-30T15:00:00",
+2026-04-30T00:03:30.481889615Z [inf]            "EndDate": "2023-04-30T17:00:00",
+2026-04-30T00:03:30.481897539Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:03:30.481906573Z [inf]            "Path": "2023/2023-04-30_Azerbaijan_Grand_Prix/2023-04-30_Race/"
+2026-04-30T00:03:30.481917641Z [inf]          }
+2026-04-30T00:03:30.481926611Z [inf]        ],
+2026-04-30T00:03:30.481934193Z [inf]        "Key": 1207,
+2026-04-30T00:03:30.481942881Z [inf]        "Code": "AZE02",
+2026-04-30T00:03:30.481950861Z [inf]        "Number": 4,
+2026-04-30T00:03:30.481960021Z [inf]        "Location": "Baku",
+2026-04-30T00:03:30.481967640Z [inf]        "OfficialName": "FORMULA 1 AZERBAIJAN GRAND PRIX 2023",
+2026-04-30T00:03:30.481974346Z [inf]        "Name": "Azerbaijan Grand Prix",
+2026-04-30T00:03:30.481981609Z [inf]        "Country": {
+2026-04-30T00:03:30.481989465Z [inf]          "Key": 30,
+2026-04-30T00:03:30.481997306Z [inf]          "Code": "AZE",
+2026-04-30T00:03:30.482005437Z [inf]          "Name": "Azerbaijan"
+2026-04-30T00:03:30.482014956Z [inf]        },
+2026-04-30T00:03:30.482023515Z [inf]        "Circuit": {
+2026-04-30T00:03:30.482031137Z [inf]          "Key": 144,
+2026-04-30T00:03:30.482039406Z [inf]          "ShortName": "Baku"
+2026-04-30T00:03:30.482107894Z [inf]        }
+2026-04-30T00:03:30.482117005Z [inf]      },
+2026-04-30T00:03:30.482124350Z [inf]      {
+2026-04-30T00:03:30.482349814Z [inf]        "Sessions": [
+2026-04-30T00:03:30.482372590Z [inf]          {
+2026-04-30T00:03:30.482383454Z [inf]            "Key": 9071,
+2026-04-30T00:03:30.482392661Z [inf]            "Type": "Practice",
+2026-04-30T00:03:33.051869097Z [inf]            "Number": 1,
+2026-04-30T00:03:33.051876442Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:33.051885104Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:33.051885355Z [inf]            "StartDate": "2023-05-05T14:00:00",
+2026-04-30T00:03:33.051893306Z [inf]            "EndDate": "2023-05-05T15:00:00",
+2026-04-30T00:03:33.051900278Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-05_Practice_1/"
+2026-04-30T00:03:33.051908577Z [inf]          },
+2026-04-30T00:03:33.051915133Z [inf]          {
+2026-04-30T00:03:33.051925419Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:33.051925474Z [inf]            "Key": 9072,
+2026-04-30T00:03:33.051938824Z [inf]            "Type": "Practice",
+2026-04-30T00:03:33.051942584Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-06_Practice_3/"
+2026-04-30T00:03:33.051951851Z [inf]            "Number": 2,
+2026-04-30T00:03:33.051961135Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:33.051961464Z [inf]          {
+2026-04-30T00:03:33.051978784Z [inf]            "Key": 9073,
+2026-04-30T00:03:33.051996762Z [inf]            "Type": "Practice",
+2026-04-30T00:03:33.052003901Z [inf]            "Number": 3,
+2026-04-30T00:03:33.052013733Z [inf]            "StartDate": "2023-05-05T17:30:00",
+2026-04-30T00:03:33.052096612Z [inf]            "EndDate": "2023-05-05T18:30:00",
+2026-04-30T00:03:33.052110196Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:33.052122155Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-05_Practice_2/"
+2026-04-30T00:03:33.052130606Z [inf]          },
+2026-04-30T00:03:33.052267714Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:33.052276896Z [inf]            "StartDate": "2023-05-06T12:30:00",
+2026-04-30T00:03:33.052282123Z [inf]            "EndDate": "2023-05-06T13:30:00",
+2026-04-30T00:03:35.089614894Z [inf]          },
+2026-04-30T00:03:35.089856346Z [inf]          {
+2026-04-30T00:03:35.089867513Z [inf]            "Key": 9074,
+2026-04-30T00:03:35.089876046Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:35.089885045Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:35.089893814Z [inf]            "StartDate": "2023-05-06T16:00:00",
+2026-04-30T00:03:35.089902188Z [inf]            "EndDate": "2023-05-06T17:00:00",
+2026-04-30T00:03:35.089911637Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:35.089920855Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-06_Qualifying/"
+2026-04-30T00:03:35.089931392Z [inf]          },
+2026-04-30T00:03:35.089963256Z [inf]          {
+2026-04-30T00:03:35.089974401Z [inf]            "Key": 9078,
+2026-04-30T00:03:35.089984798Z [inf]            "Type": "Race",
+2026-04-30T00:03:35.089994334Z [inf]            "Name": "Race",
+2026-04-30T00:03:35.090003364Z [inf]            "StartDate": "2023-05-07T15:30:00",
+2026-04-30T00:03:35.090012435Z [inf]            "EndDate": "2023-05-07T17:30:00",
+2026-04-30T00:03:35.090021184Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:35.090355595Z [inf]            "Path": "2023/2023-05-07_Miami_Grand_Prix/2023-05-07_Race/"
+2026-04-30T00:03:35.090366538Z [inf]          }
+2026-04-30T00:03:35.090375858Z [inf]        ],
+2026-04-30T00:03:35.090389340Z [inf]        "Key": 1208,
+2026-04-30T00:03:35.090402482Z [inf]        "Code": "USA1401",
+2026-04-30T00:03:35.090410229Z [inf]        "Number": 5,
+2026-04-30T00:03:35.090418391Z [inf]        "Location": "Miami",
+2026-04-30T00:03:35.090427889Z [inf]        "OfficialName": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2023",
+2026-04-30T00:03:35.090436127Z [inf]        "Name": "Miami Grand Prix",
+2026-04-30T00:03:35.090444409Z [inf]        "Country": {
+2026-04-30T00:03:35.090709874Z [inf]          "Key": 19,
+2026-04-30T00:03:36.980698547Z [inf]          "Code": "USA",
+2026-04-30T00:03:36.980709820Z [inf]          "Name": "United States"
+2026-04-30T00:03:36.981476958Z [inf]        },
+2026-04-30T00:03:36.981484461Z [inf]        "Circuit": {
+2026-04-30T00:03:36.981488774Z [inf]          "Key": 151,
+2026-04-30T00:03:36.981494460Z [inf]          "ShortName": "Miami"
+2026-04-30T00:03:36.981499180Z [inf]        }
+2026-04-30T00:03:36.981503681Z [inf]      },
+2026-04-30T00:03:36.981507733Z [inf]      {
+2026-04-30T00:03:36.981511988Z [inf]        "Sessions": [
+2026-04-30T00:03:36.981516420Z [inf]          {
+2026-04-30T00:03:36.981520948Z [inf]            "Key": 9087,
+2026-04-30T00:03:36.981525791Z [inf]            "Type": "Practice",
+2026-04-30T00:03:36.981529919Z [inf]            "Number": 1,
+2026-04-30T00:03:36.981533763Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:36.981538391Z [inf]            "StartDate": "2023-05-26T13:30:00",
+2026-04-30T00:03:36.981542596Z [inf]            "EndDate": "2023-05-26T14:30:00",
+2026-04-30T00:03:36.981547382Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:36.981551174Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-26_Practice_1/"
+2026-04-30T00:03:36.981556115Z [inf]          },
+2026-04-30T00:03:36.981559988Z [inf]          {
+2026-04-30T00:03:36.981564322Z [inf]            "Key": 9088,
+2026-04-30T00:03:36.981568912Z [inf]            "Type": "Practice",
+2026-04-30T00:03:36.981574760Z [inf]            "Number": 2,
+2026-04-30T00:03:36.981578747Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:36.981582574Z [inf]            "StartDate": "2023-05-26T17:00:00",
+2026-04-30T00:03:36.981588267Z [inf]            "EndDate": "2023-05-26T18:00:00",
+2026-04-30T00:03:36.981592537Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:36.981597583Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-26_Practice_2/"
+2026-04-30T00:03:38.660786977Z [inf]          },
+2026-04-30T00:03:38.660797141Z [inf]          {
+2026-04-30T00:03:38.660804161Z [inf]            "Key": 9089,
+2026-04-30T00:03:38.661325410Z [inf]            "Type": "Practice",
+2026-04-30T00:03:38.661335944Z [inf]            "Number": 3,
+2026-04-30T00:03:38.661346705Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:38.661371044Z [inf]            "StartDate": "2023-05-27T12:30:00",
+2026-04-30T00:03:38.661377684Z [inf]            "EndDate": "2023-05-27T13:30:00",
+2026-04-30T00:03:38.661391014Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:38.661399141Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-27_Practice_3/"
+2026-04-30T00:03:38.661406604Z [inf]          },
+2026-04-30T00:03:38.661413512Z [inf]          {
+2026-04-30T00:03:38.661425545Z [inf]            "Key": 9090,
+2026-04-30T00:03:38.661444420Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:38.661504179Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:38.661513694Z [inf]            "StartDate": "2023-05-27T16:00:00",
+2026-04-30T00:03:38.661526039Z [inf]            "EndDate": "2023-05-27T17:00:00",
+2026-04-30T00:03:38.661548232Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:38.661617527Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-27_Qualifying/"
+2026-04-30T00:03:38.662287237Z [inf]          },
+2026-04-30T00:03:38.662297982Z [inf]          {
+2026-04-30T00:03:38.662306498Z [inf]            "Key": 9094,
+2026-04-30T00:03:38.662322115Z [inf]            "Type": "Race",
+2026-04-30T00:03:38.662328530Z [inf]            "Name": "Race",
+2026-04-30T00:03:38.662335270Z [inf]            "StartDate": "2023-05-28T15:00:00",
+2026-04-30T00:03:38.662343454Z [inf]            "EndDate": "2023-05-28T17:00:00",
+2026-04-30T00:03:38.662349840Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:40.859018215Z [inf]            "Path": "2023/2023-05-28_Monaco_Grand_Prix/2023-05-28_Race/"
+2026-04-30T00:03:40.859446516Z [inf]          }
+2026-04-30T00:03:40.859455779Z [inf]        ],
+2026-04-30T00:03:40.862192603Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-02_Practice_1/"
+2026-04-30T00:03:40.862311248Z [inf]        "Key": 1210,
+2026-04-30T00:03:40.862328805Z [inf]        "Code": "MON0112",
+2026-04-30T00:03:40.862339202Z [inf]        "Number": 7,
+2026-04-30T00:03:40.862348306Z [inf]        "Location": "Monaco",
+2026-04-30T00:03:40.862357348Z [inf]        "OfficialName": "FORMULA 1 GRAND PRIX DE MONACO 2023",
+2026-04-30T00:03:40.862368596Z [inf]        "Name": "Monaco Grand Prix",
+2026-04-30T00:03:40.862378685Z [inf]        "Country": {
+2026-04-30T00:03:40.862389242Z [inf]          "Key": 114,
+2026-04-30T00:03:40.862401793Z [inf]          "Code": "MON",
+2026-04-30T00:03:40.862412131Z [inf]          "Name": "Monaco"
+2026-04-30T00:03:40.862420315Z [inf]        },
+2026-04-30T00:03:40.862427133Z [inf]        "Circuit": {
+2026-04-30T00:03:40.862434989Z [inf]          "Key": 22,
+2026-04-30T00:03:40.862444627Z [inf]          "ShortName": "Monte Carlo"
+2026-04-30T00:03:40.862451456Z [inf]        }
+2026-04-30T00:03:40.862461862Z [inf]      },
+2026-04-30T00:03:40.862476323Z [inf]      {
+2026-04-30T00:03:40.862485378Z [inf]        "Sessions": [
+2026-04-30T00:03:40.862492414Z [inf]          {
+2026-04-30T00:03:40.862501814Z [inf]            "Key": 9095,
+2026-04-30T00:03:40.862508763Z [inf]            "Type": "Practice",
+2026-04-30T00:03:40.862520015Z [inf]            "Number": 1,
+2026-04-30T00:03:40.862580322Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:40.862590011Z [inf]            "StartDate": "2023-06-02T13:30:00",
+2026-04-30T00:03:40.862606932Z [inf]            "EndDate": "2023-06-02T14:30:00",
+2026-04-30T00:03:40.862616567Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:42.824542535Z [inf]          },
+2026-04-30T00:03:42.824550671Z [inf]          {
+2026-04-30T00:03:42.824557537Z [inf]            "Key": 9096,
+2026-04-30T00:03:42.824564210Z [inf]            "Type": "Practice",
+2026-04-30T00:03:42.824574346Z [inf]            "Number": 2,
+2026-04-30T00:03:42.824580425Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:42.824586532Z [inf]            "StartDate": "2023-06-02T17:00:00",
+2026-04-30T00:03:42.824592642Z [inf]            "EndDate": "2023-06-02T18:00:00",
+2026-04-30T00:03:42.824599500Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:42.824605949Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-02_Practice_2/"
+2026-04-30T00:03:42.824611771Z [inf]          },
+2026-04-30T00:03:42.824617454Z [inf]          {
+2026-04-30T00:03:42.824624049Z [inf]            "Key": 9097,
+2026-04-30T00:03:42.824629989Z [inf]            "Type": "Practice",
+2026-04-30T00:03:42.824636596Z [inf]            "Number": 3,
+2026-04-30T00:03:42.824643191Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:42.824649652Z [inf]            "StartDate": "2023-06-03T12:30:00",
+2026-04-30T00:03:42.824655709Z [inf]            "EndDate": "2023-06-03T13:30:00",
+2026-04-30T00:03:42.824661567Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:42.824667221Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-03_Practice_3/"
+2026-04-30T00:03:42.824673145Z [inf]          },
+2026-04-30T00:03:42.824680737Z [inf]          {
+2026-04-30T00:03:42.824686399Z [inf]            "Key": 9098,
+2026-04-30T00:03:42.824691791Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:42.824697485Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:42.824709115Z [inf]            "StartDate": "2023-06-03T16:00:00",
+2026-04-30T00:03:42.826714505Z [inf]            "EndDate": "2023-06-03T17:00:00",
+2026-04-30T00:03:45.791803764Z [inf]        ],
+2026-04-30T00:03:45.791819532Z [inf]        "Key": 1211,
+2026-04-30T00:03:45.791836522Z [inf]        "Code": "ESP0112",
+2026-04-30T00:03:45.791847813Z [inf]        "Number": 8,
+2026-04-30T00:03:45.791857949Z [inf]        "Location": "Barcelona",
+2026-04-30T00:03:45.791862680Z [inf]        "OfficialName": "FORMULA 1 AWS GRAN PREMIO DE ESPA\u00d1A 2023",
+2026-04-30T00:03:45.791877103Z [inf]        "Name": "Spanish Grand Prix",
+2026-04-30T00:03:45.791886161Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:45.791888538Z [inf]        "Country": {
+2026-04-30T00:03:45.791897928Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-03_Qualifying/"
+2026-04-30T00:03:45.791901913Z [inf]          "Key": 1,
+2026-04-30T00:03:45.791912653Z [inf]          "Code": "ESP",
+2026-04-30T00:03:45.791914302Z [inf]          },
+2026-04-30T00:03:45.791923091Z [inf]          "Name": "Spain"
+2026-04-30T00:03:45.791923192Z [inf]          {
+2026-04-30T00:03:45.791931933Z [inf]            "Key": 9102,
+2026-04-30T00:03:45.791933152Z [inf]        },
+2026-04-30T00:03:45.791940405Z [inf]        "Circuit": {
+2026-04-30T00:03:45.791942392Z [inf]            "Type": "Race",
+2026-04-30T00:03:45.791949507Z [inf]            "Name": "Race",
+2026-04-30T00:03:45.791958061Z [inf]          "Key": 15,
+2026-04-30T00:03:45.791968558Z [inf]            "EndDate": "2023-06-04T17:00:00",
+2026-04-30T00:03:45.791970409Z [inf]          "ShortName": "Catalunya"
+2026-04-30T00:03:45.791978915Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:45.791983383Z [inf]        }
+2026-04-30T00:03:45.791988799Z [inf]            "Path": "2023/2023-06-04_Spanish_Grand_Prix/2023-06-04_Race/"
+2026-04-30T00:03:45.791996008Z [inf]      },
+2026-04-30T00:03:45.791996969Z [inf]          }
+2026-04-30T00:03:48.076990304Z [inf]      {
+2026-04-30T00:03:48.076995964Z [inf]        "Sessions": [
+2026-04-30T00:03:48.077003123Z [inf]          {
+2026-04-30T00:03:48.077009140Z [inf]            "Key": 9103,
+2026-04-30T00:03:48.077015001Z [inf]            "Type": "Practice",
+2026-04-30T00:03:48.077283939Z [inf]            "Number": 1,
+2026-04-30T00:03:48.077301497Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:48.077313303Z [inf]            "StartDate": "2023-06-16T13:30:00",
+2026-04-30T00:03:48.077330691Z [inf]            "EndDate": "2023-06-16T14:30:00",
+2026-04-30T00:03:48.077343017Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:48.077361261Z [inf]            "Path": "2023/2023-06-18_Canadian_Grand_Prix/2023-06-16_Practice_1/"
+2026-04-30T00:03:48.077374279Z [inf]          },
+2026-04-30T00:03:48.077385831Z [inf]          {
+2026-04-30T00:03:48.077397181Z [inf]            "Key": 9104,
+2026-04-30T00:03:48.077407788Z [inf]            "Type": "Practice",
+2026-04-30T00:03:48.077417507Z [inf]            "Number": 2,
+2026-04-30T00:03:48.077427128Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:48.077439778Z [inf]            "StartDate": "2023-06-16T16:30:00",
+2026-04-30T00:03:48.077449369Z [inf]            "EndDate": "2023-06-16T18:00:00",
+2026-04-30T00:03:48.077467511Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:48.077484160Z [inf]            "Path": "2023/2023-06-18_Canadian_Grand_Prix/2023-06-16_Practice_2/"
+2026-04-30T00:03:48.077669436Z [inf]          },
+2026-04-30T00:03:48.077689395Z [inf]          {
+2026-04-30T00:03:48.077700594Z [inf]            "Key": 9105,
+2026-04-30T00:03:48.077790782Z [inf]            "Type": "Practice",
+2026-04-30T00:03:48.077803754Z [inf]            "Number": 3,
+2026-04-30T00:03:48.077817453Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:48.077828161Z [inf]            "StartDate": "2023-06-17T12:30:00",
+2026-04-30T00:03:50.178038260Z [inf]          },
+2026-04-30T00:03:50.178050523Z [inf]          {
+2026-04-30T00:03:50.178058190Z [inf]            "Key": 9106,
+2026-04-30T00:03:50.178064571Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:50.178068005Z [inf]            "EndDate": "2023-06-17T13:30:00",
+2026-04-30T00:03:50.178071768Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:50.178077485Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:50.178084450Z [inf]            "Path": "2023/2023-06-18_Canadian_Grand_Prix/2023-06-17_Practice_3/"
+2026-04-30T00:03:50.178098185Z [inf]        "Number": 9,
+2026-04-30T00:03:50.178104979Z [inf]        "Location": "Montr\u00e9al",
+2026-04-30T00:03:50.178113531Z [inf]          {
+2026-04-30T00:03:50.178128108Z [inf]            "StartDate": "2023-06-18T14:00:00",
+2026-04-30T00:03:50.178164797Z [inf]          }
+2026-04-30T00:03:50.178171781Z [inf]        ],
+2026-04-30T00:03:50.178178079Z [inf]        "Key": 1212,
+2026-04-30T00:03:50.178184327Z [inf]        "Code": "CAN0108",
+2026-04-30T00:03:50.178186906Z [inf]            "EndDate": "2023-06-18T16:00:00",
+2026-04-30T00:03:50.178187097Z [inf]            "StartDate": "2023-06-17T16:00:00",
+2026-04-30T00:03:50.178195583Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:50.178201904Z [inf]            "EndDate": "2023-06-17T17:00:00",
+2026-04-30T00:03:50.178206554Z [inf]            "Key": 9110,
+2026-04-30T00:03:50.178209438Z [inf]            "Path": "2023/2023-06-18_Canadian_Grand_Prix/2023-06-18_Race/"
+2026-04-30T00:03:50.178209701Z [inf]            "GmtOffset": "-04:00:00",
+2026-04-30T00:03:50.178219136Z [inf]            "Type": "Race",
+2026-04-30T00:03:50.178219200Z [inf]            "Path": "2023/2023-06-18_Canadian_Grand_Prix/2023-06-17_Qualifying/"
+2026-04-30T00:03:50.178226177Z [inf]          },
+2026-04-30T00:03:50.178229291Z [inf]            "Name": "Race",
+2026-04-30T00:03:51.916247309Z [inf]        "Country": {
+2026-04-30T00:03:51.916255362Z [inf]          "Key": 46,
+2026-04-30T00:03:51.916281792Z [inf]        }
+2026-04-30T00:03:51.916282384Z [inf]        },
+2026-04-30T00:03:51.916283553Z [inf]          "Code": "CAN",
+2026-04-30T00:03:51.916286631Z [inf]        "OfficialName": "FORMULA 1 PIRELLI GRAND PRIX DU CANADA 2023",
+2026-04-30T00:03:51.916291535Z [inf]          "Key": 23,
+2026-04-30T00:03:51.916295065Z [inf]        "Circuit": {
+2026-04-30T00:03:51.916295687Z [inf]          "Name": "Canada"
+2026-04-30T00:03:51.916296373Z [inf]      },
+2026-04-30T00:03:51.916297259Z [inf]        "Name": "Canadian Grand Prix",
+2026-04-30T00:03:51.916301765Z [inf]          "ShortName": "Montreal"
+2026-04-30T00:03:51.921031909Z [inf]      {
+2026-04-30T00:03:51.921045126Z [inf]        "Sessions": [
+2026-04-30T00:03:51.921051890Z [inf]          {
+2026-04-30T00:03:51.921057365Z [inf]            "Key": 9111,
+2026-04-30T00:03:51.921064174Z [inf]            "Type": "Practice",
+2026-04-30T00:03:51.921071110Z [inf]            "Number": 1,
+2026-04-30T00:03:51.921077762Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:51.921083144Z [inf]            "StartDate": "2023-06-30T13:30:00",
+2026-04-30T00:03:51.921088361Z [inf]            "EndDate": "2023-06-30T14:30:00",
+2026-04-30T00:03:51.921098782Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:51.921104892Z [inf]            "Path": "2023/2023-07-02_Austrian_Grand_Prix/2023-06-30_Practice_1/"
+2026-04-30T00:03:51.921344880Z [inf]          },
+2026-04-30T00:03:51.921355062Z [inf]          {
+2026-04-30T00:03:51.921362394Z [inf]            "Key": 9112,
+2026-04-30T00:03:51.921369041Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:51.921375666Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:51.921382573Z [inf]            "StartDate": "2023-06-30T17:00:00",
+2026-04-30T00:03:53.091721865Z [inf]            "EndDate": "2023-06-30T18:00:00",
+2026-04-30T00:03:53.091728156Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:53.091738779Z [inf]            "Path": "2023/2023-07-02_Austrian_Grand_Prix/2023-06-30_Qualifying/"
+2026-04-30T00:03:53.091750319Z [inf]          },
+2026-04-30T00:03:53.091757036Z [inf]          {
+2026-04-30T00:03:53.091763021Z [inf]            "Key": 9282,
+2026-04-30T00:03:53.091769940Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:53.091780201Z [inf]            "Number": -1,
+2026-04-30T00:03:53.091786292Z [inf]            "Name": "Sprint Shootout",
+2026-04-30T00:03:53.091804472Z [inf]            "Number": -1,
+2026-04-30T00:03:53.091809750Z [inf]          },
+2026-04-30T00:03:53.091813255Z [inf]            "Name": "Sprint",
+2026-04-30T00:03:53.091815249Z [inf]            "StartDate": "2023-07-01T16:30:00",
+2026-04-30T00:03:53.091823745Z [inf]            "EndDate": "2023-07-01T17:00:00",
+2026-04-30T00:03:53.091826992Z [inf]          {
+2026-04-30T00:03:53.091830540Z [inf]            "Key": 9117,
+2026-04-30T00:03:53.091837325Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:53.091843839Z [inf]            "Type": "Race",
+2026-04-30T00:03:53.091848882Z [inf]            "Path": "2023/2023-07-02_Austrian_Grand_Prix/2023-07-01_Sprint/"
+2026-04-30T00:03:53.091854038Z [inf]            "StartDate": "2023-07-01T12:00:00",
+2026-04-30T00:03:53.091858136Z [inf]          },
+2026-04-30T00:03:53.091863410Z [inf]            "Path": "2023/2023-07-02_Austrian_Grand_Prix/2023-07-01_Sprint_Shootout/"
+2026-04-30T00:03:53.091864155Z [inf]            "EndDate": "2023-07-01T12:44:00",
+2026-04-30T00:03:53.091871866Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:53.091895240Z [inf]          {
+2026-04-30T00:03:53.091914915Z [inf]            "Key": 9118,
+2026-04-30T00:03:53.091929670Z [inf]            "Type": "Race",
+2026-04-30T00:03:54.773420225Z [inf]        "Country": {
+2026-04-30T00:03:54.773428243Z [inf]          "Key": 17,
+2026-04-30T00:03:54.773435294Z [inf]          "Code": "AUT",
+2026-04-30T00:03:54.773443399Z [inf]          "Name": "Austria"
+2026-04-30T00:03:54.773451096Z [inf]        },
+2026-04-30T00:03:54.773460217Z [inf]        "Circuit": {
+2026-04-30T00:03:54.773475891Z [inf]          "Key": 19,
+2026-04-30T00:03:54.773483738Z [inf]          "ShortName": "Spielberg"
+2026-04-30T00:03:54.773490446Z [inf]        }
+2026-04-30T00:03:54.773497369Z [inf]      },
+2026-04-30T00:03:54.773505820Z [inf]      {
+2026-04-30T00:03:54.773513558Z [inf]        "Sessions": [
+2026-04-30T00:03:54.773521064Z [inf]          {
+2026-04-30T00:03:54.773531691Z [inf]            "Key": 9119,
+2026-04-30T00:03:54.773539296Z [inf]            "Type": "Practice",
+2026-04-30T00:03:54.773548600Z [inf]            "Number": 1,
+2026-04-30T00:03:54.773555010Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:54.774118610Z [inf]            "Name": "Race",
+2026-04-30T00:03:54.774127149Z [inf]            "StartDate": "2023-07-02T15:00:00",
+2026-04-30T00:03:54.774228753Z [inf]            "EndDate": "2023-07-02T17:00:00",
+2026-04-30T00:03:54.774236519Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:54.774242673Z [inf]            "Path": "2023/2023-07-02_Austrian_Grand_Prix/2023-07-02_Race/"
+2026-04-30T00:03:54.774279455Z [inf]          }
+2026-04-30T00:03:54.774287966Z [inf]        ],
+2026-04-30T00:03:54.774295500Z [inf]        "Key": 1213,
+2026-04-30T00:03:54.774307903Z [inf]        "Code": "AUT0108",
+2026-04-30T00:03:54.774314667Z [inf]        "Number": 10,
+2026-04-30T00:03:54.774320894Z [inf]        "Location": "Spielberg",
+2026-04-30T00:03:54.774502584Z [inf]        "OfficialName": "FORMULA 1 ROLEX GROSSER PREIS VON \u00d6STERREICH 2023",
+2026-04-30T00:03:54.774512465Z [inf]        "Name": "Austrian Grand Prix",
+2026-04-30T00:03:56.531219854Z [inf]            "EndDate": "2023-07-08T12:30:00",
+2026-04-30T00:03:56.531228640Z [inf]            "GmtOffset": "01:00:00",
+2026-04-30T00:03:56.531235567Z [inf]            "Path": "2023/2023-07-09_British_Grand_Prix/2023-07-08_Practice_3/"
+2026-04-30T00:03:56.531241833Z [inf]          },
+2026-04-30T00:03:56.531248220Z [inf]          {
+2026-04-30T00:03:56.531254385Z [inf]            "Key": 9122,
+2026-04-30T00:03:56.531413358Z [inf]            "StartDate": "2023-07-07T12:30:00",
+2026-04-30T00:03:56.531418900Z [inf]            "EndDate": "2023-07-07T13:30:00",
+2026-04-30T00:03:56.531425787Z [inf]            "GmtOffset": "01:00:00",
+2026-04-30T00:03:56.531431929Z [inf]            "Path": "2023/2023-07-09_British_Grand_Prix/2023-07-07_Practice_1/"
+2026-04-30T00:03:56.531437388Z [inf]          },
+2026-04-30T00:03:56.531443450Z [inf]          {
+2026-04-30T00:03:56.531449457Z [inf]            "Key": 9120,
+2026-04-30T00:03:56.531455535Z [inf]            "Type": "Practice",
+2026-04-30T00:03:56.531461534Z [inf]            "Number": 2,
+2026-04-30T00:03:56.531466424Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:56.531472178Z [inf]            "StartDate": "2023-07-07T16:00:00",
+2026-04-30T00:03:56.531478866Z [inf]            "EndDate": "2023-07-07T17:00:00",
+2026-04-30T00:03:56.531484422Z [inf]            "GmtOffset": "01:00:00",
+2026-04-30T00:03:56.531491716Z [inf]            "Path": "2023/2023-07-09_British_Grand_Prix/2023-07-07_Practice_2/"
+2026-04-30T00:03:56.531498253Z [inf]          },
+2026-04-30T00:03:56.531503140Z [inf]          {
+2026-04-30T00:03:56.531509151Z [inf]            "Key": 9121,
+2026-04-30T00:03:56.531515606Z [inf]            "Type": "Practice",
+2026-04-30T00:03:56.531522701Z [inf]            "Number": 3,
+2026-04-30T00:03:56.531528606Z [inf]            "Name": "Practice 3",
+2026-04-30T00:03:56.531534478Z [inf]            "StartDate": "2023-07-08T11:30:00",
+2026-04-30T00:03:57.887835275Z [inf]            "Type": "Qualifying",
+2026-04-30T00:03:57.887841289Z [inf]            "Name": "Qualifying",
+2026-04-30T00:03:57.887850456Z [inf]            "StartDate": "2023-07-08T15:00:00",
+2026-04-30T00:03:57.887859268Z [inf]          "Code": "GBR",
+2026-04-30T00:03:57.887871027Z [inf]          "Name": "Great Britain"
+2026-04-30T00:03:57.887899009Z [inf]            "EndDate": "2023-07-08T16:00:00",
+2026-04-30T00:03:57.887907911Z [inf]            "GmtOffset": "01:00:00",
+2026-04-30T00:03:57.887917920Z [inf]            "Path": "2023/2023-07-09_British_Grand_Prix/2023-07-08_Qualifying/"
+2026-04-30T00:03:57.887923366Z [inf]            "Path": "2023/2023-07-09_British_Grand_Prix/2023-07-09_Race/"
+2026-04-30T00:03:57.887934074Z [inf]          }
+2026-04-30T00:03:57.887943280Z [inf]          },
+2026-04-30T00:03:57.887947462Z [inf]        ],
+2026-04-30T00:03:57.887954387Z [inf]        "Key": 1214,
+2026-04-30T00:03:57.887963055Z [inf]        "Code": "GBR0114",
+2026-04-30T00:03:57.887976224Z [inf]        "Number": 11,
+2026-04-30T00:03:57.887980492Z [inf]          {
+2026-04-30T00:03:57.887995164Z [inf]        "Location": "Silverstone",
+2026-04-30T00:03:57.887997077Z [inf]            "Key": 9126,
+2026-04-30T00:03:57.888003355Z [inf]            "Name": "Race",
+2026-04-30T00:03:57.888009889Z [inf]        "Name": "British Grand Prix",
+2026-04-30T00:03:57.888014287Z [inf]            "Type": "Race",
+2026-04-30T00:03:57.888015232Z [inf]        "OfficialName": "FORMULA 1 ARAMCO BRITISH GRAND PRIX 2023",
+2026-04-30T00:03:57.888019434Z [inf]            "StartDate": "2023-07-09T15:00:00",
+2026-04-30T00:03:57.888023836Z [inf]        "Country": {
+2026-04-30T00:03:57.888027771Z [inf]            "EndDate": "2023-07-09T17:00:00",
+2026-04-30T00:03:57.888034709Z [inf]          "Key": 2,
+2026-04-30T00:03:57.888034860Z [inf]            "GmtOffset": "01:00:00",
+2026-04-30T00:03:59.414628345Z [inf]        },
+2026-04-30T00:03:59.414636441Z [inf]        "Circuit": {
+2026-04-30T00:03:59.414643699Z [inf]          "Key": 2,
+2026-04-30T00:03:59.415142240Z [inf]          "ShortName": "Silverstone"
+2026-04-30T00:03:59.415152823Z [inf]        }
+2026-04-30T00:03:59.415161093Z [inf]      },
+2026-04-30T00:03:59.415167324Z [inf]      {
+2026-04-30T00:03:59.415173469Z [inf]        "Sessions": [
+2026-04-30T00:03:59.415179177Z [inf]          {
+2026-04-30T00:03:59.415187424Z [inf]            "Key": 9223,
+2026-04-30T00:03:59.415340455Z [inf]            "Type": "Practice",
+2026-04-30T00:03:59.415347930Z [inf]            "Number": 1,
+2026-04-30T00:03:59.415354763Z [inf]            "Name": "Practice 1",
+2026-04-30T00:03:59.415360737Z [inf]            "StartDate": "2023-07-21T13:30:00",
+2026-04-30T00:03:59.415366273Z [inf]            "EndDate": "2023-07-21T14:30:00",
+2026-04-30T00:03:59.415373445Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:59.415379710Z [inf]            "Path": "2023/2023-07-23_Hungarian_Grand_Prix/2023-07-21_Practice_1/"
+2026-04-30T00:03:59.415386449Z [inf]          },
+2026-04-30T00:03:59.415394163Z [inf]          {
+2026-04-30T00:03:59.415399911Z [inf]            "Key": 9127,
+2026-04-30T00:03:59.415407918Z [inf]            "Type": "Practice",
+2026-04-30T00:03:59.415413950Z [inf]            "Number": 2,
+2026-04-30T00:03:59.415420168Z [inf]            "Name": "Practice 2",
+2026-04-30T00:03:59.415427218Z [inf]            "StartDate": "2023-07-21T17:00:00",
+2026-04-30T00:03:59.415434847Z [inf]            "EndDate": "2023-07-21T18:00:00",
+2026-04-30T00:03:59.415441567Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:03:59.415449108Z [inf]            "Path": "2023/2023-07-23_Hungarian_Grand_Prix/2023-07-21_Practice_2/"
+2026-04-30T00:03:59.415456394Z [inf]          },
+2026-04-30T00:03:59.415463115Z [inf]          {
+2026-04-30T00:04:01.750018754Z [inf]            "Key": 9128,
+2026-04-30T00:04:01.750025917Z [inf]            "Type": "Practice",
+2026-04-30T00:04:01.750032723Z [inf]            "Number": 3,
+2026-04-30T00:04:01.750039172Z [inf]            "Name": "Practice 3",
+2026-04-30T00:04:01.750046978Z [inf]            "StartDate": "2023-07-22T12:30:00",
+2026-04-30T00:04:01.750053522Z [inf]            "EndDate": "2023-07-22T13:30:00",
+2026-04-30T00:04:01.750061126Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:01.750069784Z [inf]            "Path": "2023/2023-07-23_Hungarian_Grand_Prix/2023-07-22_Practice_3/"
+2026-04-30T00:04:01.750076120Z [inf]          },
+2026-04-30T00:04:01.750083405Z [inf]          {
+2026-04-30T00:04:01.750090564Z [inf]            "Key": 9129,
+2026-04-30T00:04:01.750096675Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:01.750102638Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:01.750108757Z [inf]            "StartDate": "2023-07-22T16:00:00",
+2026-04-30T00:04:01.750115942Z [inf]            "EndDate": "2023-07-22T17:00:00",
+2026-04-30T00:04:01.750121986Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:01.750127729Z [inf]            "Path": "2023/2023-07-23_Hungarian_Grand_Prix/2023-07-22_Qualifying/"
+2026-04-30T00:04:01.750153829Z [inf]          },
+2026-04-30T00:04:01.750160945Z [inf]          {
+2026-04-30T00:04:01.750167525Z [inf]            "Key": 9133,
+2026-04-30T00:04:01.751871071Z [inf]            "Type": "Race",
+2026-04-30T00:04:01.751884090Z [inf]            "Name": "Race",
+2026-04-30T00:04:01.751897270Z [inf]            "StartDate": "2023-07-23T15:00:00",
+2026-04-30T00:04:01.751906198Z [inf]            "EndDate": "2023-07-23T17:00:00",
+2026-04-30T00:04:01.751914029Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:01.751924694Z [inf]            "Path": "2023/2023-07-23_Hungarian_Grand_Prix/2023-07-23_Race/"
+2026-04-30T00:04:03.373938235Z [inf]        "Code": "HUN0109",
+2026-04-30T00:04:03.373960794Z [inf]        "Country": {
+2026-04-30T00:04:03.373963401Z [inf]        "Number": 12,
+2026-04-30T00:04:03.373971864Z [inf]          }
+2026-04-30T00:04:03.373978080Z [inf]        "Location": "Budapest",
+2026-04-30T00:04:03.373979665Z [inf]          "Key": 14,
+2026-04-30T00:04:03.373995319Z [inf]          "Code": "HUN",
+2026-04-30T00:04:03.373995578Z [inf]        ],
+2026-04-30T00:04:03.374007433Z [inf]      {
+2026-04-30T00:04:03.374007545Z [inf]        "OfficialName": "FORMULA 1 QATAR AIRWAYS HUNGARIAN GRAND PRIX 2023",
+2026-04-30T00:04:03.374013105Z [inf]          "Name": "Hungary"
+2026-04-30T00:04:03.374014039Z [inf]        "Key": 1215,
+2026-04-30T00:04:03.374026388Z [inf]        "Name": "Hungarian Grand Prix",
+2026-04-30T00:04:03.374030576Z [inf]        "Sessions": [
+2026-04-30T00:04:03.374031678Z [inf]        },
+2026-04-30T00:04:03.374046035Z [inf]        "Circuit": {
+2026-04-30T00:04:03.374048078Z [inf]          {
+2026-04-30T00:04:03.374058383Z [inf]          "Key": 4,
+2026-04-30T00:04:03.374061443Z [inf]            "StartDate": "2023-07-28T13:30:00",
+2026-04-30T00:04:03.374067962Z [inf]          "ShortName": "Hungaroring"
+2026-04-30T00:04:03.374068790Z [inf]            "EndDate": "2023-07-28T14:30:00",
+2026-04-30T00:04:03.374075977Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:03.374077204Z [inf]        }
+2026-04-30T00:04:03.374083427Z [inf]            "Path": "2023/2023-07-30_Belgian_Grand_Prix/2023-07-28_Practice_1/"
+2026-04-30T00:04:03.374086391Z [inf]      },
+2026-04-30T00:04:03.374123888Z [inf]            "Key": 9134,
+2026-04-30T00:04:03.374163455Z [inf]            "Type": "Practice",
+2026-04-30T00:04:03.374182774Z [inf]            "Number": 1,
+2026-04-30T00:04:03.374194354Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:03.374535030Z [inf]          },
+2026-04-30T00:04:04.926205283Z [inf]            "Name": "Sprint Shootout",
+2026-04-30T00:04:04.926218981Z [inf]            "StartDate": "2023-07-29T12:00:00",
+2026-04-30T00:04:04.926226885Z [inf]            "EndDate": "2023-07-29T12:44:00",
+2026-04-30T00:04:04.926233353Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:04.926238114Z [inf]            "Path": "2023/2023-07-30_Belgian_Grand_Prix/2023-07-29_Sprint_Shootout/"
+2026-04-30T00:04:04.926243261Z [inf]          },
+2026-04-30T00:04:04.926247774Z [inf]          {
+2026-04-30T00:04:04.926254543Z [inf]            "Key": 9140,
+2026-04-30T00:04:04.926259872Z [inf]            "Type": "Race",
+2026-04-30T00:04:04.926264848Z [inf]            "Number": -1,
+2026-04-30T00:04:04.926269573Z [inf]            "Name": "Sprint",
+2026-04-30T00:04:04.926273787Z [inf]            "StartDate": "2023-07-29T17:05:00",
+2026-04-30T00:04:04.926278367Z [inf]            "EndDate": "2023-07-29T17:35:00",
+2026-04-30T00:04:04.926283159Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:04.926402458Z [inf]          {
+2026-04-30T00:04:04.926408451Z [inf]            "Key": 9135,
+2026-04-30T00:04:04.926414154Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:04.926419407Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:04.926423978Z [inf]            "StartDate": "2023-07-28T17:00:00",
+2026-04-30T00:04:04.926431040Z [inf]            "EndDate": "2023-07-28T18:00:00",
+2026-04-30T00:04:04.926436560Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:04.926441610Z [inf]            "Path": "2023/2023-07-30_Belgian_Grand_Prix/2023-07-28_Qualifying/"
+2026-04-30T00:04:04.926447092Z [inf]          },
+2026-04-30T00:04:04.926453038Z [inf]          {
+2026-04-30T00:04:04.926464077Z [inf]            "Key": 9286,
+2026-04-30T00:04:04.926470585Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:04.926477337Z [inf]            "Number": -1,
+2026-04-30T00:04:06.967034713Z [inf]            "EndDate": "2023-07-30T17:00:00",
+2026-04-30T00:04:06.967101365Z [inf]          },
+2026-04-30T00:04:06.967102572Z [inf]            "Type": "Race",
+2026-04-30T00:04:06.967112758Z [inf]            "Name": "Race",
+2026-04-30T00:04:06.967120644Z [inf]            "StartDate": "2023-07-30T15:00:00",
+2026-04-30T00:04:06.967142078Z [inf]          {
+2026-04-30T00:04:06.967151244Z [inf]            "Key": 9141,
+2026-04-30T00:04:06.967179124Z [inf]            "Path": "2023/2023-07-30_Belgian_Grand_Prix/2023-07-29_Sprint/"
+2026-04-30T00:04:06.967263447Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:06.967277668Z [inf]            "Path": "2023/2023-07-30_Belgian_Grand_Prix/2023-07-30_Race/"
+2026-04-30T00:04:06.967287552Z [inf]          }
+2026-04-30T00:04:06.967295978Z [inf]        ],
+2026-04-30T00:04:06.967303444Z [inf]        "Key": 1216,
+2026-04-30T00:04:06.967318165Z [inf]        "Code": "BEL02012",
+2026-04-30T00:04:06.967328550Z [inf]        "Number": 13,
+2026-04-30T00:04:06.967979112Z [inf]        "Location": "Spa-Francorchamps",
+2026-04-30T00:04:06.968005927Z [inf]        "OfficialName": "FORMULA 1 MSC CRUISES BELGIAN GRAND PRIX 2023",
+2026-04-30T00:04:06.968015434Z [inf]        "Name": "Belgian Grand Prix",
+2026-04-30T00:04:06.968023539Z [inf]        "Country": {
+2026-04-30T00:04:06.968030235Z [inf]          "Key": 16,
+2026-04-30T00:04:06.968040514Z [inf]          "Code": "BEL",
+2026-04-30T00:04:06.968051061Z [inf]          "Name": "Belgium"
+2026-04-30T00:04:06.968059592Z [inf]        },
+2026-04-30T00:04:06.968065958Z [inf]        "Circuit": {
+2026-04-30T00:04:06.968072958Z [inf]          "Key": 7,
+2026-04-30T00:04:06.968080335Z [inf]          "ShortName": "Spa-Francorchamps"
+2026-04-30T00:04:06.968089474Z [inf]        }
+2026-04-30T00:04:06.968096463Z [inf]      },
+2026-04-30T00:04:06.968103827Z [inf]      {
+2026-04-30T00:04:08.525644004Z [inf]        "Sessions": [
+2026-04-30T00:04:08.525652788Z [inf]          {
+2026-04-30T00:04:08.525660707Z [inf]            "Key": 9142,
+2026-04-30T00:04:08.525666869Z [inf]            "Type": "Practice",
+2026-04-30T00:04:08.525674096Z [inf]            "Number": 1,
+2026-04-30T00:04:08.525681409Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:08.525687959Z [inf]            "StartDate": "2023-08-25T12:30:00",
+2026-04-30T00:04:08.525693810Z [inf]            "EndDate": "2023-08-25T13:30:00",
+2026-04-30T00:04:08.525699875Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:08.525707493Z [inf]            "Path": "2023/2023-08-27_Dutch_Grand_Prix/2023-08-25_Practice_1/"
+2026-04-30T00:04:08.525714999Z [inf]          },
+2026-04-30T00:04:08.525722013Z [inf]          {
+2026-04-30T00:04:08.525727884Z [inf]            "Key": 9143,
+2026-04-30T00:04:08.525734602Z [inf]            "Type": "Practice",
+2026-04-30T00:04:08.525742681Z [inf]            "Number": 2,
+2026-04-30T00:04:08.525749481Z [inf]            "Name": "Practice 2",
+2026-04-30T00:04:08.525758231Z [inf]            "StartDate": "2023-08-25T16:00:00",
+2026-04-30T00:04:08.525764893Z [inf]            "EndDate": "2023-08-25T17:00:00",
+2026-04-30T00:04:08.525771120Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:08.525777400Z [inf]            "Path": "2023/2023-08-27_Dutch_Grand_Prix/2023-08-25_Practice_2/"
+2026-04-30T00:04:08.525783899Z [inf]          },
+2026-04-30T00:04:08.525790394Z [inf]          {
+2026-04-30T00:04:08.525796997Z [inf]            "Key": 9144,
+2026-04-30T00:04:08.525803616Z [inf]            "Type": "Practice",
+2026-04-30T00:04:08.525810652Z [inf]            "Number": 3,
+2026-04-30T00:04:08.525816180Z [inf]            "Name": "Practice 3",
+2026-04-30T00:04:08.525822362Z [inf]            "StartDate": "2023-08-26T11:30:00",
+2026-04-30T00:04:08.525828058Z [inf]            "EndDate": "2023-08-26T12:30:00",
+2026-04-30T00:04:10.388386202Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:10.388389901Z [inf]            "Path": "2023/2023-08-27_Dutch_Grand_Prix/2023-08-26_Practice_3/"
+2026-04-30T00:04:10.388393682Z [inf]          },
+2026-04-30T00:04:10.388397492Z [inf]          {
+2026-04-30T00:04:10.388401558Z [inf]            "Key": 9145,
+2026-04-30T00:04:10.388405313Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:10.388408996Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:10.388413686Z [inf]            "StartDate": "2023-08-26T15:00:00",
+2026-04-30T00:04:10.388418701Z [inf]            "EndDate": "2023-08-26T16:00:00",
+2026-04-30T00:04:10.388422301Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:10.388426301Z [inf]            "Path": "2023/2023-08-27_Dutch_Grand_Prix/2023-08-26_Qualifying/"
+2026-04-30T00:04:10.388430332Z [inf]          },
+2026-04-30T00:04:10.388434047Z [inf]          {
+2026-04-30T00:04:10.388438190Z [inf]            "Key": 9149,
+2026-04-30T00:04:10.388442066Z [inf]            "Type": "Race",
+2026-04-30T00:04:10.388484875Z [inf]            "Name": "Race",
+2026-04-30T00:04:10.388489975Z [inf]            "StartDate": "2023-08-27T15:00:00",
+2026-04-30T00:04:10.388494254Z [inf]            "EndDate": "2023-08-27T17:00:00",
+2026-04-30T00:04:10.388498373Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:10.388503103Z [inf]            "Path": "2023/2023-08-27_Dutch_Grand_Prix/2023-08-27_Race/"
+2026-04-30T00:04:10.388507483Z [inf]          }
+2026-04-30T00:04:10.388511634Z [inf]        ],
+2026-04-30T00:04:10.388515534Z [inf]        "Key": 1217,
+2026-04-30T00:04:10.388519516Z [inf]        "Code": "NED0105",
+2026-04-30T00:04:10.388523444Z [inf]        "Number": 14,
+2026-04-30T00:04:10.388528547Z [inf]        "Location": "Zandvoort",
+2026-04-30T00:04:10.388532450Z [inf]        "OfficialName": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2023",
+2026-04-30T00:04:12.395318789Z [inf]        "Name": "Dutch Grand Prix",
+2026-04-30T00:04:12.395323583Z [inf]        "Country": {
+2026-04-30T00:04:12.395328556Z [inf]          "Key": 133,
+2026-04-30T00:04:12.395333359Z [inf]          "Code": "NED",
+2026-04-30T00:04:12.395338206Z [inf]          "Name": "Netherlands"
+2026-04-30T00:04:12.395345301Z [inf]        },
+2026-04-30T00:04:12.395350201Z [inf]        "Circuit": {
+2026-04-30T00:04:12.395354583Z [inf]          "Key": 55,
+2026-04-30T00:04:12.395359051Z [inf]          "ShortName": "Zandvoort"
+2026-04-30T00:04:12.395363487Z [inf]        }
+2026-04-30T00:04:12.395367958Z [inf]      },
+2026-04-30T00:04:12.395373507Z [inf]      {
+2026-04-30T00:04:12.395379415Z [inf]        "Sessions": [
+2026-04-30T00:04:12.395384629Z [inf]          {
+2026-04-30T00:04:12.395390735Z [inf]            "Key": 9150,
+2026-04-30T00:04:12.395394783Z [inf]            "Type": "Practice",
+2026-04-30T00:04:12.395399052Z [inf]            "Number": 1,
+2026-04-30T00:04:12.395409556Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:12.395415208Z [inf]            "StartDate": "2023-09-01T13:30:00",
+2026-04-30T00:04:12.395420271Z [inf]            "EndDate": "2023-09-01T14:30:00",
+2026-04-30T00:04:12.395425109Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:12.395429723Z [inf]            "Path": "2023/2023-09-03_Italian_Grand_Prix/2023-09-01_Practice_1/"
+2026-04-30T00:04:12.395434741Z [inf]          },
+2026-04-30T00:04:12.395439681Z [inf]          {
+2026-04-30T00:04:12.395444460Z [inf]            "Key": 9151,
+2026-04-30T00:04:12.395448924Z [inf]            "Type": "Practice",
+2026-04-30T00:04:12.395453916Z [inf]            "Number": 2,
+2026-04-30T00:04:12.395458879Z [inf]            "Name": "Practice 2",
+2026-04-30T00:04:12.395463910Z [inf]            "StartDate": "2023-09-01T17:00:00",
+2026-04-30T00:04:12.395468630Z [inf]            "EndDate": "2023-09-01T18:00:00",
+2026-04-30T00:04:14.747851647Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:14.747855843Z [inf]            "Path": "2023/2023-09-03_Italian_Grand_Prix/2023-09-01_Practice_2/"
+2026-04-30T00:04:14.747860246Z [inf]          },
+2026-04-30T00:04:14.747865022Z [inf]          {
+2026-04-30T00:04:14.747869778Z [inf]            "Key": 9152,
+2026-04-30T00:04:14.747874122Z [inf]            "Type": "Practice",
+2026-04-30T00:04:14.747884460Z [inf]            "Number": 3,
+2026-04-30T00:04:14.750207442Z [inf]            "Name": "Practice 3",
+2026-04-30T00:04:14.750225404Z [inf]            "StartDate": "2023-09-02T12:30:00",
+2026-04-30T00:04:14.750236534Z [inf]            "EndDate": "2023-09-02T13:30:00",
+2026-04-30T00:04:14.750245881Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:14.750254617Z [inf]            "Path": "2023/2023-09-03_Italian_Grand_Prix/2023-09-02_Practice_3/"
+2026-04-30T00:04:14.750264294Z [inf]          },
+2026-04-30T00:04:14.750273842Z [inf]          {
+2026-04-30T00:04:14.750283760Z [inf]            "Key": 9153,
+2026-04-30T00:04:14.750292779Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:14.750302427Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:14.750310933Z [inf]            "StartDate": "2023-09-02T16:00:00",
+2026-04-30T00:04:14.750322318Z [inf]            "EndDate": "2023-09-02T17:00:00",
+2026-04-30T00:04:14.750561229Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:14.750572855Z [inf]            "Path": "2023/2023-09-03_Italian_Grand_Prix/2023-09-02_Qualifying/"
+2026-04-30T00:04:14.750587895Z [inf]          },
+2026-04-30T00:04:14.750597403Z [inf]          {
+2026-04-30T00:04:14.750606709Z [inf]            "Key": 9157,
+2026-04-30T00:04:14.750619244Z [inf]            "Type": "Race",
+2026-04-30T00:04:14.750627821Z [inf]            "Name": "Race",
+2026-04-30T00:04:14.750636112Z [inf]            "StartDate": "2023-09-03T15:00:00",
+2026-04-30T00:04:16.426489364Z [inf]            "GmtOffset": "02:00:00",
+2026-04-30T00:04:16.426507542Z [inf]            "Path": "2023/2023-09-03_Italian_Grand_Prix/2023-09-03_Race/"
+2026-04-30T00:04:16.426517399Z [inf]        ],
+2026-04-30T00:04:16.426519436Z [inf]          }
+2026-04-30T00:04:16.426532050Z [inf]        "Key": 1218,
+2026-04-30T00:04:16.426539887Z [inf]          "Key": 13,
+2026-04-30T00:04:16.426542767Z [inf]        "Code": "ITA0311",
+2026-04-30T00:04:16.426553698Z [inf]          "Code": "ITA",
+2026-04-30T00:04:16.426553803Z [inf]        "Number": 15,
+2026-04-30T00:04:16.426557502Z [inf]          {
+2026-04-30T00:04:16.426564388Z [inf]        "Location": "Monza",
+2026-04-30T00:04:16.426568251Z [inf]            "Key": 9158,
+2026-04-30T00:04:16.426574009Z [inf]        "Name": "Italian Grand Prix",
+2026-04-30T00:04:16.426577521Z [inf]        "OfficialName": "FORMULA 1 PIRELLI GRAN PREMIO D\u2019ITALIA 2023 ",
+2026-04-30T00:04:16.426584894Z [inf]      {
+2026-04-30T00:04:16.426585207Z [inf]            "StartDate": "2023-09-15T17:30:00",
+2026-04-30T00:04:16.426586887Z [inf]        }
+2026-04-30T00:04:16.426588706Z [inf]        "Country": {
+2026-04-30T00:04:16.426598275Z [inf]        "Sessions": [
+2026-04-30T00:04:16.426603126Z [inf]            "EndDate": "2023-09-15T18:30:00",
+2026-04-30T00:04:16.426603332Z [inf]            "Number": 1,
+2026-04-30T00:04:16.426609961Z [inf]          "Name": "Italy"
+2026-04-30T00:04:16.426612818Z [inf]            "Type": "Practice",
+2026-04-30T00:04:16.426615333Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:16.426617181Z [inf]        "Circuit": {
+2026-04-30T00:04:16.426618352Z [inf]      },
+2026-04-30T00:04:16.426623068Z [inf]        },
+2026-04-30T00:04:16.426629292Z [inf]          "Key": 39,
+2026-04-30T00:04:16.426636984Z [inf]          "ShortName": "Monza"
+2026-04-30T00:04:16.426871591Z [inf]            "EndDate": "2023-09-03T17:00:00",
+2026-04-30T00:04:18.702778900Z [inf]            "GmtOffset": "08:00:00",
+2026-04-30T00:04:18.702785692Z [inf]            "Path": "2023/2023-09-17_Singapore_Grand_Prix/2023-09-15_Practice_1/"
+2026-04-30T00:04:18.702793517Z [inf]          },
+2026-04-30T00:04:18.702807199Z [inf]          {
+2026-04-30T00:04:18.702814700Z [inf]            "Key": 9159,
+2026-04-30T00:04:18.702824112Z [inf]            "Type": "Practice",
+2026-04-30T00:04:18.702831016Z [inf]            "Number": 2,
+2026-04-30T00:04:18.702836536Z [inf]            "Name": "Practice 2",
+2026-04-30T00:04:18.702842197Z [inf]            "StartDate": "2023-09-15T21:00:00",
+2026-04-30T00:04:18.702848181Z [inf]            "EndDate": "2023-09-15T22:00:00",
+2026-04-30T00:04:18.702854151Z [inf]            "GmtOffset": "08:00:00",
+2026-04-30T00:04:18.702860446Z [inf]            "Path": "2023/2023-09-17_Singapore_Grand_Prix/2023-09-15_Practice_2/"
+2026-04-30T00:04:18.702868412Z [inf]          },
+2026-04-30T00:04:18.702874603Z [inf]          {
+2026-04-30T00:04:18.702880902Z [inf]            "Key": 9160,
+2026-04-30T00:04:18.702887312Z [inf]            "Type": "Practice",
+2026-04-30T00:04:18.702894268Z [inf]            "Number": 3,
+2026-04-30T00:04:18.702900989Z [inf]            "Name": "Practice 3",
+2026-04-30T00:04:18.702907841Z [inf]            "StartDate": "2023-09-16T17:30:00",
+2026-04-30T00:04:18.702914826Z [inf]            "EndDate": "2023-09-16T18:30:00",
+2026-04-30T00:04:18.702921298Z [inf]            "GmtOffset": "08:00:00",
+2026-04-30T00:04:18.702928522Z [inf]            "Path": "2023/2023-09-17_Singapore_Grand_Prix/2023-09-16_Practice_3/"
+2026-04-30T00:04:18.702934302Z [inf]          },
+2026-04-30T00:04:18.702941336Z [inf]          {
+2026-04-30T00:04:18.702946906Z [inf]            "Key": 9161,
+2026-04-30T00:04:18.702956624Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:18.702963114Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:20.029969997Z [inf]            "StartDate": "2023-09-16T21:00:00",
+2026-04-30T00:04:20.029977388Z [inf]            "EndDate": "2023-09-16T22:00:00",
+2026-04-30T00:04:20.029988918Z [inf]            "GmtOffset": "08:00:00",
+2026-04-30T00:04:20.029989602Z [inf]        "Circuit": {
+2026-04-30T00:04:20.029996668Z [inf]            "Path": "2023/2023-09-17_Singapore_Grand_Prix/2023-09-16_Qualifying/"
+2026-04-30T00:04:20.030003979Z [inf]          },
+2026-04-30T00:04:20.030007189Z [inf]          "Key": 61,
+2026-04-30T00:04:20.030012309Z [inf]          {
+2026-04-30T00:04:20.030017009Z [inf]            "Key": 9165,
+2026-04-30T00:04:20.030021461Z [inf]            "Type": "Race",
+2026-04-30T00:04:20.030025782Z [inf]            "Name": "Race",
+2026-04-30T00:04:20.030118767Z [inf]        "Code": "SIN0107",
+2026-04-30T00:04:20.030125736Z [inf]        "Number": 16,
+2026-04-30T00:04:20.030148746Z [inf]        "Location": "Marina Bay",
+2026-04-30T00:04:20.030155491Z [inf]        "OfficialName": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2023 ",
+2026-04-30T00:04:20.030167572Z [inf]            "StartDate": "2023-09-17T20:00:00",
+2026-04-30T00:04:20.030175603Z [inf]            "EndDate": "2023-09-17T22:00:00",
+2026-04-30T00:04:20.030182978Z [inf]            "GmtOffset": "08:00:00",
+2026-04-30T00:04:20.030193750Z [inf]            "Path": "2023/2023-09-17_Singapore_Grand_Prix/2023-09-17_Race/"
+2026-04-30T00:04:20.030202734Z [inf]          }
+2026-04-30T00:04:20.030209915Z [inf]        ],
+2026-04-30T00:04:20.030216369Z [inf]        "Key": 1219,
+2026-04-30T00:04:20.030229037Z [inf]        "Name": "Singapore Grand Prix",
+2026-04-30T00:04:20.030235946Z [inf]        "Country": {
+2026-04-30T00:04:20.030242279Z [inf]          "Key": 157,
+2026-04-30T00:04:20.030248785Z [inf]          "Code": "SGP",
+2026-04-30T00:04:20.030254865Z [inf]          "Name": "Singapore"
+2026-04-30T00:04:20.030261607Z [inf]        },
+2026-04-30T00:04:21.709250445Z [inf]          "ShortName": "Singapore"
+2026-04-30T00:04:21.709257353Z [inf]        }
+2026-04-30T00:04:21.709264121Z [inf]      },
+2026-04-30T00:04:21.709272452Z [inf]      {
+2026-04-30T00:04:21.709293841Z [inf]        "Sessions": [
+2026-04-30T00:04:21.709305882Z [inf]          {
+2026-04-30T00:04:21.709315778Z [inf]            "Key": 9166,
+2026-04-30T00:04:21.709325458Z [inf]            "Type": "Practice",
+2026-04-30T00:04:21.709332998Z [inf]            "Number": 1,
+2026-04-30T00:04:21.709340550Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:21.709347803Z [inf]            "StartDate": "2023-09-22T11:30:00",
+2026-04-30T00:04:21.709356086Z [inf]            "EndDate": "2023-09-22T12:30:00",
+2026-04-30T00:04:21.709368077Z [inf]            "GmtOffset": "09:00:00",
+2026-04-30T00:04:21.709376643Z [inf]            "Path": "2023/2023-09-24_Japanese_Grand_Prix/2023-09-22_Practice_1/"
+2026-04-30T00:04:21.709389421Z [inf]            "Name": "Practice 2",
+2026-04-30T00:04:21.709390901Z [inf]          },
+2026-04-30T00:04:21.709402456Z [inf]            "Type": "Practice",
+2026-04-30T00:04:21.709407035Z [inf]          {
+2026-04-30T00:04:21.709408788Z [inf]            "StartDate": "2023-09-22T15:00:00",
+2026-04-30T00:04:21.709423338Z [inf]            "Number": 2,
+2026-04-30T00:04:21.709423618Z [inf]            "Key": 9167,
+2026-04-30T00:04:21.709432142Z [inf]            "EndDate": "2023-09-22T16:00:00",
+2026-04-30T00:04:21.709440105Z [inf]            "GmtOffset": "09:00:00",
+2026-04-30T00:04:21.709446917Z [inf]            "Path": "2023/2023-09-24_Japanese_Grand_Prix/2023-09-22_Practice_2/"
+2026-04-30T00:04:21.709628661Z [inf]          },
+2026-04-30T00:04:21.709637051Z [inf]          {
+2026-04-30T00:04:21.709646985Z [inf]            "Key": 9168,
+2026-04-30T00:04:21.709654265Z [inf]            "Type": "Practice",
+2026-04-30T00:04:21.709673768Z [inf]            "Number": 3,
+2026-04-30T00:04:23.084261682Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:23.084270703Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:23.084278672Z [inf]            "StartDate": "2023-09-23T15:00:00",
+2026-04-30T00:04:23.084285112Z [inf]            "EndDate": "2023-09-23T16:00:00",
+2026-04-30T00:04:23.084291637Z [inf]            "GmtOffset": "09:00:00",
+2026-04-30T00:04:23.084298708Z [inf]            "Path": "2023/2023-09-24_Japanese_Grand_Prix/2023-09-23_Qualifying/"
+2026-04-30T00:04:23.084304473Z [inf]          },
+2026-04-30T00:04:23.084309353Z [inf]          {
+2026-04-30T00:04:23.084314200Z [inf]            "Key": 9173,
+2026-04-30T00:04:23.084319502Z [inf]            "Type": "Race",
+2026-04-30T00:04:23.084324968Z [inf]            "Name": "Race",
+2026-04-30T00:04:23.084331503Z [inf]            "StartDate": "2023-09-24T14:00:00",
+2026-04-30T00:04:23.084338194Z [inf]            "EndDate": "2023-09-24T16:00:00",
+2026-04-30T00:04:23.084344376Z [inf]            "GmtOffset": "09:00:00",
+2026-04-30T00:04:23.084349596Z [inf]            "Path": "2023/2023-09-24_Japanese_Grand_Prix/2023-09-24_Race/"
+2026-04-30T00:04:23.084356176Z [inf]          }
+2026-04-30T00:04:23.084362736Z [inf]        ],
+2026-04-30T00:04:23.084367633Z [inf]        "Key": 1220,
+2026-04-30T00:04:23.084542606Z [inf]            "Name": "Practice 3",
+2026-04-30T00:04:23.084547709Z [inf]            "StartDate": "2023-09-23T11:30:00",
+2026-04-30T00:04:23.084553261Z [inf]            "EndDate": "2023-09-23T12:30:00",
+2026-04-30T00:04:23.084558858Z [inf]            "GmtOffset": "09:00:00",
+2026-04-30T00:04:23.084564624Z [inf]            "Path": "2023/2023-09-24_Japanese_Grand_Prix/2023-09-23_Practice_3/"
+2026-04-30T00:04:23.084570949Z [inf]          },
+2026-04-30T00:04:23.084576958Z [inf]          {
+2026-04-30T00:04:23.084582608Z [inf]            "Key": 9169,
+2026-04-30T00:04:24.915617740Z [inf]          {
+2026-04-30T00:04:24.915625079Z [inf]            "Key": 9214,
+2026-04-30T00:04:24.915630323Z [inf]            "Type": "Practice",
+2026-04-30T00:04:24.915731208Z [inf]        "Code": "JPN0306",
+2026-04-30T00:04:24.915738963Z [inf]        "Number": 17,
+2026-04-30T00:04:24.915750451Z [inf]        "Location": "Suzuka",
+2026-04-30T00:04:24.915758627Z [inf]        "OfficialName": "FORMULA 1 LENOVO JAPANESE GRAND PRIX 2023 ",
+2026-04-30T00:04:24.915765745Z [inf]        "Name": "Japanese Grand Prix",
+2026-04-30T00:04:24.915772844Z [inf]        "Country": {
+2026-04-30T00:04:24.915780219Z [inf]          "Key": 4,
+2026-04-30T00:04:24.915787311Z [inf]          "Code": "JPN",
+2026-04-30T00:04:24.915794224Z [inf]          "Name": "Japan"
+2026-04-30T00:04:24.915801930Z [inf]        },
+2026-04-30T00:04:24.915810425Z [inf]        "Circuit": {
+2026-04-30T00:04:24.915817300Z [inf]          "Key": 46,
+2026-04-30T00:04:24.915823940Z [inf]          "ShortName": "Suzuka"
+2026-04-30T00:04:24.915829899Z [inf]        }
+2026-04-30T00:04:24.915836184Z [inf]      },
+2026-04-30T00:04:24.915842120Z [inf]      {
+2026-04-30T00:04:24.915848045Z [inf]        "Sessions": [
+2026-04-30T00:04:24.916043619Z [inf]            "Number": 1,
+2026-04-30T00:04:24.916049028Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:24.916054056Z [inf]            "StartDate": "2023-10-06T16:30:00",
+2026-04-30T00:04:24.916059996Z [inf]            "EndDate": "2023-10-06T17:30:00",
+2026-04-30T00:04:24.916064523Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:04:24.916070662Z [inf]            "Path": "2023/2023-10-08_Qatar_Grand_Prix/2023-10-06_Practice_1/"
+2026-04-30T00:04:24.916076535Z [inf]          },
+2026-04-30T00:04:24.916083512Z [inf]          {
+2026-04-30T00:04:24.916089259Z [inf]            "Key": 9215,
+2026-04-30T00:04:24.916095771Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:26.811758898Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:26.811766294Z [inf]            "StartDate": "2023-10-06T20:00:00",
+2026-04-30T00:04:26.811772672Z [inf]            "EndDate": "2023-10-06T21:00:00",
+2026-04-30T00:04:26.811780248Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:04:26.811787551Z [inf]            "Path": "2023/2023-10-08_Qatar_Grand_Prix/2023-10-06_Qualifying/"
+2026-04-30T00:04:26.811832564Z [inf]          },
+2026-04-30T00:04:26.811840515Z [inf]          {
+2026-04-30T00:04:26.811848503Z [inf]            "Key": -1,
+2026-04-30T00:04:26.811856052Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:26.811863064Z [inf]            "StartDate": "2023-10-07T16:00:00",
+2026-04-30T00:04:26.811871493Z [inf]            "EndDate": "2023-10-07T16:44:00",
+2026-04-30T00:04:26.811879981Z [inf]            "GmtOffset": "03:00:00"
+2026-04-30T00:04:26.811887193Z [inf]          },
+2026-04-30T00:04:26.811893553Z [inf]          {
+2026-04-30T00:04:26.811900350Z [inf]            "Key": 9298,
+2026-04-30T00:04:26.811907699Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:26.811914421Z [inf]            "Number": -1,
+2026-04-30T00:04:26.811920483Z [inf]            "Name": "Sprint Shootout",
+2026-04-30T00:04:26.811926647Z [inf]            "StartDate": "2023-10-07T16:20:00",
+2026-04-30T00:04:26.811933772Z [inf]            "EndDate": "2023-10-07T17:04:00",
+2026-04-30T00:04:26.811941774Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:04:26.811948425Z [inf]            "Path": "2023/2023-10-08_Qatar_Grand_Prix/2023-10-07_Sprint_Shootout/"
+2026-04-30T00:04:26.812064516Z [inf]          },
+2026-04-30T00:04:26.812075205Z [inf]          {
+2026-04-30T00:04:26.812083254Z [inf]            "Key": -1,
+2026-04-30T00:04:26.812090269Z [inf]            "Type": "Race",
+2026-04-30T00:04:26.812097214Z [inf]            "StartDate": "2023-10-07T20:30:00",
+2026-04-30T00:04:29.315578879Z [inf]            "EndDate": "2023-10-07T21:30:00",
+2026-04-30T00:04:29.315585541Z [inf]            "GmtOffset": "03:00:00"
+2026-04-30T00:04:29.315592221Z [inf]          },
+2026-04-30T00:04:29.315598270Z [inf]          {
+2026-04-30T00:04:29.315604260Z [inf]            "Key": 9220,
+2026-04-30T00:04:29.315611360Z [inf]            "Type": "Race",
+2026-04-30T00:04:29.315618161Z [inf]            "Number": -1,
+2026-04-30T00:04:29.315626435Z [inf]            "Name": "Sprint",
+2026-04-30T00:04:29.315633447Z [inf]            "StartDate": "2023-10-07T20:30:00",
+2026-04-30T00:04:29.315639361Z [inf]            "EndDate": "2023-10-07T21:30:00",
+2026-04-30T00:04:29.315645802Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:04:29.315652366Z [inf]            "Path": "2023/2023-10-08_Qatar_Grand_Prix/2023-10-07_Sprint/"
+2026-04-30T00:04:29.315659210Z [inf]          },
+2026-04-30T00:04:29.315665591Z [inf]          {
+2026-04-30T00:04:29.315671449Z [inf]            "Key": -1,
+2026-04-30T00:04:29.315677706Z [inf]            "Type": "Race",
+2026-04-30T00:04:29.315683798Z [inf]            "StartDate": "2023-10-08T20:00:00",
+2026-04-30T00:04:29.315746716Z [inf]            "EndDate": "2023-10-08T22:00:00",
+2026-04-30T00:04:29.315753671Z [inf]            "GmtOffset": "03:00:00"
+2026-04-30T00:04:29.315760022Z [inf]          },
+2026-04-30T00:04:29.315766075Z [inf]          {
+2026-04-30T00:04:29.319005358Z [inf]            "Key": 9221,
+2026-04-30T00:04:29.319017131Z [inf]            "Type": "Race",
+2026-04-30T00:04:29.319023701Z [inf]            "Name": "Race",
+2026-04-30T00:04:29.319031749Z [inf]            "StartDate": "2023-10-08T20:00:00",
+2026-04-30T00:04:29.319039136Z [inf]            "EndDate": "2023-10-08T22:00:00",
+2026-04-30T00:04:29.319044704Z [inf]            "GmtOffset": "03:00:00",
+2026-04-30T00:04:29.319049474Z [inf]            "Path": "2023/2023-10-08_Qatar_Grand_Prix/2023-10-08_Race/"
+2026-04-30T00:04:31.008926648Z [inf]        "Sessions": [
+2026-04-30T00:04:31.008997398Z [inf]          }
+2026-04-30T00:04:31.009012965Z [inf]        "Country": {
+2026-04-30T00:04:31.009016469Z [inf]        "OfficialName": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2023",
+2026-04-30T00:04:31.009018002Z [inf]        "Code": "QAT0102",
+2026-04-30T00:04:31.009031728Z [inf]        "Name": "Qatar Grand Prix",
+2026-04-30T00:04:31.009037952Z [inf]          "ShortName": "Lusail"
+2026-04-30T00:04:31.009051386Z [inf]        }
+2026-04-30T00:04:31.009051578Z [inf]        ],
+2026-04-30T00:04:31.009060449Z [inf]      },
+2026-04-30T00:04:31.009067141Z [inf]        "Key": 1221,
+2026-04-30T00:04:31.009069119Z [inf]          "Code": "QAT",
+2026-04-30T00:04:31.009069477Z [inf]      {
+2026-04-30T00:04:31.009080888Z [inf]          "Name": "Qatar"
+2026-04-30T00:04:31.009082588Z [inf]        "Location": "Lusail",
+2026-04-30T00:04:31.009089804Z [inf]        },
+2026-04-30T00:04:31.009098938Z [inf]        "Circuit": {
+2026-04-30T00:04:31.009107941Z [inf]          "Key": 150,
+2026-04-30T00:04:31.009179106Z [inf]          "Key": 149,
+2026-04-30T00:04:31.009247611Z [inf]          {
+2026-04-30T00:04:31.009262173Z [inf]            "Key": 9206,
+2026-04-30T00:04:31.009269002Z [inf]            "Type": "Practice",
+2026-04-30T00:04:31.009274978Z [inf]            "Number": 1,
+2026-04-30T00:04:31.009280708Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:31.009308366Z [inf]            "GmtOffset": "-05:00:00",
+2026-04-30T00:04:31.009321204Z [inf]            "StartDate": "2023-10-20T12:30:00",
+2026-04-30T00:04:31.009328364Z [inf]        "Number": 18,
+2026-04-30T00:04:31.009329485Z [inf]            "EndDate": "2023-10-20T13:30:00",
+2026-04-30T00:04:31.009354755Z [inf]            "Path": "2023/2023-10-22_United_States_Grand_Prix/2023-10-20_Practice_1/"
+2026-04-30T00:04:31.009365035Z [inf]          },
+2026-04-30T00:04:32.860550483Z [inf]            "Name": "Sprint Shootout",
+2026-04-30T00:04:32.860581617Z [inf]            "StartDate": "2023-10-21T12:30:00",
+2026-04-30T00:04:32.860590854Z [inf]            "EndDate": "2023-10-21T13:14:00",
+2026-04-30T00:04:32.860598409Z [inf]            "GmtOffset": "-05:00:00",
+2026-04-30T00:04:32.860761468Z [inf]            "EndDate": "2023-10-20T17:00:00",
+2026-04-30T00:04:32.860770697Z [inf]            "GmtOffset": "-05:00:00",
+2026-04-30T00:04:32.860778337Z [inf]            "Path": "2023/2023-10-22_United_States_Grand_Prix/2023-10-20_Qualifying/"
+2026-04-30T00:04:32.860785536Z [inf]          },
+2026-04-30T00:04:32.860792338Z [inf]          {
+2026-04-30T00:04:32.860799921Z [inf]            "Key": 9294,
+2026-04-30T00:04:32.860807620Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:32.860815033Z [inf]            "Number": -1,
+2026-04-30T00:04:32.860938712Z [inf]          {
+2026-04-30T00:04:32.860944568Z [inf]            "Key": 9207,
+2026-04-30T00:04:32.860950279Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:32.860956572Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:32.860963613Z [inf]            "StartDate": "2023-10-20T16:00:00",
+2026-04-30T00:04:32.861038996Z [inf]            "Path": "2023/2023-10-22_United_States_Grand_Prix/2023-10-21_Sprint_Shootout/"
+2026-04-30T00:04:32.861047041Z [inf]          },
+2026-04-30T00:04:32.861054307Z [inf]          {
+2026-04-30T00:04:32.861061245Z [inf]            "Key": 9212,
+2026-04-30T00:04:32.861090418Z [inf]            "Type": "Race",
+2026-04-30T00:04:32.861097907Z [inf]            "Number": -1,
+2026-04-30T00:04:32.861106315Z [inf]            "Name": "Sprint",
+2026-04-30T00:04:32.861113915Z [inf]            "StartDate": "2023-10-21T17:00:00",
+2026-04-30T00:04:32.861120403Z [inf]            "EndDate": "2023-10-21T18:00:00",
+2026-04-30T00:04:32.861128250Z [inf]            "GmtOffset": "-05:00:00",
+2026-04-30T00:04:34.918122692Z [inf]            "Path": "2023/2023-10-22_United_States_Grand_Prix/2023-10-21_Sprint/"
+2026-04-30T00:04:34.918151406Z [inf]          },
+2026-04-30T00:04:34.918158076Z [inf]          {
+2026-04-30T00:04:34.918163925Z [inf]            "Key": 9213,
+2026-04-30T00:04:34.918169205Z [inf]            "Type": "Race",
+2026-04-30T00:04:34.918175850Z [inf]            "Name": "Race",
+2026-04-30T00:04:34.918181633Z [inf]            "StartDate": "2023-10-22T14:00:00",
+2026-04-30T00:04:34.918186750Z [inf]            "EndDate": "2023-10-22T16:00:00",
+2026-04-30T00:04:34.918192869Z [inf]            "GmtOffset": "-05:00:00",
+2026-04-30T00:04:34.918200205Z [inf]            "Path": "2023/2023-10-22_United_States_Grand_Prix/2023-10-22_Race/"
+2026-04-30T00:04:34.918205718Z [inf]          }
+2026-04-30T00:04:34.918211231Z [inf]        ],
+2026-04-30T00:04:34.918216105Z [inf]        "Key": 1222,
+2026-04-30T00:04:34.918221392Z [inf]        "Code": "USA0101",
+2026-04-30T00:04:34.918227193Z [inf]        "Number": 19,
+2026-04-30T00:04:34.918232050Z [inf]        "Location": "Austin",
+2026-04-30T00:04:34.918237716Z [inf]        "OfficialName": "FORMULA 1 LENOVO UNITED STATES GRAND PRIX 2023",
+2026-04-30T00:04:34.918245337Z [inf]        "Name": "United States Grand Prix",
+2026-04-30T00:04:34.918250856Z [inf]        "Country": {
+2026-04-30T00:04:34.918255747Z [inf]          "Key": 19,
+2026-04-30T00:04:34.918262527Z [inf]          "Code": "USA",
+2026-04-30T00:04:34.918268305Z [inf]          "Name": "United States"
+2026-04-30T00:04:34.918274620Z [inf]        },
+2026-04-30T00:04:34.918280376Z [inf]        "Circuit": {
+2026-04-30T00:04:34.918286671Z [inf]          "Key": 9,
+2026-04-30T00:04:34.918294665Z [inf]          "ShortName": "Austin"
+2026-04-30T00:04:34.918300344Z [inf]        }
+2026-04-30T00:04:34.918306412Z [inf]      },
+2026-04-30T00:04:34.918312773Z [inf]      {
+2026-04-30T00:04:36.695697640Z [inf]        "Sessions": [
+2026-04-30T00:04:36.695705041Z [inf]          {
+2026-04-30T00:04:36.695711633Z [inf]            "Key": 9174,
+2026-04-30T00:04:36.695722710Z [inf]            "Type": "Practice",
+2026-04-30T00:04:36.695730193Z [inf]            "Number": 1,
+2026-04-30T00:04:36.695737263Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:36.695748274Z [inf]            "StartDate": "2023-10-27T12:30:00",
+2026-04-30T00:04:36.695755843Z [inf]            "EndDate": "2023-10-27T13:30:00",
+2026-04-30T00:04:36.695762499Z [inf]            "GmtOffset": "-06:00:00",
+2026-04-30T00:04:36.695768672Z [inf]            "Path": "2023/2023-10-29_Mexico_City_Grand_Prix/2023-10-27_Practice_1/"
+2026-04-30T00:04:36.695780941Z [inf]          },
+2026-04-30T00:04:36.695788319Z [inf]          {
+2026-04-30T00:04:36.695796806Z [inf]            "Key": 9175,
+2026-04-30T00:04:36.695803877Z [inf]            "Type": "Practice",
+2026-04-30T00:04:36.695815138Z [inf]            "Number": 2,
+2026-04-30T00:04:36.695822643Z [inf]            "Name": "Practice 2",
+2026-04-30T00:04:36.695830078Z [inf]            "StartDate": "2023-10-27T16:00:00",
+2026-04-30T00:04:36.695841237Z [inf]            "EndDate": "2023-10-27T17:00:00",
+2026-04-30T00:04:36.695848294Z [inf]            "GmtOffset": "-06:00:00",
+2026-04-30T00:04:36.695856146Z [inf]            "Path": "2023/2023-10-29_Mexico_City_Grand_Prix/2023-10-27_Practice_2/"
+2026-04-30T00:04:36.695862369Z [inf]          },
+2026-04-30T00:04:36.695873124Z [inf]          {
+2026-04-30T00:04:36.695881202Z [inf]            "Key": 9176,
+2026-04-30T00:04:36.695887171Z [inf]            "Type": "Practice",
+2026-04-30T00:04:36.695893087Z [inf]            "Number": 3,
+2026-04-30T00:04:36.695902831Z [inf]            "Name": "Practice 3",
+2026-04-30T00:04:36.695910447Z [inf]            "StartDate": "2023-10-28T11:30:00",
+2026-04-30T00:04:36.695917407Z [inf]            "EndDate": "2023-10-28T12:30:00",
+2026-04-30T00:04:38.338441787Z [inf]          },
+2026-04-30T00:04:38.338453463Z [inf]          {
+2026-04-30T00:04:38.338461728Z [inf]        "OfficialName": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE M\u00c9XICO 2023",
+2026-04-30T00:04:38.338462159Z [inf]            "Key": 9181,
+2026-04-30T00:04:38.338470394Z [inf]            "Type": "Race",
+2026-04-30T00:04:38.338477015Z [inf]            "Name": "Race",
+2026-04-30T00:04:38.338480960Z [inf]            "GmtOffset": "-06:00:00",
+2026-04-30T00:04:38.338486965Z [inf]            "Path": "2023/2023-10-29_Mexico_City_Grand_Prix/2023-10-28_Practice_3/"
+2026-04-30T00:04:38.338489217Z [inf]            "StartDate": "2023-10-29T14:00:00",
+2026-04-30T00:04:38.338492432Z [inf]          },
+2026-04-30T00:04:38.338497337Z [inf]          {
+2026-04-30T00:04:38.338501356Z [inf]            "EndDate": "2023-10-29T16:00:00",
+2026-04-30T00:04:38.338503688Z [inf]            "Key": 9177,
+2026-04-30T00:04:38.338509952Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:38.338510264Z [inf]            "GmtOffset": "-06:00:00",
+2026-04-30T00:04:38.338521234Z [inf]            "Path": "2023/2023-10-29_Mexico_City_Grand_Prix/2023-10-29_Race/"
+2026-04-30T00:04:38.338527866Z [inf]          }
+2026-04-30T00:04:38.338534038Z [inf]        ],
+2026-04-30T00:04:38.338546485Z [inf]        "Key": 1223,
+2026-04-30T00:04:38.338557908Z [inf]        "Code": "MEX0103",
+2026-04-30T00:04:38.338564166Z [inf]        "Number": 20,
+2026-04-30T00:04:38.338579747Z [inf]        "Location": "Mexico City",
+2026-04-30T00:04:38.338630463Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:38.338636686Z [inf]            "StartDate": "2023-10-28T15:00:00",
+2026-04-30T00:04:38.338640594Z [inf]            "EndDate": "2023-10-28T16:00:00",
+2026-04-30T00:04:38.338645101Z [inf]            "GmtOffset": "-06:00:00",
+2026-04-30T00:04:38.338649461Z [inf]            "Path": "2023/2023-10-29_Mexico_City_Grand_Prix/2023-10-28_Qualifying/"
+2026-04-30T00:04:39.744066562Z [inf]            "Key": 9304,
+2026-04-30T00:04:39.744070535Z [inf]            "Key": 9198,
+2026-04-30T00:04:39.744075883Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:39.744087980Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:39.744095951Z [inf]            "StartDate": "2023-11-03T15:00:00",
+2026-04-30T00:04:39.744103626Z [inf]            "EndDate": "2023-11-03T16:00:00",
+2026-04-30T00:04:39.744114379Z [inf]          "Key": 8,
+2026-04-30T00:04:39.744115344Z [inf]            "Type": "Practice",
+2026-04-30T00:04:39.744122049Z [inf]            "EndDate": "2023-11-03T12:30:00",
+2026-04-30T00:04:39.744126352Z [inf]            "Number": 1,
+2026-04-30T00:04:39.744126937Z [inf]          "Code": "MEX",
+2026-04-30T00:04:39.744131334Z [inf]        "Name": "Mexico City Grand Prix",
+2026-04-30T00:04:39.744136008Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:39.744138270Z [inf]          "Name": "Mexico"
+2026-04-30T00:04:39.744140630Z [inf]            "GmtOffset": "-03:00:00",
+2026-04-30T00:04:39.744143433Z [inf]        "Country": {
+2026-04-30T00:04:39.744147953Z [inf]            "StartDate": "2023-11-03T11:30:00",
+2026-04-30T00:04:39.744148068Z [inf]        }
+2026-04-30T00:04:39.744149714Z [inf]        },
+2026-04-30T00:04:39.744154114Z [inf]            "Path": "2023/2023-11-05_S\u00e3o_Paulo_Grand_Prix/2023-11-03_Practice_1/"
+2026-04-30T00:04:39.744159552Z [inf]      },
+2026-04-30T00:04:39.744160656Z [inf]        "Circuit": {
+2026-04-30T00:04:39.744164113Z [inf]          },
+2026-04-30T00:04:39.744170830Z [inf]          "Key": 65,
+2026-04-30T00:04:39.744171428Z [inf]      {
+2026-04-30T00:04:39.744175432Z [inf]          {
+2026-04-30T00:04:39.744181458Z [inf]          "ShortName": "Mexico City"
+2026-04-30T00:04:39.744181630Z [inf]        "Sessions": [
+2026-04-30T00:04:39.744189531Z [inf]          {
+2026-04-30T00:04:41.358557916Z [inf]            "GmtOffset": "-03:00:00",
+2026-04-30T00:04:41.358564180Z [inf]            "Path": "2023/2023-11-05_S\u00e3o_Paulo_Grand_Prix/2023-11-03_Qualifying/"
+2026-04-30T00:04:41.358570648Z [inf]          },
+2026-04-30T00:04:41.358576431Z [inf]          {
+2026-04-30T00:04:41.358599989Z [inf]            "Key": 9308,
+2026-04-30T00:04:41.358606958Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:41.358613682Z [inf]            "Name": "Sprint Shootout",
+2026-04-30T00:04:41.358619864Z [inf]            "StartDate": "2023-11-04T11:00:00",
+2026-04-30T00:04:41.358626433Z [inf]            "EndDate": "2023-11-04T11:44:00",
+2026-04-30T00:04:41.358632497Z [inf]            "GmtOffset": "-03:00:00",
+2026-04-30T00:04:41.358638949Z [inf]            "Path": "2023/2023-11-05_S\u00e3o_Paulo_Grand_Prix/2023-11-04_Sprint_Shootout/"
+2026-04-30T00:04:41.358645366Z [inf]          },
+2026-04-30T00:04:41.358651871Z [inf]          {
+2026-04-30T00:04:41.358658170Z [inf]            "Key": 9204,
+2026-04-30T00:04:41.358664091Z [inf]            "Type": "Race",
+2026-04-30T00:04:41.358670443Z [inf]            "Name": "Sprint",
+2026-04-30T00:04:41.358676913Z [inf]            "StartDate": "2023-11-04T15:30:00",
+2026-04-30T00:04:41.358683183Z [inf]            "EndDate": "2023-11-04T16:00:00",
+2026-04-30T00:04:41.358692370Z [inf]            "GmtOffset": "-03:00:00",
+2026-04-30T00:04:41.358698339Z [inf]            "Path": "2023/2023-11-05_S\u00e3o_Paulo_Grand_Prix/2023-11-04_Sprint/"
+2026-04-30T00:04:41.358705581Z [inf]          },
+2026-04-30T00:04:41.358711407Z [inf]          {
+2026-04-30T00:04:41.358717563Z [inf]            "Key": 9205,
+2026-04-30T00:04:41.358723537Z [inf]            "Type": "Race",
+2026-04-30T00:04:41.358729459Z [inf]            "Name": "Race",
+2026-04-30T00:04:41.358736048Z [inf]            "StartDate": "2023-11-05T14:00:00",
+2026-04-30T00:04:41.358741794Z [inf]            "EndDate": "2023-11-05T16:00:00",
+2026-04-30T00:04:42.527214850Z [inf]        ],
+2026-04-30T00:04:42.527223820Z [inf]        "Key": 1224,
+2026-04-30T00:04:42.527230391Z [inf]        "Code": "BRA0109",
+2026-04-30T00:04:42.527246937Z [inf]        "Name": "S\u00e3o Paulo Grand Prix",
+2026-04-30T00:04:42.527250455Z [inf]            "GmtOffset": "-03:00:00",
+2026-04-30T00:04:42.527254255Z [inf]        "Country": {
+2026-04-30T00:04:42.527261517Z [inf]            "Path": "2023/2023-11-05_S\u00e3o_Paulo_Grand_Prix/2023-11-05_Race/"
+2026-04-30T00:04:42.527262953Z [inf]          "Code": "BRA",
+2026-04-30T00:04:42.527264217Z [inf]          "Key": 10,
+2026-04-30T00:04:42.527272526Z [inf]          }
+2026-04-30T00:04:42.527274045Z [inf]      {
+2026-04-30T00:04:42.527279108Z [inf]          "Name": "Brazil"
+2026-04-30T00:04:42.527283802Z [inf]        "Sessions": [
+2026-04-30T00:04:42.527286681Z [inf]            "Number": 1,
+2026-04-30T00:04:42.527289479Z [inf]        "Number": 21,
+2026-04-30T00:04:42.527291939Z [inf]        },
+2026-04-30T00:04:42.527297587Z [inf]          {
+2026-04-30T00:04:42.527301361Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:42.527307327Z [inf]            "Key": 9182,
+2026-04-30T00:04:42.527307391Z [inf]        "Circuit": {
+2026-04-30T00:04:42.527316117Z [inf]          "Key": 14,
+2026-04-30T00:04:42.527318260Z [inf]        "Location": "S\u00e3o Paulo",
+2026-04-30T00:04:42.527319125Z [inf]            "StartDate": "2023-11-16T20:30:00",
+2026-04-30T00:04:42.527328884Z [inf]            "Type": "Practice",
+2026-04-30T00:04:42.527328950Z [inf]          "ShortName": "Interlagos"
+2026-04-30T00:04:42.527336516Z [inf]        "OfficialName": "FORMULA 1 ROLEX GRANDE PR\u00caMIO DE S\u00c3O PAULO 2023",
+2026-04-30T00:04:42.527339569Z [inf]            "EndDate": "2023-11-16T21:30:00",
+2026-04-30T00:04:42.527345250Z [inf]        }
+2026-04-30T00:04:42.527352411Z [inf]      },
+2026-04-30T00:04:44.355551309Z [inf]            "GmtOffset": "-08:00:00",
+2026-04-30T00:04:44.355555793Z [inf]            "Path": "2023/2023-11-18_Las_Vegas_Grand_Prix/2023-11-16_Practice_1/"
+2026-04-30T00:04:44.355560224Z [inf]          },
+2026-04-30T00:04:44.355565077Z [inf]          {
+2026-04-30T00:04:44.355571247Z [inf]            "Key": 9183,
+2026-04-30T00:04:44.355576270Z [inf]            "Type": "Practice",
+2026-04-30T00:04:44.355581759Z [inf]            "Number": 2,
+2026-04-30T00:04:44.355585848Z [inf]            "Name": "Practice 2",
+2026-04-30T00:04:44.355590431Z [inf]            "StartDate": "2023-11-17T02:00:00",
+2026-04-30T00:04:44.355594823Z [inf]            "EndDate": "2023-11-17T03:30:00",
+2026-04-30T00:04:44.355599165Z [inf]            "GmtOffset": "-08:00:00",
+2026-04-30T00:04:44.355603388Z [inf]            "Path": "2023/2023-11-18_Las_Vegas_Grand_Prix/2023-11-17_Practice_2/"
+2026-04-30T00:04:44.355609282Z [inf]          },
+2026-04-30T00:04:44.355613510Z [inf]          {
+2026-04-30T00:04:44.355617741Z [inf]            "Key": 9184,
+2026-04-30T00:04:44.355622463Z [inf]            "Type": "Practice",
+2026-04-30T00:04:44.356044349Z [inf]            "Number": 3,
+2026-04-30T00:04:44.356063918Z [inf]            "Name": "Practice 3",
+2026-04-30T00:04:44.356073588Z [inf]            "StartDate": "2023-11-17T20:30:00",
+2026-04-30T00:04:44.356084830Z [inf]            "EndDate": "2023-11-17T21:30:00",
+2026-04-30T00:04:44.356095289Z [inf]            "GmtOffset": "-08:00:00",
+2026-04-30T00:04:44.356104085Z [inf]            "Path": "2023/2023-11-18_Las_Vegas_Grand_Prix/2023-11-17_Practice_3/"
+2026-04-30T00:04:44.356112448Z [inf]          },
+2026-04-30T00:04:44.356120984Z [inf]          {
+2026-04-30T00:04:44.356129322Z [inf]            "Key": 9314,
+2026-04-30T00:04:44.356139214Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:44.356149002Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:46.111180255Z [inf]            "EndDate": "2023-11-19T00:00:00",
+2026-04-30T00:04:46.111190170Z [inf]            "GmtOffset": "-08:00:00",
+2026-04-30T00:04:46.111198264Z [inf]            "Path": "2023/2023-11-18_Las_Vegas_Grand_Prix/2023-11-18_Race/"
+2026-04-30T00:04:46.111205551Z [inf]          }
+2026-04-30T00:04:46.111213395Z [inf]        ],
+2026-04-30T00:04:46.111223543Z [inf]        "Key": 1225,
+2026-04-30T00:04:46.111233246Z [inf]        "Code": "USA1501",
+2026-04-30T00:04:46.111240204Z [inf]        "Number": 22,
+2026-04-30T00:04:46.111247036Z [inf]        "Location": "Las Vegas",
+2026-04-30T00:04:46.111254357Z [inf]        "OfficialName": "FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023",
+2026-04-30T00:04:46.111260734Z [inf]        "Name": "Las Vegas Grand Prix",
+2026-04-30T00:04:46.111267640Z [inf]        "Country": {
+2026-04-30T00:04:46.111273690Z [inf]          "Key": 19,
+2026-04-30T00:04:46.111280228Z [inf]          "Code": "USA",
+2026-04-30T00:04:46.111286406Z [inf]          "Name": "United States"
+2026-04-30T00:04:46.112054882Z [inf]            "StartDate": "2023-11-18T00:00:00",
+2026-04-30T00:04:46.112061447Z [inf]            "EndDate": "2023-11-18T01:00:00",
+2026-04-30T00:04:46.112072608Z [inf]            "GmtOffset": "-08:00:00",
+2026-04-30T00:04:46.112079116Z [inf]            "Path": "2023/2023-11-18_Las_Vegas_Grand_Prix/2023-11-18_Qualifying/"
+2026-04-30T00:04:46.112085305Z [inf]          },
+2026-04-30T00:04:46.112090764Z [inf]          {
+2026-04-30T00:04:46.112096055Z [inf]            "Key": 9189,
+2026-04-30T00:04:46.112101557Z [inf]            "Type": "Race",
+2026-04-30T00:04:46.112107269Z [inf]            "Name": "Race",
+2026-04-30T00:04:46.112113057Z [inf]            "StartDate": "2023-11-18T22:00:00",
+2026-04-30T00:04:46.114259527Z [inf]        },
+2026-04-30T00:04:46.114275082Z [inf]        "Circuit": {
+2026-04-30T00:04:46.114281134Z [inf]          "Key": 152,
+2026-04-30T00:04:47.853126439Z [inf]          "ShortName": "Las Vegas"
+2026-04-30T00:04:47.853131489Z [inf]        }
+2026-04-30T00:04:47.853136903Z [inf]      },
+2026-04-30T00:04:47.853142551Z [inf]      {
+2026-04-30T00:04:47.853158481Z [inf]        "Sessions": [
+2026-04-30T00:04:47.853164260Z [inf]          {
+2026-04-30T00:04:47.853169586Z [inf]            "Key": 9190,
+2026-04-30T00:04:47.853176114Z [inf]            "Type": "Practice",
+2026-04-30T00:04:47.853182138Z [inf]            "Number": 1,
+2026-04-30T00:04:47.853187262Z [inf]            "Name": "Practice 1",
+2026-04-30T00:04:47.853193021Z [inf]            "StartDate": "2023-11-24T13:30:00",
+2026-04-30T00:04:47.855594890Z [inf]            "Number": 3,
+2026-04-30T00:04:47.855610717Z [inf]            "EndDate": "2023-11-24T14:30:00",
+2026-04-30T00:04:47.855627172Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:04:47.855636709Z [inf]            "Path": "2023/2023-11-26_Abu_Dhabi_Grand_Prix/2023-11-24_Practice_1/"
+2026-04-30T00:04:47.855643592Z [inf]          },
+2026-04-30T00:04:47.855653282Z [inf]          {
+2026-04-30T00:04:47.855662273Z [inf]            "Key": 9191,
+2026-04-30T00:04:47.855667649Z [inf]            "Type": "Practice",
+2026-04-30T00:04:47.855677126Z [inf]            "Number": 2,
+2026-04-30T00:04:47.855682460Z [inf]            "Name": "Practice 2",
+2026-04-30T00:04:47.855691796Z [inf]            "StartDate": "2023-11-24T17:00:00",
+2026-04-30T00:04:47.855696920Z [inf]            "EndDate": "2023-11-24T18:00:00",
+2026-04-30T00:04:47.855703020Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:04:47.855709076Z [inf]            "Path": "2023/2023-11-26_Abu_Dhabi_Grand_Prix/2023-11-24_Practice_2/"
+2026-04-30T00:04:47.855713849Z [inf]          },
+2026-04-30T00:04:47.855720055Z [inf]          {
+2026-04-30T00:04:47.855725844Z [inf]            "Key": 9192,
+2026-04-30T00:04:47.855730801Z [inf]            "Type": "Practice",
+2026-04-30T00:04:49.006956419Z [inf]            "Name": "Practice 3",
+2026-04-30T00:04:49.006962457Z [inf]            "StartDate": "2023-11-25T14:30:00",
+2026-04-30T00:04:49.006970597Z [inf]            "EndDate": "2023-11-25T15:30:00",
+2026-04-30T00:04:49.006977593Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:04:49.006990534Z [inf]            "Path": "2023/2023-11-26_Abu_Dhabi_Grand_Prix/2023-11-25_Practice_3/"
+2026-04-30T00:04:49.007011433Z [inf]          },
+2026-04-30T00:04:49.007018256Z [inf]          {
+2026-04-30T00:04:49.007025739Z [inf]            "Key": 9193,
+2026-04-30T00:04:49.007032512Z [inf]            "Type": "Qualifying",
+2026-04-30T00:04:49.007043430Z [inf]            "Name": "Qualifying",
+2026-04-30T00:04:49.007049647Z [inf]            "StartDate": "2023-11-25T18:00:00",
+2026-04-30T00:04:49.007056510Z [inf]            "EndDate": "2023-11-25T19:00:00",
+2026-04-30T00:04:49.007166668Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:04:49.007180003Z [inf]            "Path": "2023/2023-11-26_Abu_Dhabi_Grand_Prix/2023-11-25_Qualifying/"
+2026-04-30T00:04:49.007187867Z [inf]          },
+2026-04-30T00:04:49.007194529Z [inf]          {
+2026-04-30T00:04:49.007201918Z [inf]            "Key": 9197,
+2026-04-30T00:04:49.007208262Z [inf]            "Type": "Race",
+2026-04-30T00:04:49.007214584Z [inf]            "Name": "Race",
+2026-04-30T00:04:49.007220974Z [inf]            "StartDate": "2023-11-26T17:00:00",
+2026-04-30T00:04:49.007226967Z [inf]            "EndDate": "2023-11-26T19:00:00",
+2026-04-30T00:04:49.007233637Z [inf]            "GmtOffset": "04:00:00",
+2026-04-30T00:04:49.007241506Z [inf]            "Path": "2023/2023-11-26_Abu_Dhabi_Grand_Prix/2023-11-26_Race/"
+2026-04-30T00:04:49.007249118Z [inf]          }
+2026-04-30T00:04:49.007255732Z [inf]        ],
+2026-04-30T00:04:49.007263740Z [inf]        "Key": 1226,
+2026-04-30T00:04:49.007270195Z [inf]        "Code": "UAE0103",
+2026-04-30T00:04:50.554356010Z [inf]        "Number": 23,
+2026-04-30T00:04:50.554364523Z [inf]        "Location": "Yas Island",
+2026-04-30T00:04:50.554371020Z [inf]        "OfficialName": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2023 ",
+2026-04-30T00:04:50.554377985Z [inf]        "Name": "Abu Dhabi Grand Prix",
+2026-04-30T00:04:50.554384705Z [inf]        "Country": {
+2026-04-30T00:04:50.554391223Z [inf]          "Key": 21,
+2026-04-30T00:04:50.554397985Z [inf]          "Code": "UAE",
+2026-04-30T00:04:50.554404549Z [inf]          "Name": "United Arab Emirates"
+2026-04-30T00:04:50.554411471Z [inf]        },
+2026-04-30T00:04:50.554418109Z [inf]        "Circuit": {
+2026-04-30T00:04:50.554424544Z [inf]          "Key": 70,
+2026-04-30T00:04:50.554431376Z [inf]          "ShortName": "Yas Marina Circuit"
+2026-04-30T00:04:50.554438028Z [inf]        }
+2026-04-30T00:04:50.554445095Z [inf]      }
+2026-04-30T00:04:50.554451236Z [inf]    ]
+2026-04-30T00:04:50.554457843Z [inf]  }
+2026-04-30T00:04:50.554464117Z [err]  /usr/local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+2026-04-30T00:04:50.554470667Z [err]    warnings.warn(message, FutureWarning)
+2026-04-30T00:04:50.554477139Z [err]  2026-04-30 00:03:12.104 | INFO     | __main__:main:19 - Recording raw data to '/tmp/tmp6yqtxi_5'
+2026-04-30T00:04:50.554483206Z [err]  2026-04-30 00:03:12.152 | INFO     | __main__:main:24 - Starting live recording of the following topics: {'SessionInfo', 'SessionData', 'RaceControlMessages', 'Position.z', 'PitLaneTimeCollection', 'TimingData', 'DriverList', 'TeamRadio', 'ChampionshipPrediction', 'CarData.z', 'TimingAppData', 'DriverRaceInfo', 'Heartbeat', 'PitStopSeries', 'WeatherData'}
+2026-04-30T00:04:52.317455569Z [err]  2026-04-30 00:03:12.152 | INFO     | __main__:main:49 - Starting data ingestion
+2026-04-30T00:04:52.317461933Z [err]  2026-04-30 00:03:12.154 | INFO     | openf1.util.mqtt:initialize_mqtt:26 - MQTT credentials not found, MQTT is disabled
+2026-04-30T00:04:52.317468599Z [err]  2026-04-30 00:03:12.289 | INFO     | __main__:ingest_season:391 - 23 meetings found: [1140, 1141, 1142, 1143, 1207, 1208, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1217, 1218, 1219, 1220, 1221, 1222, 1223, 1224, 1225, 1226]
+2026-04-30T00:04:52.317474761Z [err]  2026-04-30 00:03:12.289 | INFO     | __main__:ingest_season:395 - Ingesting meeting 1140
+2026-04-30T00:04:52.317480968Z [err]  2026-04-30 00:03:12,494 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=kULTiVfaea9fctgMuVpVSBc9Yp2JOw4RkP%2F2BALW3ATstqHvaynRz%2B5yG08jCyN0%2BsXjo77NoEp7N9yf%2FpOpabSYjrXMWHLIL2vfr%2B0aMMwLhPD%2FNBHamAbOYVZev1I0&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:04:52.318725661Z [err]  2026-04-30 00:03:12,832 - INFO: WebSocket connection established.
+2026-04-30T00:04:52.318736777Z [inf]  INFO:     100.64.0.2:16014 - "GET / HTTP/1.1" 200 OK
+2026-04-30T00:04:52.318746071Z [err]  2026-04-30 00:04:12.155 | WARNING  | openf1.services.ingestor_livetiming.real_time.recording:monitor_file_size:33 - File '/tmp/tmp6yqtxi_5' is empty after 1 minute. Killing subprocess to trigger a restart.
+2026-04-30T00:04:52.318752969Z [err]  2026-04-30 00:04:12.169 | ERROR    | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:55 - Recorder subprocess failed with exit code -9.
+2026-04-30T00:04:52.318762728Z [err]  2026-04-30 00:04:12.169 | INFO     | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:64 - Waiting before restarting the recorder...
+2026-04-30T00:04:52.318774294Z [err]  2026-04-30 00:04:15.005 | DEBUG    | openf1.util.db:get_documents:67 - Mongo query predicate for collection 'meetings': {}
+2026-04-30T00:04:53.824435694Z [err]  2026-04-30 00:04:15.047 | DEBUG    | openf1.util.db:get_documents:87 - get_documents: collection='meetings' filters='{}' returned 0 documents
+2026-04-30T00:04:53.824442726Z [inf]  INFO:     100.64.0.3:33732 - "GET /v1/meetings HTTP/1.1" 200 OK
+2026-04-30T00:04:53.824449318Z [err]  2026-04-30 00:04:17,546 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=ANc31sTmZ1HW0fe25Tfid2E68GhvEP3o%2BzOlG4GuXsWpapqt5BbSVn8jKnAsQM1zQHbuUlRR%2FEhuDDWp%2BHkecfZwd6EXo%2FjDHs12Lf4lJZHUsj50nx%2FGpTgoRzJcia0n&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:04:53.824456499Z [err]  2026-04-30 00:04:17,952 - INFO: WebSocket connection established.
+2026-04-30T00:05:24.370930833Z [err]  2026-04-30 00:05:16.268 | WARNING  | openf1.services.ingestor_livetiming.real_time.recording:monitor_file_size:33 - File '/tmp/tmp6yqtxi_5' is empty after 1 minute. Killing subprocess to trigger a restart.
+2026-04-30T00:05:24.370936721Z [err]  2026-04-30 00:05:16.273 | ERROR    | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:55 - Recorder subprocess failed with exit code -9.
+2026-04-30T00:05:24.370942974Z [err]  2026-04-30 00:05:16.273 | INFO     | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:64 - Waiting before restarting the recorder...
+2026-04-30T00:05:24.370949680Z [err]  2026-04-30 00:05:19,705 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=tlFSa%2BcZyPeeVOKE8ql2wPHesqiwgPyCAErEI9PlpK6JRGXvZwEhFEHj5Ma6sZRDJcpdk8%2BrczZYLiR%2BZUYymTU2qlRzOYvB7IoHuEw%2FaxSIbXUZoVxqAQ11hnLaJ5mp&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:05:24.370956249Z [err]  2026-04-30 00:05:19,962 - INFO: WebSocket connection established.
+2026-04-30T00:06:29.667812589Z [err]  2026-04-30 00:06:19.296 | WARNING  | openf1.services.ingestor_livetiming.real_time.recording:monitor_file_size:33 - File '/tmp/tmp6yqtxi_5' is empty after 1 minute. Killing subprocess to trigger a restart.
+2026-04-30T00:06:29.667825242Z [err]  2026-04-30 00:06:19.304 | ERROR    | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:55 - Recorder subprocess failed with exit code -9.
+2026-04-30T00:06:29.667881723Z [err]  2026-04-30 00:06:19.304 | INFO     | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:64 - Waiting before restarting the recorder...
+2026-04-30T00:06:29.667888999Z [err]  2026-04-30 00:06:24,396 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=Dkcy48NgX9BW3NgSS8XYkiUq0eJN2NW0n0GOwFml1UTn0WOOKDdPzKVxCXM1mEuVThsyfU4S4eREKsI3lntL14UKpLnd8zK2K%2BzmvAl146pR3kWwH840iVkneSTi%2FIgF&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:06:29.667896996Z [err]  2026-04-30 00:06:24,727 - INFO: WebSocket connection established.
+2026-04-30T00:07:32.938714372Z [err]  2026-04-30 00:07:26,379 - INFO: Connecting to wss://livetiming.formula1.com/signalr/connect?transport=webSockets&connectionToken=28tpTtiJrdKkPumQ4GCsewIDj5t1agaZKzqkpgimJr19LFGsa0CpK%2BIn%2FtZHkYY8PqxaSXFdMADWzqw1LGxJuolS60wtpT3Tg9lluIPRNmoCYiZXbW1aLQdYqPwhbIQI&connectionData=%5B%7B%22name%22%3A+%22Streaming%22%7D%5D&clientProtocol=1.5
+2026-04-30T00:07:32.938742512Z [err]  2026-04-30 00:07:26,633 - INFO: WebSocket connection established.
+2026-04-30T00:07:32.938753021Z [err]  2026-04-30 00:07:30.143 | DEBUG    | openf1.util.db:get_documents:67 - Mongo query predicate for collection 'meetings': {}
