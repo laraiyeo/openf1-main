@@ -43,6 +43,23 @@ def _convert_gmt_offset(offset_str: str) -> str:
     return f"{cleaned_offset}:00"
 
 
+def _is_cancelled(obj: dict) -> bool:
+    """Detects common cancellation flags in API responses.
+
+    The external API may use different key names/casing for cancellation.
+    Return True if any common cancellation key is present and truthy.
+    """
+    for key in ("isCancelled", "isCanceled", "cancelled", "is_cancelled", "status"):
+        if key in obj:
+            val = obj.get(key)
+            # Some APIs use string statuses like 'cancelled' or 'cancelledByPromoter'
+            if isinstance(val, bool):
+                return val
+            if isinstance(val, str) and val.lower().startswith("cancel"):
+                return True
+    return False
+
+
 def _normalize_session_type_and_name(
     session_type: str, session_name: str
 ) -> tuple[str, str]:
@@ -95,7 +112,7 @@ def get_meetings(year: int | None = None) -> list[dict]:
                 "date_start": _to_utc(event["meetingStartDate"], offset),
                 "date_end": _to_utc(event["meetingEndDate"], offset),
                 "year": int(data["year"]),
-                "is_cancelled": False,  # to be manually flipped to True in the (rare) case of cancellation
+                "is_cancelled": _is_cancelled(event),
             }
         )
 
@@ -139,7 +156,7 @@ def get_sessions(year: int | None = None) -> list[dict]:
                     "location": meeting["location"],
                     "gmt_offset": meeting["gmt_offset"],
                     "year": meeting["year"],
-                    "is_cancelled": False,  # to be manually flipped to True in the (rare) case of cancellation
+                    "is_cancelled": _is_cancelled(sess),
                 }
             )
 
