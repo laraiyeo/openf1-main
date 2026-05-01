@@ -46,12 +46,33 @@ def ingest_year(year: int, collections: List[str]):
 
 
 def main(argv: Iterable[str] | None = None):
-    parser = argparse.ArgumentParser(description="Ingest scrapers for years")
-    parser.add_argument("--years", nargs="+", type=int, required=True, help="Years to ingest, e.g. 2024 2025 2026")
+    parser = argparse.ArgumentParser(description="Ingest scrapers for years or latest session")
+    parser.add_argument("--years", nargs="*", type=int, help="Years to ingest, e.g. 2024 2025 2026. Omit to ingest latest session only.")
     parser.add_argument("--collections", nargs="*", default=DEFAULT_COLLS, help="Which scrapers to run")
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+
+    # When no years provided, ingest the latest session (or session in progress)
+    if not args.years:
+        logging.info("No years provided; ingesting latest session only")
+        try:
+            # Determine latest meeting/session from schedule utils
+            from openf1.util.schedule import get_latest_meeting_key, get_latest_session_key
+
+            mk = get_latest_meeting_key()
+            sk = get_latest_session_key()
+            logging.info(f"Ingesting latest session: meeting={mk}, session={sk}")
+            # run session_result and starting_grid scrapers for the latest session
+            if "session_result" in args.collections:
+                logging.info(f"Ingesting session_result for meeting={mk} session={sk}")
+                sr_mod.ingest_session_result(meeting_key=mk, session_key=sk)
+            if "starting_grid" in args.collections:
+                logging.info(f"Ingesting starting_grid for meeting={mk} session={sk}")
+                sg_mod.ingest_starting_grid(meeting_key=mk, session_key=sk)
+        except Exception:
+            logging.exception("Failed to ingest latest session")
+        return
 
     for y in args.years:
         logging.info(f"Starting ingestion for year {y}")
