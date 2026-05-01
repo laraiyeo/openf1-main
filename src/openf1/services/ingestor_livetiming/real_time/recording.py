@@ -27,6 +27,14 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
                 stderr=asyncio.subprocess.PIPE,
             )
 
+            # Immediately log whether the recorder created the file and its size
+            try:
+                init_exists = os.path.exists(filepath)
+                init_size = os.path.getsize(filepath) if init_exists else 0
+                logger.debug(f"Initial file state: exists={init_exists}, size={init_size}")
+            except Exception as e:
+                logger.debug(f"Failed to stat initial file {filepath}: {e}")
+
             # Monitor task: periodically check file for content for a grace period
             async def monitor_file_size():
                 try:

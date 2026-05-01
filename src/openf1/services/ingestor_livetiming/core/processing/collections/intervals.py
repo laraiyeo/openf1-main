@@ -56,6 +56,13 @@ class IntervalsCollection(Collection):
     _last_gap: dict = field(default_factory=dict)
 
     def process_message(self, message: Message) -> Iterator[Interval]:
+        try:
+            logger.debug(
+                f"intervals.process_message: time={message.timepoint} type={type(message.content)} keys={list(message.content.keys()) if isinstance(message.content, dict) else None}"
+            )
+        except Exception:
+            pass
+
         for driver_number, data in message.content.items():
             try:
                 driver_number = int(driver_number)

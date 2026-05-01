@@ -28,6 +28,13 @@ class PositionCollection(Collection):
     source_topics = {"TimingData"}
 
     def process_message(self, message: Message) -> Iterator[Position]:
+        try:
+            logger.debug(
+                f"position.process_message: time={message.timepoint} type={type(message.content)} keys={list(message.content.keys()) if isinstance(message.content, dict) else None}"
+            )
+        except Exception:
+            pass
+
         if "Lines" not in message.content:
             return
 

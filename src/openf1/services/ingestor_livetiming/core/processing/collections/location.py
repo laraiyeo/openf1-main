@@ -33,6 +33,13 @@ class LocationCollection(Collection):
     source_topics = {"Position.z"}
 
     def process_message(self, message: Message) -> Iterator[Location]:
+        try:
+            logger.debug(
+                f"location.process_message: time={message.timepoint} type={type(message.content)} keys={list(message.content.keys()) if isinstance(message.content, dict) else None}"
+            )
+        except Exception:
+            pass
+
         for content in message.content["Position"]:
             if not isinstance(content, dict):
                 continue
