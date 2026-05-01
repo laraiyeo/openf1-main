@@ -74,13 +74,13 @@ PY
         echo "Running scraper ingestion for years: $YEARS"
         python -m openf1.scripts.ingest_scrapers --years $YEARS
         # If we are in scrape-latest mode for deployment, afterwards keep running the
-        # latest-session scraper every 5 minutes so the container ingests new results
+        # latest-session scraper every 2 1/2 minutes so the container ingests new results
         # automatically. This loop runs until the container stops.
-        echo "Entering scheduled loop: ingest latest session every 5 minutes"
+        echo "Entering scheduled loop: ingest latest session every 2 1/2 minutes"
         while true; do
           # Run latest session ingestion (no args => scrape latest)
           python -m openf1.scripts.ingest_scrapers
-          sleep 300
+          sleep 150
         done
       ;;
     *)
