@@ -15,21 +15,24 @@ GCS_BUCKET = os.getenv("OPENF1_INGESTOR_LIVETIMING_GCS_BUCKET_RAW")
 
 
 async def main():
-    with tempfile.NamedTemporaryFile(mode="w", delete=True) as temp:
-        logger.info(f"Recording raw data to '{temp.name}'")
-        tasks = []
+    # Create a temporary file that other processes can open (Windows-safe)
+    temp = tempfile.NamedTemporaryFile(mode="w", delete=False)
+    temp_path = temp.name
+    temp.close()
+    logger.info(f"Recording raw data to '{temp_path}'")
+    tasks = []
 
-        # Record raw data and save it to file
-        topics = get_topics()
-        logger.info(f"Starting live recording of the following topics: {topics}")
-        task_recording = asyncio.create_task(
-            record_to_file(
-                filepath=temp.name,
-                topics=topics,
-                timeout=TIMEOUT,
-            )
+    # Record raw data and save it to file
+    topics = get_topics()
+    logger.info(f"Starting live recording of the following topics: {topics}")
+    task_recording = asyncio.create_task(
+        record_to_file(
+            filepath=temp_path,
+            topics=topics,
+            timeout=TIMEOUT,
         )
-        tasks.append(task_recording)
+    )
+    tasks.append(task_recording)
 
         if GCS_BUCKET:
             # Save received raw data to GCS, for debugging
@@ -50,6 +53,7 @@ async def main():
         task_ingest = asyncio.create_task(ingest_file(temp.name))
         tasks.append(task_ingest)
 
+    try:
         # Wait for the recording task to stop
         await asyncio.wait([task_recording], return_when=asyncio.FIRST_COMPLETED)
         logger.info("Recording stopped")
@@ -63,6 +67,13 @@ async def main():
         await asyncio.gather(*tasks, return_exceptions=True)
 
         logger.info("Job completed")
+    finally:
+        # Clean up the temporary file created earlier
+        try:
+            os.unlink(temp_path)
+            logger.debug(f"Removed temporary file {temp_path}")
+        except Exception:
+            logger.debug(f"Could not remove temporary file {temp_path}")
 
 
 if __name__ == "__main__":

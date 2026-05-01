@@ -27,23 +27,33 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
                 stderr=asyncio.subprocess.PIPE,
             )
 
-            # Monitor task: wait 60 seconds and check if file is being written to
+            # Monitor task: periodically check file for content for a grace period
             async def monitor_file_size():
                 try:
-                    await asyncio.sleep(60)
-                    if proc.returncode is None:  # If the process is still running
-                        if (
-                            not os.path.exists(filepath)
-                            or os.path.getsize(filepath) == 0
-                        ):
-                            logger.warning(
-                                f"File '{filepath}' is empty after 1 minute. "
-                                "Killing subprocess to trigger a restart."
-                            )
-                            try:
-                                proc.kill()
-                            except ProcessLookupError:
-                                pass
+                    checks = 8  # total wait = checks * interval (here 8*15 = 120s)
+                    interval = 15
+                    for i in range(checks):
+                        await asyncio.sleep(interval)
+                        if proc.returncode is not None:
+                            return
+                        try:
+                            size = os.path.getsize(filepath) if os.path.exists(filepath) else 0
+                        except Exception:
+                            size = 0
+                        logger.debug(f"Monitor check {i+1}/{checks}, size={size}")
+                        if size > 0:
+                            return
+
+                    # If we get here, the file is still empty after the grace period
+                    if proc.returncode is None:
+                        logger.warning(
+                            f"File '{filepath}' is empty after {checks*interval} seconds. "
+                            "Killing subprocess to trigger a restart."
+                        )
+                        try:
+                            proc.kill()
+                        except ProcessLookupError:
+                            pass
                 except asyncio.CancelledError:
                     pass
 
