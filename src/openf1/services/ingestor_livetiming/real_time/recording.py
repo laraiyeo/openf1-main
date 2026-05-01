@@ -1,6 +1,7 @@
 import asyncio
 import os
 import random
+import sys
 
 from loguru import logger
 
@@ -14,12 +15,17 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
     while True:
         try:
             command = (
-                ["python", "-m", "fastf1_livetiming", "save", filepath]
+                [sys.executable, "-m", "fastf1_livetiming", "save", filepath]
                 + sorted(list(topics))
                 + (["--auth"] if F1_TOKEN is not None else [])
                 + ["--timeout", str(timeout)]
             )
-            proc = await asyncio.create_subprocess_exec(*command)
+            logger.debug(f"Starting recorder subprocess: {command}")
+            proc = await asyncio.create_subprocess_exec(
+                *command,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
 
             # Monitor task: wait 60 seconds and check if file is being written to
             async def monitor_file_size():
@@ -43,9 +49,24 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
 
             monitor_task = asyncio.create_task(monitor_file_size())
 
-            # Wait for the process to complete
-            await proc.wait()
+            # Wait for the process to complete and capture output
+            stdout, stderr = await proc.communicate()
             monitor_task.cancel()
+
+            # Decode subprocess output for logging
+            try:
+                out_str = stdout.decode("utf-8").strip() if stdout else ""
+            except Exception:
+                out_str = "<could not decode stdout>"
+            try:
+                err_str = stderr.decode("utf-8").strip() if stderr else ""
+            except Exception:
+                err_str = "<could not decode stderr>"
+
+            if out_str:
+                logger.debug(f"Recorder stdout: {out_str}")
+            if err_str:
+                logger.debug(f"Recorder stderr: {err_str}")
 
             # Check if the process exited cleanly with an exit code of 0.
             if proc.returncode == 0:

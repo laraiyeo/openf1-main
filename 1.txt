@@ -1,63 +1,70 @@
-2026-04-30T16:54:40.432719764Z [err]  INFO:     Will watch for changes in these directories: ['/app']
-2026-04-30T16:54:40.432731438Z [inf]  Starting api
-2026-04-30T16:54:40.432731922Z [err]  INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-2026-04-30T16:54:40.432740778Z [err]  INFO:     Started reloader process [6] using StatReload
-2026-04-30T16:54:40.432744673Z [inf]  OPENF1_BASE_URL set to http://localhost:8000
-2026-04-30T16:54:40.432745598Z [inf]  Starting scrape-latest
-2026-04-30T16:54:40.432752139Z [inf]  Starting ingest-realtime
-2026-04-30T16:54:40.432757546Z [inf]  Waiting for local API at http://localhost:8000/ (30s timeout)...
-2026-04-30T16:54:40.698209615Z [inf]  Starting Container
-2026-04-30T16:54:40.858520285Z [err]  INFO:     Started server process [11]
-2026-04-30T16:54:40.858535128Z [err]  INFO:     Waiting for application startup.
-2026-04-30T16:54:40.858542583Z [err]  INFO:     Application startup complete.
-2026-04-30T16:54:41.033403459Z [inf]  INFO:     127.0.0.1:49096 - "GET / HTTP/1.1" 200 OK
-2026-04-30T16:54:41.033412486Z [inf]  Local API is responding
-2026-04-30T16:54:41.510827323Z [err]  2026-04-30 16:54:41.506 | INFO     | __main__:_ingest:172 - Ingesting 24 documents into 'meetings'
-2026-04-30T16:54:42.449377663Z [err]  /usr/local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
-2026-04-30T16:54:42.449382706Z [err]    warnings.warn(message, FutureWarning)
-2026-04-30T16:54:42.449388052Z [err]  2026-04-30 16:54:42.358 | INFO     | __main__:main:19 - Recording raw data to '/tmp/tmpiid9muwa'
-2026-04-30T16:54:42.449393141Z [err]  2026-04-30 16:54:42.387 | INFO     | __main__:main:24 - Starting live recording of the following topics: {'PitLaneTimeCollection', 'RaceControlMessages', 'DriverList', 'SessionData', 'CarData.z', 'SessionInfo', 'Position.z', 'TimingAppData', 'ChampionshipPrediction', 'DriverRaceInfo', 'TimingData', 'Heartbeat', 'TeamRadio', 'PitStopSeries', 'WeatherData'}
-2026-04-30T16:54:42.449398295Z [err]  2026-04-30 16:54:42.387 | INFO     | __main__:main:49 - Starting data ingestion
-2026-04-30T16:54:42.449402951Z [err]  2026-04-30 16:54:42.388 | INFO     | openf1.util.mqtt:initialize_mqtt:26 - MQTT credentials not found, MQTT is disabled
-2026-04-30T16:54:42.591554275Z [err]  
-Fetching sessions:   0%|          | 0/24 [00:00<?, ?it/s]2026-04-30 16:54:42,586 - INFO: Reconnecting in 5 seconds...
-2026-04-30T16:54:43.773990477Z [err]  
-Fetching sessions:   4%|▍         | 1/24 [00:00<00:04,  5.26it/s]
-Fetching sessions:   8%|▊         | 2/24 [00:00<00:03,  6.05it/s]
-Fetching sessions:  17%|█▋        | 4/24 [00:00<00:01, 10.42it/s]
-Fetching sessions:  25%|██▌       | 6/24 [00:00<00:01, 12.68it/s]
-Fetching sessions:  33%|███▎      | 8/24 [00:00<00:01, 14.43it/s]
-Fetching sessions:  42%|████▏     | 10/24 [00:00<00:00, 15.07it/s]
-Fetching sessions:  50%|█████     | 12/24 [00:00<00:00, 16.19it/s]
-Fetching sessions:  58%|█████▊    | 14/24 [00:01<00:00, 16.88it/s]
-Fetching sessions:  67%|██████▋   | 16/24 [00:01<00:00, 16.72it/s]
-Fetching sessions:  75%|███████▌  | 18/24 [00:01<00:00, 17.33it/s]
-2026-04-30T16:54:44.128213813Z [err]  
-Fetching sessions:  83%|████████▎ | 20/24 [00:01<00:00, 17.45it/s]
-Fetching sessions:  92%|█████████▏| 22/24 [00:01<00:00, 17.69it/s]
-Fetching sessions: 100%|██████████| 24/24 [00:01<00:00, 15.35it/s]
-2026-04-30T16:54:44.128220145Z [err]  2026-04-30 16:54:44.083 | INFO     | __main__:_ingest:172 - Ingesting 116 documents into 'sessions'
-2026-04-30T16:54:44.676039674Z [inf]  Running scraper ingestion for years: 2026
-2026-04-30T16:54:45.117237116Z [err]      meeting_keys = get_meeting_keys(year)
-2026-04-30T16:54:45.117248623Z [err]    File "/app/openf1/util/schedule.py", line 257, in get_meeting_keys
-2026-04-30T16:54:45.117250300Z [err]  2026-04-30 16:54:45,076 INFO Starting ingestion for year 2026
-2026-04-30T16:54:45.117256085Z [err]  Traceback (most recent call last):
-2026-04-30T16:54:45.117259232Z [err]      keys = [m["Key"] for m in get_schedule(year)["Meetings"]]
-2026-04-30T16:54:45.117263021Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-2026-04-30T16:54:45.117268385Z [err]    File "/app/openf1/util/schedule.py", line 235, in get_schedule
-2026-04-30T16:54:45.117270595Z [err]      return _run_code(code, main_globals, None,
-2026-04-30T16:54:45.117277924Z [err]    File "/usr/local/lib/python3.10/runpy.py", line 86, in _run_code
-2026-04-30T16:54:45.117278426Z [err]      content_dict = json.loads(content_json)
-2026-04-30T16:54:45.117287849Z [err]      exec(code, run_globals)
-2026-04-30T16:54:45.117288039Z [err]    File "/usr/local/lib/python3.10/json/__init__.py", line 346, in loads
-2026-04-30T16:54:45.117295340Z [err]      return _default_decoder.decode(s)
-2026-04-30T16:54:45.117300728Z [err]    File "/usr/local/lib/python3.10/json/decoder.py", line 337, in decode
-2026-04-30T16:54:45.117305034Z [err]    File "/app/openf1/scripts/ingest_scrapers.py", line 65, in <module>
-2026-04-30T16:54:45.117307881Z [err]      obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-2026-04-30T16:54:45.117314078Z [err]    File "/usr/local/lib/python3.10/json/decoder.py", line 355, in raw_decode
-2026-04-30T16:54:45.117315802Z [err]      main()
-2026-04-30T16:54:45.117321516Z [err]    File "/app/openf1/scripts/ingest_scrapers.py", line 61, in main
-2026-04-30T16:54:45.117328031Z [err]      ingest_year(y, args.collections)
-2026-04-30T16:54:45.117334235Z [err]    File "/app/openf1/scripts/ingest_scrapers.py", line 45, in ingest_year
-2026-04-30T16:54:45.117815991Z [err]      raise JSONDecodeError("Expecting value", s, err.value) from None
-2026-04-30T16:54:45.117820896Z [err]  json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2026-05-01 16:25:07.070 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'overtakes': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:07.077 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='overtakes' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.3:18804 - "GET /v1/overtakes?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:07.104 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'pit': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:07.111 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='pit' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.5:57950 - "GET /v1/pit?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:07.135 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'race_control': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:07.142 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='race_control' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.5:57950 - "GET /v1/race_control?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:07.211 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'stints': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:07.218 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='stints' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.9:26714 - "GET /v1/stints?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:07.248 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'session_result': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:07.254 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='session_result' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+2026-05-01 16:25:07.339 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'weather': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 15, 58, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.341 | ERROR    | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:55 - Recorder subprocess failed with exit code -9.
+INFO:     100.64.0.10:24182 - "GET /v1/session_result?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:07.293 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'position': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:07.305 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='position' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.7:53730 - "GET /v1/position?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:07.338 | WARNING  | openf1.services.ingestor_livetiming.real_time.recording:monitor_file_size:33 - File '/tmp/tmp73fcszdw' is empty after 1 minute. Killing subprocess to trigger a restart.
+2026-05-01 16:25:07.342 | INFO     | openf1.services.ingestor_livetiming.real_time.recording:record_to_file:64 - Waiting before restarting the recorder...
+2026-05-01 16:25:07.348 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='weather' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 15, 58, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.6:20032 - "GET /v1/weather?session_key=11270&date%3E=2026-05-01T15%3A58%3A00.000Z&date%3C=2026-05-01T16%3A02%3A00.000Z HTTP/1.1" 200 OK
+2026-05-01 16:25:07.375 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'intervals': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.427 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='intervals' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.8:45238 - "GET /v1/intervals?session_key=11270&date%3E=2026-05-01T16%3A02%3A29.253Z&date%3C=2026-05-01T16%3A02%3A39.253Z HTTP/1.1" 200 OK
+2026-05-01 16:25:07.456 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'location': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.462 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='location' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.9:26714 - "GET /v1/location?session_key=11270&date%3E=2026-05-01T16%3A02%3A29.253Z&date%3C=2026-05-01T16%3A02%3A39.253Z HTTP/1.1" 200 OK
+2026-05-01 16:25:07.489 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'position': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.501 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='position' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.8:45238 - "GET /v1/position?session_key=11270&date%3E=2026-05-01T16%3A02%3A29.253Z&date%3C=2026-05-01T16%3A02%3A39.253Z HTTP/1.1" 200 OK
+2026-05-01 16:25:07.524 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'overtakes': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.531 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='overtakes' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.9:26714 - "GET /v1/overtakes?session_key=11270&date%3E=2026-05-01T16%3A02%3A29.253Z&date%3C=2026-05-01T16%3A02%3A39.253Z HTTP/1.1" 200 OK
+2026-05-01 16:25:07.565 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'pit': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.572 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='pit' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.7:53730 - "GET /v1/pit?session_key=11270&date%3E=2026-05-01T16%3A02%3A29.253Z&date%3C=2026-05-01T16%3A02%3A39.253Z HTTP/1.1" 200 OK
+2026-05-01 16:25:07.628 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'race_control': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.635 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='race_control' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.11:54480 - "GET /v1/race_control?session_key=11270&date%3E=2026-05-01T16%3A02%3A29.253Z&date%3C=2026-05-01T16%3A02%3A39.253Z HTTP/1.1" 200 OK
+2026-05-01 16:25:07.664 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'stints': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.671 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='stints' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.7:53730 - "GET /v1/stints?session_key=11270&date%3E=2026-05-01T16%3A02%3A29.253Z&date%3C=2026-05-01T16%3A02%3A39.253Z HTTP/1.1" 200 OK
+2026-05-01 16:25:07.697 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'session_result': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:07.704 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='session_result' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 16, 2, 29, 253000, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, 39, 253000, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.6:20032 - "GET /v1/session_result?session_key=11270&date%3E=2026-05-01T16%3A02%3A29.253Z&date%3C=2026-05-01T16%3A02%3A39.253Z HTTP/1.1" 200 OK
+2026-05-01 16:25:12,140 - INFO: Reconnecting in 5 seconds...
+2026-05-01 16:25:17.735 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'overtakes': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:17.742 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='overtakes' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.14:55924 - "GET /v1/overtakes?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:17.771 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'pit': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:17.779 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='pit' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.13:46096 - "GET /v1/pit?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:17.811 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'race_control': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:17.819 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='race_control' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.5:29320 - "GET /v1/race_control?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:17.844 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'stints': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:17.852 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='stints' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.16:42428 - "GET /v1/stints?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:17.879 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'session_result': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:17.885 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='session_result' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.8:38686 - "GET /v1/session_result?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:17.909 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'position': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}]}
+2026-05-01 16:25:17.924 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='position' filters='{'session_key': [{'$eq': 11270}]}' returned 0 documents
+INFO:     100.64.0.15:40100 - "GET /v1/position?session_key=11270 HTTP/1.1" 200 OK
+2026-05-01 16:25:17.954 | DEBUG    | openf1.util.db:get_documents:68 - Mongo query predicate for collection 'weather': {'$and': [{'$or': [{'$or': [{'session_key': {'$eq': 11270}}]}]}, {'$or': [{'$or': [{'$and': [{'date': {'$gte': datetime.datetime(2026, 5, 1, 15, 58, tzinfo=tzutc())}}, {'date': {'$lte': datetime.datetime(2026, 5, 1, 16, 2, tzinfo=tzutc())}}]}]}]}]}
+2026-05-01 16:25:17.962 | DEBUG    | openf1.util.db:get_documents:118 - get_documents: collection='weather' filters='{'session_key': [{'$eq': 11270}], 'date': [{'$gte': datetime.datetime(2026, 5, 1, 15, 58, tzinfo=tzutc())}, {'$lte': datetime.datetime(2026, 5, 1, 16, 2, tzinfo=tzutc())}]}' returned 0 documents
+INFO:     100.64.0.6:23346 - "GET /v1/weather?session_key=11270&date%3E=2026-05-01T15%3A58%3A00.000Z&date%3C=2026-05-01T16%3A02%3A00.000Z HTTP/1.1" 200 OK
