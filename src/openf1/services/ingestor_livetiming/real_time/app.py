@@ -34,24 +34,24 @@ async def main():
     )
     tasks.append(task_recording)
 
-        if GCS_BUCKET:
-            # Save received raw data to GCS, for debugging
-            logger.info("Starting periodic GCS upload of raw data")
-            gcs_filekey = datetime.now(timezone.utc).strftime("%Y/%m/%d/%H:%M:%S.txt")
-            task_upload_raw = asyncio.create_task(
-                upload_to_gcs_periodically(
-                    filepath=temp.name,
-                    bucket=GCS_BUCKET,
-                    destination_key=gcs_filekey,
-                    interval=timedelta(seconds=60),
-                )
+    if GCS_BUCKET:
+        # Save received raw data to GCS, for debugging
+        logger.info("Starting periodic GCS upload of raw data")
+        gcs_filekey = datetime.now(timezone.utc).strftime("%Y/%m/%d/%H:%M:%S.txt")
+        task_upload_raw = asyncio.create_task(
+            upload_to_gcs_periodically(
+                filepath=temp_path,
+                bucket=GCS_BUCKET,
+                destination_key=gcs_filekey,
+                interval=timedelta(seconds=60),
             )
-            tasks.append(task_upload_raw)
+        )
+        tasks.append(task_upload_raw)
 
-        # Ingest received data
-        logger.info("Starting data ingestion")
-        task_ingest = asyncio.create_task(ingest_file(temp.name))
-        tasks.append(task_ingest)
+    # Ingest received data
+    logger.info("Starting data ingestion")
+    task_ingest = asyncio.create_task(ingest_file(temp_path))
+    tasks.append(task_ingest)
 
     try:
         # Wait for the recording task to stop
