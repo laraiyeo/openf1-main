@@ -15,7 +15,7 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
     while True:
         try:
             command = (
-                [sys.executable, "-m", "fastf1_livetiming", "save", filepath]
+                [sys.executable, "-u", "-m", "fastf1_livetiming", "save", filepath]
                 + sorted(list(topics))
                 + (["--auth"] if F1_TOKEN is not None else [])
                 + ["--timeout", str(timeout)]

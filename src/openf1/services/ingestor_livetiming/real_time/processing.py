@@ -135,6 +135,7 @@ async def ingest_file(filepath: str):
 
             # Watch for new lines
             while True:
+                line = None
                 try:
                     line = file.readline()
                     if not line:
@@ -142,9 +143,10 @@ async def ingest_file(filepath: str):
                         continue
                     await ingest_line(line)
                 except Exception:
+                    line_content = line.strip() if line else "<line not read>"
                     logger.exception(
                         "Failed to ingest line, skipping to prevent crash. "
-                        f"Line content: '{line.strip()}'"
+                        f"Line content: '{line_content}'"
                     )
     except Exception:
         logger.exception(f"An unexpected error occurred while ingesting {filepath}")
