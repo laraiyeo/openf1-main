@@ -1,11 +1,11 @@
 """Race window scheduler: checks if current time is within 12h before/after any race meeting."""
 import logging
 from datetime import datetime, timedelta
-from typing import List
 
 from openf1.util.db import _get_mongo_db_sync
 
 logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
 
 def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
@@ -40,10 +40,17 @@ def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
         })
         
         if meeting:
-            logger.info(
-                f"In race window for meeting: {meeting.get('name', 'Unknown')} "
-                f"(starts {meeting['date_start']}, ends {meeting['date_end']})"
-            )
+            meeting_name = meeting.get('name', 'Unknown')
+            meeting_start = meeting['date_start']
+            meeting_end = meeting['date_end']
+            window_end = meeting_end + timedelta(hours=hours_after)
+            
+            time_until_end = (window_end - now).total_seconds() / 3600
+            
+            logger.info(f"✓ IN RACE WINDOW: {meeting_name}")
+            logger.info(f"  Meeting: {meeting_start} to {meeting_end}")
+            logger.info(f"  Window end (+ {hours_after}h): {window_end} UTC")
+            logger.info(f"  Stopping in: {time_until_end:.1f} hours")
             return True
         
         # Find next meeting for logging
@@ -53,13 +60,21 @@ def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
         )
         
         if next_meeting:
-            hours_until = (next_meeting["date_start"] - now).total_seconds() / 3600
-            logger.info(
-                f"Not in race window. Next meeting: {next_meeting.get('name', 'Unknown')} "
-                f"in {hours_until:.1f} hours (at {next_meeting['date_start']})"
-            )
+            next_name = next_meeting.get('name', 'Unknown')
+            next_start = next_meeting['date_start']
+            next_end = next_meeting['date_end']
+            window_start = next_start - timedelta(hours=hours_before)
+            
+            hours_until_start = (window_start - now).total_seconds() / 3600
+            
+            logger.info(f"✗ NOT IN RACE WINDOW")
+            logger.info(f"  Next: {next_name}")
+            logger.info(f"  Meeting: {next_start} to {next_end}")
+            logger.info(f"  Window start (- {hours_before}h): {window_start} UTC")
+            logger.info(f"  Starting in: {hours_until_start:.1f} hours")
         else:
-            logger.info("Not in race window. No upcoming meetings found.")
+            logger.info("✗ NOT IN RACE WINDOW")
+            logger.info("  No upcoming meetings found")
         
         return False
     
@@ -89,6 +104,14 @@ def get_next_race_window(hours_before: int = 12, hours_after: int = 12) -> tuple
         if next_meeting:
             window_start = next_meeting["date_start"] - timedelta(hours=hours_before)
             window_end = next_meeting["date_end"] + timedelta(hours=hours_after)
+            
+            hours_until_start = (window_start - now).total_seconds() / 3600
+            meeting_name = next_meeting.get('name', 'Unknown')
+            
+            logger.debug(
+                f"Next race window: {meeting_name} "
+                f"starts at {window_start} UTC ({hours_until_start:.1f}h from now)"
+            )
             return (window_start, window_end)
         
         return None

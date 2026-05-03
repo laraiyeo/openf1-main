@@ -1,44 +1,27 @@
 #! /usr/bin/env sh
 
-wait_for_race_window() {
+should_run_ingestion_services() {
   # If OPENF1_ENABLE_RACE_WINDOW_ONLY is set to "true", only run during race windows
   if [ "$OPENF1_ENABLE_RACE_WINDOW_ONLY" != "true" ]; then
     return 0
   fi
 
-  echo "OPENF1_ENABLE_RACE_WINDOW_ONLY is true; checking if in race window..."
   HOURS_BEFORE=${OPENF1_RACE_WINDOW_HOURS_BEFORE:-12}
   HOURS_AFTER=${OPENF1_RACE_WINDOW_HOURS_AFTER:-12}
 
-  while true; do
-    python - "$HOURS_BEFORE" "$HOURS_AFTER" <<'PYCODE'
+  python - "$HOURS_BEFORE" "$HOURS_AFTER" <<'PYCODE'
 import sys
-from datetime import datetime
-from openf1.util.race_scheduler import is_race_window, get_next_race_window
+from openf1.util.race_scheduler import is_race_window
 
 hours_before = int(sys.argv[1])
 hours_after = int(sys.argv[2])
 
-if is_race_window(hours_before=hours_before, hours_after=hours_after):
-    print(f"In race window! Starting services...")
-    sys.exit(0)
-else:
-    next_window = get_next_race_window(hours_before=hours_before, hours_after=hours_after)
-    if next_window:
-        window_start, _ = next_window
-        seconds_until = (window_start - datetime.utcnow()).total_seconds()
-        print(f"Not in race window. Sleeping until {window_start} UTC ({seconds_until / 3600:.1f}h from now)...")
-    else:
-        print("No race meetings found. Sleeping for 1 hour...")
-    sys.exit(1)
+# This will log the window status with timing details
+in_window = is_race_window(hours_before=hours_before, hours_after=hours_after)
+sys.exit(0 if in_window else 1)
 PYCODE
-
-    if [ $? -eq 0 ]; then
-      return 0
-    fi
-    # Sleep for 1 hour before checking again
-    sleep 3600
-  done
+  
+  return $?
 }
 
 run_role() {
@@ -50,11 +33,27 @@ run_role() {
       ;;
     ingest-realtime)
       echo "Starting ingest-realtime"
+      
+      # Check if ingestion services should run during race windows only
+      if ! should_run_ingestion_services; then
+        echo "Not in race window and OPENF1_ENABLE_RACE_WINDOW_ONLY=true; will retry in 1 hour"
+        sleep 3600
+        exec "$0" ingest-realtime
+      fi
+      
       sleep 2
       python -m openf1.services.ingestor_livetiming.real_time.app
       ;;
     ingest-historical)
       echo "Starting ingest-historical"
+      
+      # Check if ingestion services should run during race windows only
+      if ! should_run_ingestion_services; then
+        echo "Not in race window and OPENF1_ENABLE_RACE_WINDOW_ONLY=true; will retry in 1 hour"
+        sleep 3600
+        exec "$0" ingest-historical
+      fi
+      
       # Historical ingestion only runs on deploy when explicitly enabled.
       if [ "$OPENF1_RUN_HISTORICAL_ON_DEPLOY" != "true" ]; then
         echo "ingest-historical present in ROLE but OPENF1_RUN_HISTORICAL_ON_DEPLOY!=true; skipping historical ingest"
@@ -80,12 +79,27 @@ PYCODE
       # continuously updates with new data. This loop runs until the container stops.
       echo "Entering scheduled loop: ingest historical data every 2 1/2 minutes"
       while true; do
+        # Check if we're still in race window
+        if ! should_run_ingestion_services; then
+          echo "Exiting race window; pausing historical ingestion..."
+          sleep 3600
+          # Re-check periodically
+          continue
+        fi
         python -m openf1.scripts.ingest_all_no_cardata --years $YEARS --skip-existing
         sleep 150
       done
       ;;
     scrape-latest)
       echo "Starting scrape-latest"
+      
+      # Check if ingestion services should run during race windows only
+      if ! should_run_ingestion_services; then
+        echo "Not in race window and OPENF1_ENABLE_RACE_WINDOW_ONLY=true; will retry in 1 hour"
+        sleep 3600
+        exec "$0" scrape-latest
+      fi
+      
       # Force scrapers to call the local api when running in the same container
       export OPENF1_BASE_URL=http://localhost:8000
       echo "OPENF1_BASE_URL set to $OPENF1_BASE_URL"
@@ -117,6 +131,13 @@ PY
         # automatically. This loop runs until the container stops.
         echo "Entering scheduled loop: ingest latest session every 2 1/2 minutes"
         while true; do
+          # Check if we're still in race window
+          if ! should_run_ingestion_services; then
+            echo "Exiting race window; pausing scraper loop..."
+            sleep 3600
+            # Re-check periodically
+            continue
+          fi
           # Run latest session ingestion (no args => scrape latest)
           python -m openf1.scripts.ingest_scrapers
           sleep 150
@@ -128,9 +149,6 @@ PY
       ;;
   esac
 }
-
-# Check if we should only run during race windows
-wait_for_race_window
 
 # Allow comma-separated ROLE values so a single container can run multiple roles
 if echo "$ROLE" | grep -q ','; then
