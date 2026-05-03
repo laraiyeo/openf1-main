@@ -19,6 +19,12 @@ def _as_utc(dt: datetime) -> datetime:
     return dt.astimezone(timezone.utc)
 
 
+def _emit(msg: str) -> None:
+    """Emit race-window messages to both stdout and logging for visibility."""
+    print(msg, flush=True)
+    logger.info(msg)
+
+
 def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
     """
     Check if current time is within a race window.
@@ -51,17 +57,17 @@ def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
         })
         
         if meeting:
-            meeting_name = meeting.get('name', 'Unknown')
+            meeting_name = meeting.get('meeting_name', 'Unknown')
             meeting_start = _as_utc(meeting['date_start'])
             meeting_end = _as_utc(meeting['date_end'])
             window_end = meeting_end + timedelta(hours=hours_after)
             
             time_until_end = (window_end - now).total_seconds() / 3600
             
-            logger.info(f"✓ IN RACE WINDOW: {meeting_name}")
-            logger.info(f"  Meeting: {meeting_start} to {meeting_end}")
-            logger.info(f"  Window end (+ {hours_after}h): {window_end} UTC")
-            logger.info(f"  Stopping in: {time_until_end:.1f} hours")
+            _emit(f"[race-window] IN WINDOW: {meeting_name}")
+            _emit(f"[race-window] Meeting: {meeting_start} -> {meeting_end}")
+            _emit(f"[race-window] Window end (+{hours_after}h): {window_end}")
+            _emit(f"[race-window] Stopping in: {time_until_end:.1f} hours")
             return True
         
         # Find next meeting for logging
@@ -71,25 +77,29 @@ def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
         )
         
         if next_meeting:
-            next_name = next_meeting.get('name', 'Unknown')
+            next_name = next_meeting.get('meeting_name', 'Unknown')
             next_start = _as_utc(next_meeting['date_start'])
             next_end = _as_utc(next_meeting['date_end'])
             window_start = next_start - timedelta(hours=hours_before)
             
             hours_until_start = (window_start - now).total_seconds() / 3600
             
-            logger.info(f"✗ NOT IN RACE WINDOW")
-            logger.info(f"  Next: {next_name}")
-            logger.info(f"  Meeting: {next_start} to {next_end}")
-            logger.info(f"  Window start (- {hours_before}h): {window_start} UTC")
-            logger.info(f"  Starting in: {hours_until_start:.1f} hours")
+            _emit("[race-window] OUT OF WINDOW")
+            _emit(f"[race-window] Next: {next_name}")
+            _emit(f"[race-window] Meeting: {next_start} -> {next_end}")
+            _emit(f"[race-window] Window start (-{hours_before}h): {window_start}")
+            _emit(f"[race-window] Starting in: {hours_until_start:.1f} hours")
         else:
-            logger.info("✗ NOT IN RACE WINDOW")
-            logger.info("  No upcoming meetings found")
+            _emit("[race-window] OUT OF WINDOW")
+            _emit("[race-window] No upcoming meetings found")
         
         return False
     
     except Exception as exc:
+        print(
+            f"[race-window] WARNING: error checking race window (assume in-window): {exc}",
+            flush=True,
+        )
         logger.warning(f"Error checking race window (will assume in-window): {exc}")
         # On error, assume we should run to avoid downtime surprises
         return True
@@ -119,7 +129,7 @@ def get_next_race_window(hours_before: int = 12, hours_after: int = 12) -> tuple
             window_end = next_end + timedelta(hours=hours_after)
             
             hours_until_start = (window_start - now).total_seconds() / 3600
-            meeting_name = next_meeting.get('name', 'Unknown')
+            meeting_name = next_meeting.get('meeting_name', 'Unknown')
             
             logger.debug(
                 f"Next race window: {meeting_name} "

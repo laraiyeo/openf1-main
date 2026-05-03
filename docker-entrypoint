@@ -35,6 +35,7 @@ run_role() {
       echo "Starting ingest-realtime"
       
       # Check if ingestion services should run during race windows only
+      echo "[race-window] Checking gate for role ingest-realtime"
       if ! should_run_ingestion_services; then
         echo "Not in race window and OPENF1_ENABLE_RACE_WINDOW_ONLY=true; will retry in 1 hour"
         sleep 3600
@@ -48,6 +49,7 @@ run_role() {
       echo "Starting ingest-historical"
       
       # Check if ingestion services should run during race windows only
+      echo "[race-window] Checking gate for role ingest-historical"
       if ! should_run_ingestion_services; then
         echo "Not in race window and OPENF1_ENABLE_RACE_WINDOW_ONLY=true; will retry in 1 hour"
         sleep 3600
@@ -80,6 +82,7 @@ PYCODE
       echo "Entering scheduled loop: ingest historical data every 2 1/2 minutes"
       while true; do
         # Check if we're still in race window
+        echo "[race-window] Re-check for role ingest-historical loop"
         if ! should_run_ingestion_services; then
           echo "Exiting race window; pausing historical ingestion..."
           sleep 3600
@@ -94,6 +97,7 @@ PYCODE
       echo "Starting scrape-latest"
       
       # Check if ingestion services should run during race windows only
+      echo "[race-window] Checking gate for role scrape-latest"
       if ! should_run_ingestion_services; then
         echo "Not in race window and OPENF1_ENABLE_RACE_WINDOW_ONLY=true; will retry in 1 hour"
         sleep 3600
@@ -132,6 +136,7 @@ PY
         echo "Entering scheduled loop: ingest latest session every 2 1/2 minutes"
         while true; do
           # Check if we're still in race window
+          echo "[race-window] Re-check for role scrape-latest loop"
           if ! should_run_ingestion_services; then
             echo "Exiting race window; pausing scraper loop..."
             sleep 3600
