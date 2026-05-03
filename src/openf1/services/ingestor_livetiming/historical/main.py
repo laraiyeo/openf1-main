@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from functools import lru_cache
 
 import requests
+import time
 import typer
 from loguru import logger
 from tqdm import tqdm
@@ -22,6 +23,9 @@ from openf1.util.misc import join_url, json_serializer, to_datetime, to_timedelt
 from openf1.util.schedule import get_meeting_keys
 from openf1.util.schedule import get_schedule as _get_schedule
 from openf1.util.schedule import get_session_keys
+
+REQUEST_TIMEOUT = int(os.getenv("OPENF1_HTTP_TIMEOUT", "30"))
+REQUEST_RETRIES = int(os.getenv("OPENF1_HTTP_RETRIES", "3"))
 
 cli = typer.Typer()
 
@@ -69,8 +73,22 @@ def get_session_url(year: int, meeting_key: int, session_key: int) -> str:
 def _list_topics(session_url: str) -> list[str]:
     """Returns all the available raw data filenames for the session"""
     index_url = join_url(session_url, "Index.json")
-    index_response = requests.get(index_url)
-    index_content = json.loads(index_response.content)
+    # Use a simple retry loop to avoid hanging indefinitely on network issues
+    last_exc = None
+    for attempt in range(1, REQUEST_RETRIES + 1):
+        try:
+            index_response = requests.get(index_url, timeout=REQUEST_TIMEOUT)
+            index_response.raise_for_status()
+            index_content = json.loads(index_response.content)
+            last_exc = None
+            break
+        except Exception as exc:
+            last_exc = exc
+            logger.warning(f"Attempt {attempt} to fetch Index.json failed: {exc}")
+            if attempt < REQUEST_RETRIES:
+                time.sleep(attempt)
+    if last_exc is not None:
+        raise last_exc
 
     filenames = [v["StreamPath"] for v in index_content["Feeds"].values()]
     topics = [f[: -len(".jsonStream")] for f in filenames if f.endswith(".jsonStream")]
@@ -99,7 +117,25 @@ def list_topics(
 def _get_topic_content(session_url: str, topic: str) -> list[str]:
     topic_filename = f"{topic}.jsonStream"
     url_topic = join_url(session_url, topic_filename)
-    topic_content = requests.get(url_topic).text.split("\r\n")
+    last_exc = None
+    for attempt in range(1, REQUEST_RETRIES + 1):
+        try:
+            resp = requests.get(url_topic, timeout=REQUEST_TIMEOUT)
+            resp.raise_for_status()
+            topic_content = resp.text.split("\r\n")
+            last_exc = None
+            break
+        except Exception as exc:
+            last_exc = exc
+            status = getattr(getattr(exc, "response", None), "status_code", None)
+            if status == 403:
+                logger.info(f"Skipping topic {topic_filename} due to HTTP 403 Forbidden")
+                return []
+            logger.warning(f"Attempt {attempt} to fetch {topic_filename} failed: {exc}")
+            if attempt < REQUEST_RETRIES:
+                time.sleep(attempt)
+    if last_exc is not None:
+        raise last_exc
     return topic_content
 
 
@@ -213,15 +249,19 @@ def get_t0(year: int, meeting_key: int, session_key: int) -> datetime:
 def _get_messages(session_url: str, topics: list[str], t0: datetime) -> list[Message]:
     messages = []
     for topic in topics:
-        raw_content = _get_topic_content(
-            session_url=session_url,
-            topic=topic,
-        )
-        messages += _parse_and_decode_topic_content(
-            topic=topic,
-            topic_raw_content=raw_content,
-            t0=t0,
-        )
+        try:
+            raw_content = _get_topic_content(
+                session_url=session_url,
+                topic=topic,
+            )
+            messages += _parse_and_decode_topic_content(
+                topic=topic,
+                topic_raw_content=raw_content,
+                t0=t0,
+            )
+        except Exception as exc:
+            logger.warning(f"Skipping topic '{topic}' due to error: {exc}")
+            continue
     messages = sorted(messages, key=lambda m: (m.timepoint, m.topic))
     return messages
 
@@ -347,6 +387,8 @@ def ingest_collections(
         logger.info("Inserting (upserting) documents to DB")
     for collection, docs in tqdm(list(docs_by_collection.items()), disable=not verbose):
         docs_mongo = [d.to_mongo_doc_sync() for d in docs]
+        if verbose:
+            logger.info(f"Collection '{collection}': prepared {len(docs_mongo)} docs to upsert")
         # Use upsert to avoid duplicate-key errors when re-ingesting the same
         # session/meeting. This performs a replace-or-insert based on `_key`.
         upsert_data_sync(collection_name=collection, docs=docs_mongo)
