@@ -1,5 +1,46 @@
 #! /usr/bin/env sh
 
+wait_for_race_window() {
+  # If OPENF1_ENABLE_RACE_WINDOW_ONLY is set to "true", only run during race windows
+  if [ "$OPENF1_ENABLE_RACE_WINDOW_ONLY" != "true" ]; then
+    return 0
+  fi
+
+  echo "OPENF1_ENABLE_RACE_WINDOW_ONLY is true; checking if in race window..."
+  HOURS_BEFORE=${OPENF1_RACE_WINDOW_HOURS_BEFORE:-12}
+  HOURS_AFTER=${OPENF1_RACE_WINDOW_HOURS_AFTER:-12}
+
+  while true; do
+    python - "$HOURS_BEFORE" "$HOURS_AFTER" <<'PYCODE'
+import sys
+from datetime import datetime
+from openf1.util.race_scheduler import is_race_window, get_next_race_window
+
+hours_before = int(sys.argv[1])
+hours_after = int(sys.argv[2])
+
+if is_race_window(hours_before=hours_before, hours_after=hours_after):
+    print(f"In race window! Starting services...")
+    sys.exit(0)
+else:
+    next_window = get_next_race_window(hours_before=hours_before, hours_after=hours_after)
+    if next_window:
+        window_start, _ = next_window
+        seconds_until = (window_start - datetime.utcnow()).total_seconds()
+        print(f"Not in race window. Sleeping until {window_start} UTC ({seconds_until / 3600:.1f}h from now)...")
+    else:
+        print("No race meetings found. Sleeping for 1 hour...")
+    sys.exit(1)
+PYCODE
+
+    if [ $? -eq 0 ]; then
+      return 0
+    fi
+    # Sleep for 1 hour before checking again
+    sleep 3600
+  done
+}
+
 run_role() {
   role="$1"
   case "$role" in
@@ -87,6 +128,9 @@ PY
       ;;
   esac
 }
+
+# Check if we should only run during race windows
+wait_for_race_window
 
 # Allow comma-separated ROLE values so a single container can run multiple roles
 if echo "$ROLE" | grep -q ','; then
