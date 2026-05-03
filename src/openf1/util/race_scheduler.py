@@ -1,11 +1,22 @@
 """Race window scheduler: checks if current time is within 12h before/after any race meeting."""
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from openf1.util.db import _get_mongo_db_sync
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+
+
+def _utc_now() -> datetime:
+    return datetime.now(timezone.utc)
+
+
+def _as_utc(dt: datetime) -> datetime:
+    """Normalize a datetime to timezone-aware UTC for safe arithmetic."""
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
 
 
 def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
@@ -24,7 +35,7 @@ def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
         True if in any race window, False otherwise
     """
     try:
-        now = datetime.utcnow()
+        now = _utc_now()
         db = _get_mongo_db_sync()
         meetings = db.get_collection("meetings")
         
@@ -41,8 +52,8 @@ def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
         
         if meeting:
             meeting_name = meeting.get('name', 'Unknown')
-            meeting_start = meeting['date_start']
-            meeting_end = meeting['date_end']
+            meeting_start = _as_utc(meeting['date_start'])
+            meeting_end = _as_utc(meeting['date_end'])
             window_end = meeting_end + timedelta(hours=hours_after)
             
             time_until_end = (window_end - now).total_seconds() / 3600
@@ -61,8 +72,8 @@ def is_race_window(hours_before: int = 12, hours_after: int = 12) -> bool:
         
         if next_meeting:
             next_name = next_meeting.get('name', 'Unknown')
-            next_start = next_meeting['date_start']
-            next_end = next_meeting['date_end']
+            next_start = _as_utc(next_meeting['date_start'])
+            next_end = _as_utc(next_meeting['date_end'])
             window_start = next_start - timedelta(hours=hours_before)
             
             hours_until_start = (window_start - now).total_seconds() / 3600
@@ -92,7 +103,7 @@ def get_next_race_window(hours_before: int = 12, hours_after: int = 12) -> tuple
         Tuple of (window_start, window_end) or None if no meeting found
     """
     try:
-        now = datetime.utcnow()
+        now = _utc_now()
         db = _get_mongo_db_sync()
         meetings = db.get_collection("meetings")
         
@@ -102,8 +113,10 @@ def get_next_race_window(hours_before: int = 12, hours_after: int = 12) -> tuple
         )
         
         if next_meeting:
-            window_start = next_meeting["date_start"] - timedelta(hours=hours_before)
-            window_end = next_meeting["date_end"] + timedelta(hours=hours_after)
+            next_start = _as_utc(next_meeting["date_start"])
+            next_end = _as_utc(next_meeting["date_end"])
+            window_start = next_start - timedelta(hours=hours_before)
+            window_end = next_end + timedelta(hours=hours_after)
             
             hours_until_start = (window_start - now).total_seconds() / 3600
             meeting_name = next_meeting.get('name', 'Unknown')
