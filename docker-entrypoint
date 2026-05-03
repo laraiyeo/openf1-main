@@ -31,19 +31,17 @@ print(f"Dropped database: {db_name}")
 PYCODE
       fi
 
-      if [ -n "$OPENF1_INGEST_HISTORICAL_YEARS" ]; then
-        # Comma-separated list of years, e.g. 2023,2024,2025
-        IFS=','; set -- $OPENF1_INGEST_HISTORICAL_YEARS
-        for Y in "$@"; do
-          echo "Ingesting historical season for year: $Y"
-          python -m openf1.services.ingestor_livetiming.historical.main get-schedule "$Y"
-          python -m openf1.services.ingestor_livetiming.historical.main ingest-season "$Y"
-        done
-      else
-        YEAR=$(date +"%Y")
-        python -m openf1.services.ingestor_livetiming.historical.main get-schedule $YEAR
-        python -m openf1.services.ingestor_livetiming.historical.main ingest-season $YEAR
-      fi
+      # Use OPENF1_INGEST_HISTORICAL_YEARS if set, otherwise default to current year
+      YEARS=${OPENF1_INGEST_HISTORICAL_YEARS:-$(date +"%Y")}
+      echo "Running historical ingestion for years: $YEARS"
+      python scripts/ingest_all_no_cardata.py --years $YEARS --skip-existing
+      # Keep running the historical ingestion every 2 1/2 minutes so the container
+      # continuously updates with new data. This loop runs until the container stops.
+      echo "Entering scheduled loop: ingest historical data every 2 1/2 minutes"
+      while true; do
+        python scripts/ingest_all_no_cardata.py --years $YEARS --skip-existing
+        sleep 150
+      done
       ;;
     scrape-latest)
       echo "Starting scrape-latest"

@@ -53,17 +53,53 @@ def ingest_meeting_no_cardata(year: int, meeting_key: int, collections: List[str
                 continue
 
             logging.info(f"Collections missing for session {sk}: {missing}")
-            hist_main.ingest_collections(year=year, meeting_key=meeting_key, session_key=sk, collection_names=missing, verbose=verbose)
+            try:
+                hist_main.ingest_collections(
+                    year=year,
+                    meeting_key=meeting_key,
+                    session_key=sk,
+                    collection_names=missing,
+                    verbose=verbose,
+                )
+            except Exception as exc:
+                # Continue with next session instead of aborting the whole year.
+                logging.exception(
+                    f"Failed ingest for year={year} meeting={meeting_key} session={sk}: {exc}"
+                )
+                continue
         else:
-            hist_main.ingest_collections(year=year, meeting_key=meeting_key, session_key=sk, collection_names=collections, verbose=verbose)
+            try:
+                hist_main.ingest_collections(
+                    year=year,
+                    meeting_key=meeting_key,
+                    session_key=sk,
+                    collection_names=collections,
+                    verbose=verbose,
+                )
+            except Exception as exc:
+                logging.exception(
+                    f"Failed ingest for year={year} meeting={meeting_key} session={sk}: {exc}"
+                )
+                continue
 
 
 def _collection_has_data(collection: str, session_key: int, meeting_key: int) -> bool:
-    """Return True if the DB already contains documents for the given session or meeting."""
+    """Return True if DB contains docs for this specific session.
+
+    Important: checks are session-scoped by default to avoid false positives where
+    one session's data makes another session look complete.
+    """
     db = _get_mongo_db_sync()
     coll = db.get_collection(collection)
-    # Check common identifying fields; some collections are session-scoped, others meeting/season-scoped
-    query = {"$or": [{"session_key": session_key}, {"meeting_key": meeting_key}, {"_key": session_key}]}
+    # Primary check: strict per-session presence.
+    query = {"session_key": session_key}
+
+    # Fallback for legacy/edge docs that may be missing session_key.
+    # Prefer meeting_key only for collections that are clearly meeting-scoped.
+    meeting_scoped = {"meetings"}
+    if collection in meeting_scoped:
+        query = {"meeting_key": meeting_key}
+
     doc = coll.find_one(query)
     return doc is not None
 
