@@ -8,10 +8,12 @@ from loguru import logger
 from openf1.services.ingestor_livetiming.core.objects import get_topics
 from openf1.services.ingestor_livetiming.real_time.processing import ingest_file
 from openf1.services.ingestor_livetiming.real_time.recording import record_to_file
+from openf1.util.race_scheduler import is_race_window
 from openf1.util.gcs import upload_to_gcs_periodically
 
 TIMEOUT = 5400  # Terminate job if no data received for 90 minutes (in seconds)
 GCS_BUCKET = os.getenv("OPENF1_INGESTOR_LIVETIMING_GCS_BUCKET_RAW")
+RACE_WINDOW_CHECK_INTERVAL = int(os.getenv("OPENF1_RACE_WINDOW_CHECK_INTERVAL", "60"))
 
 
 async def main():
@@ -53,9 +55,23 @@ async def main():
     task_ingest = asyncio.create_task(ingest_file(temp_path))
     tasks.append(task_ingest)
 
+    async def watch_race_window():
+        while True:
+            await asyncio.sleep(RACE_WINDOW_CHECK_INTERVAL)
+            if not is_race_window():
+                logger.info(
+                    "Race window closed; stopping realtime ingestion tasks and recorder"
+                )
+                for task in tasks:
+                    task.cancel()
+                break
+
+    task_race_window = asyncio.create_task(watch_race_window())
+    tasks.append(task_race_window)
+
     try:
-        # Wait for the recording task to stop
-        await asyncio.wait([task_recording], return_when=asyncio.FIRST_COMPLETED)
+        # Wait for any task to stop (recording ends naturally or race window closes)
+        await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
         logger.info("Recording stopped")
 
         # Cancel all the tasks

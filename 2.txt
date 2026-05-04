@@ -1,126 +1,99 @@
-python -m openf1.services.f1_scraping.session_result --meeting-key 1304 --session-key 11465
-python -m openf1.services.f1_scraping.session_result --meeting-key 1304 --session-key 11466
-python -m openf1.services.f1_scraping.session_result --meeting-key 1304 --session-key 11467
-python -m openf1.services.f1_scraping.session_result --meeting-key 1305 --session-key 11470
-python -m openf1.services.f1_scraping.session_result --meeting-key 1305 --session-key 11469
-python -m openf1.services.f1_scraping.session_result --meeting-key 1305 --session-key 11468
-python -m openf1.services.f1_scraping.session_result --meeting-key 1279 --session-key 11227
-python -m openf1.services.f1_scraping.session_result --meeting-key 1279 --session-key 11228
-python -m openf1.services.f1_scraping.session_result --meeting-key 1279 --session-key 11229
-python -m openf1.services.f1_scraping.session_result --meeting-key 1279 --session-key 11230
-python -m openf1.services.f1_scraping.session_result --meeting-key 1279 --session-key 11234
-python -m openf1.services.f1_scraping.session_result --meeting-key 1280 --session-key 11235
-python -m openf1.services.f1_scraping.session_result --meeting-key 1280 --session-key 11236
-python -m openf1.services.f1_scraping.session_result --meeting-key 1280 --session-key 11240
-python -m openf1.services.f1_scraping.session_result --meeting-key 1280 --session-key 11241
-python -m openf1.services.f1_scraping.session_result --meeting-key 1280 --session-key 11245
-python -m openf1.services.f1_scraping.session_result --meeting-key 1281 --session-key 11246
-python -m openf1.services.f1_scraping.session_result --meeting-key 1281 --session-key 11247
-python -m openf1.services.f1_scraping.session_result --meeting-key 1281 --session-key 11248
-python -m openf1.services.f1_scraping.session_result --meeting-key 1281 --session-key 11249
-python -m openf1.services.f1_scraping.session_result --meeting-key 1281 --session-key 11253
-python -m openf1.services.f1_scraping.session_result --meeting-key 1282 --session-key 11254
-python -m openf1.services.f1_scraping.session_result --meeting-key 1282 --session-key 11255
-python -m openf1.services.f1_scraping.session_result --meeting-key 1282 --session-key 11256
-python -m openf1.services.f1_scraping.session_result --meeting-key 1282 --session-key 11257
-python -m openf1.services.f1_scraping.session_result --meeting-key 1282 --session-key 11261
-python -m openf1.services.f1_scraping.session_result --meeting-key 1283 --session-key 11262
-python -m openf1.services.f1_scraping.session_result --meeting-key 1283 --session-key 11263
-python -m openf1.services.f1_scraping.session_result --meeting-key 1283 --session-key 11264
-python -m openf1.services.f1_scraping.session_result --meeting-key 1283 --session-key 11265
-python -m openf1.services.f1_scraping.session_result --meeting-key 1283 --session-key 11269
-python -m openf1.services.f1_scraping.session_result --meeting-key 1284 --session-key 11270
-python -m openf1.services.f1_scraping.session_result --meeting-key 1284 --session-key 11271
-python -m openf1.services.f1_scraping.session_result --meeting-key 1284 --session-key 11275
-python -m openf1.services.f1_scraping.session_result --meeting-key 1284 --session-key 11276
-python -m openf1.services.f1_scraping.session_result --meeting-key 1284 --session-key 11280
-python -m openf1.services.f1_scraping.session_result --meeting-key 1285 --session-key 11281
-python -m openf1.services.f1_scraping.session_result --meeting-key 1285 --session-key 11282
-python -m openf1.services.f1_scraping.session_result --meeting-key 1285 --session-key 11286
-python -m openf1.services.f1_scraping.session_result --meeting-key 1285 --session-key 11287
-python -m openf1.services.f1_scraping.session_result --meeting-key 1285 --session-key 11291
-python -m openf1.services.f1_scraping.session_result --meeting-key 1286 --session-key 11292
-python -m openf1.services.f1_scraping.session_result --meeting-key 1286 --session-key 11293
-python -m openf1.services.f1_scraping.session_result --meeting-key 1286 --session-key 11294
-python -m openf1.services.f1_scraping.session_result --meeting-key 1286 --session-key 11295
-python -m openf1.services.f1_scraping.session_result --meeting-key 1286 --session-key 11299
-python -m openf1.services.f1_scraping.session_result --meeting-key 1287 --session-key 11300
-python -m openf1.services.f1_scraping.session_result --meeting-key 1287 --session-key 11301
-python -m openf1.services.f1_scraping.session_result --meeting-key 1287 --session-key 11302
-python -m openf1.services.f1_scraping.session_result --meeting-key 1287 --session-key 11303
-python -m openf1.services.f1_scraping.session_result --meeting-key 1287 --session-key 11307
-python -m openf1.services.f1_scraping.session_result --meeting-key 1288 --session-key 11308
-python -m openf1.services.f1_scraping.session_result --meeting-key 1288 --session-key 11309
-python -m openf1.services.f1_scraping.session_result --meeting-key 1288 --session-key 11310
-python -m openf1.services.f1_scraping.session_result --meeting-key 1288 --session-key 11311
-python -m openf1.services.f1_scraping.session_result --meeting-key 1288 --session-key 11315
-python -m openf1.services.f1_scraping.session_result --meeting-key 1289 --session-key 11316
-python -m openf1.services.f1_scraping.session_result --meeting-key 1289 --session-key 11317
-python -m openf1.services.f1_scraping.session_result --meeting-key 1289 --session-key 11321
-python -m openf1.services.f1_scraping.session_result --meeting-key 1289 --session-key 11322
-python -m openf1.services.f1_scraping.session_result --meeting-key 1289 --session-key 11326
-python -m openf1.services.f1_scraping.session_result --meeting-key 1290 --session-key 11327
-python -m openf1.services.f1_scraping.session_result --meeting-key 1290 --session-key 11328
-python -m openf1.services.f1_scraping.session_result --meeting-key 1290 --session-key 11329
-python -m openf1.services.f1_scraping.session_result --meeting-key 1290 --session-key 11330
-python -m openf1.services.f1_scraping.session_result --meeting-key 1290 --session-key 11334
-python -m openf1.services.f1_scraping.session_result --meeting-key 1291 --session-key 11335
-python -m openf1.services.f1_scraping.session_result --meeting-key 1291 --session-key 11336
-python -m openf1.services.f1_scraping.session_result --meeting-key 1291 --session-key 11337
-python -m openf1.services.f1_scraping.session_result --meeting-key 1291 --session-key 11338
-python -m openf1.services.f1_scraping.session_result --meeting-key 1291 --session-key 11342
-python -m openf1.services.f1_scraping.session_result --meeting-key 1292 --session-key 11343
-python -m openf1.services.f1_scraping.session_result --meeting-key 1292 --session-key 11344
-python -m openf1.services.f1_scraping.session_result --meeting-key 1292 --session-key 11348
-python -m openf1.services.f1_scraping.session_result --meeting-key 1292 --session-key 11349
-python -m openf1.services.f1_scraping.session_result --meeting-key 1292 --session-key 11353
-python -m openf1.services.f1_scraping.session_result --meeting-key 1293 --session-key 11354
-python -m openf1.services.f1_scraping.session_result --meeting-key 1293 --session-key 11355
-python -m openf1.services.f1_scraping.session_result --meeting-key 1293 --session-key 11356
-python -m openf1.services.f1_scraping.session_result --meeting-key 1293 --session-key 11357
-python -m openf1.services.f1_scraping.session_result --meeting-key 1293 --session-key 11361
-python -m openf1.services.f1_scraping.session_result --meeting-key 1294 --session-key 11362
-python -m openf1.services.f1_scraping.session_result --meeting-key 1294 --session-key 11363
-python -m openf1.services.f1_scraping.session_result --meeting-key 1294 --session-key 11364
-python -m openf1.services.f1_scraping.session_result --meeting-key 1294 --session-key 11365
-python -m openf1.services.f1_scraping.session_result --meeting-key 1294 --session-key 11369
-python -m openf1.services.f1_scraping.session_result --meeting-key 1295 --session-key 11370
-python -m openf1.services.f1_scraping.session_result --meeting-key 1295 --session-key 11371
-python -m openf1.services.f1_scraping.session_result --meeting-key 1295 --session-key 11372
-python -m openf1.services.f1_scraping.session_result --meeting-key 1295 --session-key 11373
-python -m openf1.services.f1_scraping.session_result --meeting-key 1295 --session-key 11377
-python -m openf1.services.f1_scraping.session_result --meeting-key 1296 --session-key 11378
-python -m openf1.services.f1_scraping.session_result --meeting-key 1296 --session-key 11379
-python -m openf1.services.f1_scraping.session_result --meeting-key 1296 --session-key 11383
-python -m openf1.services.f1_scraping.session_result --meeting-key 1296 --session-key 11384
-python -m openf1.services.f1_scraping.session_result --meeting-key 1296 --session-key 11388
-python -m openf1.services.f1_scraping.session_result --meeting-key 1297 --session-key 11389
-python -m openf1.services.f1_scraping.session_result --meeting-key 1297 --session-key 11390
-python -m openf1.services.f1_scraping.session_result --meeting-key 1297 --session-key 11391
-python -m openf1.services.f1_scraping.session_result --meeting-key 1297 --session-key 11392
-python -m openf1.services.f1_scraping.session_result --meeting-key 1297 --session-key 11396
-python -m openf1.services.f1_scraping.session_result --meeting-key 1298 --session-key 11397
-python -m openf1.services.f1_scraping.session_result --meeting-key 1298 --session-key 11398
-python -m openf1.services.f1_scraping.session_result --meeting-key 1298 --session-key 11399
-python -m openf1.services.f1_scraping.session_result --meeting-key 1298 --session-key 11400
-python -m openf1.services.f1_scraping.session_result --meeting-key 1298 --session-key 11404
-python -m openf1.services.f1_scraping.session_result --meeting-key 1299 --session-key 11405
-python -m openf1.services.f1_scraping.session_result --meeting-key 1299 --session-key 11406
-python -m openf1.services.f1_scraping.session_result --meeting-key 1299 --session-key 11407
-python -m openf1.services.f1_scraping.session_result --meeting-key 1299 --session-key 11408
-python -m openf1.services.f1_scraping.session_result --meeting-key 1299 --session-key 11412
-python -m openf1.services.f1_scraping.session_result --meeting-key 1300 --session-key 11413
-python -m openf1.services.f1_scraping.session_result --meeting-key 1300 --session-key 11414
-python -m openf1.services.f1_scraping.session_result --meeting-key 1300 --session-key 11415
-python -m openf1.services.f1_scraping.session_result --meeting-key 1300 --session-key 11416
-python -m openf1.services.f1_scraping.session_result --meeting-key 1300 --session-key 11420
-python -m openf1.services.f1_scraping.session_result --meeting-key 1301 --session-key 11421
-python -m openf1.services.f1_scraping.session_result --meeting-key 1301 --session-key 11422
-python -m openf1.services.f1_scraping.session_result --meeting-key 1301 --session-key 11423
-python -m openf1.services.f1_scraping.session_result --meeting-key 1301 --session-key 11424
-python -m openf1.services.f1_scraping.session_result --meeting-key 1301 --session-key 11428
-python -m openf1.services.f1_scraping.session_result --meeting-key 1302 --session-key 11429
-python -m openf1.services.f1_scraping.session_result --meeting-key 1302 --session-key 11430
-python -m openf1.services.f1_scraping.session_result --meeting-key 1302 --session-key 11431
-python -m openf1.services.f1_scraping.session_result --meeting-key 1302 --session-key 11432
-python -m openf1.services.f1_scraping.session_result --meeting-key 1302 --session-key 11436
+2026-05-04T02:51:38.653040766Z [inf]  Slow query
+2026-05-04T02:51:38.654537941Z [inf]  Slow query
+2026-05-04T02:51:38.654545857Z [inf]  Slow query
+2026-05-04T02:51:38.655873534Z [inf]  Slow query
+2026-05-04T02:51:40.073442533Z [inf]  WiredTiger message
+2026-05-04T02:51:44.807716857Z [inf]  Slow query
+2026-05-04T02:51:44.807721479Z [inf]  Slow query
+2026-05-04T02:51:44.808727077Z [inf]  Slow query
+2026-05-04T02:51:44.808732016Z [inf]  Slow query
+2026-05-04T02:51:44.810112889Z [inf]  Slow query
+2026-05-04T02:51:50.847199718Z [inf]  Slow query
+2026-05-04T02:51:50.847205542Z [inf]  Slow query
+2026-05-04T02:51:50.849007163Z [inf]  Slow query
+2026-05-04T02:51:50.849012717Z [inf]  Slow query
+2026-05-04T02:51:50.850767913Z [inf]  Slow query
+2026-05-04T02:51:56.954906301Z [inf]  Slow query
+2026-05-04T02:51:56.954912865Z [inf]  Slow query
+2026-05-04T02:51:56.956374772Z [inf]  Slow query
+2026-05-04T02:51:56.956380707Z [inf]  Slow query
+2026-05-04T02:51:56.957984067Z [inf]  Slow query
+2026-05-04T02:52:02.954073243Z [inf]  Slow query
+2026-05-04T02:52:02.954081814Z [inf]  Slow query
+2026-05-04T02:52:02.955534472Z [inf]  Slow query
+2026-05-04T02:52:02.955539699Z [inf]  Slow query
+2026-05-04T02:52:02.957242200Z [inf]  Slow query
+2026-05-04T02:52:09.170193421Z [inf]  Slow query
+2026-05-04T02:52:09.170196773Z [inf]  Slow query
+2026-05-04T02:52:09.171947143Z [inf]  Slow query
+2026-05-04T02:52:09.171950719Z [inf]  Slow query
+2026-05-04T02:52:09.174624942Z [inf]  Slow query
+2026-05-04T02:52:15.200575281Z [inf]  Slow query
+2026-05-04T02:52:15.200581919Z [inf]  Slow query
+2026-05-04T02:52:15.202650817Z [inf]  Slow query
+2026-05-04T02:52:15.202654211Z [inf]  Slow query
+2026-05-04T02:52:15.204630866Z [inf]  Slow query
+2026-05-04T02:52:21.190530348Z [inf]  Slow query
+2026-05-04T02:52:21.190535088Z [inf]  Slow query
+2026-05-04T02:52:21.192081891Z [inf]  Slow query
+2026-05-04T02:52:21.192086755Z [inf]  Slow query
+2026-05-04T02:52:21.193813891Z [inf]  Slow query
+2026-05-04T02:52:27.146022213Z [inf]  Slow query
+2026-05-04T02:52:27.146026753Z [inf]  Slow query
+2026-05-04T02:52:27.147161521Z [inf]  Slow query
+2026-05-04T02:52:27.147164302Z [inf]  Slow query
+2026-05-04T02:52:27.153303248Z [inf]  Slow query
+2026-05-04T02:52:33.051909039Z [inf]  Slow query
+2026-05-04T02:52:33.051913883Z [inf]  Slow query
+2026-05-04T02:52:33.053884629Z [inf]  Slow query
+2026-05-04T02:52:33.053889083Z [inf]  Slow query
+2026-05-04T02:52:33.055647224Z [inf]  Slow query
+2026-05-04T02:52:39.004606662Z [inf]  Slow query
+2026-05-04T02:52:39.004613320Z [inf]  Slow query
+2026-05-04T02:52:39.006571843Z [inf]  Slow query
+2026-05-04T02:52:39.006578138Z [inf]  Slow query
+2026-05-04T02:52:39.008213835Z [inf]  Slow query
+2026-05-04T02:52:40.104626489Z [inf]  WiredTiger message
+2026-05-04T02:52:45.086131583Z [inf]  Slow query
+2026-05-04T02:52:45.086135239Z [inf]  Slow query
+2026-05-04T02:52:45.087613394Z [inf]  Slow query
+2026-05-04T02:52:45.102054290Z [inf]  Slow query
+2026-05-04T02:52:45.102058782Z [inf]  Slow query
+2026-05-04T02:52:51.089620108Z [inf]  Slow query
+2026-05-04T02:52:51.089624556Z [inf]  Slow query
+2026-05-04T02:52:51.091062038Z [inf]  Slow query
+2026-05-04T02:52:51.091066588Z [inf]  Slow query
+2026-05-04T02:52:51.092670819Z [inf]  Slow query
+2026-05-04T02:52:56.050861235Z [inf]  Connection accepted
+2026-05-04T02:52:56.050864179Z [inf]  client metadata
+2026-05-04T02:52:56.050867318Z [inf]  Connection not authenticating
+2026-05-04T02:52:56.050870464Z [inf]  Connection accepted
+2026-05-04T02:52:56.050873590Z [inf]  client metadata
+2026-05-04T02:52:56.051740764Z [inf]  Auth metrics report
+2026-05-04T02:52:56.051744590Z [inf]  Successfully authenticated
+2026-05-04T02:52:56.051747971Z [inf]  Received first command on ingress connection since session start or auth handshake
+2026-05-04T02:52:56.051751084Z [inf]  Connection accepted
+2026-05-04T02:52:56.051754047Z [inf]  Connection accepted
+2026-05-04T02:52:56.051757156Z [inf]  client metadata
+2026-05-04T02:52:56.053460110Z [inf]  Auth metrics report
+2026-05-04T02:52:56.053464804Z [inf]  client metadata
+2026-05-04T02:52:56.053467922Z [inf]  Auth metrics report
+2026-05-04T02:52:56.053471091Z [inf]  Successfully authenticated
+2026-05-04T02:52:56.053474237Z [inf]  Successfully authenticated
+2026-05-04T02:52:56.055243453Z [inf]  Connection ended
+2026-05-04T02:52:56.055248029Z [inf]  Connection ended
+2026-05-04T02:52:56.055251958Z [inf]  Connection ended
+2026-05-04T02:52:56.055254843Z [inf]  Connection ended
+2026-05-04T02:52:57.110140658Z [inf]  Slow query
+2026-05-04T02:52:57.110145447Z [inf]  Slow query
+2026-05-04T02:52:57.111825563Z [inf]  Slow query
+2026-05-04T02:52:57.111833473Z [inf]  Slow query
+2026-05-04T02:52:57.113581790Z [inf]  Slow query
+2026-05-04T02:53:03.148440175Z [inf]  Slow query
+2026-05-04T02:53:03.148443702Z [inf]  Slow query
+2026-05-04T02:53:03.150312003Z [inf]  Slow query
+2026-05-04T02:53:03.150318249Z [inf]  Slow query
+2026-05-04T02:53:03.151923453Z [inf]  Slow query
+2026-05-04T02:53:09.210115642Z [inf]  Slow query
+2026-05-04T02:53:09.210120210Z [inf]  Slow query
+2026-05-04T02:53:09.212008175Z [inf]  Slow query

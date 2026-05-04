@@ -68,7 +68,16 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
             monitor_task = asyncio.create_task(monitor_file_size())
 
             # Wait for the process to complete and capture output
-            stdout, stderr = await proc.communicate()
+            try:
+                stdout, stderr = await proc.communicate()
+            except asyncio.CancelledError:
+                logger.info("Recorder task cancelled; terminating subprocess")
+                try:
+                    proc.kill()
+                except ProcessLookupError:
+                    pass
+                stdout, stderr = await proc.communicate()
+                raise
             monitor_task.cancel()
 
             # Decode subprocess output for logging
