@@ -2,8 +2,15 @@ import asyncio
 import os
 import random
 import sys
+from typing import Final
 
 from loguru import logger
+
+
+RESTART_BACKOFF_BASE_SECONDS: Final[float] = 2.0
+RESTART_BACKOFF_MAX_SECONDS: Final[float] = 60.0
+AUTH_ACCEPTED_MARKER = "Connection established"
+AUTH_REJECTED_MARKER = "Initial connection failed: 403"
 
 
 async def record_to_file(filepath: str, topics: list[str], timeout: int):
@@ -11,9 +18,15 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
     live timing module (https://github.com/br-g/fastf1-livetiming)
     """
     F1_TOKEN = os.getenv("F1_TOKEN")
+    restart_attempt = 0
 
     while True:
         try:
+            if F1_TOKEN is not None:
+                logger.info(
+                    "F1_TOKEN detected; the recorder will now verify whether the live timing server accepts it."
+                )
+
             command = (
                 [sys.executable, "-u", "-m", "fastf1_livetiming", "save", filepath]
                 + sorted(list(topics))
@@ -95,6 +108,20 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
             if err_str:
                 logger.debug(f"Recorder stderr: {err_str}")
 
+            if F1_TOKEN is not None:
+                if AUTH_ACCEPTED_MARKER in err_str:
+                    logger.info(
+                        "F1_TOKEN was accepted by the live timing server."
+                    )
+                elif AUTH_REJECTED_MARKER in err_str:
+                    logger.error(
+                        "F1_TOKEN was rejected by the live timing server (403)."
+                    )
+                elif "Using F1_TOKEN for authentication..." in err_str:
+                    logger.warning(
+                        "F1_TOKEN was provided, but the recorder never confirmed a successful connection."
+                    )
+
             # Check if the process exited cleanly with an exit code of 0.
             if proc.returncode == 0:
                 logger.info("Recorder subprocess completed successfully.")
@@ -109,7 +136,15 @@ async def record_to_file(filepath: str, topics: list[str], timeout: int):
                 "the recorder subprocess."
             )
 
-        logger.info("Waiting before restarting the recorder...")
-        await asyncio.sleep(
-            random.uniform(1, 5)
-        )  # Use random jitter to prevent synchronized retry loops
+        restart_attempt += 1
+        backoff_seconds = min(
+            RESTART_BACKOFF_MAX_SECONDS,
+            RESTART_BACKOFF_BASE_SECONDS * (2 ** (restart_attempt - 1)),
+        )
+        sleep_seconds = backoff_seconds + random.uniform(0, 1)
+        logger.warning(
+            "Restarting recorder after failure",
+            attempt=restart_attempt,
+            delay_seconds=round(sleep_seconds, 2),
+        )
+        await asyncio.sleep(sleep_seconds)
